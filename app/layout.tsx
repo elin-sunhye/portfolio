@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
+import '@/style/globals.scss';
 import NextAuthProvider from '@/component/layout/NextAuthProvider';
 import RecoilRootProvider from '@/component/layout/RecoilRootProvider';
 import ReactQueryProvider from '@/component/layout/ReactQueryProvider';
+import Header from '@/component/header/Header';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,6 +23,8 @@ export default function RootLayout({
       <body className={inter.className}>
         <NextAuthProvider>
           <RecoilRootProvider>
+            <Header />
+
             <ReactQueryProvider>{children}</ReactQueryProvider>
           </RecoilRootProvider>
         </NextAuthProvider>

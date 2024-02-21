@@ -1,6 +1,6 @@
 'use client';
 
-import style from './Search.module.scss';
+import style from './search.module.scss';
 import { IoClose } from 'react-icons/io5';
 import { Dispatch, SetStateAction } from 'react';
 import Image from 'next/image';
