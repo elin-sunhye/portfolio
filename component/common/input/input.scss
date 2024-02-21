@@ -1,0 +1,31 @@
+.input {
+  width: 100%;
+  display: block;
+  border: 1px solid var(--gray-1);
+
+  // size
+  &.sm {
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0 1rem;
+    border-radius: var(--br-5);
+  }
+  &.md {
+    height: 4rem;
+    line-height: 4rem;
+    padding: 0 1.5rem;
+    border-radius: var(--br-5);
+  }
+  &.lg {
+    height: 5rem;
+    line-height: 5rem;
+    padding: 0 2rem;
+    border-radius: var(--br-10);
+  }
+  &.xlg {
+    height: 6rem;
+    line-height: 6rem;
+    padding: 0 2rem;
+    border-radius: var(--br-10);
+  }
+}
