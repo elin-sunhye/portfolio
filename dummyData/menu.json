@@ -5,7 +5,7 @@
     "menu": "SITE",
     "url": "/site",
     "title": "사이트 바로가기",
-    "hasChild": "Y",
+    "hasChild": true,
     "depth": 1,
     "sort": 1
   },
@@ -15,7 +15,7 @@
     "menu": "COMPOENET",
     "url": "/component",
     "title": "컴포넌트 바로가기",
-    "hasChild": "Y",
+    "hasChild": true,
     "depth": 1,
     "sort": 2
   },
@@ -25,7 +25,7 @@
     "menu": "WIKO",
     "url": "/site/wiko",
     "title": "위코 바로가기",
-    "hasChild": "N",
+    "hasChild": false,
     "depth": 2,
     "sort": 1
   },
@@ -35,7 +35,7 @@
     "menu": "COMMON",
     "url": "/component/common",
     "title": "공통 컴포넌트 바로가기",
-    "hasChild": "Y",
+    "hasChild": true,
     "depth": 2,
     "sort": 1
   },
@@ -45,7 +45,7 @@
     "menu": "SWIPER",
     "url": "/component/swiper",
     "title": "스와이퍼 바로가기",
-    "hasChild": "N",
+    "hasChild": false,
     "depth": 2,
     "sort": 2
   },
@@ -56,7 +56,7 @@
     "menu": "BUTTON",
     "url": "/component/common/button",
     "title": "버튼 바로가기",
-    "hasChild": "N",
+    "hasChild": false,
     "depth": 3,
     "sort": 1
   },
@@ -66,7 +66,7 @@
     "menu": "INPUT",
     "url": "/component/common/input",
     "title": "인풋 바로가기",
-    "hasChild": "N",
+    "hasChild": false,
     "depth": 3,
     "sort": 2
   }

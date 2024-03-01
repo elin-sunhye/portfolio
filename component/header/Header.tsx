@@ -2,12 +2,15 @@
 
 import style from './header.module.scss';
 import { useEffect, useState } from 'react';
-import { FiExternalLink } from 'react-icons/fi';
+import { FiExternalLink, FiPhoneCall } from 'react-icons/fi';
 
 // dummyData
 import menuData from '@/dummyData/menu.json';
 import { menuType } from '@/type/menu/menuType';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
+import { useRouter } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface HeaderClientProps {
   // /**
@@ -21,6 +24,9 @@ interface HeaderClientProps {
 }
 
 export default function HeaderClient({}: HeaderClientProps) {
+  //
+  const router = useRouter();
+
   // TODO: 메뉴 api 연결 후 useEffect로 set
   // 1차
   const [depth1, setDepth1] = useState<menuType[]>(
@@ -50,86 +56,31 @@ export default function HeaderClient({}: HeaderClientProps) {
   // sitemap
   const [siteMap, setSiteMap] = useState<boolean>(false);
 
+  // TODO: siteMap active 시 외부 스크롤 막기
+  // TODO: siteMap active 시 헤더 스크롤 이벤트 막기
+
   return (
     <header
       className={`flex_between ${style.header} ${
         scroll ? style.scroll_none : ''
-      }`}
+      } ${siteMap ? style.active : ''}`}
     >
-      <a href={'/'} className={style.t_logo_l}></a>
-      <nav className={`flex_end ${style.gnb}`}>
-        <ul className={`flex_end ${style.depth_1}`}>
-          {depth1.map((one: menuType) => {
-            return (
-              <li key={`depth_1_${one.seq}`}>
-                <p>{one.menu}</p>
+      <div className={`flex_center ${style.left}`}>
+        <h1
+          className={style.t_logo_l}
+          title="홈"
+          onClick={() => {
+            router.push('/');
+          }}
+        >
+          <Image src={'/logo.png'} alt={'로고이미지'} width={50} height={50} />
+        </h1>
 
-                {one.hasChild === 'Y' ? (
-                  <ul className={style.depth_2}>
-                    {depth2.map((two) => {
-                      if (two.parentSeq === one.seq) {
-                        return (
-                          <li>
-                            <a
-                              href={
-                                two.hasChild === 'N'
-                                  ? two.url
-                                  : depth3.find(
-                                      (three) =>
-                                        three.parentSeq === two.seq &&
-                                        three.sort === 1
-                                    )?.url
-                              }
-                              title={
-                                two.hasChild === 'N'
-                                  ? two.title
-                                  : depth3.find(
-                                      (three) =>
-                                        three.parentSeq === two.seq &&
-                                        three.sort === 1
-                                    )?.title
-                              }
-                            >
-                              {two.menu}
-                            </a>
-                          </li>
-                        );
-                      }
-                    })}
-                  </ul>
-                ) : (
-                  <></>
-                )}
-              </li>
-            );
-          })}
-        </ul>
-
-        <ul className={`flex_end ${style.more_info}`}>
-          <li>
-            <a
-              href="https://github.com/elin-sunhye?tab=repositories"
-              target="_blank"
-              title="포트폴리오 더 보기"
-              className="flex_end"
-            >
-              gitHub
-              <FiExternalLink role={'img'} aria-label={'링크 아이콘'} />
-            </a>
-          </li>
-          {/* <li>
-            <button type="button" title="연락하기">
-              <FiPhoneCall role={'img'} aria-label={'전화 아이콘'} size={16} />
-            </button>
-          </li> */}
-        </ul>
-
+        {/* 사이트 맵 */}
         <button
           type="button"
           title="사이트맵 보기"
-          className={`${style.btn_site_map} ${
-            siteMap ? style.site_map_open : ''
-          }`}
+          className={`${style.btn_site_map}`}
           onClick={() => {
             setSiteMap(!siteMap);
           }}
@@ -137,65 +88,76 @@ export default function HeaderClient({}: HeaderClientProps) {
           <span></span>
           <span></span>
           <span></span>
-          <span></span>
         </button>
-      </nav>
-      <ul className={style.site_map}>
-        {depth1.map((one: menuType) => {
-          return (
-            <li key={`site_map_${one.seq}`}>
-              {one.hasChild === 'Y' ? (
-                <>
-                  <button className="flex_between">
-                    <p>{one.menu}</p>
-                    <span>
-                      <MdKeyboardArrowUp />
-                      <MdKeyboardArrowDown />
-                    </span>
-                  </button>
-                  <ul className={style.site_map_2}>
-                    {depth2.map((two: menuType) => {
-                      if (two.parentSeq === one.seq) {
-                        return (
-                          <li key={`site_map_${two.seq}`}>
-                            {two.hasChild === 'Y' ? (
-                              <>
-                                <button type="button" className="flex_between">
-                                  <p>{two.menu}</p>
-                                  <span>
-                                    <MdKeyboardArrowUp />
-                                    <MdKeyboardArrowDown />
-                                  </span>
-                                </button>
 
-                                <ul className={style.site_map_3}>
-                                  {depth3.map((three) => {
-                                    if (three.parentSeq === two.seq) {
-                                      return (
-                                        <li>
-                                          <a href={three.url}>{three.menu}</a>
-                                        </li>
-                                      );
-                                    }
-                                  })}
-                                </ul>
-                              </>
-                            ) : (
-                              <a href={two.url}>{two.menu}</a>
-                            )}
-                          </li>
-                        );
-                      }
-                    })}
-                  </ul>
-                </>
-              ) : (
-                <a href={one.url}>{one.menu}</a>
-              )}
-            </li>
-          );
-        })}
-      </ul>
+        {/* github */}
+        <Link
+          href={'https://github.com/elin-sunhye'}
+          target="_blank"
+          title="github 바로가기"
+          className={`flex_center ${style.link_git_hub}`}
+        >
+          <FiExternalLink />
+        </Link>
+      </div>
+
+      <div className={`flex_start ${style.right}`}>
+        <ul className={style.depth_1}>
+          {depth1.map((one: menuType) => {
+            return (
+              <li key={`one_${one.seq}`} className="flex_center">
+                {one.hasChild ? (
+                  <>
+                    <button type="button" title={`${one.menu} 바로가기`}>
+                      {one.menu}
+                    </button>
+                    <ul className={style.depth_2}>
+                      {depth2.map((two: menuType) => {
+                        if (two.parentSeq === one.seq) {
+                          return (
+                            <li key={`two_${two.seq}`} className="flex_center">
+                              {two.hasChild ? (
+                                <>
+                                  <button
+                                    type="button"
+                                    title={`${two.menu} 바로가기`}
+                                  >
+                                    {two.menu}
+                                  </button>
+                                  <ul className={style.depth_3}>
+                                    {depth3.map((three: menuType) => {
+                                      if (three.parentSeq === two.seq) {
+                                        return (
+                                          <li
+                                            key={`three_${three.seq}`}
+                                            className="flex_center"
+                                          >
+                                            <Link href={three.url}>
+                                              {three.menu}
+                                            </Link>
+                                          </li>
+                                        );
+                                      }
+                                    })}
+                                  </ul>
+                                </>
+                              ) : (
+                                <Link href={two.url}>{two.menu}</Link>
+                              )}
+                            </li>
+                          );
+                        }
+                      })}
+                    </ul>
+                  </>
+                ) : (
+                  <Link href={one.url}> {one.menu}</Link>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </header>
   );
 }

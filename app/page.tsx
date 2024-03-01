@@ -30,7 +30,7 @@ export default function Home() {
 
     autoplay: {
       // 자동 슬라이드 설정 , 비 활성화 시 false, true 설정 시   import {Autoplay from "swiper/modules" 추가
-      delay: 3000, // 시간 설정
+      delay: 7000, // 시간 설정
       disableOnInteraction: false, // false로 설정하면 스와이프 후 자동 재생이 비활성화 되지 않음
     },
     allowTouchMove: false, // false시에 스와이핑이 되지 않으며 버튼으로만 슬라이드 조작이 가능
@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <main>
       <section className={style.main_visual}>
-        <Swiper {...swiperParams}>
+        {/* <Swiper {...swiperParams}>
           <SwiperSlide>
             <div className={`flex_center ${style.slide_1}`}>1</div>
           </SwiperSlide>
@@ -48,7 +48,7 @@ export default function Home() {
           <SwiperSlide>
             <div className={`flex_center ${style.slide_3}`}>3</div>
           </SwiperSlide>
-        </Swiper>
+        </Swiper> */}
       </section>
     </main>
   );

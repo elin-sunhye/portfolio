@@ -4,7 +4,7 @@ export interface menuType {
   menu: string;
   url: string;
   title: string;
-  hasChild: string;
+  hasChild: boolean;
   depth: number;
   sort: number;
 }
