@@ -2,26 +2,166 @@
   {
     "seq": 1,
     "parentSeq": null,
-    "menu": "SITE",
-    "url": "/site",
-    "title": "사이트 바로가기",
+    "menu": "CAREER",
+    "url": "/career",
+    "title": "커리어 바로가기",
     "hasChild": true,
     "depth": 1,
     "sort": 1
   },
   {
-    "seq": 2,
-    "parentSeq": null,
-    "menu": "COMPOENET",
-    "url": "/component",
-    "title": "컴포넌트 바로가기",
+    "seq": 10,
+    "parentSeq": 1,
+    "menu": "DEPS",
+    "url": "/career/deps",
+    "title": "뎁스 바로가기",
     "hasChild": true,
-    "depth": 1,
+    "depth": 2,
+    "sort": 1
+  },
+  {
+    "seq": 100,
+    "parentSeq": 10,
+    "menu": "STX",
+    "url": "/career/deps/stx",
+    "title": "STX엔진 SSC 시스템 구축 바로가기",
+    "hasChild": false,
+    "depth": 3,
+    "sort": 1
+  },
+  {
+    "seq": 101,
+    "parentSeq": 10,
+    "menu": "3DSANDAN",
+    "url": "/career/deps/3Dsandan",
+    "title": "경남 창원 3D산단 디지털 플랫폼 바로가기",
+    "hasChild": false,
+    "depth": 3,
     "sort": 2
   },
   {
-    "seq": 10,
+    "seq": 102,
+    "parentSeq": 10,
+    "menu": "HOMEPAGE",
+    "url": "/career/deps/homepage",
+    "title": "뎁스 홈페이지 바로가기",
+    "hasChild": false,
+    "depth": 3,
+    "sort": 3
+  },
+  {
+    "seq": 103,
+    "parentSeq": 10,
+    "menu": "GAPT",
+    "url": "/career/deps/gapt",
+    "title": "경남 공동주택 통합 플랫폼 바로가기",
+    "hasChild": false,
+    "depth": 3,
+    "sort": 4
+  },
+  {
+    "seq": 104,
+    "parentSeq": 10,
+    "menu": "GNTP",
+    "url": "/career/deps/gntp",
+    "title": "경남 통합 일자리 플랫폼 바로가기",
+    "hasChild": false,
+    "depth": 3,
+    "sort": 5
+  },
+  {
+    "seq": 105,
+    "parentSeq": 10,
+    "menu": "VIRTUAL",
+    "url": "/career/deps/virtual",
+    "title": "버추얼 개발 기술지원 플랫폼 바로가기",
+    "hasChild": false,
+    "depth": 3,
+    "sort": 6
+  },
+  {
+    "seq": 106,
+    "parentSeq": 10,
+    "menu": "WISDOM",
+    "url": "/career/deps/wisdom",
+    "title": "경남대학교 LINC3.0 사업단 WISDOM 플랫폼 바로가기",
+    "hasChild": false,
+    "depth": 3,
+    "sort": 7
+  },
+  {
+    "seq": 11,
     "parentSeq": 1,
+    "menu": "ORANGE",
+    "url": "/career/orangeent",
+    "title": "오렌지엔터 바로가기",
+    "hasChild": true,
+    "depth": 2,
+    "sort": 2
+  },
+  {
+    "seq": 110,
+    "parentSeq": 11,
+    "menu": "FANPICK",
+    "url": "/career/orangeent/fanpick",
+    "title": "팬픽 바로가기",
+    "hasChild": false,
+    "depth": 3,
+    "sort": 1
+  },
+  {
+    "seq": 111,
+    "parentSeq": 11,
+    "menu": "HOMEPAGE",
+    "url": "/career/orangeent/homepage",
+    "title": "오렌지 홈페이지 바로가기",
+    "hasChild": false,
+    "depth": 3,
+    "sort": 2
+  },
+  {
+    "seq": 12,
+    "parentSeq": 1,
+    "menu": "LAPCOS",
+    "url": "/career/lapcos",
+    "title": "랩코스 바로가기",
+    "hasChild": true,
+    "depth": 2,
+    "sort": 3
+  },
+  {
+    "seq": 120,
+    "parentSeq": 12,
+    "menu": "TRADESHOW",
+    "url": "/career/lapcos/tradeshow",
+    "title": "트레이드쇼 바로가기",
+    "hasChild": false,
+    "depth": 3,
+    "sort": 1
+  },
+  {
+    "seq": 121,
+    "parentSeq": 12,
+    "menu": "FLYER",
+    "url": "/career/lapcos/flyer",
+    "title": "초대장 바로가기",
+    "hasChild": false,
+    "depth": 3,
+    "sort": 1
+  },
+  {
+    "seq": 2,
+    "parentSeq": null,
+    "menu": "PROJECT",
+    "url": "/project",
+    "title": "프로젝트 바로가기",
+    "hasChild": true,
+    "depth": 1,
+    "sort": 1
+  },
+  {
+    "seq": 20,
+    "parentSeq": 2,
     "menu": "WIKO",
     "url": "/site/wiko",
     "title": "위코 바로가기",
@@ -30,8 +170,18 @@
     "sort": 1
   },
   {
-    "seq": 20,
-    "parentSeq": 2,
+    "seq": 3,
+    "parentSeq": null,
+    "menu": "COMPONENT",
+    "url": "/component",
+    "title": "컴포넌트 바로가기",
+    "hasChild": true,
+    "depth": 1,
+    "sort": 2
+  },
+  {
+    "seq": 30,
+    "parentSeq": 3,
     "menu": "COMMON",
     "url": "/component/common",
     "title": "공통 컴포넌트 바로가기",
@@ -40,19 +190,8 @@
     "sort": 1
   },
   {
-    "seq": 21,
-    "parentSeq": 2,
-    "menu": "SWIPER",
-    "url": "/component/swiper",
-    "title": "스와이퍼 바로가기",
-    "hasChild": false,
-    "depth": 2,
-    "sort": 2
-  },
-
-  {
-    "seq": 200,
-    "parentSeq": 20,
+    "seq": 300,
+    "parentSeq": 30,
     "menu": "BUTTON",
     "url": "/component/common/button",
     "title": "버튼 바로가기",
@@ -61,13 +200,23 @@
     "sort": 1
   },
   {
-    "seq": 201,
-    "parentSeq": 20,
+    "seq": 301,
+    "parentSeq": 30,
     "menu": "INPUT",
     "url": "/component/common/input",
     "title": "인풋 바로가기",
     "hasChild": false,
     "depth": 3,
+    "sort": 2
+  },
+  {
+    "seq": 31,
+    "parentSeq": 3,
+    "menu": "SWIPER",
+    "url": "/component/swiper",
+    "title": "스와이퍼 바로가기",
+    "hasChild": false,
+    "depth": 2,
     "sort": 2
   }
 ]

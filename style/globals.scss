@@ -46,7 +46,7 @@
 
   // gray scale
   --white: #fff;
-  --gray-1: #eee;
+  --gray-1: #f4f4f4;
   --gray-1-trans: #eeeeee61;
   --gray-2: #eee;
   --gray-3: #ccc;
@@ -59,12 +59,15 @@
   --main-purple-1: #6860fc;
   --main-green-1: #c2e4a2;
   --main-gray-1: #ededed;
+  --main-orange-1: #ff784b;
 
   // sub color
   --sub-yellow-1: #ffa800;
   --sub-pink-1: #ffdaff;
   --sub-orange-1: #fd5939;
   --sub-blue-1: #3067ec;
+  --sub-purple-1: #cad0e8;
+  --sub-purple-2: #cac6f8;
 
   // error
   --error-1: #fdeaea;
@@ -234,7 +237,7 @@ img {
   width: 100%;
   height: auto;
   padding: 0.5rem 0;
-  background: var(--gray-2);
+  background: var(--gray-1);
   font-size: var(--fs-14);
   text-align: center;
 }

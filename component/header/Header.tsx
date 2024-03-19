@@ -3,14 +3,14 @@
 import style from './header.module.scss';
 import { useEffect, useState } from 'react';
 import { FiExternalLink, FiPhoneCall } from 'react-icons/fi';
-
-// dummyData
-import menuData from '@/dummyData/menu.json';
 import { menuType } from '@/type/menu/menuType';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
+
+// dummyData
+import menuData from '@/dummyData/menu.json';
 
 interface HeaderClientProps {
   // /**
@@ -47,6 +47,7 @@ export default function HeaderClient({}: HeaderClientProps) {
     window.addEventListener('wheel', function (e) {
       if (e.deltaY > 0) {
         setScroll(true);
+        // setSiteMap(false);
       } else {
         setScroll(false);
       }
@@ -56,8 +57,25 @@ export default function HeaderClient({}: HeaderClientProps) {
   // sitemap
   const [siteMap, setSiteMap] = useState<boolean>(false);
 
+  // sitemap 나와있을때 헤더 스크롤 막기
+  useEffect(() => {
+    if (siteMap) {
+      window.addEventListener('wheel', function (e) {
+        setScroll(false);
+      });
+    } else {
+      window.addEventListener('wheel', function (e) {
+        if (e.deltaY > 0) {
+          setScroll(true);
+          // setSiteMap(false);
+        } else {
+          setScroll(false);
+        }
+      });
+    }
+  }, [siteMap]);
+
   // TODO: siteMap active 시 외부 스크롤 막기
-  // TODO: siteMap active 시 헤더 스크롤 이벤트 막기
 
   return (
     <header
@@ -73,7 +91,7 @@ export default function HeaderClient({}: HeaderClientProps) {
             router.push('/');
           }}
         >
-          <Image src={'/logo.png'} alt={'로고이미지'} width={50} height={50} />
+          <Image src={'/logo.png'} alt={'로고이미지'} width={70} height={70} />
         </h1>
 
         {/* 사이트 맵 */}
@@ -101,22 +119,54 @@ export default function HeaderClient({}: HeaderClientProps) {
         </Link>
       </div>
 
-      <div className={`flex_start ${style.right}`}>
-        <ul className={style.depth_1}>
-          {depth1.map((one: menuType) => {
+      <div className={`flex_center ${style.right}`}>
+        <ul className={`flex_start ${style.depth_1}`}>
+          {depth1.map((one: menuType, idx1: number) => {
+            const middle = String(depth1.length / 2).includes('.')
+              ? Number(String(depth1.length / 2).split('.')[1]) >= 5
+                ? Number(String(depth1.length / 2).split('.')[0]) + 1
+                : Number(String(depth1.length / 2).split('.')[0])
+              : depth1.length / 2;
             return (
-              <li key={`one_${one.seq}`} className="flex_center">
+              <li
+                key={`one_${one.seq}`}
+                className={` ${
+                  one.menu === 'CAREER'
+                    ? style.green
+                    : one.menu === 'PROJECT'
+                    ? style.pink
+                    : one.menu === 'COMPONENT'
+                    ? style.purple
+                    : style.gray
+                } ${
+                  middle <= idx1 + 1 && idx1 <= depth1.length
+                    ? `flex_end ${style.end}`
+                    : 'flex_start'
+                }`}
+              >
                 {one.hasChild ? (
-                  <>
-                    <button type="button" title={`${one.menu} 바로가기`}>
+                  <div className={style.box}>
+                    <p>{one.menu}</p>
+                    {/* <button type="button" title={`${one.menu} 바로가기`}>
                       {one.menu}
-                    </button>
+                    </button> */}
                     <ul className={style.depth_2}>
                       {depth2.map((two: menuType) => {
                         if (two.parentSeq === one.seq) {
                           return (
-                            <li key={`two_${two.seq}`} className="flex_center">
-                              {two.hasChild ? (
+                            <li
+                              key={`two_${two.seq}`}
+                              // className={
+                              //   middle <= idx1 + 1 && idx1 <= depth1.length
+                              //     ? 'flex_end'
+                              //     : 'flex_start'
+                              // }
+                            >
+                              <Link href={two.url}>
+                                {two.menu}
+                                <span>aaaaaaaaaaa</span>
+                              </Link>
+                              {/* {two.hasChild ? (
                                 <>
                                   <button
                                     type="button"
@@ -143,13 +193,13 @@ export default function HeaderClient({}: HeaderClientProps) {
                                 </>
                               ) : (
                                 <Link href={two.url}>{two.menu}</Link>
-                              )}
+                              )} */}
                             </li>
                           );
                         }
                       })}
                     </ul>
-                  </>
+                  </div>
                 ) : (
                   <Link href={one.url}> {one.menu}</Link>
                 )}
