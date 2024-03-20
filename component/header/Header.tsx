@@ -42,6 +42,7 @@ export default function HeaderClient({}: HeaderClientProps) {
   );
 
   // 헤더 스크롤 이벤트
+  const [currentScrollY, setCurrentScrollY] = useState<number>(0);
   const [scroll, setScroll] = useState<boolean>(false);
   useEffect(() => {
     window.addEventListener('wheel', function (e) {

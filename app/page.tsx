@@ -55,23 +55,6 @@ export default function Home() {
         );
       }
 
-      // wheel
-      window.addEventListener('wheel', function (e) {
-        if (window.scrollY >= 50 && scrollTxtRef.current !== null) {
-          if (e.deltaY > 0) {
-            scrollTxtRef.current.style.setProperty(
-              'transform',
-              `translateX(-${String(window.scrollY + 1)}px)`
-            );
-          } else {
-            scrollTxtRef.current.style.setProperty(
-              'transform',
-              `translateX(-${String(window.scrollY - 1)}px)`
-            );
-          }
-        }
-      });
-
       // scroll
       window.addEventListener('scroll', function (e) {
         setCurrentScrollY(window.scrollY);
@@ -84,9 +67,17 @@ export default function Home() {
     window.addEventListener('scroll', function (e) {
       if (scrollTxtRef.current !== null) {
         if (window.scrollY >= currentScrollY) {
-          console.log('올라간다');
+          console.log('다운');
+          scrollTxtRef.current.style.setProperty(
+            'transform',
+            `translateX(-${String(window.scrollY + 1)}px)`
+          );
         } else {
-          console.log('내려간다');
+          console.log('업');
+          scrollTxtRef.current.style.setProperty(
+            'transform',
+            `translateX(-${String(window.scrollY - 1)}px)`
+          );
         }
       }
     });
