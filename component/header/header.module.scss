@@ -10,7 +10,7 @@
   position: fixed;
   left: 0;
   top: 0;
-  transition: all 0.5s;
+  transition: all 0.3s;
   z-index: 999;
 
   // .left,
@@ -23,14 +23,14 @@
     height: 100%;
     flex-wrap: wrap;
     align-content: space-between;
-    transition: all 0.5s;
+    transition: all 0.3s;
 
     // 사이트 맵
     .btn_site_map {
       width: 3.5rem;
       height: 2.5rem;
       position: relative;
-      transition: all 0.5s;
+      transition: all 0.3s;
 
       span {
         display: inline-block;
@@ -41,7 +41,7 @@
         opacity: 1;
         position: absolute;
         right: 0;
-        transition: all 0.5s;
+        transition: all 0.3s;
 
         &:first-of-type {
           top: 0;
@@ -101,7 +101,7 @@
     height: 100%;
     padding: 10rem 5rem;
     border-left: 1px solid var(--gray-2);
-    transition: all 0.5s;
+    transition: all 0.3s;
 
     // 공통
     ul {
@@ -128,7 +128,7 @@
         height: 100%;
         border-radius: var(--br-10);
         position: relative;
-        transition: all 0.5s;
+        transition: all 0.3s;
 
         &.purple {
           background-color: var(--sub-purple-1);
@@ -154,7 +154,7 @@
           top: 10rem;
           // transform: translateX(-100%);
           opacity: 0;
-          transition: all 0.5s;
+          transition: all 0.3s;
 
           & > p {
             font-size: var(--fs-36);

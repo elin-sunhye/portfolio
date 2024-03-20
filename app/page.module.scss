@@ -1,23 +1,72 @@
+// 애니메이션
+@mixin aniSetting($name) {
+  animation-name: $name;
+  // 시작되기 전이나 끝나고 난 후 어떤 값 적용
+  // animation-fill-mode: forwards;
+  // 종료 후 다시 처음부터 시작할지 역방향으로 진행할지
+  animation-direction: alternate;
+  // 몇번 진행
+  animation-iteration-count: infinite;
+  // 진행 속도
+  animation-duration: 1s;
+  // 애니메이션 속도
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes upDownAni {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 2rem;
+  }
+}
+
 // 메인
-.main_visual {
-  width: 100%;
+.main_visual_box {
   height: 100vh;
   background-color: var(--main-blue-1);
 
-  .slide_1,
-  .slide_2,
-  .slide_3 {
-    width: 100vw;
-    height: 80vh;
-    font-size: var(--fs-40);
+  .main_visual {
+    width: 100%;
+    height: calc(100vh - 7rem);
+
+    // .slide_1,
+    // .slide_2,
+    // .slide_3 {
+    //   width: 100vw;
+    //   height: 80vh;
+    //   font-size: var(--fs-40);
+    // }
+    // .slide_1 {
+    //   background-color: var(--sub-orange-1);
+    // }
+    // .slide_2 {
+    //   background-color: var(--main-blue-1);
+    // }
+    // .slide_3 {
+    //   background-color: var(--main-green-1);
+    // }
   }
-  .slide_1 {
-    background-color: var(--sub-orange-1);
+
+  .btn_go_content {
+    margin: 0 auto;
+    @include aniSetting(upDownAni);
+
+    svg {
+      font-size: var(--fs-36);
+      color: var(--white);
+    }
   }
-  .slide_2 {
-    background-color: var(--main-blue-1);
-  }
-  .slide_3 {
-    background-color: var(--main-green-1);
+}
+
+// introduce_section
+.introduce_section {
+  .scroll_txt {
+    width: 900rem;
+    color: var(--sub-pink-1);
+    font-size: 20rem;
+    font-weight: bold;
+    position: absolute;
   }
 }

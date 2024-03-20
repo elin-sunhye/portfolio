@@ -63,6 +63,9 @@ export default function HeaderClient({}: HeaderClientProps) {
       window.addEventListener('wheel', function (e) {
         setScroll(false);
       });
+
+      // siteMap active 시 외부 스크롤 막기
+      document.body.style.cssText = `overflow: hidden`;
     } else {
       window.addEventListener('wheel', function (e) {
         if (e.deltaY > 0) {
@@ -72,10 +75,11 @@ export default function HeaderClient({}: HeaderClientProps) {
           setScroll(false);
         }
       });
+
+      // siteMap active 시 외부 스크롤 막기
+      document.body.style.cssText = `overflow: auto`;
     }
   }, [siteMap]);
-
-  // TODO: siteMap active 시 외부 스크롤 막기
 
   return (
     <header
@@ -164,7 +168,17 @@ export default function HeaderClient({}: HeaderClientProps) {
                             >
                               <Link href={two.url}>
                                 {two.menu}
-                                <span>aaaaaaaaaaa</span>
+                                <span>
+                                  {two.menu === 'DEPS'
+                                    ? 'AI 융합 솔루션 전문기업'
+                                    : two.menu === 'ORANGE'
+                                    ? '해외 아티스트 콜라보레이션 전문 기업'
+                                    : two.menu === 'LAPCOS'
+                                    ? 'LAP 브랜드에서 론칭한 회장품 회사'
+                                    : two.menu === 'WIKO'
+                                    ? '주물 주조'
+                                    : ''}
+                                </span>
                               </Link>
                               {/* {two.hasChild ? (
                                 <>
