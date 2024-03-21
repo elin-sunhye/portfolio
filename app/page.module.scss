@@ -62,11 +62,16 @@
 
 // introduce_section
 .introduce_section {
+  position: relative;
+  height: 50rem;
   .scroll_txt {
+    font-family: var(--Gmarket);
     width: 900rem;
     color: var(--sub-pink-1);
     font-size: 20rem;
     font-weight: bold;
+    line-height: 1;
     position: absolute;
+    top: 13rem;
   }
 }

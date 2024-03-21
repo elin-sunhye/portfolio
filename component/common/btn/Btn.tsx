@@ -84,7 +84,7 @@ export const Btn = ({
       id={id}
       className={`flex_center ${style.btn} ${
         btnSize ? style[btnSize] : style.lg
-      } ${hover ? style.hover : ''} ${className}`}
+      } ${hover && btnType === 'ico' ? style.hoverIco : ''} ${className}`}
       style={{
         background: btnBg ? btnBg : 'transparent',
         color: btnColor ? btnColor : 'var(--black)',

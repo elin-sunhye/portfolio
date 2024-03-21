@@ -39,16 +39,20 @@ export default function Home() {
   //   allowTouchMove: false, // false시에 스와이핑이 되지 않으며 버튼으로만 슬라이드 조작이 가능
   // };
 
+  // 브라우저 크기
+  const [browserHeight, setBrowserHeight] = useState<number>(0);
+
   // scroll
-  const [currentScrollY, setCurrentScrollY] = useState<number>(0);
   const scrollTxtRef = useRef<HTMLSpanElement>(null);
 
   // 화면 로드시
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      // 브라우저 크기
+      setBrowserHeight(window.innerHeight);
+
       // 스크롤 초기화
-      // window.scrollTo({ top: 0 });
-      if (window.scrollY >= 10 && scrollTxtRef.current !== null) {
+      if (window.scrollY >= 130 && scrollTxtRef.current !== null) {
         scrollTxtRef.current.style.setProperty(
           'transform',
           `translateX(-${String(window.scrollY + 1)}px)`
@@ -56,32 +60,27 @@ export default function Home() {
       }
 
       // scroll
-      window.addEventListener('scroll', function (e) {
-        setCurrentScrollY(window.scrollY);
+      let lastScroll = 0;
+      window.addEventListener('scroll', function () {
+        let currentScroll =
+          window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTxtRef.current !== null) {
+          if (currentScroll > lastScroll) {
+            scrollTxtRef.current.style.setProperty(
+              'transform',
+              `translateX(-${String(window.scrollY + 1)}px)`
+            );
+          } else {
+            scrollTxtRef.current.style.setProperty(
+              'transform',
+              `translateX(-${String(window.scrollY - 1)}px)`
+            );
+          }
+          lastScroll = currentScroll;
+        }
       });
     }
   }, []);
-
-  // scrollY 변경할떄 마다
-  useEffect(() => {
-    window.addEventListener('scroll', function (e) {
-      if (scrollTxtRef.current !== null) {
-        if (window.scrollY >= currentScrollY) {
-          console.log('다운');
-          scrollTxtRef.current.style.setProperty(
-            'transform',
-            `translateX(-${String(window.scrollY + 1)}px)`
-          );
-        } else {
-          console.log('업');
-          scrollTxtRef.current.style.setProperty(
-            'transform',
-            `translateX(-${String(window.scrollY - 1)}px)`
-          );
-        }
-      }
-    });
-  }, [currentScrollY]);
 
   return (
     <main>
@@ -111,14 +110,38 @@ export default function Home() {
               aria-label="더블 아래 화살표"
             />
           }
-          onClick={() => {}}
+          onClick={() =>
+            window.scrollTo({ top: browserHeight, behavior: 'smooth' })
+          }
         />
       </section>
 
       <section className={`section_padding ${style.introduce_section}`}>
         <span className={style.scroll_txt} ref={scrollTxtRef}>
-          THE PARADISE IS WHERE I AM
+          THE PARADISE IS WHERE I AM THE PARADISE IS WHERE I AM
         </span>
+
+        <div className={style.top_box}>
+          <h3>김선혜</h3>
+          <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
+          <span>가나다 나다 가가라</span>
+          <Btn
+            type={'button'}
+            title={'contact me'}
+            id={'contactMe'}
+            btnType={'text'}
+            hover={false}
+          />
+        </div>
+
+        <div className={style.skill_box}>
+          <span>
+            <img src="/skill/img_react.svg" alt="react" />
+          </span>
+          <span>
+            <img src="/skill/img_react.svg" alt="react" />
+          </span>
+        </div>
       </section>
     </main>
   );

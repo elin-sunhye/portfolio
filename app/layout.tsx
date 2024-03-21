@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import '@/style/globals.scss';
 import NextAuthProvider from '@/component/layout/NextAuthProvider';
 import RecoilRootProvider from '@/component/layout/RecoilRootProvider';
@@ -67,7 +66,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ko">
       <body className={`${pretendard.variable} ${Gmarket.variable}`}>
         <NextAuthProvider>
           <RecoilRootProvider>

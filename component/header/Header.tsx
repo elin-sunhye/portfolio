@@ -42,17 +42,30 @@ export default function HeaderClient({}: HeaderClientProps) {
   );
 
   // 헤더 스크롤 이벤트
-  const [currentScrollY, setCurrentScrollY] = useState<number>(0);
   const [scroll, setScroll] = useState<boolean>(false);
   useEffect(() => {
-    window.addEventListener('wheel', function (e) {
-      if (e.deltaY > 0) {
+    if (typeof window !== 'undefined') {
+      // 스크롤 초기화
+      if (window.scrollY > 0) {
         setScroll(true);
-        // setSiteMap(false);
-      } else {
-        setScroll(false);
       }
-    });
+
+      // scroll
+      let lastScroll = 0;
+      window.addEventListener('scroll', function () {
+        console.log('scroll', window.scrollY);
+        let currentScroll =
+          window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll > lastScroll) {
+          setScroll(true);
+        } else {
+          setScroll(false);
+        }
+
+        lastScroll = currentScroll;
+      });
+    }
   }, []);
 
   // sitemap
@@ -61,24 +74,30 @@ export default function HeaderClient({}: HeaderClientProps) {
   // sitemap 나와있을때 헤더 스크롤 막기
   useEffect(() => {
     if (siteMap) {
-      window.addEventListener('wheel', function (e) {
+      window.addEventListener('scroll', function (e) {
         setScroll(false);
       });
 
       // siteMap active 시 외부 스크롤 막기
-      document.body.style.cssText = `overflow: hidden`;
+      document.body.style.cssText = `overflow-y: hidden`;
     } else {
-      window.addEventListener('wheel', function (e) {
-        if (e.deltaY > 0) {
+      let lastScroll = 0;
+      window.addEventListener('scroll', function () {
+        console.log('scroll', window.scrollY);
+        let currentScroll =
+          window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll > lastScroll) {
           setScroll(true);
-          // setSiteMap(false);
         } else {
           setScroll(false);
         }
+
+        lastScroll = currentScroll;
       });
 
       // siteMap active 시 외부 스크롤 막기
-      document.body.style.cssText = `overflow: auto`;
+      document.body.style.cssText = `overflow-y: auto`;
     }
   }, [siteMap]);
 
