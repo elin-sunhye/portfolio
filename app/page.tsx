@@ -48,32 +48,35 @@ export default function Home() {
   // 화면 로드시
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      // 브라우저 크기
-      setBrowserHeight(window.innerHeight);
-
       // 스크롤 초기화
-      if (window.scrollY >= 130 && scrollTxtRef.current !== null) {
+      if (window.scrollY > 0 && scrollTxtRef.current !== null) {
         scrollTxtRef.current.style.setProperty(
           'transform',
-          `translateX(-${String(window.scrollY + 1)}px)`
+          `translateX(-${String(window.scrollY - window.innerHeight + 1)}px)`
         );
       }
 
       // scroll
       let lastScroll = 0;
       window.addEventListener('scroll', function () {
-        let currentScroll =
-          window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTxtRef.current !== null) {
+        let currentScroll = document.documentElement.scrollTop;
+        if (
+          scrollTxtRef.current !== null &&
+          window.innerHeight <= window.scrollY
+        ) {
           if (currentScroll > lastScroll) {
             scrollTxtRef.current.style.setProperty(
               'transform',
-              `translateX(-${String(window.scrollY + 1)}px)`
+              `translateX(-${String(
+                window.scrollY - window.innerHeight + 1
+              )}px)`
             );
           } else {
             scrollTxtRef.current.style.setProperty(
               'transform',
-              `translateX(-${String(window.scrollY - 1)}px)`
+              `translateX(-${String(
+                window.scrollY - window.innerHeight - 1
+              )}px)`
             );
           }
           lastScroll = currentScroll;
@@ -81,6 +84,10 @@ export default function Home() {
       });
     }
   }, []);
+
+  useEffect(() => {
+    console.log(browserHeight, window.scrollY);
+  }, [browserHeight]);
 
   return (
     <main>
@@ -117,11 +124,7 @@ export default function Home() {
       </section>
 
       <section className={`section_padding ${style.introduce_section}`}>
-        <span className={style.scroll_txt} ref={scrollTxtRef}>
-          THE PARADISE IS WHERE I AM THE PARADISE IS WHERE I AM
-        </span>
-
-        <div className={style.top_box}>
+        <div className={style.contact_box}>
           <h3>김선혜</h3>
           <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
           <span>가나다 나다 가가라</span>
@@ -131,18 +134,70 @@ export default function Home() {
             id={'contactMe'}
             btnType={'text'}
             hover={false}
+            className={style.btn_contact_me}
+            btnBg="var(--black)"
+            btnColor="var(--white)"
           />
         </div>
 
-        <div className={style.skill_box}>
-          <span>
-            <img src="/skill/img_react.svg" alt="react" />
-          </span>
-          <span>
-            <img src="/skill/img_react.svg" alt="react" />
-          </span>
+        <div className={`wrap flex_start ${style.skill_box}`}>
+          <div>
+            <span>
+              <img src="/skill/img_react.svg" alt="react" />
+            </span>
+            <span>
+              <img src="/skill/img_react-query.svg" alt="react" />
+            </span>
+            <span>
+              <img src="/skill/img_react-hook-form.png" alt="react" />
+            </span>
+            <span>
+              <img src="/skill/img_react-icons.svg" alt="react" />
+            </span>
+          </div>
+          <div>
+            <span>
+              <img src="/skill/img_nextjs.svg" alt="react" />
+            </span>
+            <span>
+              <img src="/skill/img_recoil.svg" alt="react" />
+            </span>
+          </div>
+          <div>
+            <span>
+              <img src="/skill/img_js.svg" alt="react" />
+            </span>
+            <span>
+              <img src="/skill/img_ts.svg" alt="react" />
+            </span>
+          </div>
+          <div>
+            <span>
+              <img src="/skill/img_github.svg" alt="react" />
+            </span>
+            <span>
+              <img src="/skill/img_gitlab.svg" alt="react" />
+            </span>
+          </div>
+          <div>
+            <span>
+              <img src="/skill/img_html.svg" alt="react" />
+            </span>
+            <span>
+              <img src="/skill/img_css.svg" alt="react" />
+            </span>
+            <span>
+              <img src="/skill/img_scss.svg" alt="react" />
+            </span>
+          </div>
         </div>
       </section>
+      <section className={style.scroll_txt_section}>
+        <span className={style.scroll_txt} ref={scrollTxtRef}>
+          THE PARADISE IS WHERE I AM THE PARADISE IS WHERE I AM
+        </span>
+      </section>
+      <section className="section_padding"></section>
     </main>
   );
 }

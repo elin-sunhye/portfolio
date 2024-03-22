@@ -53,9 +53,7 @@ export default function HeaderClient({}: HeaderClientProps) {
       // scroll
       let lastScroll = 0;
       window.addEventListener('scroll', function () {
-        console.log('scroll', window.scrollY);
-        let currentScroll =
-          window.pageYOffset || document.documentElement.scrollTop;
+        let currentScroll = document.documentElement.scrollTop;
 
         if (currentScroll > lastScroll) {
           setScroll(true);
@@ -84,8 +82,7 @@ export default function HeaderClient({}: HeaderClientProps) {
       let lastScroll = 0;
       window.addEventListener('scroll', function () {
         console.log('scroll', window.scrollY);
-        let currentScroll =
-          window.pageYOffset || document.documentElement.scrollTop;
+        let currentScroll = document.documentElement.scrollTop;
 
         if (currentScroll > lastScroll) {
           setScroll(true);

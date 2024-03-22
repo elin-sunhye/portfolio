@@ -7,51 +7,15 @@ import Header from '@/component/header/Header';
 import localFont from 'next/font/local';
 
 // font
-const pretendard = localFont({
+const Strawford = localFont({
   src: [
     {
-      path: '../fonts/Pretendard/Pretendard-Light.woff2',
-      weight: '300',
-      style: 'normal',
-    },
-    {
-      path: '../fonts/Pretendard/Pretendard-Regular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../fonts/Pretendard/Pretendard-Medium.woff2',
+      path: '../fonts/Strawford/strawfordRegularWebfont.woff2',
       weight: '500',
       style: 'normal',
     },
-    {
-      path: '../fonts/Pretendard/Pretendard-Bold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
   ],
-  variable: '--pretendard',
-  display: 'fallback',
-});
-const Gmarket = localFont({
-  src: [
-    {
-      path: '../fonts/Gmarket/GmarketSansLight.woff2',
-      weight: '100',
-      style: 'normal',
-    },
-    {
-      path: '../fonts/Gmarket/GmarketSansMedium.woff2',
-      weight: '500',
-      style: 'normal',
-    },
-    {
-      path: '../fonts/Gmarket/GmarketSansBold.woff2',
-      weight: '900',
-      style: 'normal',
-    },
-  ],
-  variable: '--Gmarket',
+  variable: '--Strawford',
   display: 'fallback',
 });
 
@@ -67,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${pretendard.variable} ${Gmarket.variable}`}>
+      <body className={`${Strawford.variable}`}>
         <NextAuthProvider>
           <RecoilRootProvider>
             <Header />

@@ -1,7 +1,7 @@
 .btn {
-  border-radius: var(--br-10);
+  border-radius: var(--br-2) var(--br-2) var(--br-2) var(--br-10);
   padding: 1.4rem 2rem;
-  transition: var(--transition-03);
+  transition: all 0.3s;
 
   & > .ico_btn {
     display: inline-flex;
