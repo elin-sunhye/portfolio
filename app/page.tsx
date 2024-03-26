@@ -79,14 +79,23 @@ export default function Home() {
   // rolling
   // item
   const [rollingITems, setRollingItems] = useState<menuType[]>([]);
+  const [rollingDesignITems, setRollingDesignItems] = useState<menuType[]>([]);
+
   useEffect(() => {
     setRollingItems(
-      menuData.filter((mn) => mn.url.includes('/career/') && mn.depth === 3)
+      menuData.filter(
+        (mn) =>
+          (mn.url.includes('/career/orange/') ||
+            mn.url.includes('/career/deps/')) &&
+          mn.depth === 3
+      )
+    );
+    setRollingDesignItems(
+      menuData.filter(
+        (mn) => mn.url.includes('/career/lapcos/') && mn.depth === 3
+      )
     );
   }, [menuData]);
-
-  // hover
-  const [rollingHover, setRollingHover] = useState<boolean>(false);
 
   return (
     <main>
@@ -198,34 +207,65 @@ export default function Home() {
           />
         </div>
 
-        {/* https://velog.io/@kimbangul/React-SCSS-%EC%B4%88%EA%B0%84%EB%8B%A8-%EB%AC%B4%ED%95%9C%EC%9E%AC%EC%83%9D-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0  */}
-
-        <Rolling>
-          {rollingITems.map((item, itemInd) => {
-            return (
-              <div
-                key={`rolling_item_${item.seq}`}
-                className={`flex_center ${style.career_slides} ${
-                  itemInd % 2 === 0 ? style.two : ''
-                } ${itemInd % 3 === 0 ? style.three : ''} `}
-              >
-                <p>사진</p>
-
+        <div className={`flex_start ${style.career_box}`}>
+          {/* https://velog.io/@kimbangul/React-SCSS-%EC%B4%88%EA%B0%84%EB%8B%A8-%EB%AC%B4%ED%95%9C%EC%9E%AC%EC%83%9D-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0  */}
+          <Rolling>
+            {rollingITems.map((item, itemInd) => {
+              return (
                 <div
-                  className={`flex_center ${style.career_rolling_hover_card} ${
-                    itemInd % 4 == 0 ? style.blue : ''
-                  } ${itemInd % 5 == 0 ? style.black : ''}`}
+                  key={`rolling_item_${item.seq}`}
+                  className={`flex_center ${style.career_slides} ${
+                    itemInd % 2 === 0 ? style.polygon : ''
+                  } ${itemInd % 3 === 0 ? style.circle : ''} `}
                 >
-                  <span>
-                    {menuData.find((seq) => seq.seq === item.parentSeq)?.menu}
-                  </span>
-                  <p>{item.menu}</p>
-                  <span>기간 | 설명설명ㅆㅡ</span>
+                  <p>사진</p>
+
+                  <div
+                    className={`flex_center ${
+                      style.career_rolling_hover_card
+                    } ${itemInd % 2 == 0 ? style.red : ''} ${
+                      itemInd % 4 == 0 ? style.blue : ''
+                    } ${itemInd % 5 == 0 ? style.black : ''}`}
+                  >
+                    <span>
+                      {menuData.find((seq) => seq.seq === item.parentSeq)?.menu}
+                    </span>
+                    <p>{item.menu}</p>
+                    <span>기간 | 설명설명ㅆㅡ</span>
+                  </div>
                 </div>
-              </div>
-            );
-          })}
-        </Rolling>
+              );
+            })}
+          </Rolling>
+          <Rolling deirection={'right'}>
+            {rollingDesignITems.map((item, itemInd) => {
+              return (
+                <div
+                  key={`rolling_item_${item.seq}`}
+                  className={`flex_center ${style.career_slides} ${
+                    itemInd % 2 === 0 ? style.polygon : ''
+                  } ${itemInd % 3 === 0 ? style.circle : ''} `}
+                >
+                  <p>사진</p>
+
+                  <div
+                    className={`flex_center ${
+                      style.career_rolling_hover_card
+                    } ${itemInd % 2 == 0 ? style.red : ''} ${
+                      itemInd % 4 == 0 ? style.blue : ''
+                    } ${itemInd % 5 == 0 ? style.black : ''}`}
+                  >
+                    <span>
+                      {menuData.find((seq) => seq.seq === item.parentSeq)?.menu}
+                    </span>
+                    <p>{item.menu}</p>
+                    <span>기간 | 설명설명ㅆㅡ</span>
+                  </div>
+                </div>
+              );
+            })}
+          </Rolling>
+        </div>
       </section>
     </main>
   );

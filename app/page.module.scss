@@ -140,70 +140,84 @@
 .career_section {
   width: 100%;
 
-  .career_slides {
-    width: calc(100vw / 5);
-    aspect-ratio: 1 / 1;
-    background-color: var(--gray-2);
-    border-radius: var(--br-10);
-    position: relative;
-    overflow: hidden;
+  .career_box {
+    gap: 2rem;
+    flex-wrap: wrap;
 
-    &.two {
-      // https://bennettfeely.com/clippy/
-      border-radius: var(--br-5);
-      clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0 80%, 0 20%);
-    }
-    &.two.three,
-    &.three {
-      border-radius: var(--br-50pro);
-      clip-path: unset;
-    }
+    .career_slides {
+      width: calc(100vw / 5);
+      aspect-ratio: 1 / 1;
+      background-color: var(--gray-2);
+      border-radius: var(--br-10);
+      position: relative;
+      overflow: hidden;
 
-    // career_rolling_hover_card
-    .career_rolling_hover_card {
-      flex-wrap: wrap;
-      align-content: center;
-      gap: 1rem;
-      width: 100%;
-      height: 100%;
-      background-color: var(--gray-1-trans);
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      opacity: 0;
-      transition: all 0.5s;
-
-      &.blue {
-        background-color: var(--main-blue-1);
+      &.polygon {
+        // https://bennettfeely.com/clippy/
+        border-radius: var(--br-5);
+        clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0 80%, 0 20%);
       }
-      &.blue.black,
-      &.black {
-        background-color: var(--black);
-        color: var(--white);
+      &.polygon.circle,
+      &.circle {
+        border-radius: var(--br-50pro);
+        clip-path: unset;
       }
 
-      span {
-        display: inline-block;
-        font-size: var(--fs-14);
+      // career_rolling_hover_card
+      .career_rolling_hover_card {
+        flex-wrap: wrap;
+        align-content: center;
+        gap: 1rem;
+        width: 100%;
+        height: 100%;
+        background-color: var(--sub-yellow-1);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: all 0.5s;
 
-        &:first-of-type {
-          border: 1px solid var(--white);
-          border-radius: var(--br-50);
-          padding: 0.5rem 2rem;
+        &.red {
+          background-color: var(--main-orange-1);
+          color: var(--white);
+        }
+
+        &.red.blue,
+        &.blue {
+          background-color: var(--main-blue-1);
+        }
+
+        &.blue.black,
+        &.red.black,
+        &.red.blue.black,
+        &.black {
+          background-color: var(--black);
+          color: var(--white);
+        }
+
+        span {
+          display: inline-block;
+          font-size: var(--fs-14);
+
+          &:first-of-type {
+            border: 1px solid var(--white);
+            border-radius: var(--br-50);
+            padding: 0.5rem 2rem;
+          }
+        }
+
+        p {
+          width: 100%;
+          text-align: center;
         }
       }
 
-      p {
-        width: 100%;
-        text-align: center;
-      }
-    }
-
-    // hover
-    &:hover {
-      .career_rolling_hover_card {
-        opacity: 1;
+      // hover
+      &:hover {
+        .career_rolling_hover_card {
+          opacity: 1;
+        }
       }
     }
   }

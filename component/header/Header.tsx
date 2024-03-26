@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { FiExternalLink, FiPhoneCall } from 'react-icons/fi';
 import { menuType } from '@/type/menu/menuType';
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -43,6 +43,7 @@ export default function HeaderClient({}: HeaderClientProps) {
 
   // 헤더 스크롤 이벤트
   const [scroll, setScroll] = useState<boolean>(false);
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       // 스크롤 초기화
@@ -81,7 +82,6 @@ export default function HeaderClient({}: HeaderClientProps) {
     } else {
       let lastScroll = 0;
       window.addEventListener('scroll', function () {
-        console.log('scroll', window.scrollY);
         let currentScroll = document.documentElement.scrollTop;
 
         if (currentScroll > lastScroll) {
