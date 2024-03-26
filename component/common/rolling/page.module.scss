@@ -1,0 +1,27 @@
+@mixin aniSlowSetting($name) {
+  animation-name: $name;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+}
+
+@keyframes rolling {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.rolling_box {
+  gap: 3rem;
+  width: fit-content;
+  @include aniSlowSetting(rolling);
+
+  // hover - 롤링 배너 호버
+  &.rolling_hover {
+    animation-play-state: paused;
+  }
+}

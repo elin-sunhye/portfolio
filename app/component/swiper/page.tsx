@@ -1,6 +1,7 @@
 'use client';
 
 import style from './page.module.scss';
+import './swiper.scss';
 import { Btn } from '@/component/common/btn/Btn';
 import { HiOutlineChevronDoubleDown } from 'react-icons/hi';
 import { useEffect, useRef, useState } from 'react';
@@ -21,7 +22,6 @@ import {
 
 // dummyData
 import menuData from '@/dummyData/menu.json';
-import Rolling from '@/component/common/rolling/Rolling';
 
 export default function Home() {
   // 브라우저 크기
@@ -76,17 +76,32 @@ export default function Home() {
     }
   }, []);
 
-  // rolling
-  // item
-  const [rollingITems, setRollingItems] = useState<menuType[]>([]);
+  // swiper
+  const carreerRef = useRef(null);
+  // setting
+  const swiperParams = {
+    modules: [Autoplay],
+    spaceBetween: 20, // 슬라이드 사이 여백
+    speed: 3000,
+    loop: true,
+    loopAdditionalSlides: 1,
+    slidesPerView: 'auto', //  한 슬라이드에 보여줄 개수
+    centeredSlides: true, // center 정렬
+    autoplay: {
+      // 자동 슬라이드 설정 , 비 활성화 시 false, true 설정 시   import {Autoplay from "swiper/modules" 추가
+      delay: 0, // 시간 설정
+      disableOnInteraction: false, // false로 설정하면 스와이프 후 자동 재생이 비활성화 되지 않음
+    },
+    allowTouchMove: false, // false시에 스와이핑이 되지 않으며 버튼으로만 슬라이드 조작이 가능
+  };
+
+  // swiper item
+  const [swiperItems, setSiwerItems] = useState<menuType[]>([]);
   useEffect(() => {
-    setRollingItems(
+    setSiwerItems(
       menuData.filter((mn) => mn.url.includes('/career/') && mn.depth === 3)
     );
   }, [menuData]);
-
-  // hover
-  const [rollingHover, setRollingHover] = useState<boolean>(false);
 
   return (
     <main>
@@ -198,34 +213,49 @@ export default function Home() {
           />
         </div>
 
+        {/* TODO: 롤ㄹ이배너 swiper 뺴고 다시 만들기 */}
         {/* https://velog.io/@kimbangul/React-SCSS-%EC%B4%88%EA%B0%84%EB%8B%A8-%EB%AC%B4%ED%95%9C%EC%9E%AC%EC%83%9D-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0  */}
-
-        <Rolling>
-          {rollingITems.map((item, itemInd) => {
-            return (
-              <div
-                key={`rolling_item_${item.seq}`}
-                className={`flex_center ${style.career_slides} ${
-                  itemInd % 2 === 0 ? style.two : ''
-                } ${itemInd % 3 === 0 ? style.three : ''} `}
-              >
-                <p>사진</p>
-
-                <div
-                  className={`flex_center ${style.career_rolling_hover_card} ${
-                    itemInd % 4 == 0 ? style.blue : ''
-                  } ${itemInd % 5 == 0 ? style.black : ''}`}
+        <div
+          className={style.career_box}
+          onMouseEnter={() => {
+            if (carreerRef.current) {
+              // @ts-ignore
+              carreerRef.current.swiper.autoplay.stop();
+            }
+          }}
+          onMouseLeave={() => {
+            if (carreerRef.current) {
+              // @ts-ignore
+              carreerRef.current.swiper.autoplay.start();
+            }
+          }}
+        >
+          {/* @ts-ignore */}
+          <Swiper {...swiperParams} ref={carreerRef}>
+            {swiperItems.map((item, itemInd) => {
+              return (
+                <SwiperSlide
+                  key={`swiper_item_${item.seq}`}
+                  className={`${style.career_slides} ${
+                    itemInd % 2 === 0 ? style.two : ''
+                  } ${
+                    itemInd % 2 === 0 && itemInd % 3 === 0 ? style.three : ''
+                  } `}
                 >
-                  <span>
-                    {menuData.find((seq) => seq.seq === item.parentSeq)?.menu}
-                  </span>
-                  <p>{item.menu}</p>
-                  <span>기간 | 설명설명ㅆㅡ</span>
-                </div>
-              </div>
-            );
-          })}
-        </Rolling>
+                  <p>사진</p>
+
+                  <div className={`flex_center ${style.career_slides_hover}`}>
+                    <span>
+                      {menuData.find((seq) => seq.seq === item.parentSeq)?.menu}
+                    </span>
+                    <p>{item.menu}</p>
+                    <span>기간 | 설명설명ㅆ,</span>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
       </section>
     </main>
   );

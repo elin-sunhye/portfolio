@@ -72,8 +72,8 @@
   {
     "seq": 105,
     "parentSeq": 10,
-    "menu": "VIRTUAL",
-    "url": "/career/deps/virtual",
+    "menu": "GNCAR",
+    "url": "/career/deps/gncar",
     "title": "버추얼 개발 기술지원 플랫폼 바로가기",
     "hasChild": false,
     "depth": 3,
