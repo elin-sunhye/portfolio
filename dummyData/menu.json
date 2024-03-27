@@ -32,9 +32,9 @@
   {
     "seq": 101,
     "parentSeq": 10,
-    "menu": "3DSANDAN",
-    "url": "/career/deps/3Dsandan",
-    "title": "경남 창원 3D산단 디지털 플랫폼 바로가기",
+    "menu": "HOMEPAGE",
+    "url": "/career/deps/homepage",
+    "title": "뎁스 홈페이지 바로가기",
     "hasChild": false,
     "depth": 3,
     "sort": 2
@@ -42,9 +42,9 @@
   {
     "seq": 102,
     "parentSeq": 10,
-    "menu": "HOMEPAGE",
-    "url": "/career/deps/homepage",
-    "title": "뎁스 홈페이지 바로가기",
+    "menu": "3DSANDAN",
+    "url": "/career/deps/3Dsandan",
+    "title": "경남 창원 3D산단 디지털 플랫폼 바로가기",
     "hasChild": false,
     "depth": 3,
     "sort": 3
@@ -120,6 +120,26 @@
     "sort": 2
   },
   {
+    "seq": 112,
+    "parentSeq": 11,
+    "menu": "NFT SHOWCASE",
+    "url": "/career/orangeent/nftshowcase",
+    "title": "랜디주커버그 nft 쇼케이스 바로가기",
+    "hasChild": false,
+    "depth": 3,
+    "sort": 3
+  },
+  {
+    "seq": 113,
+    "parentSeq": 11,
+    "menu": "BASIC COLLABO EVENT",
+    "url": "/career/orangeent/nftshowcase",
+    "title": "베이직 nft 콜라보 이벤트 바로가기",
+    "hasChild": false,
+    "depth": 3,
+    "sort": 4
+  },
+  {
     "seq": 12,
     "parentSeq": 1,
     "menu": "LAPCOS",
@@ -132,9 +152,9 @@
   {
     "seq": 120,
     "parentSeq": 12,
-    "menu": "TRADESHOW",
-    "url": "/career/lapcos/tradeshow",
-    "title": "트레이드쇼 바로가기",
+    "menu": "CATALOG",
+    "url": "/career/lapcos/catalog",
+    "title": "제품 카탈로그 바로가기",
     "hasChild": false,
     "depth": 3,
     "sort": 1
@@ -142,12 +162,22 @@
   {
     "seq": 121,
     "parentSeq": 12,
-    "menu": "FLYER",
-    "url": "/career/lapcos/flyer",
-    "title": "초대장 바로가기",
+    "menu": "TRADESHOW",
+    "url": "/career/lapcos/tradeshow",
+    "title": "트레이드쇼 바로가기",
     "hasChild": false,
     "depth": 3,
-    "sort": 1
+    "sort": 2
+  },
+  {
+    "seq": 122,
+    "parentSeq": 12,
+    "menu": "COSTCO",
+    "url": "/career/lapcos/cost",
+    "title": "코스트코 바로가기",
+    "hasChild": false,
+    "depth": 3,
+    "sort": 3
   },
   {
     "seq": 2,

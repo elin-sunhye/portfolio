@@ -1,0 +1,61 @@
+.slide_container {
+  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3rem;
+
+  .slide_wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+  }
+  .slide {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+
+    position: relative;
+
+    &.original {
+      animation: 30s linear infinite normal none running infiniteAnimation1;
+    }
+    &.clone {
+      animation: 30s linear infinite infiniteAnimation2;
+    }
+    &.stop {
+      animation-play-state: paused;
+    }
+
+    li {
+      width: 30rem;
+      height: 5rem;
+      border: 1px solid #333;
+    }
+  }
+}
+
+@keyframes infiniteAnimation1 {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  50.1% {
+    transform: translateX(calc(100% + 3rem));
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes infiniteAnimation2 {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}

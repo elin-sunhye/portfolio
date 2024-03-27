@@ -7,37 +7,30 @@ interface RollingProps {
   children: React.ReactNode;
 }
 export default function Rolling({ deirection, children }: RollingProps) {
-  const childrenRef1 = useRef<HTMLDivElement>(null);
-  const childrenRef2 = useRef<HTMLDivElement>(null);
-  const childrenRef3 = useRef<HTMLDivElement>(null);
-  // useEffect(() => {
-  //   if (typeof window !== 'undefined' && childrenRef.current) {
-  //     console.log('width', childrenRef.current.offsetWidth);
-  //   }
-  // }, [childrenRef]);
-
-  // hover
-  const [rollingHover, setRollingHover] = useState<boolean>(false);
+  const [animate, setAnimate] = useState(true);
+  const onStop = () => setAnimate(false);
+  const onRun = () => setAnimate(true);
 
   return (
     <div
       className={`flex_start ${style.rolling_box} ${
-        rollingHover ? style.rolling_hover : ''
-      } ${deirection ? style.right : ''}`}
-      onMouseEnter={() => {
-        setRollingHover(true);
-      }}
-      onMouseLeave={() => {
-        setRollingHover(false);
-      }}
+        deirection ? style.right : ''
+      }`}
+      onMouseEnter={onStop}
+      onMouseLeave={onRun}
     >
-      <div className={`flex_start ${style.rolling_inner}`} ref={childrenRef1}>
+      <div
+        className={`flex_start ${style.rolling_list} ${style.original} ${
+          animate ? '' : style.stop
+        }`}
+      >
         {children}
       </div>
-      <div className={`flex_start ${style.rolling_inner}`} ref={childrenRef2}>
-        {children}
-      </div>
-      <div className={`flex_start ${style.rolling_inner}`} ref={childrenRef3}>
+      <div
+        className={`flex_start ${style.rolling_list} ${style.clone} ${
+          animate ? '' : style.stop
+        }`}
+      >
         {children}
       </div>
     </div>

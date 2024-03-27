@@ -1,44 +1,90 @@
-// @mixin aniSlowSetting($name) {
-//   animation-name: $name;
-//   animation-direction: alternate;
-//   animation-iteration-count: infinite;
-//   animation-duration: 30s;
-//   animation-timing-function: linear;
-// }
+// rolling_box
+.rolling_box {
+  overflow: hidden;
 
-// @keyframes rolling {
-//   0% {
-//     left: 0;
-//   }
-//   100% {
-//     left: 100%;
-//     transform: translateX(-100%);
-//   }
-// }
+  .rolling_list {
+    position: relative;
 
-// @keyframes rollingRgiht {
-//   0% {
-//     left: 100%;
-//     transform: translateX(-100%);
-//   }
-//   100% {
-//     left: 0;
-//   }
-// }
+    &.original {
+      animation: 50s linear infinite normal none running rolling1;
+    }
+    &.clone {
+      animation: 50s linear infinite rolling2;
+    }
+    &.original.stop,
+    &.clone.stop {
+      animation-play-state: paused;
+    }
 
-.rolling_box,
-.rolling_inner {
-  gap: 3rem;
-  width: fit-content;
+    & > div,
+    & > a,
+    & > button {
+      margin: 0 1.5rem;
+    }
+  }
 
-  // @include aniSlowSetting(rolling);
+  // right
+  &.right {
+    .rolling_list {
+      position: relative;
 
-  // &.right {
-  //   @include aniSlowSetting(rollingRgiht);
-  // }
+      &.original {
+        animation: 30s linear infinite normal none running rollingRight1;
+      }
+      &.clone {
+        animation: 30s linear infinite rollingRight2;
+      }
+      &.original.stop,
+      &.clone.stop {
+        animation-play-state: paused;
+      }
+    }
+  }
+}
 
-  // hover - 롤링 배너 호버
-  // &.rolling_hover {
-  //   animation-play-state: paused;
-  // }
+@keyframes rolling1 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-100%);
+  }
+  50.1% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes rolling2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+// right
+@keyframes rollingRight1 {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  50.1% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes rollingRight2 {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }

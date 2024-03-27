@@ -29,6 +29,8 @@
     .btn_site_map {
       width: 3.5rem;
       height: 2.5rem;
+      border-radius: 0 0 0 var(--br-50);
+      overflow: hidden;
       position: relative;
       transition: all 0.3s;
 
@@ -57,6 +59,8 @@
 
       // hover
       &:hover {
+        border-radius: 0;
+
         span {
           &:first-of-type {
             width: 50%;
@@ -277,6 +281,8 @@
     .left {
       // 사이트 맵
       .btn_site_map {
+        border-radius: 0;
+
         span {
           &:first-of-type {
             top: 50%;
