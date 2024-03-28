@@ -15,21 +15,69 @@
 
 @keyframes upDownAni {
   0% {
-    margin-top: 0;
+    margin-top: 2rem;
   }
   100% {
-    margin-top: 2rem;
+    margin-top: 4rem;
   }
 }
 
 // 메인 ---------------------------------
-.main_visual_box {
+.main_visual_section {
   height: 100vh;
-  background-color: var(--main-blue-1);
 
-  .main_visual {
+  .main_visual_box {
     width: 100%;
-    height: calc(100vh - 7rem);
+    height: calc(100vh - 10rem);
+    background-color: var(--main-gray-1);
+    position: relative;
+
+    & > span {
+      display: inline-block;
+      position: absolute;
+
+      &:first-of-type {
+        width: 130vh;
+        height: 130vh;
+        border: 3px solid var(--main-blue-1);
+        border-radius: var(--br-50pro);
+        left: -35%;
+        top: -70%;
+      }
+
+      &:nth-of-type(2) {
+        width: 30vh;
+        height: 60vh;
+        background-color: var(--main-green-1);
+        border-radius: 30rem 0 0 30rem;
+        right: 0;
+        top: 0;
+      }
+      &:nth-of-type(3) {
+        width: calc(40vh - 10rem);
+        height: calc(40vh - 10rem);
+        border: 3px solid var(--main-green-1);
+        border-radius: 0 0 0 50rem;
+        right: -0.3rem;
+        bottom: 0;
+      }
+
+      &:last-of-type {
+        width: 60vh;
+        height: 30vh;
+        background-color: var(--sub-pink-1);
+        border-radius: 0 0 50rem 50rem;
+        right: 30vh;
+        top: 30vh;
+      }
+    }
+
+    .main_visual {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 3;
+    }
   }
 
   .btn_go_content {
@@ -38,7 +86,7 @@
 
     svg {
       font-size: var(--fs-36);
-      color: var(--white);
+      color: var(--blakc);
     }
   }
 }
@@ -49,16 +97,16 @@
   width: 100%;
   height: 15rem;
   position: relative;
+  overflow: hidden;
 
   .scroll_txt {
     width: 900rem;
-    color: var(--sub-pink-1);
+    color: var(--main-orange-1);
     font-size: 15rem;
     font-weight: 900;
     line-height: 1;
     position: absolute;
     top: 0;
-    z-index: -1;
   }
 }
 
@@ -130,6 +178,7 @@
 
 // introduce_section ---------------------------------
 .introduce_section {
+  position: relative;
   // top_box
   .top_box {
     h3 {
@@ -137,6 +186,38 @@
       -webkit-text-stroke: 0;
     }
   }
+
+  // bg
+  .bg_circle,
+  .bg_triangle {
+    position: absolute;
+  }
+
+  .bg_circle {
+    width: 50rem;
+    height: 50rem;
+    flex-wrap: wrap;
+    left: -37rem;
+    top: -40rem;
+
+    span {
+      display: block;
+      width: calc(100% / 2);
+      height: calc(100% / 2);
+      border-radius: var(--br-50pro);
+      background-color: var(--main-green-1);
+    }
+  }
+
+  .bg_triangle {
+    width: 50rem;
+    height: 40rem;
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    background-color: var(--sub-pink-1);
+    right: 0;
+    bottom: 0;
+  }
+
   // skill
   .skill_box {
     padding: 15rem 5rem;
@@ -144,8 +225,9 @@
     border-radius: 30rem;
     flex-wrap: wrap;
     gap: 5rem;
+    position: relative;
 
-    & > div {
+    & > div:not(.bg_circle) {
       width: 100%;
       display: flex;
       justify-content: center;
@@ -255,7 +337,9 @@
 }
 
 // project_wiko_section ---------------------------------
-.project_wiko_section {
+.project_wiko_section,
+.project_2_section,
+.project_3_section {
   background-color: var(--main-green-1);
   height: 100vh;
 
@@ -276,17 +360,14 @@
 // project_2_section ---------------------------------
 .project_2_section {
   background-color: var(--main-blue-1);
-  height: 100vh;
   .wrap {
-    height: 100%;
+    .top_box {
+      text-align: right;
+    }
   }
 }
 
 // project_3_section ---------------------------------
 .project_3_section {
   background-color: var(--sub-pink-1);
-  height: 100vh;
-  .wrap {
-    height: 100%;
-  }
 }

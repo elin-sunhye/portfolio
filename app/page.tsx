@@ -16,6 +16,12 @@ export default function Home() {
 
   // scroll
   const scrollTxtRef = useRef<HTMLSpanElement>(null);
+  const scrollWikoUpRef = useRef<HTMLDivElement>(null);
+  const scrollWikoDownRef = useRef<HTMLDivElement>(null);
+  const scroll2UpRef = useRef<HTMLDivElement>(null);
+  const scroll2DownRef = useRef<HTMLDivElement>(null);
+  const scroll3UpRef = useRef<HTMLDivElement>(null);
+  const scroll3DownRef = useRef<HTMLDivElement>(null);
 
   // 화면 로드시
   useEffect(() => {
@@ -38,6 +44,8 @@ export default function Home() {
       let lastScroll = 0;
       window.addEventListener('scroll', function () {
         let currentScroll = document.documentElement.scrollTop;
+
+        // scrollTxt
         if (
           scrollTxtRef.current !== null &&
           window.scrollY >= 10
@@ -61,6 +69,180 @@ export default function Home() {
             );
           }
           lastScroll = currentScroll;
+        }
+
+        // scroll wiko
+        if (
+          scrollWikoUpRef.current !== null &&
+          scrollWikoDownRef.current !== null
+        ) {
+          if (window.scrollY >= window.innerHeight * 2.5) {
+            let num1 = String(
+              window.scrollY - window.innerHeight * 2.5 + 0.1
+            ).replaceAll('.', '');
+
+            let num2 = String(
+              window.scrollY - window.innerHeight * 2.5 - 0.1
+            ).replaceAll('.', '');
+
+            let plus =
+              num1.length == 1
+                ? `0.00${num1}`
+                : num1.length == 2
+                ? `0.0${num1}`
+                : num1.length == 3
+                ? `0.${num1}`
+                : num1.length == 4
+                ? num1.slice(0, 1) + '.' + num1.slice(1)
+                : num1.slice(0, 2) + '.' + num1.slice(2);
+
+            let minus =
+              num2.length == 1
+                ? `0.00${num2}`
+                : num2.length == 2
+                ? `0.0${num2}`
+                : num2.length == 3
+                ? `0.${num2}`
+                : num2.length == 4
+                ? num2.slice(0, 1) + '.' + num2.slice(1)
+                : num2.slice(0, 2) + '.' + num2.slice(2);
+
+            if (currentScroll > lastScroll) {
+              scrollWikoUpRef.current.style.setProperty(
+                'transform',
+                `translateY(-${plus}%)`
+              );
+              scrollWikoDownRef.current.style.setProperty(
+                'transform',
+                `translateY(${minus}%)`
+              );
+            } else {
+              scrollWikoUpRef.current.style.setProperty(
+                'transform',
+                `translateY(-${minus}%)`
+              );
+
+              scrollWikoDownRef.current.style.setProperty(
+                'transform',
+                `translateY(${plus}%)`
+              );
+            }
+            lastScroll = currentScroll;
+          }
+        }
+
+        // scroll 2
+        if (scroll2UpRef.current !== null && scroll2DownRef.current !== null) {
+          if (window.scrollY >= window.innerHeight * 3.5) {
+            let num1 = String(
+              window.scrollY - window.innerHeight * 3.5 + 0.1
+            ).replaceAll('.', '');
+
+            let num2 = String(
+              window.scrollY - window.innerHeight * 3.5 - 0.1
+            ).replaceAll('.', '');
+
+            let plus =
+              num1.length == 1
+                ? `0.00${num1}`
+                : num1.length == 2
+                ? `0.0${num1}`
+                : num1.length == 3
+                ? `0.${num1}`
+                : num1.length == 4
+                ? num1.slice(0, 1) + '.' + num1.slice(1)
+                : num1.slice(0, 2) + '.' + num1.slice(2);
+
+            let minus =
+              num2.length == 1
+                ? `0.00${num2}`
+                : num2.length == 2
+                ? `0.0${num2}`
+                : num2.length == 3
+                ? `0.${num2}`
+                : num2.length == 4
+                ? num2.slice(0, 1) + '.' + num2.slice(1)
+                : num2.slice(0, 2) + '.' + num2.slice(2);
+
+            if (currentScroll > lastScroll) {
+              scroll2UpRef.current.style.setProperty(
+                'transform',
+                `translateY(-${plus}%)`
+              );
+              scroll2DownRef.current.style.setProperty(
+                'transform',
+                `translateY(${minus}%)`
+              );
+            } else {
+              scroll2UpRef.current.style.setProperty(
+                'transform',
+                `translateY(-${minus}%)`
+              );
+
+              scroll2DownRef.current.style.setProperty(
+                'transform',
+                `translateY(${plus}%)`
+              );
+            }
+            lastScroll = currentScroll;
+          }
+        }
+
+        // scroll 3
+        if (scroll3UpRef.current !== null && scroll3DownRef.current !== null) {
+          if (window.scrollY >= window.innerHeight * 4.5) {
+            let num1 = String(
+              window.scrollY - window.innerHeight * 4.5 + 0.1
+            ).replaceAll('.', '');
+
+            let num2 = String(
+              window.scrollY - window.innerHeight * 4.5 - 0.1
+            ).replaceAll('.', '');
+
+            let plus =
+              num1.length == 1
+                ? `0.00${num1}`
+                : num1.length == 2
+                ? `0.0${num1}`
+                : num1.length == 3
+                ? `0.${num1}`
+                : num1.length == 4
+                ? num1.slice(0, 1) + '.' + num1.slice(1)
+                : num1.slice(0, 2) + '.' + num1.slice(2);
+
+            let minus =
+              num2.length == 1
+                ? `0.00${num2}`
+                : num2.length == 2
+                ? `0.0${num2}`
+                : num2.length == 3
+                ? `0.${num2}`
+                : num2.length == 4
+                ? num2.slice(0, 1) + '.' + num2.slice(1)
+                : num2.slice(0, 2) + '.' + num2.slice(2);
+
+            if (currentScroll > lastScroll) {
+              scroll3UpRef.current.style.setProperty(
+                'transform',
+                `translateY(-${plus}%)`
+              );
+              scroll3DownRef.current.style.setProperty(
+                'transform',
+                `translateY(${minus}%)`
+              );
+            } else {
+              scroll3UpRef.current.style.setProperty(
+                'transform',
+                `translateY(-${minus}%)`
+              );
+
+              scroll3DownRef.current.style.setProperty(
+                'transform',
+                `translateY(${plus}%)`
+              );
+            }
+            lastScroll = currentScroll;
+          }
         }
       });
     }
@@ -88,8 +270,17 @@ export default function Home() {
 
   return (
     <main>
-      <section className={style.main_visual_box}>
-        <div className={style.main_visual}></div>
+      {/* main_visual_section --------------------------------- */}
+      <section className={style.main_visual_section}>
+        <div className={style.main_visual_box}>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+
+          <div className={style.main_visual}></div>
+        </div>
+
         <Btn
           className={style.btn_go_content}
           type={'button'}
@@ -108,11 +299,15 @@ export default function Home() {
           }
         />
       </section>
+
+      {/* scroll_txt_section --------------------------------- */}
       <section className={style.scroll_txt_section}>
         <span className={style.scroll_txt} ref={scrollTxtRef}>
           THE PARADISE IS WHERE I AM THE PARADISE IS WHERE I AM
         </span>
       </section>
+
+      {/* introduce_section --------------------------------- */}
       <section className={`section_padding ${style.introduce_section}`}>
         <div className={style.top_box}>
           <h3>김선혜</h3>
@@ -131,6 +326,13 @@ export default function Home() {
         </div>
 
         <div className={`wrap flex_start ${style.skill_box}`}>
+          <div className={`flex_start ${style.bg_circle}`}>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
           <div>
             <span>
               <img src="/main/skill/img_react.svg" alt="react" />
@@ -150,10 +352,10 @@ export default function Home() {
               <img src="/main/skill/img_nextjs.svg" alt="react" />
             </span>
             <span>
-              <img src="/mainskill/img_recoil.svg" alt="react" />
+              <img src="/main/skill/img_recoil.svg" alt="react" />
             </span>
             <span>
-              <img src="/mainskill/img_js.svg" alt="react" />
+              <img src="/main/skill/img_js.svg" alt="react" />
             </span>
             <span>
               <img src="/main/skill/img_ts.svg" alt="react" />
@@ -177,8 +379,11 @@ export default function Home() {
             </span>
           </div>
         </div>
+
+        <div className={style.bg_triangle}></div>
       </section>
 
+      {/* career_section --------------------------------- */}
       <section className={`section_padding ${style.career_section}`}>
         <div className={style.top_box}>
           <h3>TOGETHER</h3>
@@ -295,6 +500,8 @@ export default function Home() {
           </Rolling>
         </div>
       </section>
+
+      {/* project_wiko_section --------------------------------- */}
       <section className={`${style.project_wiko_section}`}>
         <div className={`wrap flex_between ${style.wrap}`}>
           <div className={style.top_box}>
@@ -313,14 +520,20 @@ export default function Home() {
             />
           </div>
           <div className={`flex_end ${style.scroll_box}`}>
-            <div className={`flex_center ${style.scroll_up}`}>
+            <div
+              ref={scrollWikoUpRef}
+              className={`flex_center ${style.scroll_up}`}
+            >
               <span>asd</span>
               <div>123</div>
               <span>123</span>
               <span>dsfsad</span>
               <div>123</div>
             </div>
-            <div className={`flex_center ${style.scroll_down}`}>
+            <div
+              ref={scrollWikoDownRef}
+              className={`flex_center ${style.scroll_down}`}
+            >
               <span>asd</span>
               <div>123</div>
               <span>123</span>
@@ -330,17 +543,25 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* project_2_section --------------------------------- */}
       <section className={`${style.project_2_section}`}>
         <div className={`wrap flex_between ${style.wrap}`}>
           <div className={`flex_end ${style.scroll_box}`}>
-            <div className={`flex_center ${style.scroll_up}`}>
+            <div
+              ref={scroll2DownRef}
+              className={`flex_center ${style.scroll_down}`}
+            >
               <span>asd</span>
               <div>123</div>
               <span>123</span>
               <span>dsfsad</span>
               <div>123</div>
             </div>
-            <div className={`flex_center ${style.scroll_down}`}>
+            <div
+              ref={scroll2UpRef}
+              className={`flex_center ${style.scroll_up}`}
+            >
               <span>asd</span>
               <div>123</div>
               <span>123</span>
@@ -365,6 +586,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* project_3_section --------------------------------- */}
       <section className={`${style.project_3_section}`}>
         <div className={`wrap flex_between ${style.wrap}`}>
           <div className={style.top_box}>
@@ -383,14 +606,20 @@ export default function Home() {
             />
           </div>
           <div className={`flex_end ${style.scroll_box}`}>
-            <div className={`flex_center ${style.scroll_up}`}>
+            <div
+              ref={scroll3UpRef}
+              className={`flex_center ${style.scroll_up}`}
+            >
               <span>asd</span>
               <div>123</div>
               <span>123</span>
               <span>dsfsad</span>
               <div>123</div>
             </div>
-            <div className={`flex_center ${style.scroll_down}`}>
+            <div
+              ref={scroll3DownRef}
+              className={`flex_center ${style.scroll_down}`}
+            >
               <span>asd</span>
               <div>123</div>
               <span>123</span>
@@ -399,6 +628,45 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* view_more_section --------------------------------- */}
+      <section className={`section_padding ${style.view_more_section}`}>
+        <div className={style.top_box}>
+          <h3>12312312323123</h3>
+          <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
+          <span>가나다 나다 가가라</span>
+        </div>
+
+        <div className={`wrap flex_start ${style.view_more_box}`}>
+          <a href="/" download={''}>
+            자기 소개서 다운
+          </a>
+          <a href="/" download={''}>
+            github 바로 가기
+          </a>
+        </div>
+      </section>
+
+      {/* view_more_section --------------------------------- */}
+      <section className={`section_padding ${style.view_more_section}`}>
+        <div className={style.top_box}>
+          <h3>12312312323123</h3>
+          <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
+          <span>가나다 나다 가가라</span>
+          <Btn
+            type={'button'}
+            title={'contact me'}
+            id={'contactMe'}
+            btnType={'text'}
+            hover={false}
+            className={style.btn_go_page}
+            btnBg="var(--black)"
+            btnColor="var(--white)"
+          />
+        </div>
+
+        <div className={`wrap flex_start ${style.view_more_box}`}></div>
       </section>
     </main>
   );
