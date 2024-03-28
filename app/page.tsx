@@ -9,6 +9,7 @@ import Rolling from '@/component/common/rolling/Rolling';
 
 // dummyData
 import menuData from '@/dummyData/menu.json';
+import Link from 'next/link';
 
 export default function Home() {
   // 브라우저 크기
@@ -22,6 +23,9 @@ export default function Home() {
   const scroll2DownRef = useRef<HTMLDivElement>(null);
   const scroll3UpRef = useRef<HTMLDivElement>(null);
   const scroll3DownRef = useRef<HTMLDivElement>(null);
+
+  // 스크롤 시 애니메이션
+  const [viewMoreBg, setViewMoreBg] = useState<boolean>(false);
 
   // 화면 로드시
   useEffect(() => {
@@ -243,6 +247,13 @@ export default function Home() {
             }
             lastScroll = currentScroll;
           }
+        }
+
+        // viwe_more_bg
+        if (window.scrollY >= window.innerHeight * 6.5) {
+          setViewMoreBg(true);
+        } else {
+          setViewMoreBg(false);
         }
       });
     }
@@ -525,20 +536,24 @@ export default function Home() {
               className={`flex_center ${style.scroll_up}`}
             >
               <span>asd</span>
-              <div>123</div>
+              <span>123</span>
               <span>123</span>
               <span>dsfsad</span>
-              <div>123</div>
+              <span>123</span>
             </div>
             <div
               ref={scrollWikoDownRef}
               className={`flex_center ${style.scroll_down}`}
             >
               <span>asd</span>
-              <div>123</div>
               <span>123</span>
-              <span>dsfsad</span>
-              <div>123</div>
+              <span>123</span>
+              <div className="flex_between">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span>123</span>
             </div>
           </div>
         </div>
@@ -630,26 +645,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* view_more_section --------------------------------- */}
-      <section className={`section_padding ${style.view_more_section}`}>
+      {/* support_section --------------------------------- */}
+      <section className={`section_padding ${style.support_section}`}>
         <div className={style.top_box}>
-          <h3>12312312323123</h3>
+          <h3>SUPPORT +</h3>
           <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
           <span>가나다 나다 가가라</span>
         </div>
 
-        <div className={`wrap flex_start ${style.view_more_box}`}>
-          <a href="/" download={''}>
+        <div className={`wrap flex_center ${style.support_box}`}>
+          <Link href="/" download={''}>
             자기 소개서 다운
-          </a>
-          <a href="/" download={''}>
-            github 바로 가기
-          </a>
+          </Link>
+          <Link href={'https://github.com/elin-sunhye'}>github 바로 가기</Link>
         </div>
       </section>
 
       {/* view_more_section --------------------------------- */}
-      <section className={`section_padding ${style.view_more_section}`}>
+      <section
+        className={`section_padding flex_center ${style.view_more_section} ${
+          viewMoreBg ? style.scroll : ''
+        }`}
+      >
         <div className={style.top_box}>
           <h3>12312312323123</h3>
           <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
@@ -665,8 +682,6 @@ export default function Home() {
             btnColor="var(--white)"
           />
         </div>
-
-        <div className={`wrap flex_start ${style.view_more_box}`}></div>
       </section>
     </main>
   );

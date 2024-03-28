@@ -22,6 +22,20 @@
   }
 }
 
+@keyframes circleSizeAni {
+  0% {
+    top: -23.396424816vw;
+    width: 100vw;
+    height: 100vw;
+  }
+
+  100% {
+    top: 0;
+    width: 73.568vw;
+    height: 73.568vw;
+  }
+}
+
 // 메인 ---------------------------------
 .main_visual_section {
   height: 100vh;
@@ -158,9 +172,13 @@
 
     & > div,
     & > span {
-      display: block;
       width: 100%;
       aspect-ratio: 1 / 1.5;
+    }
+
+    & > span {
+      display: block;
+      border-radius: var(--br-5) var(--br-5) var(--br-5) 25rem;
       border: 1px solid #333;
     }
 
@@ -336,11 +354,10 @@
   }
 }
 
-// project_wiko_section ---------------------------------
+// project ---------------------------------
 .project_wiko_section,
 .project_2_section,
 .project_3_section {
-  background-color: var(--main-green-1);
   height: 100vh;
 
   .wrap {
@@ -348,10 +365,42 @@
 
     .top_box {
       margin: unset;
-      text-align: left;
+      text-align: unset;
 
       button {
         margin: unset;
+      }
+    }
+  }
+}
+
+// project_wiko_section ---------------------------------
+.project_wiko_section {
+  background-color: var(--main-green-1);
+
+  .wrap {
+    .scroll_box {
+      .scroll_down {
+        & > div {
+          align-items: flex-end;
+          & > span {
+            width: 25%;
+
+            &:first-of-type {
+              height: 30%;
+              background-color: var(--main-orange-1);
+            }
+
+            &:nth-of-type(2) {
+              height: 60%;
+              background-color: var(--main-orange-1);
+            }
+            &:last-of-type {
+              height: 100%;
+              background-color: var(--sub-orange-1);
+            }
+          }
+        }
       }
     }
   }
@@ -370,4 +419,70 @@
 // project_3_section ---------------------------------
 .project_3_section {
   background-color: var(--sub-pink-1);
+}
+
+// support_section ---------------------------------
+.support_section {
+  height: 100vh;
+
+  .support_box {
+    height: calc(100% - 27rem);
+    gap: 30vw;
+  }
+}
+
+// view_more_section ---------------------------------
+.view_more_section {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -23.396424816vw;
+    left: -14.609vw;
+    width: 73.568vw;
+    height: 73.568vw;
+    border-radius: 100%;
+    background-color: #c4e5ae;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+  }
+
+  &.scroll {
+    &::before {
+      animation-name: circleSizeAni;
+      animation-duration: 1s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background-color: #c4e5ae;
+    background-size: cover;
+  }
+
+  .top_box {
+    margin: 0;
+    position: relative;
+    z-index: 3;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  // view_more_section ---------------------------------
+  .view_more_section {
+    & > span {
+      top: 8rem;
+    }
+  }
 }
