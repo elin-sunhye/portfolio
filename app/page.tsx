@@ -568,20 +568,23 @@ export default function Home() {
               className={`flex_center ${style.scroll_down}`}
             >
               <span>asd</span>
-              <div>123</div>
               <span>123</span>
-              <span>dsfsad</span>
-              <div>123</div>
+              <span>123</span>
+              <div className="flex_start">
+                <span></span>
+                <span></span>
+              </div>
+              <span>123</span>
             </div>
             <div
               ref={scroll2UpRef}
               className={`flex_center ${style.scroll_up}`}
             >
               <span>asd</span>
-              <div>123</div>
+              <span>123</span>
               <span>123</span>
               <span>dsfsad</span>
-              <div>123</div>
+              <span>123</span>
             </div>
           </div>
           <div className={style.top_box}>
@@ -626,20 +629,25 @@ export default function Home() {
               className={`flex_center ${style.scroll_up}`}
             >
               <span>asd</span>
-              <div>123</div>
+              <span>123</span>
               <span>123</span>
               <span>dsfsad</span>
-              <div>123</div>
+              <span>123</span>
             </div>
             <div
               ref={scroll3DownRef}
               className={`flex_center ${style.scroll_down}`}
             >
               <span>asd</span>
-              <div>123</div>
               <span>123</span>
-              <span>dsfsad</span>
-              <div>123</div>
+              <span>123</span>
+              <div className="flex_start">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span>123</span>
             </div>
           </div>
         </div>
