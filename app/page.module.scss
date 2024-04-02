@@ -468,7 +468,27 @@
 
   .support_box {
     height: calc(100% - 27rem);
-    gap: 30vw;
+    gap: 10rem;
+
+    a {
+      height: 100%;
+      aspect-ratio: 1 / 1;
+      background-color: var(--sub-purple-1);
+      border-radius: var(--br-50pro);
+
+      svg {
+        display: inline-block;
+        font-size: var(--fs-20);
+        margin-left: 0.5rem;
+        vertical-align: middle;
+      }
+
+      // hover
+      &:hover {
+        text-decoration: underline;
+        color: var(--main-purple-1);
+      }
+    }
   }
 }
 

@@ -193,7 +193,7 @@
     "seq": 20,
     "parentSeq": 2,
     "menu": "WIKO",
-    "url": "/site/wiko",
+    "url": "/project/wiko",
     "title": "위코 바로가기",
     "hasChild": false,
     "depth": 2,

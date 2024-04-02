@@ -6,16 +6,22 @@ import { HiOutlineChevronDoubleDown } from 'react-icons/hi';
 import { useEffect, useRef, useState } from 'react';
 import { menuType } from '@/type/menu/menuType';
 import Rolling from '@/component/common/rolling/Rolling';
-
-// dummyData
-import menuData from '@/dummyData/menu.json';
 import Link from 'next/link';
+import { FiDownloadCloud, FiExternalLink } from 'react-icons/fi';
+
+// dummyData ---------------------------------
+import menuData from '@/dummyData/menu.json';
+import Dialog from '@/component/common/dialog/Dialog';
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
-  // 브라우저 크기
+  // ---------------------------------
+  const router = useRouter();
+
+  // 브라우저 크기 ---------------------------------
   const [browserHeight, setBrowserHeight] = useState<number>(0);
 
-  // scroll
+  // scroll ---------------------------------
   const scrollTxtRef = useRef<HTMLSpanElement>(null);
   const scrollWikoUpRef = useRef<HTMLDivElement>(null);
   const scrollWikoDownRef = useRef<HTMLDivElement>(null);
@@ -259,7 +265,7 @@ export default function Home() {
     }
   }, []);
 
-  // rolling
+  // rolling ---------------------------------
   const [rollingITems, setRollingItems] = useState<menuType[]>([]);
   const [rollingDesignITems, setRollingDesignItems] = useState<menuType[]>([]);
 
@@ -278,6 +284,10 @@ export default function Home() {
       )
     );
   }, [menuData]);
+
+  // info section ---------------------------------
+  // dialog
+  const [contactMeDialog, setContactMeDialog] = useState<boolean>(false);
 
   return (
     <main>
@@ -333,8 +343,29 @@ export default function Home() {
             className={style.btn_go_page}
             btnBg="var(--black)"
             btnColor="var(--white)"
+            onClick={() => {
+              setContactMeDialog(true);
+            }}
           />
         </div>
+
+        {/* dialog */}
+        <Dialog
+          state={contactMeDialog}
+          setState={setContactMeDialog}
+          title={'contact me'}
+          width={'50rem'}
+        >
+          <>
+            <p>
+              연락처 : <span>010-2162-0043</span>
+            </p>
+            <br />
+            <p>
+              이메일 : <span>tjsgp1041@naver.com</span>
+            </p>
+          </>
+        </Dialog>
 
         <div className={`wrap flex_start ${style.skill_box}`}>
           <div className={`flex_start ${style.bg_circle}`}>
@@ -528,6 +559,9 @@ export default function Home() {
               className={style.btn_go_page}
               btnBg="var(--black)"
               btnColor="var(--white)"
+              onClick={() => {
+                router.push(`/project/wiko`);
+              }}
             />
           </div>
           <div className={`flex_end ${style.scroll_box}`}>
@@ -662,10 +696,18 @@ export default function Home() {
         </div>
 
         <div className={`wrap flex_center ${style.support_box}`}>
-          <Link href="/" download={''}>
+          <Link href="/" download={''} className={'flex_center'}>
             자기 소개서 다운
+            <FiDownloadCloud role="img" aria-label="다운로드 아이콘" />
           </Link>
-          <Link href={'https://github.com/elin-sunhye'}>github 바로 가기</Link>
+          <Link
+            href={'https://github.com/elin-sunhye'}
+            target="_blank"
+            className={'flex_center'}
+          >
+            github 바로 가기
+            <FiExternalLink role="img" aria-label="새창 아이콘" />
+          </Link>
         </div>
       </section>
 
@@ -679,7 +721,7 @@ export default function Home() {
           <h3>12312312323123</h3>
           <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
           <span>가나다 나다 가가라</span>
-          <Btn
+          {/* <Btn
             type={'button'}
             title={'contact me'}
             id={'contactMe'}
@@ -688,7 +730,7 @@ export default function Home() {
             className={style.btn_go_page}
             btnBg="var(--black)"
             btnColor="var(--white)"
-          />
+          /> */}
         </div>
       </section>
     </main>

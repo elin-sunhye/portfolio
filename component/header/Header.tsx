@@ -136,7 +136,7 @@ export default function HeaderClient({}: HeaderClientProps) {
           title="github 바로가기"
           className={`flex_center ${style.link_git_hub}`}
         >
-          <FiExternalLink />
+          <FiExternalLink role="img" aria-label="새창 아이콘" />
         </Link>
       </div>
 

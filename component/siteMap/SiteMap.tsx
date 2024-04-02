@@ -22,26 +22,27 @@ interface SiteMapProps {
 
 export default function SiteMap({ menuData, session }: SiteMapProps) {
   // 사이트맵 버튼 클릭
-
   const [siteMapOpen, setSiteMapOpen] = useState<boolean>(false);
 
   // 사이트맵 오픈 시 외부 스크롤 막기
-
   useEffect(() => {
     if (siteMapOpen) {
-      document.body.style.cssText = `
-        position: fixed;
-        top: -${window.scrollY}px;
-        overflow-y: scroll;
-        width: 100%;`;
+      document.body.style.cssText = `overflow-y: hidden`;
+      // document.body.style.cssText = `
+      //   position: fixed;
+      //   top: -${window.scrollY}px;
+      //   overflow-y: scroll;
+      //   width: 100%;`;
 
-      return () => {
-        const scrollY = document.body.style.top;
+      // return () => {
+      //   const scrollY = document.body.style.top;
 
-        document.body.style.cssText = '';
+      //   document.body.style.cssText = '';
 
-        window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
-      };
+      //   window.scrollTo(0, parseInt(scrollY || '0', 10) * -1);
+      // };
+    } else {
+      document.body.style.cssText = `overflow-y: auto`;
     }
   }, [siteMapOpen]);
 
