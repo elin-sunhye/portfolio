@@ -1,27 +1,27 @@
-'use client';
+"use client";
 
-import style from './page.module.scss';
-import './swiper.scss';
-import { Btn } from '@/component/common/btn/Btn';
-import { HiOutlineChevronDoubleDown } from 'react-icons/hi';
-import { useEffect, useRef, useState } from 'react';
-import { menuType } from '@/type/menu/menuType';
+import style from "./page.module.scss";
+import "./swiper.scss";
+import { Btn } from "@/component/common/btn/Btn";
+import { HiOutlineChevronDoubleDown } from "react-icons/hi";
+import { useEffect, useRef, useState } from "react";
+import { menuType } from "@/type/menu/menuType";
 
 // react-swiper
-import { Swiper, SwiperSlide } from 'swiper/react'; // basic
-import 'swiper/css'; //basic
-import 'swiper/swiper-bundle.css';
-import 'swiper/css/autoplay';
+import { Swiper, SwiperSlide } from "swiper/react"; // basic
+import "swiper/css"; //basic
+import "swiper/swiper-bundle.css";
+import "swiper/css/autoplay";
 import {
   Navigation,
   Pagination,
   Scrollbar,
   A11y,
   Autoplay,
-} from 'swiper/modules';
+} from "swiper/modules";
 
 // dummyData
-import menuData from '@/dummyData/menu.json';
+import menuData from "@/dummyData/menu.json";
 
 export default function Home() {
   // 브라우저 크기
@@ -32,24 +32,24 @@ export default function Home() {
 
   // 화면 로드시
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       // 브라우저 크기
       setBrowserHeight(window.innerHeight);
-      window.addEventListener('resize', function () {
+      window.addEventListener("resize", function () {
         setBrowserHeight(window.innerHeight);
       });
 
       // 스크롤 초기화
       if (window.scrollY > 0 && scrollTxtRef.current !== null) {
         scrollTxtRef.current.style.setProperty(
-          'transform',
+          "transform",
           `translateX(-${String(window.scrollY - window.innerHeight + 1)}px)`
         );
       }
 
       // scroll
       let lastScroll = 0;
-      window.addEventListener('scroll', function () {
+      window.addEventListener("scroll", function () {
         let currentScroll = document.documentElement.scrollTop;
         if (
           scrollTxtRef.current !== null &&
@@ -57,14 +57,14 @@ export default function Home() {
         ) {
           if (currentScroll > lastScroll) {
             scrollTxtRef.current.style.setProperty(
-              'transform',
+              "transform",
               `translateX(-${String(
                 window.scrollY - window.innerHeight + 1
               )}px)`
             );
           } else {
             scrollTxtRef.current.style.setProperty(
-              'transform',
+              "transform",
               `translateX(-${String(
                 window.scrollY - window.innerHeight - 1
               )}px)`
@@ -85,7 +85,7 @@ export default function Home() {
     speed: 3000,
     loop: true,
     loopAdditionalSlides: 1,
-    slidesPerView: 'auto', //  한 슬라이드에 보여줄 개수
+    slidesPerView: "auto", //  한 슬라이드에 보여줄 개수
     centeredSlides: true, // center 정렬
     autoplay: {
       // 자동 슬라이드 설정 , 비 활성화 시 false, true 설정 시   import {Autoplay from "swiper/modules" 추가
@@ -99,7 +99,7 @@ export default function Home() {
   const [swiperItems, setSiwerItems] = useState<menuType[]>([]);
   useEffect(() => {
     setSiwerItems(
-      menuData.filter((mn) => mn.url.includes('/career/') && mn.depth === 3)
+      menuData.filter((mn) => mn.url.includes("/career/") && mn.depth === 3)
     );
   }, [menuData]);
 
@@ -109,10 +109,10 @@ export default function Home() {
         <div className={style.main_visual}></div>
         <Btn
           className={style.btn_go_content}
-          type={'button'}
-          title={'컨텐츠'}
-          id={'goContent'}
-          btnType={'ico'}
+          type={"button"}
+          title={"컨텐츠"}
+          id={"goContent"}
+          btnType={"ico"}
           hover={false}
           ico={
             <HiOutlineChevronDoubleDown
@@ -121,7 +121,7 @@ export default function Home() {
             />
           }
           onClick={() =>
-            window.scrollTo({ top: browserHeight, behavior: 'smooth' })
+            window.scrollTo({ top: browserHeight, behavior: "smooth" })
           }
         />
       </section>
@@ -132,10 +132,10 @@ export default function Home() {
           <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
           <span>가나다 나다 가가라</span>
           <Btn
-            type={'button'}
-            title={'contact me'}
-            id={'contactMe'}
-            btnType={'text'}
+            type={"button"}
+            title={"contact me"}
+            id={"contactMe"}
+            btnType={"text"}
             hover={false}
             className={style.btn_go_page}
             btnBg="var(--black)"
@@ -202,10 +202,10 @@ export default function Home() {
           <p>총 경력 : 4년 (5년차) | 2019년 2월 ~ </p>
           <span>(2024년 2월 기준 | 공백 : 2019년 11월 ~ 2020년 11월)</span>
           <Btn
-            type={'button'}
-            title={'view more'}
-            id={'viewMore'}
-            btnType={'text'}
+            type={"button"}
+            title={"view more"}
+            id={"viewMore"}
+            btnType={"text"}
             hover={false}
             className={style.btn_go_page}
             btnBg="var(--black)"
@@ -213,7 +213,7 @@ export default function Home() {
           />
         </div>
 
-        {/* TODO: 롤ㄹ이배너 swiper 뺴고 다시 만들기 */}
+        {/* TODO: 롤링배너 swiper 빼고 다시 만들기 */}
         {/* https://velog.io/@kimbangul/React-SCSS-%EC%B4%88%EA%B0%84%EB%8B%A8-%EB%AC%B4%ED%95%9C%EC%9E%AC%EC%83%9D-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0  */}
         <div
           className={style.career_box}
@@ -237,9 +237,9 @@ export default function Home() {
                 <SwiperSlide
                   key={`swiper_item_${item.seq}`}
                   className={`${style.career_slides} ${
-                    itemInd % 2 === 0 ? style.two : ''
+                    itemInd % 2 === 0 ? style.two : ""
                   } ${
-                    itemInd % 2 === 0 && itemInd % 3 === 0 ? style.three : ''
+                    itemInd % 2 === 0 && itemInd % 3 === 0 ? style.three : ""
                   } `}
                 >
                   <p>사진</p>

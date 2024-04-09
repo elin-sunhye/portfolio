@@ -63,7 +63,7 @@
         width: 30vh;
         height: 60vh;
         background-color: var(--main-green-1);
-        border-radius: 30rem 0 0 30rem;
+        border-radius: 70rem 0 0 70rem;
         right: 0;
         top: 0;
       }
@@ -131,9 +131,9 @@
   text-align: center;
 
   h3 {
-    font-size: var(--fs-72);
+    font-size: var(--fs-48);
     font-weight: 900;
-    -webkit-text-stroke: 3px var(--black);
+    -webkit-text-stroke: 2px var(--black);
     margin-bottom: 1.5rem;
   }
   p,
@@ -499,7 +499,7 @@
   position: relative;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -23.396424816vw;
     left: -14.609vw;
@@ -512,17 +512,8 @@
     background-size: cover;
   }
 
-  &.scroll {
-    &::before {
-      animation-name: circleSizeAni;
-      animation-duration: 1s;
-      animation-iteration-count: 1;
-      animation-fill-mode: forwards;
-    }
-  }
-
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     right: 0;
     top: 0;
@@ -530,6 +521,15 @@
     width: 50%;
     background-color: #c4e5ae;
     background-size: cover;
+  }
+
+  &.scroll {
+    &::before {
+      animation-name: circleSizeAni;
+      animation-duration: 1s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+    }
   }
 
   .top_box {

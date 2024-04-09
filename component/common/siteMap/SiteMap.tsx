@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import style from './SiteMap.module.scss';
-import React, { useEffect, useState } from 'react';
+import style from "./SiteMap.module.scss";
+import React, { useEffect, useState } from "react";
 
 import {
   FiChevronDown,
@@ -11,8 +11,8 @@ import {
   FiHome,
   FiPower,
   FiUser,
-} from 'react-icons/fi';
-import Input from '../common/input/Input';
+} from "react-icons/fi";
+import Input from "../input/Input";
 
 interface SiteMapProps {
   menuData: any[];
@@ -80,7 +80,7 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
     <>
       <button
         type="button"
-        className={`${style.hamburger_bar} ${siteMapOpen ? style.open : ''}`}
+        className={`${style.hamburger_bar} ${siteMapOpen ? style.open : ""}`}
         onClick={() => {
           setSiteMapOpen(!siteMapOpen);
         }}
@@ -95,7 +95,7 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
       </button>
 
       <div
-        className={`${style.all_menu} ${siteMapOpen ? style.open : ''}`}
+        className={`${style.all_menu} ${siteMapOpen ? style.open : ""}`}
         style={{ ...style }}
       >
         <div className={style.all_menu_left}>
@@ -152,7 +152,7 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
 
                   <ul
                     className={`${style.depth_3} ${
-                      openDepth3 ? style.open : ''
+                      openDepth3 ? style.open : ""
                     }`}
                   >
                     <li>
@@ -178,7 +178,7 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
 
                   <ul
                     className={`${style.depth_3} ${
-                      openDepth3 ? style.open : ''
+                      openDepth3 ? style.open : ""
                     }`}
                   >
                     <li>
@@ -200,7 +200,7 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
 
                   <ul
                     className={`${style.depth_3} ${
-                      openDepth3 ? style.open : ''
+                      openDepth3 ? style.open : ""
                     }`}
                   >
                     <li>
@@ -252,7 +252,7 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
 
                   <ul
                     className={`${style.depth_3} ${
-                      openDepth3 ? style.open : ''
+                      openDepth3 ? style.open : ""
                     }`}
                   >
                     <li>
@@ -300,8 +300,8 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
             <a href="/" target="_blank">
               경남대학교
               <FiExternalLink
-                role={'img'}
-                aria-label={'링크 아이콘'}
+                role={"img"}
+                aria-label={"링크 아이콘"}
                 size={14}
               />
             </a>
@@ -316,31 +316,31 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
 
             <div className={style.simple_menu}>
               <a href="/" target="_blank">
-                <FiHome role={'img'} aria-label={'홈 아이콘'} />
+                <FiHome role={"img"} aria-label={"홈 아이콘"} />
                 홈으로
               </a>
 
               {session !== null ? (
                 <>
                   <a href="/" target="_blank">
-                    <FiPower role={'img'} aria-label={'로그아웃 아이콘'} />
+                    <FiPower role={"img"} aria-label={"로그아웃 아이콘"} />
                     로그아웃
                   </a>
 
                   <a href="/" target="_blank">
-                    <FiUser role={'img'} aria-label={'마이페이지 아이콘'} />
+                    <FiUser role={"img"} aria-label={"마이페이지 아이콘"} />
                     마이페이지
                   </a>
                 </>
               ) : (
                 <>
                   <a href="/" target="_blank">
-                    <FiPower role={'img'} aria-label={'로그인 아이콘'} />
+                    <FiPower role={"img"} aria-label={"로그인 아이콘"} />
                     로그인
                   </a>
 
                   <a href="/" target="_blank">
-                    <FiEdit role={'img'} aria-label={'회원가입 아이콘'} />
+                    <FiEdit role={"img"} aria-label={"회원가입 아이콘"} />
                     회원가입
                   </a>
                 </>
@@ -348,7 +348,7 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
             </div>
 
             <div className={style.search_box}>
-              <Input id={''} labelNm={''} type={''} value={''} ref={null} />
+              <Input id={""} labelNm={""} type={""} value={""} ref={null} />
             </div>
           </div>
 
@@ -362,17 +362,17 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
               >
                 WISE LINC 3.0 사업단
                 {openDepth2 ? (
-                  <FiChevronUp role={'img'} aria-label={'위 화살표 아이콘'} />
+                  <FiChevronUp role={"img"} aria-label={"위 화살표 아이콘"} />
                 ) : (
                   <FiChevronDown
-                    role={'img'}
-                    aria-label={'아래 화살표 아이콘'}
+                    role={"img"}
+                    aria-label={"아래 화살표 아이콘"}
                   />
                 )}
               </button>
 
               <ul
-                className={`${style.depth_2} ${openDepth2 ? style.open : ''}`}
+                className={`${style.depth_2} ${openDepth2 ? style.open : ""}`}
               >
                 <li>
                   <a href="/">인사말</a>
@@ -405,17 +405,17 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
               >
                 인력양성
                 {openDepth2 ? (
-                  <FiChevronUp role={'img'} aria-label={'위 화살표 아이콘'} />
+                  <FiChevronUp role={"img"} aria-label={"위 화살표 아이콘"} />
                 ) : (
                   <FiChevronDown
-                    role={'img'}
-                    aria-label={'아래 화살표 아이콘'}
+                    role={"img"}
+                    aria-label={"아래 화살표 아이콘"}
                   />
                 )}
               </button>
 
               <ul
-                className={`${style.depth_2} ${openDepth2 ? style.open : ''}`}
+                className={`${style.depth_2} ${openDepth2 ? style.open : ""}`}
               >
                 <li>
                   <button
@@ -427,20 +427,20 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
                     일머리교육특성화과정
                     {openDepth3 ? (
                       <FiChevronUp
-                        role={'img'}
-                        aria-label={'위 화살표 아이콘'}
+                        role={"img"}
+                        aria-label={"위 화살표 아이콘"}
                       />
                     ) : (
                       <FiChevronDown
-                        role={'img'}
-                        aria-label={'아래 화살표 아이콘'}
+                        role={"img"}
+                        aria-label={"아래 화살표 아이콘"}
                       />
                     )}
                   </button>
 
                   <ul
                     className={`${style.depth_3} ${
-                      openDepth3 ? style.open : ''
+                      openDepth3 ? style.open : ""
                     }`}
                   >
                     <li>
@@ -471,20 +471,20 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
                     미래산학교육
                     {openDepth3 ? (
                       <FiChevronUp
-                        role={'img'}
-                        aria-label={'위 화살표 아이콘'}
+                        role={"img"}
+                        aria-label={"위 화살표 아이콘"}
                       />
                     ) : (
                       <FiChevronDown
-                        role={'img'}
-                        aria-label={'아래 화살표 아이콘'}
+                        role={"img"}
+                        aria-label={"아래 화살표 아이콘"}
                       />
                     )}
                   </button>
 
                   <ul
                     className={`${style.depth_3} ${
-                      openDepth3 ? style.open : ''
+                      openDepth3 ? style.open : ""
                     }`}
                   >
                     <li>
@@ -511,20 +511,20 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
                     창업교육
                     {openDepth3 ? (
                       <FiChevronUp
-                        role={'img'}
-                        aria-label={'위 화살표 아이콘'}
+                        role={"img"}
+                        aria-label={"위 화살표 아이콘"}
                       />
                     ) : (
                       <FiChevronDown
-                        role={'img'}
-                        aria-label={'아래 화살표 아이콘'}
+                        role={"img"}
+                        aria-label={"아래 화살표 아이콘"}
                       />
                     )}
                   </button>
 
                   <ul
                     className={`${style.depth_3} ${
-                      openDepth3 ? style.open : ''
+                      openDepth3 ? style.open : ""
                     }`}
                   >
                     <li>
@@ -544,17 +544,17 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
               >
                 기업지원
                 {openDepth2 ? (
-                  <FiChevronUp role={'img'} aria-label={'위 화살표 아이콘'} />
+                  <FiChevronUp role={"img"} aria-label={"위 화살표 아이콘"} />
                 ) : (
                   <FiChevronDown
-                    role={'img'}
-                    aria-label={'아래 화살표 아이콘'}
+                    role={"img"}
+                    aria-label={"아래 화살표 아이콘"}
                   />
                 )}
               </button>
 
               <ul
-                className={`${style.depth_2} ${openDepth2 ? style.open : ''}`}
+                className={`${style.depth_2} ${openDepth2 ? style.open : ""}`}
               >
                 <li>
                   <a href="/">창업역량강화 프로그램</a>
@@ -571,17 +571,17 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
               >
                 지산학연협력 DB
                 {openDepth2 ? (
-                  <FiChevronUp role={'img'} aria-label={'위 화살표 아이콘'} />
+                  <FiChevronUp role={"img"} aria-label={"위 화살표 아이콘"} />
                 ) : (
                   <FiChevronDown
-                    role={'img'}
-                    aria-label={'아래 화살표 아이콘'}
+                    role={"img"}
+                    aria-label={"아래 화살표 아이콘"}
                   />
                 )}
               </button>
 
               <ul
-                className={`${style.depth_2} ${openDepth2 ? style.open : ''}`}
+                className={`${style.depth_2} ${openDepth2 ? style.open : ""}`}
               >
                 <li>
                   <a href="/">창업역량강화 프로그램</a>
@@ -598,17 +598,17 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
               >
                 커뮤니티
                 {openDepth2 ? (
-                  <FiChevronUp role={'img'} aria-label={'위 화살표 아이콘'} />
+                  <FiChevronUp role={"img"} aria-label={"위 화살표 아이콘"} />
                 ) : (
                   <FiChevronDown
-                    role={'img'}
-                    aria-label={'아래 화살표 아이콘'}
+                    role={"img"}
+                    aria-label={"아래 화살표 아이콘"}
                   />
                 )}
               </button>
 
               <ul
-                className={`${style.depth_2} ${openDepth2 ? style.open : ''}`}
+                className={`${style.depth_2} ${openDepth2 ? style.open : ""}`}
               >
                 <li>
                   <a href="/">공지사항</a>
@@ -632,20 +632,20 @@ export default function SiteMap({ menuData, session }: SiteMapProps) {
                     사업단 뉴스
                     {openDepth3 ? (
                       <FiChevronUp
-                        role={'img'}
-                        aria-label={'위 화살표 아이콘'}
+                        role={"img"}
+                        aria-label={"위 화살표 아이콘"}
                       />
                     ) : (
                       <FiChevronDown
-                        role={'img'}
-                        aria-label={'아래 화살표 아이콘'}
+                        role={"img"}
+                        aria-label={"아래 화살표 아이콘"}
                       />
                     )}
                   </button>
 
                   <ul
                     className={`${style.depth_3} ${
-                      openDepth3 ? style.open : ''
+                      openDepth3 ? style.open : ""
                     }`}
                   >
                     <li>

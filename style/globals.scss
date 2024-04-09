@@ -1,7 +1,10 @@
 @charset "UTF-8";
-@import url('./reset.css');
+@import url("./reset.css");
 
 // 규칙
+// 셀렉터[어트리뷰트^=”값”] 자정된 어트리뷰트 값으로 시작하는 요소
+// 셀렉터[어트리뷰트$=”값”] 자정된 어트리뷰트 값으로 끝나는 요소
+
 // h1 : 로고
 // h2 : 메인비쥬얼 타이틀 60-36
 // h3 : 서브탑 타이틀 60-36
@@ -48,6 +51,10 @@
   --br-10: 1rem;
   --br-15: 1.5rem;
   --br-50: 5rem;
+  --br-70: 7rem;
+  --br-100: 10rem;
+  --br-150: 15rem;
+  --br-200: 20rem;
   --br-50pro: 50%;
 
   // gray scale
@@ -61,7 +68,7 @@
   --black: #333;
 
   // main color
-  --main-blue-1: #a6c5e6;
+  --main-blue-1: #c3daf4;
   --main-purple-1: #6860fc;
   --main-green-1: #c2e4a2;
   --main-gray-1: #ededed;
@@ -170,7 +177,7 @@ body {
 
 // 공통 section
 .section_padding {
-  padding: 13rem 0;
+  padding: 7% 0;
 }
 
 .wrap {
@@ -202,7 +209,7 @@ img {
 // }
 
 // pc에서 모바일 숨기기
-[class^='mo_'] {
+[class^="mo_"] {
   display: none !important;
 }
 
@@ -347,11 +354,11 @@ button.swiper-pagination-bullet-active {
   // }
 
   // 모바일에서 pc 숨기기
-  [class^='pc_'] {
+  [class^="pc_"] {
     display: none !important;
   }
   // 모바일에서 모바일 생성
-  [class^='mo_'] {
+  [class^="mo_"] {
     display: flex !important;
   }
 

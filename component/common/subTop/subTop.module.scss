@@ -1,0 +1,17 @@
+.sub_top {
+  text-align: center;
+
+  h3 {
+    font-size: var(--fs-72);
+    font-weight: 900;
+  }
+
+  p {
+    margin: 2% 0;
+  }
+
+  .btn_link {
+    width: fit-content;
+    margin-bottom: 8%;
+  }
+}
