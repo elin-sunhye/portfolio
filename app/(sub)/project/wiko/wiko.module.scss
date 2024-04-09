@@ -39,7 +39,7 @@
   text-align: center;
 
   h3 {
-    font-size: var(--fs-48);
+    font-size: var(--fs-60);
     font-weight: 900;
     letter-spacing: 0.3rem;
     margin-bottom: 1.5rem;
@@ -51,11 +51,11 @@
   }
 
   p {
-    font-size: var(--fs-24);
+    font-size: var(--fs-48);
     font-weight: bold;
   }
   span {
-    font-size: var(--fs-14);
+    font-size: var(--fs-20);
   }
 
   .btn_go_page {
@@ -152,3 +152,8 @@
 }
 
 // point_section ---------------------------------
+.point_section {
+  .point_box {
+    height: 50rem;
+  }
+}
