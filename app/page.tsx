@@ -286,7 +286,7 @@ export default function Home() {
     );
   }, [menuData]);
 
-  // info section ---------------------------------
+  // info_section ---------------------------------
   // dialog
   const [contactMeDialog, setContactMeDialog] = useState<boolean>(false);
 

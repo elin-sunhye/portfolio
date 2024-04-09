@@ -2,12 +2,12 @@
 
 import style from "./subTop.module.scss";
 import { usePathname } from "next/navigation";
-
-// dummyData
-import menuData from "@/dummyData/menu.json";
 import { useEffect, useState } from "react";
 import { FiExternalLink } from "react-icons/fi";
 import { Btn } from "../btn/Btn";
+
+// dummyData
+import menuData from "@/dummyData/menu.json";
 
 interface SubTopProps {
   explain: string;

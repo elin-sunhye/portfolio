@@ -5,8 +5,13 @@ import SubTop from "@/component/common/subTop/SubTop";
 import Rolling from "@/component/common/rolling/Rolling";
 import { MdFactory, MdFlight } from "react-icons/md";
 import { TbWorld } from "react-icons/tb";
+
+// tree gragh
+import { Tree } from "react-tree-graph";
+import "react-tree-graph/dist/style.css";
+
 export default function Wiko() {
-  // 롤링 아이템
+  // sub_top ---------------------------------
   const rollingItem1: { string: string; tag: JSX.Element }[] = [
     { string: "123123123", tag: <></> },
     { string: "", tag: <MdFlight role="img" aria-label="비행기 아이콘" /> },
@@ -38,6 +43,9 @@ export default function Wiko() {
     { string: "26md f", tag: <></> },
     { string: "sdfe wgw", tag: <></> },
   ];
+
+  // point_section ---------------------------------
+
   return (
     <>
       {/* sub_top --------------------------------- */}
@@ -133,6 +141,24 @@ export default function Wiko() {
         <div className={style.top_box}>
           <p>code point</p>
           <span>가나다 나다 가가라</span>
+        </div>
+
+        <div className={style.point_box}>
+          <Tree
+            data={{
+              name: "Parent",
+              children: [
+                {
+                  name: "Child One",
+                },
+                {
+                  name: "Child Two",
+                },
+              ],
+            }}
+            height={400}
+            width={400}
+          />
         </div>
       </section>
     </>
