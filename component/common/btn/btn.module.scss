@@ -8,14 +8,14 @@
     width: 1.8rem;
     height: 1.8rem;
     vertical-align: middle;
-    transition: var(--transition-03);
-    margin-left: 0;
+    transition: all 0.3s;
+    margin-left: 0.5rem;
     margin-right: 0;
 
-    // &.mg_right {
-    //   margin-left: 0;
-    //   margin-right: 0;
-    // }
+    &.mg_right {
+      margin-left: 0;
+      margin-right: 0.5rem;
+    }
     & > svg {
       font-size: var(--fs-18);
     }
@@ -34,7 +34,7 @@
       }
     }
   }
-  &.hover:hover {
+  &.hoverIco:hover {
     & > .ico_btn {
       opacity: 1;
       margin-left: 0.5rem;

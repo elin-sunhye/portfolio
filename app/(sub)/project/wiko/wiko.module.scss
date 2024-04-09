@@ -1,0 +1,154 @@
+// sub_top ---------------------------------
+.btn_link {
+  margin: 0 auto;
+}
+.sub_top_inner {
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .rolling_item {
+    &.rolling_ico {
+      svg {
+        width: auto;
+        height: 15rem;
+        color: var(--white);
+      }
+    }
+    &.rolling_txt {
+      width: 50rem;
+      height: 20rem;
+      border-radius: 10rem;
+      border: 1px solid #333;
+
+      &:nth-child(2n) {
+        width: 80rem;
+      }
+      &:nth-child(5n) {
+        border-radius: var(--br-15) var(--br-15) var(--br-15) 25rem;
+        background-color: var(--white);
+      }
+    }
+  }
+}
+
+// 공통 ---------------------------------
+// top_box
+.top_box {
+  width: fit-content;
+  margin: 0 auto 10rem;
+  text-align: center;
+
+  h3 {
+    font-size: var(--fs-48);
+    font-weight: 900;
+    letter-spacing: 0.3rem;
+    margin-bottom: 1.5rem;
+  }
+  p,
+  span {
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-size: var(--fs-24);
+    font-weight: bold;
+  }
+  span {
+    font-size: var(--fs-14);
+  }
+
+  .btn_go_page {
+    width: fit-content;
+    margin: 0 auto;
+
+    &:hover {
+      background-color: var(--main-orange-1) !important;
+    }
+  }
+}
+
+// bg_section ---------------------------------
+.bg_section {
+  width: 100%;
+  height: 40rem;
+  overflow: hidden;
+  background-color: var(--main-blue-1);
+  position: relative;
+  z-index: -1;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -14.609vw;
+    width: 73.568vw;
+    height: 73.568vw;
+    border-radius: 100%;
+    background-color: var(--white);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: cover;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background-color: var(--white);
+    background-size: cover;
+  }
+}
+
+// explain_section ---------------------------------
+.explain_section {
+  padding-top: 0;
+
+  .explain_box {
+    width: 100%;
+    aspect-ratio: 1 / 0.4;
+    background-color: var(--black);
+    border-radius: 50rem;
+    position: relative;
+
+    .bg_top {
+      width: 30%;
+      aspect-ratio: 1 / 1;
+      position: absolute;
+      right: -10%;
+      top: -60%;
+      z-index: -1;
+
+      span {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1 / 0.5;
+        border: 2px solid var(--main-blue-1);
+        border-radius: 0 0 var(--br-200) var(--br-200);
+      }
+    }
+
+    .bg_bottom {
+      width: 34%;
+      aspect-ratio: 1 / 1;
+      flex-wrap: wrap;
+      position: absolute;
+      left: -10%;
+      bottom: -70%;
+      z-index: -1;
+
+      span {
+        display: block;
+        width: 50%;
+        aspect-ratio: 1 / 1;
+        background-color: var(--main-blue-1);
+        border-radius: var(--br-50pro);
+      }
+    }
+  }
+}
+
+// point_section ---------------------------------
