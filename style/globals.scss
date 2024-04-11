@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("./reset.css");
+@import url('./reset.css');
 
 // 규칙
 // 셀렉터[어트리뷰트^=”값”] 자정된 어트리뷰트 값으로 시작하는 요소
@@ -15,6 +15,21 @@
 // md : height: 4rem
 // lg : height: 5rem
 // xlg : height: 6rem
+
+// 반응형 사이즈
+// pc
+// @media screen and (max-width: 1920px)
+// @media screen and (max-width: 1500px)
+// @media screen and (max-width: 1200px)
+// 테블릿
+// @media screen and (max-width: 1024px)
+// @media screen and (max-width: 876px)
+// @media screen and (max-width: 768px)
+// 모바일
+// @media screen and (max-width: 640px)
+// @media screen and (max-width: 460px)
+// @media screen and (max-width: 320px)
+// @media screen and (max-width: 280px)
 
 :root {
   // font fam
@@ -209,7 +224,7 @@ img {
 // }
 
 // pc에서 모바일 숨기기
-[class^="mo_"] {
+[class^='mo_'] {
   display: none !important;
 }
 
@@ -354,11 +369,11 @@ button.swiper-pagination-bullet-active {
   // }
 
   // 모바일에서 pc 숨기기
-  [class^="pc_"] {
+  [class^='pc_'] {
     display: none !important;
   }
   // 모바일에서 모바일 생성
-  [class^="mo_"] {
+  [class^='mo_'] {
     display: flex !important;
   }
 

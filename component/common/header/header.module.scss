@@ -18,12 +18,18 @@
   //   display: inline-flex;
   // }
 
+  // left
   .left {
     width: 7rem;
     height: 100%;
     flex-wrap: wrap;
     align-content: space-between;
     transition: all 0.3s;
+
+    // 로고
+    h1 {
+      cursor: pointer;
+    }
 
     // 사이트 맵
     .btn_site_map {
@@ -94,6 +100,7 @@
     }
   }
 
+  // right
   .right {
     opacity: 0;
     width: calc(100vw - 10rem);
@@ -374,6 +381,114 @@
 
     .right {
       opacity: 1;
+    }
+  }
+}
+
+// 모바일 ---------------------------------
+@media screen and (max-width: 640px) {
+  .header {
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 5rem;
+    padding: 0 1rem;
+    border-radius: 0 0 var(--br-15) var(--br-15);
+
+    // left
+    .left {
+      width: 100%;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+
+      // 로고
+      h1 {
+        img {
+          width: 3.5rem;
+          height: 3.5rem;
+        }
+      }
+
+      // 사이트 맵
+      .btn_site_map {
+        width: 3rem;
+        height: 2rem;
+
+        span {
+          height: 0.3rem;
+        }
+      }
+
+      // github
+      .link_git_hub {
+        width: 2rem;
+        height: 2rem;
+        padding: 0;
+      }
+    }
+
+    // right
+    .right {
+      width: 100%;
+      height: calc(100vh - 5rem);
+      padding: 3rem;
+    }
+
+    // 스크롤 다운 시 메뉴 사라짐
+    &.scroll_none {
+      left: 0;
+      top: -5rem;
+    }
+
+    // 사이트 맵 오픈 시 width
+    &.active {
+      height: 100vw;
+      border-color: transparent;
+      border-radius: 0;
+
+      .left {
+        // 사이트 맵
+        .btn_site_map {
+          border-radius: 0;
+
+          span {
+            &:first-of-type {
+              top: 50%;
+              transform: translateY(-50%) rotate(45deg);
+            }
+            &:nth-of-type(2) {
+              opacity: 0;
+            }
+            &:last-of-type {
+              bottom: 50%;
+              transform: translateY(50%) rotate(-45deg);
+            }
+          }
+
+          // hover
+          &:hover {
+            span {
+              &:first-of-type {
+                width: 50%;
+                top: 15%;
+                transform: translateX(-100%) rotate(-45deg);
+              }
+              &:nth-of-type(2) {
+                opacity: 1;
+              }
+              &:last-of-type {
+                width: 50%;
+                bottom: 15%;
+                transform: translateX(-100%) rotate(45deg);
+              }
+            }
+          }
+        }
+      }
+
+      .right {
+        opacity: 1;
+      }
     }
   }
 }
