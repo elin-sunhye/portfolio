@@ -1,0 +1,29 @@
+.swiper {
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+
+  .swiper-slide {
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+    border-radius: var(--br-50) var(--br-50) 0 0;
+    // overflow: hidden;
+    opacity: 1;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 5rem !important;
+  aspect-ratio: 1 / 1;
+  padding: 1rem !important;
+  top: 50% !important;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+.swiper-button-next {
+  right: 0;
+}
