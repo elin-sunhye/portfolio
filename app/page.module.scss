@@ -177,7 +177,7 @@
 
     & > span {
       display: block;
-      border-radius: var(--br-5) var(--br-5) var(--br-5) 25rem;
+      border-radius: var(--br-50);
       border: 1px solid #333;
       aspect-ratio: 1 / 1.5;
     }
@@ -499,7 +499,7 @@
   position: relative;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: -23.396424816vw;
     left: -14.609vw;
@@ -513,7 +513,7 @@
   }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     right: 0;
     top: 0;

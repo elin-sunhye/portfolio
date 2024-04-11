@@ -17,14 +17,16 @@
     &.rolling_txt {
       width: 50rem;
       height: 20rem;
-      border-radius: 10rem;
-      border: 1px solid #333;
+      border-radius: var(--br-100);
+      overflow: hidden;
+      border: 1px solid var(--black);
 
       &:nth-child(2n) {
         width: 80rem;
       }
       &:nth-child(5n) {
-        border-radius: var(--br-15) var(--br-15) var(--br-15) 25rem;
+        border-radius: var(--br-15);
+        overflow: hidden;
         background-color: var(--white);
       }
     }
@@ -78,13 +80,14 @@
   z-index: -1;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: -14.609vw;
     width: 73.568vw;
     height: 73.568vw;
     border-radius: 100%;
+    overflow: hidden;
     background-color: var(--white);
     background-repeat: no-repeat;
     background-position: 0 0;
@@ -92,7 +95,7 @@
   }
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     right: 0;
     top: 0;
@@ -110,8 +113,9 @@
   .explain_box {
     width: 100%;
     aspect-ratio: 1 / 0.4;
-    background-color: var(--black);
+    background-color: var(--gray-3);
     border-radius: 50rem;
+    overflow: hidden;
     position: relative;
 
     .bg_top {
@@ -128,6 +132,7 @@
         aspect-ratio: 1 / 0.5;
         border: 2px solid var(--main-blue-1);
         border-radius: 0 0 var(--br-200) var(--br-200);
+        overflow: hidden;
       }
     }
 
@@ -146,14 +151,168 @@
         aspect-ratio: 1 / 1;
         background-color: var(--main-blue-1);
         border-radius: var(--br-50pro);
+        overflow: hidden;
       }
     }
   }
 }
 
-// point_section ---------------------------------
-.point_section {
-  .point_box {
-    height: 50rem;
+// skill_section ---------------------------------
+.skill_section {
+  .skill_box {
+    height: 70vw;
+    max-height: 100rem;
+    background: url('/project/wiko/img_point_bg.svg') no-repeat center center /
+      cover;
+
+    position: relative;
+
+    & > div {
+      position: absolute;
+      overflow: hidden;
+    }
+
+    .skill_main {
+      width: 20rem;
+      height: 20rem;
+      color: var(--white);
+      background-color: var(--sub-blue-1);
+      border-radius: var(--br-50pro);
+      overflow: hidden;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .skill {
+      width: 35rem;
+      height: 20rem;
+      // height: auto;
+      background-color: var(--white);
+      border-radius: var(--br-10);
+      overflow: hidden;
+
+      &.skill_1,
+      &.skill_2,
+      &.skill_4,
+      &.skill_5 {
+        border: 3px solid var(--gray-3);
+      }
+
+      &.skill_1,
+      &.skill_6 {
+        height: 30rem;
+      }
+
+      &.skill_1 {
+        left: 10%;
+        top: 10%;
+      }
+      &.skill_2 {
+        height: 15rem;
+
+        right: 20%;
+        top: 0;
+      }
+      &.skill_3 {
+        height: 50rem;
+        background: linear-gradient(-45deg, #5084ff, #a5cfff);
+        right: 0;
+        top: 20%;
+      }
+      &.skill_4 {
+        width: 20rem;
+        height: 20rem;
+        right: 5%;
+        bottom: 5%;
+      }
+      &.skill_5 {
+        width: 45rem;
+        left: 20%;
+        bottom: 0;
+      }
+      &.skill_6 {
+        background-color: var(--main-blue-1);
+        left: 0;
+        bottom: 15%;
+      }
+    }
   }
+}
+
+// code_section ---------------------------------
+.code_section {
+  .code_box {
+    gap: 2rem;
+
+    & > div {
+      width: 100%;
+      aspect-ratio: 1 / 2;
+      border: 3px solid var(--gray-3);
+      border-radius: var(--br-10);
+      overflow: hidden;
+
+      &:nth-of-type(2) {
+        border: 0;
+        background-color: var(--main-blue-1);
+      }
+    }
+  }
+}
+
+// point_code_section ---------------------------------
+.point_code_section {
+  .point_code_box {
+    gap: 2rem;
+
+    & > div {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: var(--br-10);
+      overflow: hidden;
+      background-color: var(--sub-blue-1);
+
+      &:nth-of-type(2) {
+        border: 0;
+        border-radius: var(--br-50pro);
+        overflow: hidden;
+        background-color: var(--main-purple-1);
+      }
+    }
+  }
+}
+
+// data_section ---------------------------------
+.data_section {
+  background-color: var(--main-blue-1);
+  border-radius: var(--br-200) var(--br-200) 0 0;
+  overflow: hidden;
+
+  .data_box {
+    width: 100%;
+
+    .data_item {
+      width: 30rem;
+      aspect-ratio: 1 / 1.5;
+      background-color: var(--white);
+      border-radius: var(--br-10);
+      overflow: hidden;
+    }
+  }
+}
+
+// data_code_section ---------------------------------
+.data_code_section {
+  padding-bottom: 0;
+  background-color: var(--main-blue-1);
+
+  .data_code_box {
+    aspect-ratio: 1 / 0.5;
+    position: relative;
+  }
+}
+
+// view_site_section ---------------------------------
+.view_site_section {
+  height: 100vh;
 }
