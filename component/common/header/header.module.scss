@@ -146,6 +146,59 @@
           background-color: var(--sub-pink-1);
         }
 
+        // bg
+        .depth_1_bg {
+          width: 80%;
+          position: absolute;
+          span {
+            display: block;
+            border: 2px solid var(--white);
+          }
+        }
+        .career_bg {
+          aspect-ratio: 1 / 1.5;
+          left: -15%;
+          bottom: -15%;
+
+          span {
+            width: 100%;
+            height: calc(100% / 3);
+            border-radius: 50rem 50rem 0 0;
+          }
+        }
+        .project_bg {
+          aspect-ratio: 1 / 1;
+          flex-wrap: wrap;
+          // right: -10%;
+          right: 40%;
+          top: -5%;
+
+          span {
+            width: 50%;
+            height: calc(100% / 2);
+            border-radius: var(--br-50pro);
+          }
+        }
+        .conponent_bg {
+          width: 120%;
+          aspect-ratio: 1.5 / 1;
+          right: -10%;
+          top: 50%;
+
+          span {
+            height: 100%;
+
+            &:first-of-type {
+              width: calc((100% / 3) * 2);
+              border-radius: var(--br-50pro);
+            }
+            &:last-of-type {
+              width: calc(100% / 3);
+            }
+          }
+        }
+
+        // menu
         .box {
           width: 30rem;
           z-index: 9;
