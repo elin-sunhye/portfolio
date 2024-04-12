@@ -731,13 +731,22 @@
 
   // support_section ---------------------------------
   .support_section {
+    height: auto;
+
     .support_box {
-      height: calc(100% - 10.5rem);
+      width: 100%;
+      height: auto;
       gap: 1rem;
-      flex-wrap: wrap;
 
       a {
-        height: calc((100% / 2) - 1rem);
+        width: 50%;
+        height: auto;
+        aspect-ratio: 1 / 2;
+        border-radius: 0 50rem 50rem 0;
+
+        &:last-of-type {
+          border-radius: 50rem 0 0 50rem;
+        }
 
         svg {
           font-size: var(--fs-18);
@@ -748,6 +757,8 @@
 
   // view_more_section ---------------------------------
   .view_more_section {
+    height: 50vh;
+
     &::before {
       content: unset;
     }
