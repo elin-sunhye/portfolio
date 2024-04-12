@@ -89,3 +89,17 @@
     transform: translateX(0);
   }
 }
+
+// 모바일 ---------------------------------
+@media screen and (max-width: 640px) {
+  // rolling_box
+  .rolling_box {
+    .rolling_list {
+      & > div,
+      & > a,
+      & > button {
+        margin: 0 0.5rem;
+      }
+    }
+  }
+}

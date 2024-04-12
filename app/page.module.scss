@@ -22,6 +22,15 @@
   }
 }
 
+@keyframes upDownAniMo {
+  0% {
+    margin-top: 0;
+  }
+  100% {
+    margin-top: 1rem;
+  }
+}
+
 @keyframes circleSizeAni {
   0% {
     top: -23.396424816vw;
@@ -212,6 +221,7 @@
   .bg_circle,
   .bg_triangle {
     position: absolute;
+    z-index: -1;
   }
 
   .bg_circle {
@@ -539,11 +549,211 @@
   }
 }
 
+// 테블릿 ---------------------------------
 @media screen and (max-width: 1024px) {
   // view_more_section ---------------------------------
   .view_more_section {
     & > span {
       top: 8rem;
+    }
+  }
+}
+
+// 모바일 ---------------------------------
+@media screen and (max-width: 640px) {
+  // 메인 ---------------------------------
+  .main_visual_section {
+    .main_visual_box {
+      height: calc(100vh - 5rem);
+
+      & > span {
+        &:first-of-type {
+          width: 100vh;
+          height: 100vh;
+        }
+
+        &:nth-of-type(2) {
+          width: 20vh;
+          height: 40vh;
+        }
+        &:nth-of-type(3) {
+          width: calc(30vh - 10rem);
+          height: calc(30vh - 10rem);
+        }
+
+        &:last-of-type {
+          width: 40vh;
+          height: 20vh;
+        }
+      }
+    }
+
+    .btn_go_content {
+      margin: 0 auto;
+      @include aniSetting(upDownAniMo);
+
+      svg {
+        font-size: var(--fs-24);
+        color: var(--blakc);
+      }
+    }
+  }
+
+  // 공통 ---------------------------------
+  // scroll_txt
+  .scroll_txt_section {
+    height: 7rem;
+
+    .scroll_txt {
+      width: 700rem;
+      font-size: 7rem;
+    }
+  }
+
+  // top_box
+  .top_box {
+    margin: 0 auto 3rem;
+
+    h3 {
+      font-size: var(--fs-36);
+      margin-bottom: 1rem;
+    }
+    p,
+    span {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: var(--fs-18);
+    }
+  }
+  // scroll_box
+  .scroll_box {
+    height: calc(100% - 17rem);
+    gap: 2rem;
+
+    & > div {
+      width: 25rem;
+      gap: 1rem;
+
+      & > span {
+        display: block;
+        border-radius: var(--br-15);
+      }
+    }
+  }
+
+  // introduce_section ---------------------------------
+  .introduce_section {
+    // top_box
+    .top_box {
+      h3 {
+        letter-spacing: 0.3rem;
+      }
+    }
+
+    // bg
+    .bg_circle {
+      width: 30rem;
+      height: 30rem;
+      left: -10rem;
+      top: -25rem;
+    }
+
+    .bg_triangle {
+      width: 20rem;
+      height: 15rem;
+    }
+
+    // skill
+    .skill_box {
+      padding: 1rem;
+      border-radius: var(--br-15);
+      gap: 1rem;
+
+      & > div:not(.bg_circle) {
+        width: 100%;
+        gap: 1rem;
+        flex-wrap: wrap;
+
+        span {
+          height: 3rem;
+        }
+      }
+    }
+  }
+
+  // career_section ---------------------------------
+  .career_section {
+    .career_box {
+      gap: 2rem;
+
+      .career_slides {
+        width: calc(100vw / 2.5);
+
+        // career_rolling_hover_card
+        .career_rolling_hover_card {
+          p {
+            font-size: var(--fs-16);
+          }
+        }
+      }
+    }
+  }
+
+  // project ---------------------------------
+  .project_wiko_section,
+  .project_2_section,
+  .project_3_section {
+    padding-bottom: 3rem;
+
+    .wrap {
+      flex-wrap: wrap-reverse;
+      align-content: space-between;
+
+      .top_box {
+        width: 100%;
+        text-align: center;
+
+        button {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  // project_2_section ---------------------------------
+  .project_2_section {
+    .wrap {
+      flex-wrap: wrap;
+    }
+  }
+
+  // support_section ---------------------------------
+  .support_section {
+    .support_box {
+      height: calc(100% - 10.5rem);
+      gap: 1rem;
+      flex-wrap: wrap;
+
+      a {
+        height: calc((100% / 2) - 1rem);
+
+        svg {
+          font-size: var(--fs-18);
+        }
+      }
+    }
+  }
+
+  // view_more_section ---------------------------------
+  .view_more_section {
+    &::before {
+      content: unset;
+    }
+
+    &:after {
+      width: 100%;
     }
   }
 }

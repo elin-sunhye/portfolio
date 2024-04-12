@@ -398,6 +398,7 @@
     // left
     .left {
       width: 100%;
+      height: 5rem;
       flex-wrap: nowrap;
       justify-content: space-between;
 
@@ -431,7 +432,7 @@
     .right {
       width: 100%;
       height: calc(100vh - 5rem);
-      padding: 3rem;
+      padding: 0;
     }
 
     // 스크롤 다운 시 메뉴 사라짐
@@ -442,7 +443,7 @@
 
     // 사이트 맵 오픈 시 width
     &.active {
-      height: 100vw;
+      height: 100vh;
       border-color: transparent;
       border-radius: 0;
 

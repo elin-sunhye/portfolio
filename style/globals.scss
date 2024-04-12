@@ -384,7 +384,14 @@ button.swiper-pagination-bullet-active {
 }
 // 모바일
 // @media screen and (max-width: 768px) {}
-// @media screen and (max-width: 640px){}
+@media screen and (max-width: 640px) {
+  .section_padding {
+    padding: 3rem 0;
+  }
+  .wrap {
+    max-width: calc(100% - 2rem);
+  }
+}
 // @media screen and (max-width: 425px){}
 // @media screen and (max-width: 375px){}
 // @media screen and (max-width: 320px){}
