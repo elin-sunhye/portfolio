@@ -6,6 +6,10 @@ import SubTop from '@/component/common/subTop/SubTop';
 import Rolling from '@/component/common/rolling/Rolling';
 import { MdFactory, MdFlight } from 'react-icons/md';
 import { TbWorld } from 'react-icons/tb';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
+import { Btn } from '@/component/common/btn/Btn';
+import LastSection from '@/component/lastSection/LastSection';
 
 // react-swiper
 import { Swiper, SwiperSlide } from 'swiper/react'; // basic
@@ -13,10 +17,7 @@ import 'swiper/css'; //basic
 import 'swiper/swiper-bundle.css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { useRef } from 'react';
-import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
-import { Btn } from '@/component/common/btn/Btn';
 
 export default function Wiko() {
   // sub_top ---------------------------------
@@ -142,7 +143,7 @@ export default function Wiko() {
 
       {/* explain_section --------------------------------- */}
       <section className={`section_padding ${style.explain_section}`}>
-        <div className={style.top_box}>
+        <div className={`top_box`}>
           <h3>주조 어쩌고 저쩌고 짠</h3>
         </div>
 
@@ -163,7 +164,7 @@ export default function Wiko() {
 
       {/* skill_sections --------------------------------- */}
       <section className={`section_padding ${style.skill_section}`}>
-        <div className={style.top_box}>
+        <div className={`top_box`}>
           <p>Technology Stack</p>
           <span>가나다 나다 가가라</span>
         </div>
@@ -181,7 +182,7 @@ export default function Wiko() {
 
       {/* code_section --------------------------------- */}
       <section className={`section_padding ${style.code_section}`}>
-        <div className={style.top_box}>
+        <div className={`top_box`}>
           <p>code</p>
           <span>코드 어쩌고 저쩌고</span>
         </div>
@@ -196,7 +197,7 @@ export default function Wiko() {
 
       {/* point_code_section --------------------------------- */}
       <section className={`section_padding ${style.point_code_section}`}>
-        <div className={style.top_box}>
+        <div className={`top_box`}>
           <p>point code</p>
           <span>코드 어쩌고 저쩌고</span>
         </div>
@@ -209,7 +210,7 @@ export default function Wiko() {
 
       {/* data_section --------------------------------- */}
       <section className={`section_padding ${style.data_section}`}>
-        <div className={style.top_box}>
+        <div className={`top_box`}>
           <p>database</p>
           <span>data 어쩌고 저쩌고</span>
         </div>
@@ -231,7 +232,7 @@ export default function Wiko() {
 
       {/* data_code_section --------------------------------- */}
       <section className={`section_padding ${style.data_code_section}`}>
-        <div className={style.top_box}>
+        <div className={`top_box`}>
           <p>database</p>
           <span>data 어쩌고 저쩌고</span>
         </div>
@@ -275,25 +276,19 @@ export default function Wiko() {
       </section>
 
       {/* view_site_section --------------------------------- */}
-      <section
-        className={`section_padding flex_center ${style.view_site_section}`}
-      >
-        <div className={style.top_box}>
-          <h3>주조 어쩌고 저쩌고 짠</h3>
-          <span>보러고고</span>
-          <Btn
-            href={'http://wiko.co.kr'}
-            type={'link'}
-            title={'view site'}
-            id={'viewSite'}
-            btnType={'text'}
-            hover={false}
-            className={style.btn_go_page}
-            btnBg="var(--black)"
-            btnColor="var(--white)"
-          />
-        </div>
-      </section>
+      <LastSection title="주조 어쩌고 저쩌고 짠" explain="보러고고">
+        <Btn
+          href={'http://wiko.co.kr'}
+          type={'link'}
+          title={'view site'}
+          id={'viewSite'}
+          btnType={'text'}
+          hover={false}
+          className={'btn_go_page'}
+          btnBg="var(--black)"
+          btnColor="var(--white)"
+        />
+      </LastSection>
     </>
   );
 }
