@@ -135,39 +135,19 @@
 
 // top_box
 .top_box {
-  width: fit-content;
-  margin: 0 auto 10rem;
-  text-align: center;
-
   h3 {
-    font-size: var(--fs-60);
-    font-weight: 900;
     -webkit-text-stroke: 2px var(--black);
-    margin-bottom: 1.5rem;
-  }
-  p,
-  span {
-    display: block;
-    margin-bottom: 2rem;
+    letter-spacing: unset;
   }
 
   p {
     font-size: var(--fs-24);
-    font-weight: bold;
   }
   span {
     font-size: var(--fs-14);
   }
-
-  .btn_go_page {
-    width: fit-content;
-    margin: 0 auto;
-
-    &:hover {
-      background-color: var(--main-orange-1) !important;
-    }
-  }
 }
+
 // scroll_box
 .scroll_box {
   gap: 3rem;
@@ -502,61 +482,8 @@
   }
 }
 
-// view_more_section ---------------------------------
-.view_more_section {
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: -23.396424816vw;
-    left: -14.609vw;
-    width: 73.568vw;
-    height: 73.568vw;
-    border-radius: 100%;
-    background-color: #c4e5ae;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: cover;
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 50%;
-    background-color: #c4e5ae;
-    background-size: cover;
-  }
-
-  &.scroll {
-    &::before {
-      animation-name: circleSizeAni;
-      animation-duration: 1s;
-      animation-iteration-count: 1;
-      animation-fill-mode: forwards;
-    }
-  }
-
-  .top_box {
-    margin: 0;
-    position: relative;
-    z-index: 3;
-  }
-}
-
 // 테블릿 ---------------------------------
 @media screen and (max-width: 1024px) {
-  // view_more_section ---------------------------------
-  .view_more_section {
-    & > span {
-      top: 8rem;
-    }
-  }
 }
 
 // 모바일 ---------------------------------
@@ -610,23 +537,6 @@
     }
   }
 
-  // top_box
-  .top_box {
-    margin: 0 auto 3rem;
-
-    h3 {
-      font-size: var(--fs-36);
-      margin-bottom: 1rem;
-    }
-    p,
-    span {
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: var(--fs-18);
-    }
-  }
   // scroll_box
   .scroll_box {
     height: calc(100% - 17rem);
@@ -715,6 +625,10 @@
         width: 100%;
         text-align: center;
 
+        p {
+          font-size: var(--fs-20);
+        }
+
         button {
           margin: 0 auto;
         }
@@ -752,19 +666,6 @@
           font-size: var(--fs-18);
         }
       }
-    }
-  }
-
-  // view_more_section ---------------------------------
-  .view_more_section {
-    height: 50vh;
-
-    &::before {
-      content: unset;
-    }
-
-    &:after {
-      width: 100%;
     }
   }
 }

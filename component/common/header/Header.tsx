@@ -213,7 +213,15 @@ export default function HeaderClient({}: HeaderClientProps) {
                               //     : 'flex_start'
                               // }
                             >
-                              <Link href={two.url}>
+                              <Link
+                                href={
+                                  two.hasChild
+                                    ? depth3.find(
+                                        (three) => three.parentSeq === two.seq
+                                      )?.url || ''
+                                    : two.url
+                                }
+                              >
                                 {two.menu}
                                 <span>
                                   {two.menu === 'DEPS'

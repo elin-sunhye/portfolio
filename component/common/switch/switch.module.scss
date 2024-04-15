@@ -1,0 +1,55 @@
+.switch_box {
+  gap: 1rem;
+
+  input[type='checkbox'] {
+    & + label {
+      cursor: pointer;
+      border-radius: var(--br-50);
+      overflow: hidden;
+      aspect-ratio: 2 / 1;
+      background-color: var(--gray-3);
+      transition: all 0.25s;
+      position: relative;
+
+      &::before {
+        content: '';
+        height: 85%;
+        aspect-ratio: 1 / 1;
+        background-color: var(--white);
+        border-radius: var(--br-50pro);
+        position: absolute;
+        left: 5%;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all 0.25s;
+      }
+
+      &.sm {
+        height: 3rem;
+      }
+      &.md {
+        height: 4rem;
+      }
+      &.lg {
+        height: 5rem;
+      }
+      &.xlg {
+        height: 6rem;
+      }
+    }
+
+    // check
+    &:checked + label {
+      background-color: var(--main-orange-1);
+
+      &::before {
+        left: 52.5%;
+      }
+    }
+
+    // disabled
+    &:disabled + label {
+      cursor: default;
+    }
+  }
+}

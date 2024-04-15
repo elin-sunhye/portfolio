@@ -1,6 +1,6 @@
 'use client';
 
-import style from './wiko.module.scss';
+import style from './wisdom.module.scss';
 import './swiper.scss';
 import SubTop from '@/component/common/subTop/SubTop';
 import Rolling from '@/component/common/rolling/Rolling';
@@ -18,41 +18,9 @@ import 'swiper/swiper-bundle.css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
 import { useRef } from 'react';
+import Switch from '@/component/common/switch/Switch';
 
-export default function Wiko() {
-  // sub_top ---------------------------------
-  const rollingItem1: { string: string; tag: JSX.Element }[] = [
-    { string: '123123123', tag: <></> },
-    { string: '', tag: <MdFlight role="img" aria-label="비행기 아이콘" /> },
-    { string: 'axdjh1', tag: <></> },
-    { string: 'alsald', tag: <></> },
-    {
-      string: '',
-      tag: <TbWorld role="img" aria-label="세계 아이콘" />,
-    },
-    { string: 'bdfbsvxcv', tag: <></> },
-    { string: 'csvsu7l', tag: <></> },
-    { string: '26md f', tag: <></> },
-    { string: '', tag: <MdFactory role="img" aria-label="공장 아이콘" /> },
-    { string: 'sdfe wgw', tag: <></> },
-  ];
-
-  const rollingItem2: { string: string; tag: JSX.Element }[] = [
-    { string: '', tag: <MdFlight role="img" aria-label="비행기 아이콘" /> },
-    { string: 'axdjh1', tag: <></> },
-    { string: '123123123', tag: <></> },
-    { string: 'alsald', tag: <></> },
-    {
-      string: '',
-      tag: <TbWorld role="img" aria-label="세계 아이콘" />,
-    },
-    { string: 'bdfbsvxcv', tag: <></> },
-    { string: '', tag: <MdFactory role="img" aria-label="공장 아이콘" /> },
-    { string: 'csvsu7l', tag: <></> },
-    { string: '26md f', tag: <></> },
-    { string: 'sdfe wgw', tag: <></> },
-  ];
-
+export default function Wisdom() {
   // data_section ---------------------------------
   // swiper
   const carreerRef = useRef(null);
@@ -80,84 +48,45 @@ export default function Wiko() {
           'rkskrkskrkrsm saja <br />jsgd asgd gasgd asg asdasdajsdh asjdha s'
         }
         linkBtn={{
-          href: 'http://wiko.co.kr',
+          href: 'http://deps.kr',
           title: 'view stie',
-          id: 'btnWiko',
+          id: 'btnWisdom',
           className: style.btn_link,
+          scss: { backgroundColor: 'var(--main-blue-1)' },
         }}
-        bgColor="var(--main-blue-1)"
       >
-        <div className={`flex_start ${style.sub_top_inner}`}>
-          <Rolling hoverStop={false} speed="120s">
-            {rollingItem1.map((item, idx: number) => {
-              if (item.string === '') {
-                return (
-                  <div
-                    key={`ico_${idx}`}
-                    className={`${style.rolling_item} ${style.rolling_ico}`}
-                  >
-                    {item.tag}
-                  </div>
-                );
-              } else {
-                return (
-                  <div
-                    key={`txt_${idx}`}
-                    className={`${style.rolling_item} ${style.rolling_txt}`}
-                  >
-                    {item.string}
-                  </div>
-                );
-              }
-            })}
-          </Rolling>
-
-          <Rolling hoverStop={false} deirection="right" speed="120s">
-            {rollingItem2.map((item, idx: number) => {
-              if (item.string === '') {
-                return (
-                  <div
-                    key={`ico_${idx}`}
-                    className={`${style.rolling_item} ${style.rolling_ico}`}
-                  >
-                    {item.tag}
-                  </div>
-                );
-              } else {
-                return (
-                  <div
-                    key={`txt_${idx}`}
-                    className={`${style.rolling_item} ${style.rolling_txt}`}
-                  >
-                    {item.string}
-                  </div>
-                );
-              }
-            })}
-          </Rolling>
-        </div>
+        <Rolling hoverStop={false} speed="120s">
+          <div className={style.rolling_item}></div>
+          <div className={style.rolling_item}></div>
+          <div className={style.rolling_item}></div>
+          <div className={style.rolling_item}></div>
+          <div className={style.rolling_item}></div>
+          <div className={style.rolling_item}></div>
+        </Rolling>
       </SubTop>
 
-      {/* bg_section --------------------------------- */}
-      <section className={style.bg_section}></section>
-
-      {/* explain_section --------------------------------- */}
-      <section className={`section_padding ${style.explain_section}`}>
+      {/* first_section --------------------------------- */}
+      <section className={`section_padding ${style.first_section}`}>
         <div className={`top_box`}>
-          <h3>주조 어쩌고 저쩌고 짠</h3>
+          <span className="point">dskhf sdjfhsjdk asdfh</span>
+          <h3>어쩌고 저쩌고 짠</h3>
+          <p>asdasdasdasdasdasdasd</p>
         </div>
 
-        <div className={`wrap ${style.explain_box}`}>
-          <div className={style.bg_top}>
-            <span></span>
-            <span></span>
-          </div>
+        <span className={style.bg_top}></span>
 
-          <div className={`flex_start ${style.bg_bottom}`}>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+        <div className={`wrap flex_center ${style.first_box}`}>
+          <div className={style.left}></div>
+          <div className={style.right}>
+            <Switch
+              id={''}
+              labelNm={'관리자'}
+              value={''}
+              ref={null}
+              size="xlg"
+              checked={true}
+              disabled={true}
+            />
           </div>
         </div>
       </section>
@@ -284,27 +213,7 @@ export default function Wiko() {
         </div>
 
         <Rolling>
-          {rollingItem1.map((item, idx: number) => {
-            if (item.string === '') {
-              return (
-                <div
-                  key={`ico_${idx}`}
-                  className={`${style.rolling_item} ${style.rolling_ico}`}
-                >
-                  {item.tag}
-                </div>
-              );
-            } else {
-              return (
-                <div
-                  key={`txt_${idx}`}
-                  className={`${style.rolling_item} ${style.rolling_txt}`}
-                >
-                  {item.string}
-                </div>
-              );
-            }
-          })}
+          <></>
         </Rolling>
       </section>
 

@@ -347,6 +347,48 @@ button.swiper-pagination-bullet-active {
 //   opacity: 0.7;
 // }
 
+// top_box
+.top_box {
+  width: fit-content;
+  margin: 0 auto 10rem;
+  text-align: center;
+
+  .point {
+    color: var(--main-orange-1);
+    margin-bottom: 1.5rem;
+  }
+
+  h3 {
+    font-size: var(--fs-60);
+    font-weight: 900;
+    letter-spacing: 0.3rem;
+    margin-bottom: 1.5rem;
+  }
+  p,
+  span {
+    display: block;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-size: var(--fs-48);
+    font-weight: bold;
+  }
+  span {
+    font-size: var(--fs-20);
+  }
+}
+
+// 공통 버튼
+.btn_go_page {
+  width: fit-content;
+  margin: 0 auto;
+
+  &:hover {
+    background-color: var(--main-orange-1) !important;
+  }
+}
+
 // @media (prefers-color-scheme: dark) {
 //   html {
 //     color-scheme: dark;
@@ -381,6 +423,26 @@ button.swiper-pagination-bullet-active {
   .section_padding {
     padding: 8rem 0;
   }
+
+  // top_box
+  .top_box {
+    margin: 0 auto 7rem;
+
+    h3 {
+      font-size: var(--fs-48);
+    }
+    p,
+    span {
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: var(--fs-36);
+    }
+    span {
+      font-size: var(--fs-18);
+    }
+  }
 }
 // 모바일
 // @media screen and (max-width: 768px) {}
@@ -390,6 +452,31 @@ button.swiper-pagination-bullet-active {
   }
   .wrap {
     max-width: calc(100% - 2rem);
+  }
+
+  // top_box
+  .top_box {
+    margin: 0 auto 3rem;
+
+    .point {
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: var(--fs-36);
+      margin-bottom: 1rem;
+    }
+    p,
+    span {
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: var(--fs-20);
+    }
+    span {
+      font-size: var(--fs-14);
+    }
   }
 }
 // @media screen and (max-width: 425px){}

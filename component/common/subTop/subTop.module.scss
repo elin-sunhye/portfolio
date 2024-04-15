@@ -13,5 +13,24 @@
   .btn_link {
     width: fit-content;
     margin-bottom: 8%;
+    margin: 0 auto;
+  }
+
+  .cont {
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .sub_top {
+    margin-top: 3rem;
+
+    h3 {
+      font-size: var(--fs-60);
+    }
+
+    .cont {
+      margin-top: 1rem;
+    }
   }
 }

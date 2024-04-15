@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import style from "./subTop.module.scss";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { FiExternalLink } from "react-icons/fi";
-import { Btn } from "../btn/Btn";
+import style from './subTop.module.scss';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { FiExternalLink } from 'react-icons/fi';
+import { Btn } from '../btn/Btn';
 
 // dummyData
-import menuData from "@/dummyData/menu.json";
+import menuData from '@/dummyData/menu.json';
 
 interface SubTopProps {
   explain: string;
@@ -15,7 +15,7 @@ interface SubTopProps {
     href: string;
     title: string;
     id: string;
-    btnSize?: "sm" | "md" | "xlg";
+    btnSize?: 'sm' | 'md' | 'xlg';
 
     //
     className?: string;
@@ -62,10 +62,10 @@ export default function SubTop({
   const pathNm = usePathname();
 
   // TODO: 메뉴 api 연결 후 다시 작업
-  const [curMenu, setCurMenu] = useState("");
+  const [curMenu, setCurMenu] = useState('');
   useEffect(() => {
     if (menuData) {
-      setCurMenu(menuData.find((mnm) => mnm.url === pathNm)?.menu || "");
+      setCurMenu(menuData.find((mnm) => mnm.url === pathNm)?.menu || '');
     }
   }, [
     pathNm,
@@ -76,37 +76,42 @@ export default function SubTop({
     <div
       className={`section_padding ${style.sub_top}`}
       style={{
-        backgroundColor: bgColor ? bgColor : "var(--white)",
+        backgroundColor: bgColor ? bgColor : 'var(--white)',
       }}
     >
-      <h3 style={{ color: color ? color : "var(--black)" }}>{curMenu}</h3>
-      <p style={{ color: color ? color : "var(--black)" }}>
-        {explain.split("<br />").map((txt: string, idx: number) => {
-          return (
-            <span key={`txt_${idx}`}>
-              {txt} <br />
-            </span>
-          );
-        })}
+      <h3 style={{ color: color ? color : 'var(--black)' }}>{curMenu}</h3>
+      <p style={{ color: color ? color : 'var(--black)' }}>
+        {explain.includes('<br />') ? (
+          explain.split('<br />').map((txt: string, idx: number) => {
+            return (
+              <span key={`txt_${idx}`}>
+                {txt} <br />
+              </span>
+            );
+          })
+        ) : (
+          <span>{explain}</span>
+        )}
       </p>
       {linkBtn ? (
         <Btn
-          type={"link"}
+          type={'link'}
           href={linkBtn.href}
           title={linkBtn.title}
           id={linkBtn.id}
-          btnType={"all"}
+          btnType={'all'}
           ico={<FiExternalLink role="img" aria-label="새창 아이콘" />}
           hover={true}
-          className={`${linkBtn.className ? linkBtn.className : ""} ${
+          className={`${linkBtn.className ? linkBtn.className : ''} ${
             style.btn_link
           }`}
           btnSize={linkBtn.btnSize ? linkBtn.btnSize : undefined}
+          scss={linkBtn.scss ? linkBtn.scss : {}}
         />
       ) : (
         <></>
       )}
-      <div>{children}</div>
+      <div className={style.cont}>{children}</div>
     </div>
   );
 }
