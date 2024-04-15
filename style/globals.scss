@@ -353,6 +353,11 @@ button.swiper-pagination-bullet-active {
   margin: 0 auto 10rem;
   text-align: center;
 
+  .point {
+    color: var(--main-orange-1);
+    margin-bottom: 1.5rem;
+  }
+
   h3 {
     font-size: var(--fs-60);
     font-weight: 900;
@@ -452,6 +457,10 @@ button.swiper-pagination-bullet-active {
   // top_box
   .top_box {
     margin: 0 auto 3rem;
+
+    .point {
+      margin-bottom: 1rem;
+    }
 
     h3 {
       font-size: var(--fs-36);

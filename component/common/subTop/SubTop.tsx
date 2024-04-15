@@ -106,11 +106,12 @@ export default function SubTop({
             style.btn_link
           }`}
           btnSize={linkBtn.btnSize ? linkBtn.btnSize : undefined}
+          scss={linkBtn.scss ? linkBtn.scss : {}}
         />
       ) : (
         <></>
       )}
-      <div>{children}</div>
+      <div className={style.cont}>{children}</div>
     </div>
   );
 }

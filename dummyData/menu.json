@@ -22,9 +22,9 @@
   {
     "seq": 100,
     "parentSeq": 10,
-    "menu": "STX",
-    "url": "/career/deps/stx",
-    "title": "STX엔진 SSC 시스템 구축 바로가기",
+    "menu": "WISDOM",
+    "url": "/career/deps/wisdom",
+    "title": "경남대학교 LINC3.0 사업단 WISDOM 플랫폼 바로가기",
     "hasChild": false,
     "depth": 3,
     "sort": 1
@@ -32,9 +32,9 @@
   {
     "seq": 101,
     "parentSeq": 10,
-    "menu": "HOMEPAGE",
-    "url": "/career/deps/homepage",
-    "title": "뎁스 홈페이지 바로가기",
+    "menu": "gncar",
+    "url": "/career/deps/gncar",
+    "title": "경남대학교 LINC3.0 사업단 WISDOM 플랫폼 바로가기",
     "hasChild": false,
     "depth": 3,
     "sort": 2
@@ -42,9 +42,9 @@
   {
     "seq": 102,
     "parentSeq": 10,
-    "menu": "3DSANDAN",
-    "url": "/career/deps/3Dsandan",
-    "title": "경남 창원 3D산단 디지털 플랫폼 바로가기",
+    "menu": "gnwp",
+    "url": "/career/deps/gnwp",
+    "title": "경남대학교 LINC3.0 사업단 WISDOM 플랫폼 바로가기",
     "hasChild": false,
     "depth": 3,
     "sort": 3
@@ -62,9 +62,9 @@
   {
     "seq": 104,
     "parentSeq": 10,
-    "menu": "GNTP",
-    "url": "/career/deps/gntp",
-    "title": "경남 통합 일자리 플랫폼 바로가기",
+    "menu": "3DSANDAN",
+    "url": "/career/deps/3Dsandan",
+    "title": "경남 창원 3D산단 디지털 플랫폼 바로가기",
     "hasChild": false,
     "depth": 3,
     "sort": 5
@@ -72,9 +72,9 @@
   {
     "seq": 105,
     "parentSeq": 10,
-    "menu": "GNCAR",
-    "url": "/career/deps/gncar",
-    "title": "버추얼 개발 기술지원 플랫폼 바로가기",
+    "menu": "HOMEPAGE",
+    "url": "/career/deps/homepage",
+    "title": "뎁스 홈페이지 바로가기",
     "hasChild": false,
     "depth": 3,
     "sort": 6
@@ -82,13 +82,14 @@
   {
     "seq": 106,
     "parentSeq": 10,
-    "menu": "WISDOM",
-    "url": "/career/deps/wisdom",
-    "title": "경남대학교 LINC3.0 사업단 WISDOM 플랫폼 바로가기",
+    "menu": "STX",
+    "url": "/career/deps/stx",
+    "title": "STX엔진 SSC 시스템 구축 바로가기",
     "hasChild": false,
     "depth": 3,
     "sort": 7
   },
+
   {
     "seq": 11,
     "parentSeq": 1,

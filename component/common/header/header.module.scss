@@ -261,6 +261,7 @@
           width: 150%;
 
           .box {
+            z-index: 999;
             opacity: 1;
           }
         }
@@ -495,15 +496,6 @@
                   }
                 }
               }
-            }
-          }
-
-          // hover
-          &:hover {
-            width: 150%;
-
-            .box {
-              opacity: 1;
             }
           }
         }

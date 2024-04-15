@@ -1,7 +1,4 @@
 // sub_top ---------------------------------
-.btn_link {
-  margin: 0 auto;
-}
 .sub_top_inner {
   flex-wrap: wrap;
   gap: 1rem;
@@ -273,6 +270,8 @@
     position: relative;
   }
 }
+
+// preview_section ---------------------------------
 
 @media screen and (max-width: 1024px) {
   // bg_section ---------------------------------

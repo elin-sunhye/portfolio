@@ -1,0 +1,55 @@
+.swiper {
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+  border-radius: var(--br-50) var(--br-50) 0 0;
+  overflow: hidden;
+
+  .swiper-slide {
+    width: 100%;
+    height: 100%;
+    background-color: var(--white);
+
+    // overflow: hidden;
+    opacity: 1;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 5rem !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+  padding: 1rem !important;
+  top: 50% !important;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+.swiper-button-next {
+  right: 0;
+}
+
+@media screen and (max-width: 640px) {
+  .swiper {
+    width: 100%;
+    border-radius: var(--br-15) var(--br-15) 0 0;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 3rem !important;
+    aspect-ratio: 1 / 1;
+    padding: 0.5rem !important;
+    top: 50% !important;
+    background-color: transparent;
+  }
+
+  .swiper-button-prev {
+    left: 0;
+  }
+  .swiper-button-next {
+    right: 0;
+  }
+}
