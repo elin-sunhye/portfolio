@@ -91,82 +91,48 @@ export default function Wisdom() {
         </div>
       </section>
 
-      {/* skill_sections --------------------------------- */}
-      <section className={`section_padding ${style.skill_section}`}>
+      {/* sec_sections --------------------------------- */}
+      <section className={`section_padding ${style.sec_sections}`}>
         <div className={`top_box`}>
-          <p>Technology Stack</p>
-          <span>가나다 나다 가가라</span>
+          <span className="point">dskhf sdjfhsjdk asdfh</span>
+          <h3>어쩌고 저쩌고 짠</h3>
+          <p>asdasdasdasdasdasdasd</p>
         </div>
 
-        <div className={`wrap ${style.skill_box}`}>
-          <div className={`flex_center ${style.skill_main}`}>사이트</div>
-          <div className={`${style.skill} ${style.skill_1}`}>REACT</div>
-          <div className={`${style.skill} ${style.skill_2}`}>REACT</div>
-          <div className={`${style.skill} ${style.skill_3}`}>REACT</div>
-          <div className={`${style.skill} ${style.skill_4}`}>REACT</div>
-          <div className={`${style.skill} ${style.skill_5}`}>REACT</div>
-          <div className={`${style.skill} ${style.skill_6}`}>REACT</div>
+        <div className={`wrap flex_center ${style.sec_box}`}>
+          <div className={style.row}>
+            <div></div>
+            <div></div>
+          </div>
+          <div className={style.row}>
+            <div></div>
+            <div></div>
+          </div>
+          <div className={style.row}>
+            <div></div>
+            <div></div>
+          </div>
         </div>
       </section>
 
-      {/* code_section --------------------------------- */}
-      <section className={`section_padding ${style.code_section}`}>
-        <div className={`top_box`}>
-          <p>code</p>
-          <span>코드 어쩌고 저쩌고</span>
-        </div>
-
-        <div className={`wrap flex_start ${style.code_box}`}>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
+      {/* third_section --------------------------------- */}
+      <section className={`section_padding ${style.third_section}`}>
+        <div className={`wrap flex_center ${style.third_box}`}>
+          <div className={`top_box ${style.top_box}`}>
+            <p>code</p>
+            <span>코드 어쩌고 저쩌고</span>
+          </div>
         </div>
       </section>
 
-      {/* point_code_section --------------------------------- */}
-      <section className={`section_padding ${style.point_code_section}`}>
-        <div className={`top_box`}>
-          <p>point code</p>
-          <span>코드 어쩌고 저쩌고</span>
-        </div>
-
-        <div className={`wrap flex_start ${style.point_code_box}`}>
-          <div></div>
-          <div></div>
-        </div>
-      </section>
-
-      {/* data_section --------------------------------- */}
-      <section className={`section_padding ${style.data_section}`}>
+      {/* fourth_section --------------------------------- */}
+      <section className={`section_padding ${style.fourth_section}`}>
         <div className={`top_box`}>
           <p>database</p>
           <span>data 어쩌고 저쩌고</span>
         </div>
 
-        <div className={`wrap ${style.data_box}`}>
-          <Rolling hoverStop={false} speed="90s">
-            <div className={style.data_item}>1123</div>
-            <div className={style.data_item}>sdf</div>
-            <div className={style.data_item}>135346</div>
-            <div className={style.data_item}>dfhg43</div>
-            <div className={style.data_item}>@$&^*</div>
-            <div className={style.data_item}>sdfv</div>
-            <div className={style.data_item}>125ygbe</div>
-            <div className={style.data_item}>1f4f</div>
-            <div className={style.data_item}>gn576</div>
-          </Rolling>
-        </div>
-      </section>
-
-      {/* data_code_section --------------------------------- */}
-      <section className={`section_padding ${style.data_code_section}`}>
-        <div className={`top_box`}>
-          <p>database</p>
-          <span>data 어쩌고 저쩌고</span>
-        </div>
-
-        <div className={`wrap ${style.data_code_box}`}>
+        <div className={`wrap ${style.fourth_box}`}>
           <Swiper {...swiperParams} ref={carreerRef}>
             <SwiperSlide>1</SwiperSlide>
             <SwiperSlide>2</SwiperSlide>
@@ -204,17 +170,28 @@ export default function Wisdom() {
         </div>
       </section>
 
-      {/* preview_section --------------------------------- */}
-      <section className={`section_padding ${style.preview_section}`}>
+      {/* sec_sections --------------------------------- */}
+      <section className={`section_padding ${style.sec_sections}`}>
         <div className={`top_box`}>
-          <h3>asdasdq35</h3>
-          <p>database</p>
-          <span>data 어쩌고 저쩌고</span>
+          <span className="point">dskhf sdjfhsjdk asdfh</span>
+          <h3>어쩌고 저쩌고 짠</h3>
+          <p>asdasdasdasdasdasdasd</p>
         </div>
 
-        <Rolling>
-          <></>
-        </Rolling>
+        <div className={`wrap flex_center ${style.sec_box}`}>
+          <div className={style.row}>
+            <div></div>
+            <div></div>
+          </div>
+          <div className={style.row}>
+            <div></div>
+            <div></div>
+          </div>
+          <div className={style.row}>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
       </section>
 
       {/* view_site_section --------------------------------- */}
