@@ -12,8 +12,6 @@ import menuData from '@/dummyData/menu.json';
 interface SubTopProps {
   explain: string;
   linkBtn?: {
-    href: string;
-    title: string;
     id: string;
     btnSize?: 'sm' | 'md' | 'xlg';
 
@@ -61,17 +59,6 @@ export default function SubTop({
   //
   const pathNm = usePathname();
 
-  // TODO: 메뉴 api 연결 후 다시 작업
-  const [curMenu, setCurMenu] = useState('');
-  useEffect(() => {
-    if (menuData) {
-      setCurMenu(menuData.find((mnm) => mnm.url === pathNm)?.menu || '');
-    }
-  }, [
-    pathNm,
-    // menuData
-  ]);
-
   return (
     <div
       className={`section_padding ${style.sub_top}`}
@@ -79,7 +66,9 @@ export default function SubTop({
         backgroundColor: bgColor ? bgColor : 'var(--white)',
       }}
     >
-      <h3 style={{ color: color ? color : 'var(--black)' }}>{curMenu}</h3>
+      <h3 style={{ color: color ? color : 'var(--black)' }}>
+        {menuData.find((mnm) => mnm.url === pathNm)?.menu || ''}
+      </h3>
       <p style={{ color: color ? color : 'var(--black)' }}>
         {explain.includes('<br />') ? (
           explain.split('<br />').map((txt: string, idx: number) => {
@@ -96,8 +85,8 @@ export default function SubTop({
       {linkBtn ? (
         <Btn
           type={'link'}
-          href={linkBtn.href}
-          title={linkBtn.title}
+          href={menuData.find((mnm) => mnm.url === pathNm)?.site || ''}
+          title={'view stie'}
           id={linkBtn.id}
           btnType={'all'}
           ico={<FiExternalLink role="img" aria-label="새창 아이콘" />}

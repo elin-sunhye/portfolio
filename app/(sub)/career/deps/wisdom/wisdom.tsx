@@ -45,23 +45,28 @@ export default function Wisdom() {
       {/* sub_top --------------------------------- */}
       <SubTop
         explain={
-          'rkskrkskrkrsm saja <br />jsgd asgd gasgd asg asdasdajsdh asjdha s'
+          '경남대학교와 지역기관, 산업체의 협업체계가 보다 쉽게 이어질 수 있도록 연결합니다.'
         }
         linkBtn={{
-          href: 'http://deps.kr',
-          title: 'view stie',
           id: 'btnWisdom',
           className: style.btn_link,
           scss: { backgroundColor: 'var(--main-blue-1)' },
         }}
       >
         <Rolling hoverStop={false} speed="120s">
-          <div className={style.rolling_item}></div>
-          <div className={style.rolling_item}></div>
-          <div className={style.rolling_item}></div>
-          <div className={style.rolling_item}></div>
-          <div className={style.rolling_item}></div>
-          <div className={style.rolling_item}></div>
+          <div className={`${style.rolling_item} ${style.rolling_first}`}></div>
+          <div
+            className={`flex_between ${style.rolling_item} ${style.rolling_chart}`}
+          >
+            <span></span>
+            <span></span>
+          </div>
+          <div
+            className={`${style.rolling_item} ${style.rolling_circle}`}
+          ></div>
+          {/* <div className={`${style.rolling_item} ${style.rolling_}`}></div>
+          <div className={`${style.rolling_item} ${style.rolling_}`}></div>
+          <div className={`${style.rolling_item} ${style.rolling_}`}></div> */}
         </Rolling>
       </SubTop>
 
