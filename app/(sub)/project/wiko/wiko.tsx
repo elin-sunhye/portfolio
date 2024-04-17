@@ -80,8 +80,6 @@ export default function Wiko() {
           'rkskrkskrkrsm saja <br />jsgd asgd gasgd asg asdasdajsdh asjdha s'
         }
         linkBtn={{
-          href: 'http://wiko.co.kr',
-          title: 'view stie',
           id: 'btnWiko',
           className: style.btn_link,
         }}
