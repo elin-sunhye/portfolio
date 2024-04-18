@@ -4,27 +4,51 @@ import style from './wisdom.module.scss';
 import './swiper.scss';
 import SubTop from '@/component/common/subTop/SubTop';
 import Rolling from '@/component/common/rolling/Rolling';
-import { MdFactory, MdFlight } from 'react-icons/md';
-import { TbWorld } from 'react-icons/tb';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
 import { Btn } from '@/component/common/btn/Btn';
 import LastSection from '@/component/lastSection/LastSection';
+import { useEffect, useRef, useState } from 'react';
+import Switch from '@/component/common/switch/Switch';
+import Image from 'next/image';
 
 // react-swiper
-import { Swiper, SwiperSlide } from 'swiper/react'; // basic
+import { Swiper, SwiperSlide } from 'swiper/react'; // basics
+import {
+  Navigation,
+  Pagination,
+  Scrollbar,
+  A11y,
+  Autoplay,
+  EffectFade,
+} from 'swiper/modules';
 import 'swiper/css'; //basic
 import 'swiper/swiper-bundle.css';
 import 'swiper/css/navigation';
 import 'swiper/css/autoplay';
-import { useRef } from 'react';
-import Switch from '@/component/common/switch/Switch';
+import 'swiper/css/effect-fade';
 
 export default function Wisdom() {
   // data_section ---------------------------------
   // swiper
+  const technologyRef = useRef(null);
   const carreerRef = useRef(null);
   // setting
+  const swiperAutoParams = {
+    modules: [Autoplay, EffectFade],
+    spaceBetween: 0, // 슬라이드 사이 여백
+    speed: 1000,
+    loop: true,
+    loopAdditionalSlides: 1,
+    slidesPerView: 1, //  한 슬라이드에 보여줄 개수
+    effect: 'fade',
+    allowTouchMove: false, // false시에 스와이핑이 되지 않으며 버튼으로만 슬라이드 조작이 가능
+    autoplay: {
+      // 자동 슬라이드 설정 , 비 활성화 시 false, true 설정 시   import {Autoplay from "swiper/modules" 추가
+      delay: 2500, // 시간 설정
+      disableOnInteraction: false, // false로 설정하면 스와이프 후 자동 재생이 비활성화 되지 않음
+    },
+  };
+
   const swiperParams = {
     modules: [Navigation],
     spaceBetween: 0, // 슬라이드 사이 여백
@@ -40,13 +64,46 @@ export default function Wisdom() {
     },
   };
 
+  // active index
+  const [idx, setIdx] = useState<number>(0);
+  const [activeIdx, setActiveIdx] = useState<number>(0);
+
+  // useEffect(() => {
+  //   if (document) {
+  //     const cn = document.getElementsByClassName('slick-active');
+
+  //     for (var i = 0; i < cn.length; i++) {
+  //       cn[i].classList.remove(`active_${i}`);
+  //       cn[i].classList.add(`active_${i}`);
+  //     }
+  //   }
+  // }, []);
+
+  // useEffect(() => {
+  //   if (document && technologyRef && technologyRef.current) {
+  //     const cn = document.getElementsByClassName('slick_active');
+
+  //     for (var i = 0; 1 < cn.length; i++) {
+  //       if (document.getElementsByClassName(`active_${i}`)) {
+  //         cn[i].classList.remove(`active_0`);
+  //         cn[i].classList.remove(`active_1`);
+  //         cn[i].classList.remove(`active_2`);
+  //         cn[i].classList.remove(`active_3`);
+  //         cn[i].classList.remove(`active_4`);
+
+  //         cn[i].classList.add(`active_${i}`);
+  //       } else {
+  //         cn[i].classList.add(`active_${i}`);
+  //       }
+  //     }
+  //   }
+  // }, [idx, technologyRef.current]);
+
   return (
     <>
       {/* sub_top --------------------------------- */}
       <SubTop
-        explain={
-          '경남대학교와 지역기관, 산업체의 협업체계가 보다 쉽게 이어질 수 있도록 연결합니다.'
-        }
+        explain={'경남대학교와 지역기관, 산업체의 협업체계를 위한 개발 사이트'}
         linkBtn={{
           id: 'btnWisdom',
           className: style.btn_link,
@@ -54,44 +111,118 @@ export default function Wisdom() {
         }}
       >
         <Rolling hoverStop={false} speed="120s">
-          <div className={`${style.rolling_item} ${style.rolling_first}`}></div>
+          <div
+            className={`${style.rolling_item} ${style.rolling_circle}`}
+          ></div>
+          <div className={`${style.rolling_item} ${style.rolling_half_circle}`}>
+            <span></span>
+            <span></span>
+          </div>
+          <div className={`${style.rolling_item} ${style.rolling_won}`}></div>
           <div
             className={`flex_between ${style.rolling_item} ${style.rolling_chart}`}
           >
             <span></span>
             <span></span>
           </div>
+
           <div
-            className={`${style.rolling_item} ${style.rolling_circle}`}
-          ></div>
-          {/* <div className={`${style.rolling_item} ${style.rolling_}`}></div>
-          <div className={`${style.rolling_item} ${style.rolling_}`}></div>
-          <div className={`${style.rolling_item} ${style.rolling_}`}></div> */}
+            className={`flex_center ${style.rolling_item} ${style.rolling_four_circle}`}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </Rolling>
       </SubTop>
 
       {/* first_section --------------------------------- */}
       <section className={`section_padding ${style.first_section}`}>
         <div className={`top_box`}>
-          <span className="point">dskhf sdjfhsjdk asdfh</span>
-          <h3>어쩌고 저쩌고 짠</h3>
-          <p>asdasdasdasdasdasdasd</p>
+          {/* <span className="point">Technology Stack</span> */}
+          <h3>Technology Stack</h3>
+          {/* <p>asdasdasdasdasdasdasd</p> */}
         </div>
 
         <span className={style.bg_top}></span>
 
         <div className={`wrap flex_center ${style.first_box}`}>
-          <div className={style.left}></div>
-          <div className={style.right}>
-            <Switch
-              id={''}
-              labelNm={'관리자'}
-              value={''}
-              ref={null}
-              size="xlg"
-              checked={true}
-              disabled={true}
-            />
+          <div className={`swiper_left ${style.left}`}>
+            <Swiper
+              {...swiperAutoParams}
+              ref={technologyRef}
+              onSlideChange={(e) => {
+                console.log('e', e.activeIndex);
+                //   setIdx(e.activeIndex);
+              }}
+            >
+              <SwiperSlide>
+                <Image
+                  src={'/career/wisdom/img_main_all.png'}
+                  alt={'wisdom main all 이미지'}
+                  width={100}
+                  height={100}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </SwiperSlide>
+              <SwiperSlide className="front">
+                <Image
+                  src={'/career/wisdom/img_sub_front.png'}
+                  alt={'wisdom sub 이미지'}
+                  width={100}
+                  height={100}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image
+                  src={'/career/wisdom/img_sub_all.png'}
+                  alt={'wisdom sub 이미지'}
+                  width={100}
+                  height={100}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Image
+                  src={'/career/wisdom/img_cms_all.png'}
+                  alt={'wisdom cms 이미지'}
+                  width={100}
+                  height={100}
+                  style={{ width: '100%', height: 'auto' }}
+                />
+              </SwiperSlide>
+            </Swiper>
+          </div>
+          <div className={`flex_center ${style.right}`}>
+            <div className={`flex_start`}>
+              <span>front-end</span>
+              <Switch
+                id={''}
+                labelNm={''}
+                value={''}
+                ref={null}
+                size="xlg"
+                backgroundColor="blue"
+                checked={true}
+                disabled={true}
+              />
+            </div>
+
+            <div className={`flex_start`}>
+              <span>back-end</span>
+              <Switch
+                id={''}
+                labelNm={'back-end'}
+                value={''}
+                ref={null}
+                size="xlg"
+                backgroundColor="blue"
+                checked={true}
+                disabled={true}
+              />
+            </div>
           </div>
         </div>
       </section>
