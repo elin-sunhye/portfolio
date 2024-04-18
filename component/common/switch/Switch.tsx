@@ -16,6 +16,7 @@ interface SwitchProps {
   value: string;
   checked: boolean;
   disabled?: boolean;
+  backgroundColor?: 'blue' | 'orange';
 }
 /**
  * @param size?: 버튼의 사이즈 기본 lg
@@ -24,6 +25,9 @@ interface SwitchProps {
  *
  * @param checked: 체크여부
  * @returns boolean
+ *
+ * @param backgroundColor?: active 시 배경 컬러 기본 gray
+ * @returns 'blue' | 'orange'
  *
  * @param disabled?
  *
@@ -45,6 +49,7 @@ const Switch = forwardRef(
       id,
       labelNm,
       value,
+      backgroundColor,
       checked,
       disabled,
       onChange,
@@ -71,7 +76,9 @@ const Switch = forwardRef(
         />
         <label
           htmlFor={id}
-          className={`${size ? style[size] : style.lg}`}
+          className={`${size ? style[size] : style.lg} ${
+            backgroundColor ? style[backgroundColor] : ''
+          }`}
           onClick={() => {
             if (!disabled) {
               setCheck(!check);

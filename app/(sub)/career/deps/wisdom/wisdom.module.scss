@@ -81,7 +81,7 @@
 }
 // sub_top ---------------------------------
 .rolling_item {
-  width: 35rem;
+  width: 40rem;
   aspect-ratio: 1 / 1;
   // background-color: var(--main-purple-1);
 
@@ -92,11 +92,36 @@
   //   background-color: var(--main-orange-1);
   // }
 
-  &.rolling_first {
-    background: url('/career/wisdom/sub_visual_mp.svg') no-repeat 0 0 / cover;
-    // linear-gradient( #00359f, #011a45 25%, #37f 70%);
+  &.rolling_circle {
+    border-radius: var(--br-50pro);
+    @include aniSetting(circleAni);
+    animation-direction: normal;
+    animation-duration: 10s;
+    animation-timing-function: unset;
   }
+  // &.rolling_pattern {
+  //   background: url('/career/wisdom/sub_visual_mp.svg') no-repeat 0 0 / cover;
+  //   // linear-gradient( #00359f, #011a45 25%, #37f 70%);
+  // }
+  &.rolling_half_circle {
+    span {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 0.5;
+      border-radius: 30rem 30rem 0 0;
 
+      &:first-of-type {
+        background-color: #de3923;
+      }
+      &:last-of-type {
+        background-color: #f3971c;
+      }
+    }
+  }
+  &.rolling_won {
+    border-radius: var(--br-50pro);
+    background-color: #ffd64b;
+  }
   &.rolling_chart {
     align-items: flex-end;
 
@@ -107,22 +132,25 @@
       transition: all 30s;
 
       &:first-of-type {
-        background-color: #fb9625;
+        background-color: #0e419c;
         @include aniSetting(chart1Ani);
       }
       &:last-of-type {
-        background-color: #0e419c;
+        background-color: #fb9625;
         @include aniSetting(chart2Ani);
       }
     }
   }
+  &.rolling_four_circle {
+    flex-wrap: wrap;
 
-  &.rolling_circle {
-    border-radius: var(--br-50pro);
-    @include aniSetting(circleAni);
-    animation-direction: normal;
-    animation-duration: 10s;
-    animation-timing-function: unset;
+    span {
+      display: block;
+      width: 50%;
+      aspect-ratio: 1 / 1;
+      background-color: #3fa454;
+      border-radius: var(--br-50pro);
+    }
   }
 }
 
@@ -155,6 +183,19 @@
       &.right {
         background-color: var(--gray-2);
         padding: 3rem;
+        flex-direction: column;
+        align-content: center;
+        gap: 3rem;
+
+        & > div {
+          gap: 1rem;
+
+          span {
+            width: 12rem;
+            font-size: var(--fs-20);
+            color: var(--sub-blue-1);
+          }
+        }
       }
     }
   }

@@ -40,7 +40,12 @@
 
     // check
     &:checked + label {
-      background-color: var(--main-orange-1);
+      &.blue {
+        background-color: var(--sub-blue-1);
+      }
+      &.orange {
+        background-color: var(--main-orange-1);
+      }
 
       &::before {
         left: 52.5%;
