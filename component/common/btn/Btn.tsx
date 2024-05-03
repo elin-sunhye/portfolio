@@ -1,165 +1,145 @@
 "use client";
 
-import Link from "next/link";
-import style from "./btn.module.scss";
+import { Ref, forwardRef, useState } from "react";
+import style from "./Btn.module.scss";
 
 interface BtnProps {
-  type: "button" | "submit" | "reset" | "link";
-  href?: string;
-  title: string;
-  id: string;
-  btnType: "all" | "text" | "ico";
-  btnBg?: string;
-  btnColor?: string;
-  btnSize?: "sm" | "md" | "xlg";
-  ico?: JSX.Element;
-  icoPosition?: "left";
-  hover: boolean;
-
-  //
+  type?: "submit" | "reset";
+  btnSize?: "xsm" | "sm" | "lg" | "xlg";
+  color?: string;
+  border?: "br_square_round_1" | "br_square_round_2" | "br_round";
+  children: React.ReactNode | React.ReactNode[];
+  onBlur?: () => void;
+  btnStyle?: React.CSSProperties;
   className?: string;
-  scss?: React.CSSProperties;
+
+  href?: string;
+
+  id: string;
+  title: string;
+  tabIndex?: number;
 }
 
 /**
- * @param btnType : 버튼 종류 - 텍스트 버튼, 아이콘 버튼, 텍스트 아이콘 버튼
+ * @param type?: 버튼 타입 (기본 button)
+ * @return string
  *
- * @param href ?: link 주소
+ * @param btnSize?: 버튼 크기 (기본 md)
+ * @return "xsm" | "sm" | "lg" | "xlg";
  *
- * @param btnBg ?: 버튼 배경 색 - 기본 sub-yellow-1
+ * @param border?: 보더 사이즈 (기본 0)
+ * @return "br_square_round_1" | "br_square_round_2" | "br_round";
  *
- * @param btnColor ?: 버튼 글자 색 - 기본 white
+ * @param color?: 버튼 색상 (기본 white)
+ * @returns string (black, mainColor, mainColorBorder, disabled, none)
  *
- * @param btnSize ? :버튼 사이즈 - 기본 regular
+ * @param children: 버튼 text
+ * @returns string
  *
- * @param hover : 버튼 호버 유무, 호버 시 아이콘 위치 변경
+ * @param href?: 태그 변경
+ * @returns string
  *
- * * 텍스트 아이콘 버튼일 경우
+ * @param title: 버튼 title
+ * @returns string
  *
- * @param type: "all"
+ * @param tabIndex?
+ * @returns number
  *
- * @param ico ?: 버튼 아이콘 태그
+ * @param onBlur?: 포커스가 해지될 때 이벤트
+ * @returns
  *
- * @param icoPosition ?: 버튼 아이콘 위치 - 기본 right
+ * @param id: 버튼 id
+ * @returns string
  *
- * * 텍스트 버튼일 경우
- *
- * @param type: "text"
- *
- * * 아이콘 버튼일 경우
- *
- * @param type: "ico"
- *
- * @param ico ?: 버튼 아이콘 태그
- *
- * * 접근성
- *
- * @param type : type, role
- *
- * @param title : title, aria-label, 버튼이름
- *
- * @param id : id
- *
- * * 기본 props
- * @param className
- * @param scss
+ * @param id: 버튼 id
+ * @returns string
  */
-export const Btn = ({
-  type,
-  href,
-  title,
-  id,
-  btnType,
-  btnBg,
-  btnColor,
-  btnSize,
-  ico,
-  icoPosition,
-  hover,
-  className,
-  scss,
-  ...props
-}: BtnProps & React.HTMLProps<HTMLButtonElement>) => {
-  if (type === "link") {
-    return (
-      <Link
-        href={href ? href : ""}
-        title={`${title} 바로가기`}
-        target="_blank"
-        aria-label={title}
-        id={id}
-        className={`flex_center ${style.btn} ${
-          btnSize ? style[btnSize] : style.lg
-        } ${hover && btnType === "all" ? style.hoverIco : ""} ${className}`}
-        style={{
-          background: btnBg ? btnBg : "var(--white)",
-          color: btnColor ? btnColor : "var(--black)",
-          ...scss,
-        }}
-      >
-        {btnType === "all" ? (
-          icoPosition && icoPosition === "left" ? (
-            <>
-              <span
-                className={`flex_center ${style.ico_btn} ${style.mg_right}`}
-              >
-                {ico}
-              </span>
-              {title}
-            </>
-          ) : (
-            <>
-              {title}
-              <span className={`flex_center ${style.ico_btn}`}>{ico}</span>
-            </>
-          )
-        ) : btnType === "text" ? (
-          title
-        ) : (
-          ico
-        )}
-      </Link>
-    );
-  } else {
-    return (
-      <button
-        type={type}
-        role={type}
-        title={`${title} 바로가기`}
-        aria-label={title}
-        id={id}
-        className={`flex_center ${style.btn} ${
-          btnSize ? style[btnSize] : style.lg
-        } ${hover && btnType === "all" ? style.hoverIco : ""} ${className}`}
-        style={{
-          background: btnBg ? btnBg : "var(--white)",
-          color: btnColor ? btnColor : "var(--black)",
-          ...scss,
-        }}
-        {...props}
-      >
-        {btnType === "all" ? (
-          icoPosition && icoPosition === "left" ? (
-            <>
-              <span
-                className={`flex_center ${style.ico_btn} ${style.mg_right}`}
-              >
-                {ico}
-              </span>
-              {title}
-            </>
-          ) : (
-            <>
-              {title}
-              <span className={`flex_center ${style.ico_btn}`}>{ico}</span>
-            </>
-          )
-        ) : btnType === "text" ? (
-          title
-        ) : (
-          ico
-        )}
-      </button>
-    );
-  }
+const Btn = (
+  {
+    type,
+    btnSize,
+    color,
+    border,
+    children,
+    tabIndex,
+    onBlur,
+    title,
+    id,
+    btnStyle,
+    className,
+    href,
+    ...props
+  }: BtnProps &
+    React.HTMLProps<HTMLButtonElement> &
+    React.HTMLProps<HTMLAnchorElement>,
+  ref: Ref<HTMLButtonElement>
+) => {
+  // hover
+  const [isHover, setIsHover] = useState<boolean>(false);
+
+  return href ? (
+    <a
+      href={href}
+      id={id}
+      type={type ? type : "button"}
+      role="button"
+      title={title}
+      aria-label={title}
+      tabIndex={tabIndex !== undefined ? tabIndex : 0}
+      onBlur={onBlur ? onBlur : () => {}}
+      className={`${style.btn} ${
+        btnSize === "xsm"
+          ? style.xsm
+          : btnSize === "sm"
+          ? style.sm
+          : btnSize === "lg"
+          ? style.lg
+          : btnSize === "xlg"
+          ? style.xlg
+          : style.md
+      } ${color && color !== "" ? style[color] : style.white} ${
+        border ? style[border] : ""
+      } ${isHover === true ? `${style[color + "_hover"]}` : ""} ${
+        className ? className : ""
+      }`}
+      disabled={color === "disabled" ? true : false}
+      style={{ ...btnStyle }}
+      {...props}
+    >
+      {children}
+    </a>
+  ) : (
+    <button
+      ref={ref}
+      id={id}
+      type={type ? type : "button"}
+      role="button"
+      title={title}
+      aria-label={title}
+      tabIndex={tabIndex !== undefined ? tabIndex : 0}
+      onBlur={onBlur ? onBlur : () => {}}
+      className={`${style.btn} ${
+        btnSize === "xsm"
+          ? style.xsm
+          : btnSize === "sm"
+          ? style.sm
+          : btnSize === "lg"
+          ? style.lg
+          : btnSize === "xlg"
+          ? style.xlg
+          : style.md
+      } ${color && color !== "" ? style[color] : style.white} ${
+        border ? style[border] : ""
+      } ${isHover === true ? `${style[color + "_hover"]}` : ""} ${
+        className ? className : ""
+      }`}
+      disabled={color === "disabled" ? true : false}
+      style={{ ...btnStyle }}
+      {...props}
+    >
+      {children}
+    </button>
+  );
 };
+
+export default forwardRef(Btn);

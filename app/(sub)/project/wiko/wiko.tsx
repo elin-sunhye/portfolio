@@ -1,56 +1,56 @@
-'use client';
+"use client";
 
-import style from './wiko.module.scss';
-import './swiper.scss';
-import SubTop from '@/component/common/subTop/SubTop';
-import Rolling from '@/component/common/rolling/Rolling';
-import { MdFactory, MdFlight } from 'react-icons/md';
-import { TbWorld } from 'react-icons/tb';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
-import { Btn } from '@/component/common/btn/Btn';
-import LastSection from '@/component/lastSection/LastSection';
+import style from "./wiko.module.scss";
+import "./swiper.scss";
+import SubTop from "@/component/common/subTop/SubTop";
+import Rolling from "@/component/common/rolling/Rolling";
+import { MdFactory, MdFlight } from "react-icons/md";
+import { TbWorld } from "react-icons/tb";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
+import LastSection from "@/component/lastSection/LastSection";
 
 // react-swiper
-import { Swiper, SwiperSlide } from 'swiper/react'; // basic
-import 'swiper/css'; //basic
-import 'swiper/swiper-bundle.css';
-import 'swiper/css/navigation';
-import 'swiper/css/autoplay';
-import { useRef } from 'react';
+import { Swiper, SwiperSlide } from "swiper/react"; // basic
+import "swiper/css"; //basic
+import "swiper/swiper-bundle.css";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
+import { useRef } from "react";
+import Btn from "@/component/common/btn/Btn";
 
 export default function Wiko() {
   // sub_top ---------------------------------
   const rollingItem1: { string: string; tag: JSX.Element }[] = [
-    { string: '123123123', tag: <></> },
-    { string: '', tag: <MdFlight role="img" aria-label="비행기 아이콘" /> },
-    { string: 'axdjh1', tag: <></> },
-    { string: 'alsald', tag: <></> },
+    { string: "123123123", tag: <></> },
+    { string: "", tag: <MdFlight role="img" aria-label="비행기 아이콘" /> },
+    { string: "axdjh1", tag: <></> },
+    { string: "alsald", tag: <></> },
     {
-      string: '',
+      string: "",
       tag: <TbWorld role="img" aria-label="세계 아이콘" />,
     },
-    { string: 'bdfbsvxcv', tag: <></> },
-    { string: 'csvsu7l', tag: <></> },
-    { string: '26md f', tag: <></> },
-    { string: '', tag: <MdFactory role="img" aria-label="공장 아이콘" /> },
-    { string: 'sdfe wgw', tag: <></> },
+    { string: "bdfbsvxcv", tag: <></> },
+    { string: "csvsu7l", tag: <></> },
+    { string: "26md f", tag: <></> },
+    { string: "", tag: <MdFactory role="img" aria-label="공장 아이콘" /> },
+    { string: "sdfe wgw", tag: <></> },
   ];
 
   const rollingItem2: { string: string; tag: JSX.Element }[] = [
-    { string: '', tag: <MdFlight role="img" aria-label="비행기 아이콘" /> },
-    { string: 'axdjh1', tag: <></> },
-    { string: '123123123', tag: <></> },
-    { string: 'alsald', tag: <></> },
+    { string: "", tag: <MdFlight role="img" aria-label="비행기 아이콘" /> },
+    { string: "axdjh1", tag: <></> },
+    { string: "123123123", tag: <></> },
+    { string: "alsald", tag: <></> },
     {
-      string: '',
+      string: "",
       tag: <TbWorld role="img" aria-label="세계 아이콘" />,
     },
-    { string: 'bdfbsvxcv', tag: <></> },
-    { string: '', tag: <MdFactory role="img" aria-label="공장 아이콘" /> },
-    { string: 'csvsu7l', tag: <></> },
-    { string: '26md f', tag: <></> },
-    { string: 'sdfe wgw', tag: <></> },
+    { string: "bdfbsvxcv", tag: <></> },
+    { string: "", tag: <MdFactory role="img" aria-label="공장 아이콘" /> },
+    { string: "csvsu7l", tag: <></> },
+    { string: "26md f", tag: <></> },
+    { string: "sdfe wgw", tag: <></> },
   ];
 
   // data_section ---------------------------------
@@ -67,8 +67,8 @@ export default function Wiko() {
     allowTouchMove: false, // false시에 스와이핑이 되지 않으며 버튼으로만 슬라이드 조작이 가능
 
     navigation: {
-      prevEl: '.swiper-button-prev',
-      nextEl: '.swiper-button-next',
+      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next",
     },
   };
 
@@ -77,10 +77,10 @@ export default function Wiko() {
       {/* sub_top --------------------------------- */}
       <SubTop
         explain={
-          'rkskrkskrkrsm saja <br />jsgd asgd gasgd asg asdasdajsdh asjdha s'
+          "rkskrkskrkrsm saja <br />jsgd asgd gasgd asg asdasdajsdh asjdha s"
         }
         linkBtn={{
-          id: 'btnWiko',
+          id: "btnWiko",
           className: style.btn_link,
         }}
         bgColor="var(--main-blue-1)"
@@ -88,7 +88,7 @@ export default function Wiko() {
         <div className={`flex_start ${style.sub_top_inner}`}>
           <Rolling hoverStop={false} speed="120s">
             {rollingItem1.map((item, idx: number) => {
-              if (item.string === '') {
+              if (item.string === "") {
                 return (
                   <div
                     key={`ico_${idx}`}
@@ -112,7 +112,7 @@ export default function Wiko() {
 
           <Rolling hoverStop={false} deirection="right" speed="120s">
             {rollingItem2.map((item, idx: number) => {
-              if (item.string === '') {
+              if (item.string === "") {
                 return (
                   <div
                     key={`ico_${idx}`}
@@ -243,33 +243,25 @@ export default function Wiko() {
             <SwiperSlide>4</SwiperSlide>
           </Swiper>
           <Btn
-            type={`button`}
             title={`이전 슬라이드 버튼`}
             id={`swiperButtonPrev`}
             className={`swiper-button-prev`}
-            btnType={'ico'}
-            ico={
-              <HiOutlineChevronLeft
-                role={`img`}
-                aria-label={`왼쪽 화살표 아이콘`}
-              />
-            }
-            hover={false}
-          />
+          >
+            <HiOutlineChevronLeft
+              role={`img`}
+              aria-label={`왼쪽 화살표 아이콘`}
+            />
+          </Btn>
           <Btn
-            type={`button`}
             title={`다음 슬라이드 버튼`}
             id={`swiperButtonNext`}
             className={`swiper-button-next`}
-            btnType={'ico'}
-            ico={
-              <HiOutlineChevronRight
-                role={`img`}
-                aria-label={`오른쪽 화살표 아이콘`}
-              />
-            }
-            hover={false}
-          />
+          >
+            <HiOutlineChevronRight
+              role={`img`}
+              aria-label={`오른쪽 화살표 아이콘`}
+            />
+          </Btn>
         </div>
       </section>
 
@@ -283,7 +275,7 @@ export default function Wiko() {
 
         <Rolling>
           {rollingItem1.map((item, idx: number) => {
-            if (item.string === '') {
+            if (item.string === "") {
               return (
                 <div
                   key={`ico_${idx}`}
@@ -309,16 +301,14 @@ export default function Wiko() {
       {/* view_site_section --------------------------------- */}
       <LastSection title="주조 어쩌고 저쩌고 짠" explain="보러고고">
         <Btn
-          href={'http://wiko.co.kr'}
-          type={'link'}
-          title={'view site'}
-          id={'viewSite'}
-          btnType={'text'}
-          hover={false}
-          className={'btn_go_page'}
-          btnBg="var(--black)"
-          btnColor="var(--white)"
-        />
+          href={"http://wiko.co.kr"}
+          title={"사이트 보러가기"}
+          id={"viewSite"}
+          className={"btn_go_page"}
+          color="var(--black)"
+        >
+          view site
+        </Btn>
       </LastSection>
     </>
   );

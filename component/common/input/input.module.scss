@@ -1,31 +1,106 @@
-.input {
+.inp_box {
   width: 100%;
-  display: block;
-  border: 1px solid var(--gray-1);
+  height: 100%;
 
-  // size
-  &.sm {
-    height: 3rem;
-    line-height: 3rem;
-    padding: 0 1rem;
-    border-radius: var(--br-5);
+  input.inp {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: var(--fs-16);
+    background-color: var(--white);
+    color: var(--black);
+
+    // size
+    &.xsm {
+      height: 2.8rem;
+      font-size: var(--fs-14);
+      padding: 0 1rem;
+    }
+    &.sm {
+      height: 3.2rem;
+      padding: 0 1.2rem;
+    }
+    &.md {
+      // 기본 사이즈
+      height: 4.4rem;
+      padding: 0 2rem;
+    }
+    &.lg {
+      height: 5.6rem;
+      font-size: var(--fs-18);
+      padding: 0 2.4rem;
+    }
+    &.xlg {
+      height: 6.4rem;
+      font-size: var(--fs-18);
+      padding: 0 2.4rem;
+    }
+
+    /* color */
+    // 기본 컬러
+    &.white {
+      border: 1px solid var(--gray-300);
+    }
+    &.black {
+      border: 1px solid var(--black);
+    }
+    &.mainColor {
+      border: 1px solid var(--mcolor);
+      color: var(--mcolor);
+    }
+    &.red {
+      border: 1px solid var(--error03) !important;
+    }
+    // none
+    .none {
+      border: none;
+    }
+
+    /* border */
+    &.br_square_round_1 {
+      border-radius: var(--br-3);
+    }
+    &.br_square_round_2 {
+      &.xsm {
+        border-radius: var(--br-8);
+      }
+      &.sm {
+        border-radius: var(--br-10);
+      }
+      &.md {
+        border-radius: var(--br-12);
+      }
+      &.lg {
+        border-radius: var(--br-14);
+      }
+      &.xlg {
+        border-radius: var(--br-16);
+      }
+    }
+    &.br_round {
+      border-radius: var(--br-50);
+    }
+
+    // disabled
+    &.disabled {
+      background-color: var(--gray-200) !important;
+      color: var(--gray-600) !important;
+      border: solid 1px var(--gray-200) !important;
+      cursor: default !important;
+    }
   }
-  &.md {
-    height: 4rem;
-    line-height: 4rem;
-    padding: 0 1.5rem;
-    border-radius: var(--br-5);
+
+  .txt_error {
+    display: block;
+    margin-top: 1rem;
+    color: var(--error03);
   }
-  &.lg {
-    height: 5rem;
-    line-height: 5rem;
-    padding: 0 2rem;
-    border-radius: var(--br-10);
-  }
-  &.xlg {
-    height: 6rem;
-    line-height: 6rem;
-    padding: 0 2rem;
-    border-radius: var(--br-10);
+}
+// 반응형
+// 모s바일
+@media screen and (max-width: 768px) {
+  input.inp {
+    font-size: var(--fs-14);
   }
 }

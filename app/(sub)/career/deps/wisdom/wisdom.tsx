@@ -1,18 +1,17 @@
-'use client';
+"use client";
 
-import style from './wisdom.module.scss';
-import './swiper.scss';
-import SubTop from '@/component/common/subTop/SubTop';
-import Rolling from '@/component/common/rolling/Rolling';
-import { HiOutlineChevronLeft, HiOutlineChevronRight } from 'react-icons/hi';
-import { Btn } from '@/component/common/btn/Btn';
-import LastSection from '@/component/lastSection/LastSection';
-import { useEffect, useRef, useState } from 'react';
-import Switch from '@/component/common/switch/Switch';
-import Image from 'next/image';
+import style from "./wisdom.module.scss";
+import "./swiper.scss";
+import SubTop from "@/component/common/subTop/SubTop";
+import Rolling from "@/component/common/rolling/Rolling";
+import { HiOutlineChevronLeft, HiOutlineChevronRight } from "react-icons/hi";
+import LastSection from "@/component/lastSection/LastSection";
+import { useEffect, useRef, useState } from "react";
+import Switch from "@/component/common/switch/Switch";
+import Image from "next/image";
 
 // react-swiper
-import { Swiper, SwiperSlide } from 'swiper/react'; // basics
+import { Swiper, SwiperSlide } from "swiper/react"; // basics
 import {
   Navigation,
   Pagination,
@@ -20,12 +19,13 @@ import {
   A11y,
   Autoplay,
   EffectFade,
-} from 'swiper/modules';
-import 'swiper/css'; //basic
-import 'swiper/swiper-bundle.css';
-import 'swiper/css/navigation';
-import 'swiper/css/autoplay';
-import 'swiper/css/effect-fade';
+} from "swiper/modules";
+import "swiper/css"; //basic
+import "swiper/swiper-bundle.css";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
+import "swiper/css/effect-fade";
+import Btn from "@/component/common/btn/Btn";
 
 export default function Wisdom() {
   // data_section ---------------------------------
@@ -40,7 +40,7 @@ export default function Wisdom() {
     loop: true,
     loopAdditionalSlides: 1,
     slidesPerView: 1, //  한 슬라이드에 보여줄 개수
-    effect: 'fade',
+    effect: "fade",
     allowTouchMove: false, // false시에 스와이핑이 되지 않으며 버튼으로만 슬라이드 조작이 가능
     autoplay: {
       // 자동 슬라이드 설정 , 비 활성화 시 false, true 설정 시   import {Autoplay from "swiper/modules" 추가
@@ -59,8 +59,8 @@ export default function Wisdom() {
     allowTouchMove: false, // false시에 스와이핑이 되지 않으며 버튼으로만 슬라이드 조작이 가능
 
     navigation: {
-      prevEl: '.swiper-button-prev',
-      nextEl: '.swiper-button-next',
+      prevEl: ".swiper-button-prev",
+      nextEl: ".swiper-button-next",
     },
   };
 
@@ -103,11 +103,11 @@ export default function Wisdom() {
     <>
       {/* sub_top --------------------------------- */}
       <SubTop
-        explain={'경남대학교와 지역기관, 산업체의 협업체계를 위한 개발 사이트'}
+        explain={"경남대학교와 지역기관, 산업체의 협업체계를 위한 개발 사이트"}
         linkBtn={{
-          id: 'btnWisdom',
+          id: "btnWisdom",
           className: style.btn_link,
-          scss: { backgroundColor: 'var(--main-blue-1)' },
+          scss: { backgroundColor: "var(--main-blue-1)" },
         }}
       >
         <Rolling hoverStop={false} speed="120s">
@@ -153,44 +153,44 @@ export default function Wisdom() {
               {...swiperAutoParams}
               ref={technologyRef}
               onSlideChange={(e) => {
-                console.log('e', e.activeIndex);
+                console.log("e", e.activeIndex);
                 //   setIdx(e.activeIndex);
               }}
             >
               <SwiperSlide>
                 <Image
-                  src={'/career/wisdom/img_main_all.png'}
-                  alt={'wisdom main all 이미지'}
+                  src={"/career/wisdom/img_main_all.png"}
+                  alt={"wisdom main all 이미지"}
                   width={100}
                   height={100}
-                  style={{ width: '100%', height: 'auto' }}
+                  style={{ width: "100%", height: "auto" }}
                 />
               </SwiperSlide>
               <SwiperSlide className="front">
                 <Image
-                  src={'/career/wisdom/img_sub_front.png'}
-                  alt={'wisdom sub 이미지'}
+                  src={"/career/wisdom/img_sub_front.png"}
+                  alt={"wisdom sub 이미지"}
                   width={100}
                   height={100}
-                  style={{ width: '100%', height: 'auto' }}
+                  style={{ width: "100%", height: "auto" }}
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
-                  src={'/career/wisdom/img_sub_all.png'}
-                  alt={'wisdom sub 이미지'}
+                  src={"/career/wisdom/img_sub_all.png"}
+                  alt={"wisdom sub 이미지"}
                   width={100}
                   height={100}
-                  style={{ width: '100%', height: 'auto' }}
+                  style={{ width: "100%", height: "auto" }}
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <Image
-                  src={'/career/wisdom/img_cms_all.png'}
-                  alt={'wisdom cms 이미지'}
+                  src={"/career/wisdom/img_cms_all.png"}
+                  alt={"wisdom cms 이미지"}
                   width={100}
                   height={100}
-                  style={{ width: '100%', height: 'auto' }}
+                  style={{ width: "100%", height: "auto" }}
                 />
               </SwiperSlide>
             </Swiper>
@@ -199,12 +199,12 @@ export default function Wisdom() {
             <div className={`flex_start`}>
               <span>front-end</span>
               <Switch
-                id={''}
-                labelNm={''}
-                value={''}
+                title={""}
+                id={""}
+                value={""}
                 ref={null}
-                size="xlg"
-                backgroundColor="blue"
+                inpSize="xlg"
+                color="blue"
                 checked={true}
                 disabled={true}
               />
@@ -213,12 +213,12 @@ export default function Wisdom() {
             <div className={`flex_start`}>
               <span>back-end</span>
               <Switch
-                id={''}
-                labelNm={'back-end'}
-                value={''}
+                title={""}
+                id={""}
+                value={""}
                 ref={null}
-                size="xlg"
-                backgroundColor="blue"
+                inpSize="xlg"
+                color="blue"
                 checked={true}
                 disabled={true}
               />
@@ -276,33 +276,25 @@ export default function Wisdom() {
             <SwiperSlide>4</SwiperSlide>
           </Swiper>
           <Btn
-            type={`button`}
             title={`이전 슬라이드 버튼`}
             id={`swiperButtonPrev`}
             className={`swiper-button-prev`}
-            btnType={'ico'}
-            ico={
-              <HiOutlineChevronLeft
-                role={`img`}
-                aria-label={`왼쪽 화살표 아이콘`}
-              />
-            }
-            hover={false}
-          />
+          >
+            <HiOutlineChevronLeft
+              role={`img`}
+              aria-label={`왼쪽 화살표 아이콘`}
+            />
+          </Btn>
           <Btn
-            type={`button`}
             title={`다음 슬라이드 버튼`}
             id={`swiperButtonNext`}
             className={`swiper-button-next`}
-            btnType={'ico'}
-            ico={
-              <HiOutlineChevronRight
-                role={`img`}
-                aria-label={`오른쪽 화살표 아이콘`}
-              />
-            }
-            hover={false}
-          />
+          >
+            <HiOutlineChevronRight
+              role={`img`}
+              aria-label={`오른쪽 화살표 아이콘`}
+            />
+          </Btn>
         </div>
       </section>
 
@@ -333,16 +325,14 @@ export default function Wisdom() {
       {/* view_site_section --------------------------------- */}
       <LastSection title="주조 어쩌고 저쩌고 짠" explain="보러고고">
         <Btn
-          href={'http://wiko.co.kr'}
-          type={'link'}
-          title={'view site'}
-          id={'viewSite'}
-          btnType={'text'}
-          hover={false}
-          className={'btn_go_page'}
-          btnBg="var(--black)"
-          btnColor="var(--white)"
-        />
+          href={"http://wiko.co.kr"}
+          title={"자세히 보기"}
+          id={"viewSite"}
+          className={"btn_go_page"}
+          color="var(--black)"
+        >
+          view site
+        </Btn>
       </LastSection>
     </>
   );

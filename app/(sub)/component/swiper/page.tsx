@@ -1,8 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import style from "./page.module.scss";
 import "./swiper.scss";
-import { Btn } from "@/component/common/btn/Btn";
 import { HiOutlineChevronDoubleDown } from "react-icons/hi";
 import { useEffect, useRef, useState } from "react";
 import { menuType } from "@/type/menu/menuType";
@@ -22,6 +22,7 @@ import {
 
 // dummyData
 import menuData from "@/dummyData/menu.json";
+import Btn from "@/component/common/btn/Btn";
 
 export default function Home() {
   // 브라우저 크기
@@ -109,21 +110,17 @@ export default function Home() {
         <div className={style.main_visual}></div>
         <Btn
           className={style.btn_go_content}
-          type={"button"}
           title={"컨텐츠"}
           id={"goContent"}
-          btnType={"ico"}
-          hover={false}
-          ico={
-            <HiOutlineChevronDoubleDown
-              role="img"
-              aria-label="더블 아래 화살표"
-            />
-          }
           onClick={() =>
             window.scrollTo({ top: browserHeight, behavior: "smooth" })
           }
-        />
+        >
+          <HiOutlineChevronDoubleDown
+            role="img"
+            aria-label="더블 아래 화살표"
+          />
+        </Btn>
       </section>
 
       <section className={`section_padding ${style.introduce_section}`}>
@@ -132,15 +129,13 @@ export default function Home() {
           <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
           <span>가나다 나다 가가라</span>
           <Btn
-            type={"button"}
             title={"contact me"}
             id={"contactMe"}
-            btnType={"text"}
-            hover={false}
             className={style.btn_go_page}
-            btnBg="var(--black)"
-            btnColor="var(--white)"
-          />
+            color="var(--black)"
+          >
+            contact me
+          </Btn>
         </div>
 
         <div className={`wrap flex_start ${style.skill_box}`}>
@@ -202,15 +197,13 @@ export default function Home() {
           <p>총 경력 : 4년 (5년차) | 2019년 2월 ~ </p>
           <span>(2024년 2월 기준 | 공백 : 2019년 11월 ~ 2020년 11월)</span>
           <Btn
-            type={"button"}
-            title={"view more"}
+            title={"자세히 보기"}
             id={"viewMore"}
-            btnType={"text"}
-            hover={false}
             className={style.btn_go_page}
-            btnBg="var(--black)"
-            btnColor="var(--white)"
-          />
+            color="var(--black)"
+          >
+            view more
+          </Btn>
         </div>
 
         {/* TODO: 롤링배너 swiper 빼고 다시 만들기 */}

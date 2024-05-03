@@ -1,0 +1,22 @@
+.search_box {
+  width: 50rem;
+  margin: 0 auto;
+  border: 3px solid var(--black);
+  border-radius: var(--br-50);
+  padding: 0 2rem;
+  box-sizing: border-box;
+
+  .inp_box {
+    width: calc(100% - 5rem);
+  }
+
+  .btn_search {
+    margin: 0;
+    padding: 0 !important;
+    width: 4.4rem;
+
+    svg {
+      font-size: var(--fs-36);
+    }
+  }
+}
