@@ -6,6 +6,7 @@
     "url": "/career",
     "site": "",
     "title": "커리어 바로가기",
+    "tag": [],
     "hasChild": true,
     "depth": 1,
     "sort": 1
@@ -17,6 +18,7 @@
     "url": "/career/deps",
     "site": "",
     "title": "뎁스 바로가기",
+    "tag": [],
     "hasChild": true,
     "depth": 2,
     "sort": 1
@@ -28,6 +30,17 @@
     "url": "/career/deps/wisdom",
     "site": "https://wisdom.kyungnam.ac.kr",
     "title": "경남대학교 LINC3.0 사업단 WISDOM 플랫폼 바로가기",
+    "tag": [
+      "react",
+      "nextjs",
+      "typescript",
+      "html",
+      "scss",
+      "css",
+      "radix",
+      "react icon",
+      "react query"
+    ],
     "hasChild": false,
     "depth": 3,
     "sort": 1
@@ -39,6 +52,17 @@
     "url": "/career/deps/gncar",
     "site": "https://gncar.gntp.or.kr",
     "title": "경남대학교 LINC3.0 사업단 WISDOM 플랫폼 바로가기",
+    "tag": [
+      "react",
+      "nextjs",
+      "typescript",
+      "html",
+      "scss",
+      "css",
+      "radix",
+      "react icon",
+      "react query"
+    ],
     "hasChild": false,
     "depth": 3,
     "sort": 2
@@ -50,6 +74,16 @@
     "url": "/career/deps/gnwp",
     "site": "http://gnwp.hcr.kr",
     "title": "경남대학교 LINC3.0 사업단 WISDOM 플랫폼 바로가기",
+    "tag": [
+      "react",
+      "nextjs",
+      "typescript",
+      "html",
+      "scss",
+      "css",
+      "react icon",
+      "react query"
+    ],
     "hasChild": false,
     "depth": 3,
     "sort": 3
@@ -61,6 +95,7 @@
     "url": "/career/deps/gapt",
     "site": "https://gnhome.kr",
     "title": "경남 공동주택 통합 플랫폼 바로가기",
+    "tag": ["react", "nextjs", "typescript", "html", "css", "react query"],
     "hasChild": false,
     "depth": 3,
     "sort": 4
@@ -72,6 +107,7 @@
     "url": "/career/deps/3Dsandan",
     "site": "",
     "title": "경남 창원 3D산단 디지털 플랫폼 바로가기",
+    "tag": ["javascript", "html", "css", "퍼블리싱", "publishing"],
     "hasChild": false,
     "depth": 3,
     "sort": 5
@@ -83,6 +119,7 @@
     "url": "/career/deps/homepage",
     "site": "http://deps.kr",
     "title": "뎁스 홈페이지 바로가기",
+    "tag": ["javascript", "html", "css", "퍼블리싱", "publishing"],
     "hasChild": false,
     "depth": 3,
     "sort": 6
@@ -94,6 +131,7 @@
     "url": "/career/deps/stx",
     "site": "",
     "title": "STX엔진 SSC 시스템 구축 바로가기",
+    "tag": ["javascript", "html", "css", "퍼블리싱", "publishing"],
     "hasChild": false,
     "depth": 3,
     "sort": 7
@@ -106,6 +144,7 @@
     "url": "/career/orangeent",
     "site": "",
     "title": "오렌지엔터 바로가기",
+    "tag": [],
     "hasChild": true,
     "depth": 2,
     "sort": 2
@@ -117,6 +156,17 @@
     "url": "/career/orangeent/fanpick",
     "site": "",
     "title": "팬픽 바로가기",
+    "tag": [
+      "figma",
+      "design",
+      "html",
+      "css",
+      "퍼블리싱",
+      "publishing",
+      "디자인",
+      "design",
+      "피그마"
+    ],
     "hasChild": false,
     "depth": 3,
     "sort": 1
@@ -128,6 +178,17 @@
     "url": "/career/orangeent/homepage",
     "site": "",
     "title": "오렌지 홈페이지 바로가기",
+    "tag": [
+      "javascript",
+      "html",
+      "css",
+      "퍼블리싱",
+      "publishing",
+      "figma",
+      "design",
+      "디자인",
+      "피그마"
+    ],
     "hasChild": false,
     "depth": 3,
     "sort": 2
@@ -139,6 +200,7 @@
     "url": "/career/orangeent/nftshowcase",
     "site": "",
     "title": "랜디주커버그 nft 쇼케이스 바로가기",
+    "tag": ["javascript", "html", "css", "퍼블리싱", "publishing"],
     "hasChild": false,
     "depth": 3,
     "sort": 3
@@ -150,6 +212,7 @@
     "url": "/career/orangeent/nftshowcase",
     "site": "",
     "title": "베이직 nft 콜라보 이벤트 바로가기",
+    "tag": ["javascript", "html", "css", "퍼블리싱", "publishing"],
     "hasChild": false,
     "depth": 3,
     "sort": 4
@@ -161,6 +224,7 @@
     "url": "/career/lapcos",
     "site": "",
     "title": "랩코스 바로가기",
+    "tag": [],
     "hasChild": true,
     "depth": 2,
     "sort": 3
@@ -172,6 +236,7 @@
     "url": "/career/lapcos/catalog",
     "site": "",
     "title": "제품 카탈로그 바로가기",
+    "tag": ["indesign", "인디자인", "design", "디자인"],
     "hasChild": false,
     "depth": 3,
     "sort": 1
@@ -183,6 +248,7 @@
     "url": "/career/lapcos/tradeshow",
     "site": "",
     "title": "트레이드쇼 바로가기",
+    "tag": ["indesign", "인디자인", "design", "디자인", "dp"],
     "hasChild": false,
     "depth": 3,
     "sort": 2
@@ -194,6 +260,7 @@
     "url": "/career/lapcos/cost",
     "site": "",
     "title": "코스트코 바로가기",
+    "tag": ["indesign", "인디자인", "design", "디자인", "패키지 디자인"],
     "hasChild": false,
     "depth": 3,
     "sort": 3
@@ -205,6 +272,7 @@
     "url": "/project",
     "site": "",
     "title": "프로젝트 바로가기",
+    "tag": [],
     "hasChild": true,
     "depth": 1,
     "sort": 1
@@ -216,6 +284,7 @@
     "url": "/project/wiko",
     "site": "https://wiko.co.kr",
     "title": "위코 바로가기",
+    "tag": [],
     "hasChild": false,
     "depth": 2,
     "sort": 1
@@ -227,6 +296,7 @@
     "url": "/component",
     "site": "",
     "title": "컴포넌트 바로가기",
+    "tag": [],
     "hasChild": true,
     "depth": 1,
     "sort": 2
@@ -238,6 +308,7 @@
     "url": "/component/common",
     "site": "",
     "title": "공통 컴포넌트 바로가기",
+    "tag": [],
     "hasChild": true,
     "depth": 2,
     "sort": 1
@@ -249,6 +320,7 @@
     "url": "/component/common/button",
     "site": "",
     "title": "버튼 바로가기",
+    "tag": [],
     "hasChild": false,
     "depth": 3,
     "sort": 1
@@ -260,6 +332,7 @@
     "url": "/component/common/input",
     "site": "",
     "title": "인풋 바로가기",
+    "tag": [],
     "hasChild": false,
     "depth": 3,
     "sort": 2
@@ -271,6 +344,7 @@
     "url": "/component/swiper",
     "site": "",
     "title": "스와이퍼 바로가기",
+    "tag": [],
     "hasChild": false,
     "depth": 2,
     "sort": 2

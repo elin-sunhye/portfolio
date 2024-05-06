@@ -1,6 +1,15 @@
 .sub_top {
   text-align: center;
 
+  // &.maxHeight {
+  //   height: 100vh;
+  //   box-sizing: border-box;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   flex-direction: column;
+  // }
+
   h3 {
     font-size: var(--fs-72);
     font-weight: 900;
