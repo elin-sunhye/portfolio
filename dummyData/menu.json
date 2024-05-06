@@ -48,7 +48,7 @@
   {
     "seq": 101,
     "parentSeq": 10,
-    "menu": "gncar",
+    "menu": "GNCAR",
     "url": "/career/deps/gncar",
     "site": "https://gncar.gntp.or.kr",
     "title": "경남대학교 LINC3.0 사업단 WISDOM 플랫폼 바로가기",
@@ -70,7 +70,7 @@
   {
     "seq": 102,
     "parentSeq": 10,
-    "menu": "gnwp",
+    "menu": "GNWP",
     "url": "/career/deps/gnwp",
     "site": "http://gnwp.hcr.kr",
     "title": "경남대학교 LINC3.0 사업단 WISDOM 플랫폼 바로가기",

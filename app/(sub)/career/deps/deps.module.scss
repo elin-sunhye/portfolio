@@ -1,3 +1,4 @@
+// search_box
 .search_box {
   width: 50rem;
   margin: 0 auto;
@@ -18,5 +19,30 @@
     svg {
       font-size: var(--fs-36);
     }
+  }
+}
+
+// project_list
+.project_list {
+  flex-wrap: wrap;
+  gap: 3rem;
+
+  a {
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-content: center;
+    width: calc((100% / 5) - 3rem);
+    aspect-ratio: 1 / 1;
+    border-radius: var(--br-50pro);
+    border: 1px solid #333;
+
+    p {
+      width: 100%;
+    }
+  }
+
+  p {
+    width: 100%;
+    text-align: center;
   }
 }
