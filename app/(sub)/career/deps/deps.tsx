@@ -8,6 +8,7 @@ import Btn from '@/component/common/btn/Btn';
 import { CiSearch } from 'react-icons/ci';
 import { menuType } from '@/type/menu/menuType';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 interface DepsProps {
   // menuData: menuType;
@@ -19,7 +20,7 @@ export default function Deps({ menuData }: DepsProps) {
   const pathNm = usePathname();
 
   // menu
-  const [deps3, setDeps3] = useState<menuType[]>([]);
+  const [depth3, setDeps3] = useState<menuType[]>([]);
   useEffect(() => {
     const array = menuData.filter(
       (projects: menuType) =>
@@ -48,37 +49,74 @@ export default function Deps({ menuData }: DepsProps) {
               inpSize="xlg"
               border="br_round"
               value={searchPj}
+              placeholder="프로젝트 또는 tag 검색"
               onChange={(e) => {
                 const value = e.currentTarget.value;
 
                 setSearchPj(value);
               }}
               onKeyUp={(e) => {
-                console.log(e.key);
                 if (e.key === 'Enter') {
-                  const array =
-                    deps3.filter((search: menuType) =>
-                      search.menu.includes(searchPj)
-                    ).length === 0
-                      ? [
-                          {
-                            menu: '데이터가 없습니다.',
-                            seq: 0,
-                            parentSeq: null,
-                            url: '',
-                            site: '',
-                            title: '',
-                            tag: [],
-                            hasChild: false,
-                            depth: 0,
-                            sort: 0,
-                          },
-                        ]
-                      : deps3.filter((search: menuType) =>
-                          search.menu.includes(searchPj)
-                        );
+                  if (searchPj.includes('#')) {
+                    // # 지우기
+                    const removeShap = searchPj.replaceAll('#', '');
+                    // 띄어쓰기 지우기
+                    const removeSpace = removeShap.replaceAll(' ', '');
+                    // ,로 나누기
+                    const splitComma = removeSpace.split(',');
 
-                  setBtnSearch(array);
+                    const array =
+                      depth3.filter((dd) =>
+                        dd.tag.some((tag) => splitComma.includes(tag))
+                      ).length === 0
+                        ? [
+                            {
+                              menu: '데이터가 없습니다.',
+                              seq: 0,
+                              parentSeq: null,
+                              url: '',
+                              site: '',
+                              title: '',
+                              tag: [],
+                              hasChild: false,
+                              depth: 0,
+                              sort: 0,
+                            },
+                          ]
+                        : depth3.filter((dd) =>
+                            dd.tag.some((tag) => splitComma.includes(tag))
+                          );
+
+                    setBtnSearch(array);
+                  } else {
+                    const array =
+                      depth3.filter((search: menuType) =>
+                        search.title
+                          .toUpperCase()
+                          .includes(searchPj.toUpperCase())
+                      ).length === 0
+                        ? [
+                            {
+                              menu: '데이터가 없습니다.',
+                              seq: 0,
+                              parentSeq: null,
+                              url: '',
+                              site: '',
+                              title: '',
+                              tag: [],
+                              hasChild: false,
+                              depth: 0,
+                              sort: 0,
+                            },
+                          ]
+                        : depth3.filter((search: menuType) =>
+                            search.title
+                              .toUpperCase()
+                              .includes(searchPj.toUpperCase())
+                          );
+
+                    setBtnSearch(array);
+                  }
                 }
               }}
             />
@@ -89,29 +127,64 @@ export default function Deps({ menuData }: DepsProps) {
             color="none"
             className={style.btn_search}
             onClick={() => {
-              const array =
-                deps3.filter((search: menuType) =>
-                  search.menu.includes(searchPj)
-                ).length === 0
-                  ? [
-                      {
-                        menu: '데이터가 없습니다.',
-                        seq: 0,
-                        parentSeq: null,
-                        url: '',
-                        site: '',
-                        title: '',
-                        tag: [],
-                        hasChild: false,
-                        depth: 0,
-                        sort: 0,
-                      },
-                    ]
-                  : deps3.filter((search: menuType) =>
-                      search.menu.includes(searchPj)
-                    );
+              if (searchPj.includes('#')) {
+                // # 지우기
+                const removeShap = searchPj.replaceAll('#', '');
+                // 띄어쓰기 지우기
+                const removeSpace = removeShap.replaceAll(' ', '');
+                // ,로 나누기
+                const splitComma = removeSpace.split(',');
 
-              setBtnSearch(array);
+                const array =
+                  depth3.filter((dd) =>
+                    dd.tag.some((tag) => splitComma.includes(tag))
+                  ).length === 0
+                    ? [
+                        {
+                          menu: '데이터가 없습니다.',
+                          seq: 0,
+                          parentSeq: null,
+                          url: '',
+                          site: '',
+                          title: '',
+                          tag: [],
+                          hasChild: false,
+                          depth: 0,
+                          sort: 0,
+                        },
+                      ]
+                    : depth3.filter((dd) =>
+                        dd.tag.some((tag) => splitComma.includes(tag))
+                      );
+
+                setBtnSearch(array);
+              } else {
+                const array =
+                  depth3.filter((search: menuType) =>
+                    search.title.toUpperCase().includes(searchPj.toUpperCase())
+                  ).length === 0
+                    ? [
+                        {
+                          menu: '데이터가 없습니다.',
+                          seq: 0,
+                          parentSeq: null,
+                          url: '',
+                          site: '',
+                          title: '',
+                          tag: [],
+                          hasChild: false,
+                          depth: 0,
+                          sort: 0,
+                        },
+                      ]
+                    : depth3.filter((search: menuType) =>
+                        search.title
+                          .toUpperCase()
+                          .includes(searchPj.toUpperCase())
+                      );
+
+                setBtnSearch(array);
+              }
             }}
           >
             <CiSearch role="img" aria-label="검색 아이콘" />
@@ -122,26 +195,36 @@ export default function Deps({ menuData }: DepsProps) {
       {/* project_list --------------------------------- */}
       <div className={`wrap flex_start ${style.project_list}`}>
         {btnSearch.length === 0 ? (
-          deps3.map((project: menuType) => {
+          depth3.map((project: menuType) => {
             return (
               <a
                 key={`${project.menu}_${project.seq}`}
                 href={project.url}
-                className={`flex_center ${style.project}`}
+                className={`flex_center ${style.project} ${
+                  style[project.menu.toLowerCase()]
+                }`}
               >
-                <span className={style.img_project}></span>
-                <p className={style.project_name}>{project.menu}</p>
-                <div className={style.project_tag}>
+                <p className={style.project_name}>{project.title}</p>
+                <div className={`flex_center ${style.project_tag}`}>
                   {project.tag.map((tag: string, index: number) => {
                     if (project.tag.length - 1 === index) {
                       return <span key={`${project.menu}_${tag}`}>#{tag}</span>;
                     } else {
                       return (
-                        <span key={`${project.menu}_${tag}`}>#{tag}, </span>
+                        <span key={`${project.menu}_${tag}`}>#{tag},</span>
                       );
                     }
                   })}
                 </div>
+
+                <span className={`flex_center ${style.img_project}`}>
+                  <Image
+                    src={`/career/deps/img_${project.menu.toLowerCase()}_logo.svg`}
+                    alt={`${project.menu.toLowerCase()} 로고`}
+                    width={0}
+                    height={0}
+                  />
+                </span>
               </a>
             );
           })
@@ -153,21 +236,30 @@ export default function Deps({ menuData }: DepsProps) {
               <a
                 key={`${project.menu}_${project.seq}`}
                 href={project.url}
-                className={`flex_center ${style.project}`}
+                className={`flex_center ${style.project} ${
+                  style[project.menu.toLowerCase()]
+                }`}
               >
-                <span className={style.img_project}></span>
-                <p className={style.project_name}>{project.menu}</p>
-                <div className={style.project_tag}>
+                <p className={style.project_name}>{project.title}</p>
+                <div className={`flex_center ${style.project_tag}`}>
                   {project.tag.map((tag: string, index: number) => {
                     if (project.tag.length - 1 === index) {
                       return <span key={`${project.menu}_${tag}`}>#{tag}</span>;
                     } else {
                       return (
-                        <span key={`${project.menu}_${tag}`}>#{tag}, </span>
+                        <span key={`${project.menu}_${tag}`}>#{tag},</span>
                       );
                     }
                   })}
                 </div>
+                <span className={`flex_center ${style.img_project}`}>
+                  <Image
+                    src={`/career/deps/img_${project.menu.toLowerCase()}_logo.svg`}
+                    alt={`${project.menu.toLowerCase()} 로고`}
+                    width={0}
+                    height={0}
+                  />
+                </span>
               </a>
             );
           })

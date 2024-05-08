@@ -1,19 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
+'use client';
 
-import style from "./page.module.scss";
-import { HiOutlineChevronDoubleDown } from "react-icons/hi";
-import { useEffect, useRef, useState } from "react";
-import { menuType } from "@/type/menu/menuType";
-import Rolling from "@/component/common/rolling/Rolling";
-import Link from "next/link";
-import { FiDownloadCloud, FiExternalLink } from "react-icons/fi";
-import { useRouter } from "next/navigation";
-import LastSection from "@/component/lastSection/LastSection";
-import Btn from "@/component/common/btn/Btn";
+import style from './page.module.scss';
+import { HiOutlineChevronDoubleDown } from 'react-icons/hi';
+import { useEffect, useRef, useState } from 'react';
+import { menuType } from '@/type/menu/menuType';
+import Rolling from '@/component/common/rolling/Rolling';
+import Link from 'next/link';
+import { FiDownloadCloud, FiExternalLink } from 'react-icons/fi';
+import { useRouter } from 'next/navigation';
+import LastSection from '@/component/lastSection/LastSection';
+import Btn from '@/component/common/btn/Btn';
 
 // dummyData ---------------------------------
-import menuData from "@/dummyData/menu.json";
+import menuData from '@/dummyData/menu.json';
 
 export default function Home() {
   // ---------------------------------
@@ -33,24 +33,24 @@ export default function Home() {
 
   // 화면 로드시
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       // 브라우저 크기
       setBrowserHeight(window.innerHeight);
-      window.addEventListener("resize", function () {
+      window.addEventListener('resize', function () {
         setBrowserHeight(window.innerHeight);
       });
 
       // 스크롤 초기화
       if (window.scrollY > 0 && scrollTxtRef.current !== null) {
         scrollTxtRef.current.style.setProperty(
-          "transform",
+          'transform',
           `translateX(-${String(window.scrollY - window.innerHeight + 1)}px)`
         );
       }
 
       // scroll
       let lastScroll = 0;
-      window.addEventListener("scroll", function () {
+      window.addEventListener('scroll', function () {
         let currentScroll = document.documentElement.scrollTop;
 
         // scrollTxt
@@ -61,7 +61,7 @@ export default function Home() {
         ) {
           if (currentScroll > lastScroll) {
             scrollTxtRef.current.style.setProperty(
-              "transform",
+              'transform',
               `translateX(-${String(
                 window.scrollY + 1
                 // window.scrollY - window.innerHeight + 1
@@ -69,7 +69,7 @@ export default function Home() {
             );
           } else {
             scrollTxtRef.current.style.setProperty(
-              "transform",
+              'transform',
               `translateX(-${String(
                 window.scrollY - 1
                 // window.scrollY - window.innerHeight - 1
@@ -87,11 +87,11 @@ export default function Home() {
           if (window.scrollY >= window.innerHeight * 2.5) {
             let num1 = String(
               window.scrollY - window.innerHeight * 2.5 + 0.1
-            ).replaceAll(".", "");
+            ).replaceAll('.', '');
 
             let num2 = String(
               window.scrollY - window.innerHeight * 2.5 - 0.1
-            ).replaceAll(".", "");
+            ).replaceAll('.', '');
 
             let plus =
               num1.length == 1
@@ -101,8 +101,8 @@ export default function Home() {
                 : num1.length == 3
                 ? `0.${num1}`
                 : num1.length == 4
-                ? num1.slice(0, 1) + "." + num1.slice(1)
-                : num1.slice(0, 2) + "." + num1.slice(2);
+                ? num1.slice(0, 1) + '.' + num1.slice(1)
+                : num1.slice(0, 2) + '.' + num1.slice(2);
 
             let minus =
               num2.length == 1
@@ -112,26 +112,26 @@ export default function Home() {
                 : num2.length == 3
                 ? `0.${num2}`
                 : num2.length == 4
-                ? num2.slice(0, 1) + "." + num2.slice(1)
-                : num2.slice(0, 2) + "." + num2.slice(2);
+                ? num2.slice(0, 1) + '.' + num2.slice(1)
+                : num2.slice(0, 2) + '.' + num2.slice(2);
 
             if (currentScroll > lastScroll) {
               scrollWikoUpRef.current.style.setProperty(
-                "transform",
+                'transform',
                 `translateY(-${plus}%)`
               );
               scrollWikoDownRef.current.style.setProperty(
-                "transform",
+                'transform',
                 `translateY(${minus}%)`
               );
             } else {
               scrollWikoUpRef.current.style.setProperty(
-                "transform",
+                'transform',
                 `translateY(-${minus}%)`
               );
 
               scrollWikoDownRef.current.style.setProperty(
-                "transform",
+                'transform',
                 `translateY(${plus}%)`
               );
             }
@@ -144,11 +144,11 @@ export default function Home() {
           if (window.scrollY >= window.innerHeight * 3.5) {
             let num1 = String(
               window.scrollY - window.innerHeight * 3.5 + 0.1
-            ).replaceAll(".", "");
+            ).replaceAll('.', '');
 
             let num2 = String(
               window.scrollY - window.innerHeight * 3.5 - 0.1
-            ).replaceAll(".", "");
+            ).replaceAll('.', '');
 
             let plus =
               num1.length == 1
@@ -158,8 +158,8 @@ export default function Home() {
                 : num1.length == 3
                 ? `0.${num1}`
                 : num1.length == 4
-                ? num1.slice(0, 1) + "." + num1.slice(1)
-                : num1.slice(0, 2) + "." + num1.slice(2);
+                ? num1.slice(0, 1) + '.' + num1.slice(1)
+                : num1.slice(0, 2) + '.' + num1.slice(2);
 
             let minus =
               num2.length == 1
@@ -169,26 +169,26 @@ export default function Home() {
                 : num2.length == 3
                 ? `0.${num2}`
                 : num2.length == 4
-                ? num2.slice(0, 1) + "." + num2.slice(1)
-                : num2.slice(0, 2) + "." + num2.slice(2);
+                ? num2.slice(0, 1) + '.' + num2.slice(1)
+                : num2.slice(0, 2) + '.' + num2.slice(2);
 
             if (currentScroll > lastScroll) {
               scroll2UpRef.current.style.setProperty(
-                "transform",
+                'transform',
                 `translateY(-${plus}%)`
               );
               scroll2DownRef.current.style.setProperty(
-                "transform",
+                'transform',
                 `translateY(${minus}%)`
               );
             } else {
               scroll2UpRef.current.style.setProperty(
-                "transform",
+                'transform',
                 `translateY(-${minus}%)`
               );
 
               scroll2DownRef.current.style.setProperty(
-                "transform",
+                'transform',
                 `translateY(${plus}%)`
               );
             }
@@ -201,11 +201,11 @@ export default function Home() {
           if (window.scrollY >= window.innerHeight * 4.5) {
             let num1 = String(
               window.scrollY - window.innerHeight * 4.5 + 0.1
-            ).replaceAll(".", "");
+            ).replaceAll('.', '');
 
             let num2 = String(
               window.scrollY - window.innerHeight * 4.5 - 0.1
-            ).replaceAll(".", "");
+            ).replaceAll('.', '');
 
             let plus =
               num1.length == 1
@@ -215,8 +215,8 @@ export default function Home() {
                 : num1.length == 3
                 ? `0.${num1}`
                 : num1.length == 4
-                ? num1.slice(0, 1) + "." + num1.slice(1)
-                : num1.slice(0, 2) + "." + num1.slice(2);
+                ? num1.slice(0, 1) + '.' + num1.slice(1)
+                : num1.slice(0, 2) + '.' + num1.slice(2);
 
             let minus =
               num2.length == 1
@@ -226,26 +226,26 @@ export default function Home() {
                 : num2.length == 3
                 ? `0.${num2}`
                 : num2.length == 4
-                ? num2.slice(0, 1) + "." + num2.slice(1)
-                : num2.slice(0, 2) + "." + num2.slice(2);
+                ? num2.slice(0, 1) + '.' + num2.slice(1)
+                : num2.slice(0, 2) + '.' + num2.slice(2);
 
             if (currentScroll > lastScroll) {
               scroll3UpRef.current.style.setProperty(
-                "transform",
+                'transform',
                 `translateY(-${plus}%)`
               );
               scroll3DownRef.current.style.setProperty(
-                "transform",
+                'transform',
                 `translateY(${minus}%)`
               );
             } else {
               scroll3UpRef.current.style.setProperty(
-                "transform",
+                'transform',
                 `translateY(-${minus}%)`
               );
 
               scroll3DownRef.current.style.setProperty(
-                "transform",
+                'transform',
                 `translateY(${plus}%)`
               );
             }
@@ -264,14 +264,14 @@ export default function Home() {
     setRollingItems(
       menuData.filter(
         (mn) =>
-          (mn.url.includes("/career/orange/") ||
-            mn.url.includes("/career/deps/")) &&
+          (mn.url.includes('/career/orange/') ||
+            mn.url.includes('/career/deps/')) &&
           mn.depth === 3
       )
     );
     setRollingDesignItems(
       menuData.filter(
-        (mn) => mn.url.includes("/career/lapcos/") && mn.depth === 3
+        (mn) => mn.url.includes('/career/lapcos/') && mn.depth === 3
       )
     );
   }, [menuData]);
@@ -294,12 +294,12 @@ export default function Home() {
         </div>
 
         <Btn
-          title={"컨텐츠"}
-          id={"goContent"}
+          title={'컨텐츠'}
+          id={'goContent'}
           className={style.btn_go_content}
           color="none"
           onClick={() => {
-            window.scrollTo({ top: browserHeight, behavior: "smooth" });
+            window.scrollTo({ top: browserHeight, behavior: 'smooth' });
           }}
         >
           <HiOutlineChevronDoubleDown
@@ -323,8 +323,8 @@ export default function Home() {
           <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
           <span>가나다 나다 가가라</span>
           <Btn
-            title={"contact me"}
-            id={"contactMe"}
+            title={'contact me'}
+            id={'contactMe'}
             className={style.btn_dialog}
             color="black"
             border="br_round"
@@ -429,71 +429,71 @@ export default function Home() {
                   key={`rolling_item_${item.seq}`}
                   href={item.url}
                   className={`flex_center ${style.career_slides} ${
-                    itemInd % 2 === 0 ? style.polygon : ""
-                  } ${itemInd % 3 === 0 ? style.circle : ""} `}
+                    itemInd % 2 === 0 ? style.polygon : ''
+                  } ${itemInd % 3 === 0 ? style.circle : ''} `}
                 >
                   <p>개발 사진</p>
 
                   <div
                     className={`flex_center ${
                       style.career_rolling_hover_card
-                    } ${itemInd % 2 == 0 ? style.red : ""} ${
-                      itemInd % 4 == 0 ? style.blue : ""
-                    } ${itemInd % 5 == 0 ? style.black : ""}`}
+                    } ${itemInd % 2 == 0 ? style.red : ''} ${
+                      itemInd % 4 == 0 ? style.blue : ''
+                    } ${itemInd % 5 == 0 ? style.black : ''}`}
                   >
                     <span>
                       {menuData.find((seq) => seq.seq === item.parentSeq)?.menu}
                     </span>
                     <p>{item.menu}</p>
                     <span>
-                      {item.menu === "STX"
-                        ? "2022.02 ~ 2022.08"
-                        : item.menu === "HOMEPAGE"
-                        ? "2022.04 ~ 2022.06"
-                        : item.menu === "3DSANDAN"
-                        ? "2022.08 ~ 2022.10"
-                        : item.menu === "GAPT"
-                        ? "2022.10 ~ 2023.03"
-                        : item.menu === "GNTP"
-                        ? "2023.01 ~ 2023.07"
-                        : item.menu === "GNCAR"
-                        ? "2023.08 ~ 2024.02"
-                        : "2024.01 ~ 2024.03"}
+                      {item.menu === 'STX'
+                        ? '2022.02 ~ 2022.08'
+                        : item.menu === 'HOMEPAGE'
+                        ? '2022.04 ~ 2022.06'
+                        : item.menu === 'SANDAN'
+                        ? '2022.08 ~ 2022.10'
+                        : item.menu === 'GNHOME'
+                        ? '2022.10 ~ 2023.03'
+                        : item.menu === 'GNTP'
+                        ? '2023.01 ~ 2023.07'
+                        : item.menu === 'GNCAR'
+                        ? '2023.08 ~ 2024.02'
+                        : '2024.01 ~ 2024.03'}
                     </span>
                   </div>
                 </a>
               );
             })}
           </Rolling>
-          <Rolling deirection={"right"}>
+          <Rolling deirection={'right'}>
             {rollingDesignITems.map((item, itemInd) => {
               return (
                 <a
                   key={`rolling_design_item_${item.seq}`}
                   href={item.url}
                   className={`flex_center ${style.career_slides} ${
-                    itemInd % 2 === 0 ? style.polygon : ""
-                  } ${itemInd % 3 === 0 ? style.circle : ""} `}
+                    itemInd % 2 === 0 ? style.polygon : ''
+                  } ${itemInd % 3 === 0 ? style.circle : ''} `}
                 >
                   <p>디자인 사진</p>
 
                   <div
                     className={`flex_center ${
                       style.career_rolling_hover_card
-                    } ${itemInd % 2 == 0 ? style.red : ""} ${
-                      itemInd % 4 == 0 ? style.blue : ""
-                    } ${itemInd % 5 == 0 ? style.black : ""}`}
+                    } ${itemInd % 2 == 0 ? style.red : ''} ${
+                      itemInd % 4 == 0 ? style.blue : ''
+                    } ${itemInd % 5 == 0 ? style.black : ''}`}
                   >
                     <span>
                       {menuData.find((seq) => seq.seq === item.parentSeq)?.menu}
                     </span>
                     <p>{item.menu}</p>
                     <span>
-                      {item.menu === "CATALOG"
-                        ? "2019.02 ~ 2019.04"
-                        : item.menu === "TRADESHOW"
-                        ? "2019.04 ~ 2019.10"
-                        : "2024.09 ~ 2024.11"}
+                      {item.menu === 'CATALOG'
+                        ? '2019.02 ~ 2019.04'
+                        : item.menu === 'TRADESHOW'
+                        ? '2019.04 ~ 2019.10'
+                        : '2024.09 ~ 2024.11'}
                     </span>
                   </div>
                 </a>
@@ -505,17 +505,17 @@ export default function Home() {
                   key={`rolling_design_item_${item.seq}`}
                   href={item.url}
                   className={`flex_center ${style.career_slides} ${
-                    itemInd % 2 === 0 ? style.polygon : ""
-                  } ${itemInd % 3 === 0 ? style.circle : ""} `}
+                    itemInd % 2 === 0 ? style.polygon : ''
+                  } ${itemInd % 3 === 0 ? style.circle : ''} `}
                 >
                   <p>디자인 사진</p>
 
                   <div
                     className={`flex_center ${
                       style.career_rolling_hover_card
-                    } ${itemInd % 2 == 0 ? style.red : ""} ${
-                      itemInd % 4 == 0 ? style.blue : ""
-                    } ${itemInd % 5 == 0 ? style.black : ""}`}
+                    } ${itemInd % 2 == 0 ? style.red : ''} ${
+                      itemInd % 4 == 0 ? style.blue : ''
+                    } ${itemInd % 5 == 0 ? style.black : ''}`}
                   >
                     <span>
                       {menuData.find((seq) => seq.seq === item.parentSeq)?.menu}
@@ -538,8 +538,8 @@ export default function Home() {
             <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
             <span>가나다 나다 가가라</span>
             <Btn
-              title={"자세히 보기"}
-              id={"viewDetail"}
+              title={'자세히 보기'}
+              id={'viewDetail'}
               className={style.btn_go_page}
               color="black"
               border="br_round"
@@ -612,8 +612,8 @@ export default function Home() {
             <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
             <span>가나다 나다 가가라</span>
             <Btn
-              title={"자세히 보기"}
-              id={"viewDetail"}
+              title={'자세히 보기'}
+              id={'viewDetail'}
               className={style.btn_go_page}
               color="black"
               border="br_round"
@@ -632,8 +632,8 @@ export default function Home() {
             <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
             <span>가나다 나다 가가라</span>
             <Btn
-              title={"자세히 보기"}
-              id={"viewDetail"}
+              title={'자세히 보기'}
+              id={'viewDetail'}
               className={style.btn_go_page}
               color="black"
               border="br_round"
@@ -680,14 +680,14 @@ export default function Home() {
         </div>
 
         <div className={`wrap flex_center ${style.support_box}`}>
-          <Link href="/" download={""} className={"flex_center"}>
+          <Link href="/" download={''} className={'flex_center'}>
             자기 소개서 다운
             <FiDownloadCloud role="img" aria-label="다운로드 아이콘" />
           </Link>
           <Link
-            href={"https://github.com/elin-sunhye"}
+            href={'https://github.com/elin-sunhye'}
             target="_blank"
-            className={"flex_center"}
+            className={'flex_center'}
           >
             github 바로 가기
             <FiExternalLink role="img" aria-label="새창 아이콘" />

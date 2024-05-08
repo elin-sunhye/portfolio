@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import React, { Ref, forwardRef, useEffect, useId, useState } from "react";
-import style from "./Input.module.scss";
-import { FieldErrors, FieldValues } from "react-hook-form";
+import React, { Ref, forwardRef, useEffect, useId, useState } from 'react';
+import style from './Input.module.scss';
+import { FieldErrors, FieldValues } from 'react-hook-form';
 
 interface InputProps {
-  inpSize?: "xsm" | "sm" | "lg" | "xlg";
+  inpSize?: 'xsm' | 'sm' | 'lg' | 'xlg';
   color?: string;
-  border?: "br_square_round_1" | "br_square_round_2" | "br_round";
+  border?: 'br_square_round_1' | 'br_square_round_2' | 'br_round';
   title: string;
   value?: string | number;
   partialErrorObj?: FieldValues;
@@ -55,21 +55,22 @@ const Input = (
         id={`${id}_${title}`}
         title={title}
         className={`${style.inp} ${
-          inpSize === "xsm"
+          inpSize === 'xsm'
             ? style.xsm
-            : inpSize === "sm"
+            : inpSize === 'sm'
             ? style.sm
-            : inpSize === "lg"
+            : inpSize === 'lg'
             ? style.lg
-            : inpSize === "xlg"
+            : inpSize === 'xlg'
             ? style.xlg
             : style.md
-        } ${color && color !== "" ? style[color] : style.white} ${
-          border ? style[border] : ""
+        } ${color && color !== '' ? style[color] : style.white} ${
+          border ? style[border] : ''
         } ${partialErrorObj && style.red}`}
-        disabled={color === "disabled" ? true : false}
+        disabled={color === 'disabled' ? true : false}
         value={value}
         ref={ref}
+        autoComplete="off"
         {...props}
       />
       {partialErrorObj && (

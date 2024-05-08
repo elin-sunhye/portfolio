@@ -1,4 +1,4 @@
-// search_box
+// search_box ---------------------------------
 .search_box {
   width: 50rem;
   margin: 0 auto;
@@ -22,7 +22,7 @@
   }
 }
 
-// project_list
+// project_list ---------------------------------
 .project_list {
   flex-wrap: wrap;
   gap: 3rem;
@@ -31,13 +31,94 @@
     flex-wrap: wrap;
     gap: 1rem;
     align-content: center;
-    width: calc((100% / 5) - 3rem);
+    width: calc((100% - 6rem) / 3);
     aspect-ratio: 1 / 1;
     border-radius: var(--br-50pro);
     border: 1px solid #333;
+    overflow: hidden;
+    position: relative;
 
-    p {
+    .project_name {
       width: 100%;
+      font-size: var(--fs-24);
+      font-weight: bold;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    .project_tag {
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      opacity: 0;
+      transition: all 0.3s;
+    }
+
+    .img_project {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      img {
+        width: 90%;
+        height: auto;
+        opacity: 1;
+        transition: all 0.3s;
+      }
+    }
+
+    // // 각 프로젝트 별 스타일
+    // &.wisdom {
+    //   // color: var(--white);
+    //   span.img_project {
+    //     // background-color: #819bc9;
+    //   }
+    // }
+    &.gncar {
+      color: var(--white);
+      span.img_project {
+        background-color: #0e419c;
+      }
+    }
+    // &.gnwp {
+    //   color: var(--white);
+    //   span.img_project {
+    //     background: linear-gradient(#980030, #3a238c);
+    //   }
+    // }
+    &.gnhome {
+      color: var(--white);
+      span.img_project {
+        background: linear-gradient(#3a238c, #d9436b);
+      }
+    }
+    &.sandan {
+      color: var(--white);
+      span.img_project {
+        background-color: #0c9d87;
+      }
+    }
+    // &.homepage {
+    //   color: var(--white);
+    //   span.img_project {
+    //     background-color: #1573ac;
+    //   }
+    // }
+
+    // hover
+    &:hover {
+      .project_name,
+      .project_tag {
+        opacity: 1;
+      }
+
+      .img_project {
+        img {
+          opacity: 0;
+        }
+      }
     }
   }
 
