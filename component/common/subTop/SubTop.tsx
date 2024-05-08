@@ -1,23 +1,24 @@
-"use client";
+'use client';
 
-import style from "./subTop.module.scss";
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { FiExternalLink } from "react-icons/fi";
+import style from './subTop.module.scss';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { FiExternalLink } from 'react-icons/fi';
 
 // dummyData
-import menuData from "@/dummyData/menu.json";
-import Btn from "../btn/Btn";
+import menuData from '@/dummyData/menu.json';
+import Btn from '../btn/Btn';
 
 interface SubTopProps {
   explain: string;
   linkBtn?: {
     id: string;
-    btnSize?: "xsm" | "sm" | "lg" | "xlg";
+    btnSize?: 'xsm' | 'sm' | 'lg' | 'xlg';
 
     //
     className?: string;
     scss?: React.CSSProperties;
+    tartget?: string;
   };
   children?: React.ReactNode;
   bgColor?: string;
@@ -63,15 +64,15 @@ export default function SubTop({
     <div
       className={`section_padding ${style.sub_top}`}
       style={{
-        backgroundColor: bgColor ? bgColor : "var(--white)",
+        backgroundColor: bgColor ? bgColor : 'var(--white)',
       }}
     >
-      <h3 style={{ color: color ? color : "var(--black)" }}>
-        {menuData.find((mnm) => mnm.url === pathNm)?.menu || ""}
+      <h3 style={{ color: color ? color : 'var(--black)' }}>
+        {menuData.find((mnm) => mnm.url === pathNm)?.menu || ''}
       </h3>
-      <p style={{ color: color ? color : "var(--black)" }}>
-        {explain.includes("<br />") ? (
-          explain.split("<br />").map((txt: string, idx: number) => {
+      <p style={{ color: color ? color : 'var(--black)' }}>
+        {explain.includes('<br />') ? (
+          explain.split('<br />').map((txt: string, idx: number) => {
             return (
               <span key={`txt_${idx}`}>
                 {txt} <br />
@@ -84,13 +85,15 @@ export default function SubTop({
       </p>
       {linkBtn ? (
         <Btn
-          href={menuData.find((mnm) => mnm.url === pathNm)?.site || ""}
-          title={"자세히보기"}
+          href={menuData.find((mnm) => mnm.url === pathNm)?.site || ''}
+          title={'자세히보기'}
           id={linkBtn.id}
-          className={`${linkBtn.className ? linkBtn.className : ""} ${
+          className={`${linkBtn.className ? linkBtn.className : ''} ${
             style.btn_link
           }`}
           btnSize={linkBtn.btnSize ? linkBtn.btnSize : undefined}
+          target={linkBtn.tartget}
+          border={'br_round'}
         >
           view stie
           <FiExternalLink role="img" aria-label="새창 아이콘" />

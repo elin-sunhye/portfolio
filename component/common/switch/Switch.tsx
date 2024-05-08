@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import React, { Ref, forwardRef, useEffect, useId, useState } from "react";
-import style from "./Switch.module.scss";
-import { FieldValues } from "react-hook-form";
+import React, { Ref, forwardRef, useEffect, useId, useState } from 'react';
+import style from './Switch.module.scss';
+import { FieldValues } from 'react-hook-form';
 
 interface SwitchProps {
   txt?: { left: string; right: string };
-  inpSize?: "xsm" | "sm" | "lg" | "xlg";
+  inpSize?: 'xsm' | 'sm' | 'lg' | 'xlg';
   color?: string;
-  border?: "br_square_round_1" | "br_square_round_2" | "br_round";
+  border?: 'br_square_round_1' | 'br_square_round_2' | 'br_round';
   title: string;
   value?: string | number;
   partialErrorObj?: FieldValues;
@@ -55,31 +55,31 @@ const Switch = (
       <label htmlFor={`${id}_ ${title}`} className="screen_out">
         {title}
       </label>
-      {txt && txt.left ? <span>{txt.left}</span> : ""}
+      {txt && txt.left ? <span>{txt.left}</span> : ''}
       <input
         type="checkbox"
         id={`${id}_${title}`}
         title={title}
         className={`${style.switch}  ${
-          inpSize === "xsm"
+          inpSize === 'xsm'
             ? style.xsm
-            : inpSize === "sm"
+            : inpSize === 'sm'
             ? style.sm
-            : inpSize === "lg"
+            : inpSize === 'lg'
             ? style.lg
-            : inpSize === "xlg"
+            : inpSize === 'xlg'
             ? style.xlg
             : style.md
         }  
-        ${color && color !== "" ? style[color] : style.white} ${
-          border ? style[border] : ""
+        ${color && color !== '' ? style[color] : style.white} ${
+          border ? style[border] : ''
         } ${partialErrorObj && style.red}`}
-        disabled={color === "disabled" ? true : false}
+        disabled={color === 'disabled' ? true : false}
         value={value}
         ref={ref}
         {...props}
       />
-      {txt && txt.right ? <span>{txt.right}</span> : ""}
+      {txt && txt.right ? <span>{txt.right}</span> : ''}
     </div>
   );
 };

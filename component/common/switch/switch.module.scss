@@ -35,21 +35,21 @@ input.switch {
   /* color */
   // 기본 컬러
   &.white {
-    border: 1px solid var(--gray-300);
+    border: 1px solid var(--gray-3);
   }
   &.black {
     border: 1px solid var(--black);
   }
   &.mainColor {
-    border: 1px solid var(--mcolor);
-    color: var(--mcolor);
+    border: 1px solid var(--main-orange-1);
+    color: var(--main-orange-1);
   }
   &.red {
     border: 1px solid var(--error03) !important;
   }
 
   &::before {
-    content: "";
+    content: '';
     width: 100%;
     height: 100%;
     position: absolute;
@@ -63,7 +63,7 @@ input.switch {
   }
 
   &::after {
-    content: "";
+    content: '';
     height: 85%;
     aspect-ratio: 1 / 1;
     position: absolute;
@@ -121,10 +121,10 @@ input.switch {
 
   /* checked */
   &:checked {
-    border-color: var(--mcolor);
+    border-color: var(--main-orange-1);
 
     &::before {
-      background-color: var(--mcolor);
+      background-color: var(--main-orange-1);
     }
 
     &::after {

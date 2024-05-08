@@ -41,8 +41,8 @@ input.checkbox {
     border: 1px solid var(--black);
   }
   &.mainColor {
-    border: 1px solid var(--mcolor);
-    color: var(--mcolor);
+    border: 1px solid var(--main-orange-1);
+    color: var(--main-orange-1);
   }
   &.red {
     border: 1px solid var(--error03) !important;
@@ -51,22 +51,22 @@ input.checkbox {
   /* checked */
   &:checked {
     position: relative;
-    border-color: var(--mcolor);
+    border-color: var(--main-orange-1);
 
     &::before {
-      content: "";
+      content: '';
       width: 100%;
       height: 100%;
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
-      background-color: var(--mcolor);
+      background-color: var(--main-orange-1);
       z-index: 2;
     }
 
     &::after {
-      content: "";
+      content: '';
       width: 30%;
       height: 50%;
       position: absolute;
