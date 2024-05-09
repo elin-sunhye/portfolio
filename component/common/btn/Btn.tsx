@@ -1,7 +1,7 @@
 "use client";
 
 import { Ref, forwardRef, useState } from "react";
-import style from "./Btn.module.scss";
+import style from "./btn.module.scss";
 
 interface BtnProps {
   type?: "submit" | "reset";
