@@ -45,94 +45,7 @@
   }
 }
 
-// 메인 ---------------------------------
-.main_visual_section {
-  height: 100vh;
-
-  .main_visual_box {
-    width: 100%;
-    height: calc(100vh - 10rem);
-    background-color: var(--main-gray-1);
-    position: relative;
-
-    & > span {
-      display: inline-block;
-      position: absolute;
-
-      &:first-of-type {
-        width: 130vh;
-        height: 130vh;
-        border: 3px solid var(--main-blue-1);
-        border-radius: var(--br-50pro);
-        left: -35%;
-        top: -70%;
-      }
-
-      &:nth-of-type(2) {
-        width: 30vh;
-        height: 60vh;
-        background-color: var(--main-green-1);
-        border-radius: 70rem 0 0 70rem;
-        right: 0;
-        top: 0;
-      }
-      &:nth-of-type(3) {
-        width: calc(40vh - 10rem);
-        height: calc(40vh - 10rem);
-        border: 3px solid var(--main-green-1);
-        border-radius: 0 0 0 50rem;
-        right: -0.3rem;
-        bottom: 0;
-      }
-
-      &:last-of-type {
-        width: 60vh;
-        height: 30vh;
-        background-color: var(--sub-pink-1);
-        border-radius: 0 0 50rem 50rem;
-        right: 30vh;
-        top: 30vh;
-      }
-    }
-
-    .main_visual {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      z-index: 3;
-    }
-  }
-
-  .btn_go_content {
-    margin: 0 auto;
-    @include aniSetting(upDownAni);
-
-    svg {
-      font-size: var(--fs-36);
-      color: var(--blakc);
-    }
-  }
-}
-
 // 공통 ---------------------------------
-// scroll_txt
-.scroll_txt_section {
-  width: 100%;
-  height: 15rem;
-  position: relative;
-  overflow: hidden;
-
-  .scroll_txt {
-    width: 900rem;
-    color: var(--main-orange-1);
-    font-size: 15rem;
-    font-weight: 900;
-    line-height: 1;
-    position: absolute;
-    top: 0;
-  }
-}
-
 // top_box
 .top_box {
   h3 {
@@ -186,73 +99,182 @@
   }
 }
 
+// 메인 ---------------------------------
+.main_visual_section {
+  height: 100vh;
+
+  .main_visual_box {
+    width: 100%;
+    height: calc(100vh - 10rem);
+    background-color: var(--main-gray-1);
+    position: relative;
+
+    & > span {
+      display: inline-block;
+      position: absolute;
+
+      &:first-of-type {
+        width: 130vh;
+        height: 130vh;
+        border: 3px solid var(--main-blue-1);
+        border-radius: var(--br-50pro);
+        left: -35%;
+        top: -70%;
+      }
+
+      &:nth-of-type(2) {
+        width: 30vh;
+        height: 60vh;
+        background-color: var(--sub-pink-1);
+        border-radius: 70rem 0 0 70rem;
+        right: 0;
+        top: 0;
+      }
+      &:nth-of-type(3) {
+        width: calc(40vh - 10rem);
+        height: calc(40vh - 10rem);
+        border: 3px solid var(--main-green-1);
+        border-radius: 0 0 0 50rem;
+        right: -0.3rem;
+        bottom: 0;
+      }
+
+      // &:last-of-type {
+      //   width: 60vh;
+      //   height: 30vh;
+      //   background-color: var(--sub-pink-1);
+      //   border-radius: 0 0 50rem 50rem;
+      //   right: 30vh;
+      //   top: 30vh;
+      // }
+    }
+
+    .main_visual {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      z-index: 3;
+
+      .top_box {
+        margin: 0;
+
+        .img_profile {
+          width: 30rem;
+          margin: 0 auto;
+          aspect-ratio: 1 / 1;
+          border-radius: var(--br-50pro);
+          overflow: hidden;
+          background-color: var(--white);
+          margin-bottom: 3rem;
+
+          img {
+            width: 83%;
+            margin: 0 auto;
+            height: auto;
+          }
+        }
+
+        h3 {
+          -webkit-text-stroke: 0;
+        }
+      }
+    }
+  }
+
+  .btn_go_content {
+    margin: 0 auto;
+    @include aniSetting(upDownAni);
+
+    svg {
+      font-size: var(--fs-36);
+      color: var(--blakc);
+    }
+  }
+}
+
 // introduce_section ---------------------------------
 .introduce_section {
   position: relative;
-  // top_box
-  .top_box {
-    h3 {
-      letter-spacing: 0.5rem;
-      -webkit-text-stroke: 0;
-    }
-  }
 
   // bg
-  .bg_circle,
-  .bg_triangle {
-    position: absolute;
-    z-index: -1;
-  }
+  // .bg_circle,
+  // .bg_triangle {
+  //   position: absolute;
+  //   z-index: -1;
+  // }
 
-  .bg_circle {
-    width: 50rem;
-    height: 50rem;
-    flex-wrap: wrap;
-    left: -37rem;
-    top: -40rem;
+  // .bg_circle {
+  //   width: 50rem;
+  //   height: 50rem;
+  //   flex-wrap: wrap;
+  //   left: -37rem;
+  //   top: -40rem;
 
-    span {
-      display: block;
-      width: calc(100% / 2);
-      height: calc(100% / 2);
-      border-radius: var(--br-50pro);
-      background-color: var(--main-green-1);
-    }
-  }
+  //   span {
+  //     display: block;
+  //     width: calc(100% / 2);
+  //     height: calc(100% / 2);
+  //     border-radius: var(--br-50pro);
+  //     background-color: var(--main-green-1);
+  //   }
+  // }
 
-  .bg_triangle {
-    width: 50rem;
-    height: 40rem;
-    clip-path: polygon(100% 0, 0 100%, 100% 100%);
-    background-color: var(--sub-pink-1);
-    right: 0;
-    bottom: 0;
-  }
+  // .bg_triangle {
+  //   width: 50rem;
+  //   height: 40rem;
+  //   clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  //   background-color: var(--sub-pink-1);
+  //   right: 0;
+  //   bottom: 0;
+  // }
 
   // skill
   .skill_box {
-    padding: 15rem 5rem;
+    padding: 10rem 5rem;
     background-color: var(--main-gray-1);
     border-radius: 30rem;
     flex-wrap: wrap;
     gap: 5rem;
     position: relative;
 
-    & > div:not(.bg_circle) {
+    // & > div:not(.bg_circle) {
+    //   width: 100%;
+    //   display: flex;
+    //   justify-content: center;
+    //   align-items: center;
+    //   gap: 3rem;
+
+    //   span {
+    //     display: inline-block;
+    //     width: auto;
+    //     height: 5rem;
+
+    //     img {
+    //       width: fit-content;
+    //       height: 100%;
+    //     }
+    //   }
+    // }
+
+    & > div {
       width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 3rem;
 
-      span {
-        display: inline-block;
+      p {
         width: auto;
         height: 5rem;
+        gap: 1rem;
 
         img {
           width: fit-content;
           height: 100%;
+        }
+
+        span {
+          font-size: var(--fs-24);
         }
       }
     }
@@ -482,6 +504,24 @@
   }
 }
 
+// scroll_txt ---------------------------------
+.scroll_txt_section {
+  width: 100%;
+  height: 15rem;
+  position: relative;
+  overflow: hidden;
+
+  .scroll_txt {
+    width: 900rem;
+    color: var(--main-orange-1);
+    font-size: 15rem;
+    font-weight: 900;
+    line-height: 1;
+    position: absolute;
+    top: 0;
+  }
+}
+
 // 테블릿 ---------------------------------
 @media screen and (max-width: 1024px) {
 }
@@ -508,9 +548,18 @@
           height: calc(30vh - 10rem);
         }
 
-        &:last-of-type {
-          width: 40vh;
-          height: 20vh;
+        // &:last-of-type {
+        //   width: 40vh;
+        //   height: 20vh;
+        // }
+      }
+
+      .main_visual {
+        .top_box {
+          .img_profile {
+            max-width: 90%;
+            width: 50vh;
+          }
         }
       }
     }
@@ -527,16 +576,6 @@
   }
 
   // 공통 ---------------------------------
-  // scroll_txt
-  .scroll_txt_section {
-    height: 7rem;
-
-    .scroll_txt {
-      width: 700rem;
-      font-size: 7rem;
-    }
-  }
-
   // scroll_box
   .scroll_box {
     height: calc(100% - 17rem);
@@ -555,39 +594,46 @@
 
   // introduce_section ---------------------------------
   .introduce_section {
-    // top_box
-    .top_box {
-      h3 {
-        letter-spacing: 0.3rem;
-      }
-    }
-
     // bg
-    .bg_circle {
-      width: 30rem;
-      height: 30rem;
-      left: -10rem;
-      top: -25rem;
-    }
+    // .bg_circle {
+    //   width: 30rem;
+    //   height: 30rem;
+    //   left: -10rem;
+    //   top: -25rem;
+    // }
 
-    .bg_triangle {
-      width: 20rem;
-      height: 15rem;
-    }
+    // .bg_triangle {
+    //   width: 20rem;
+    //   height: 15rem;
+    // }
 
     // skill
     .skill_box {
-      padding: 1rem;
+      padding: 3rem 1rem;
       border-radius: var(--br-15);
-      gap: 1rem;
+      gap: 1.5rem;
 
-      & > div:not(.bg_circle) {
+      // & > div:not(.bg_circle) {
+      //   width: 100%;
+      //   gap: 1rem;
+      //   flex-wrap: wrap;
+
+      //   span {
+      //     height: 3rem;
+      //   }
+      // }
+
+      & > div {
         width: 100%;
-        gap: 1rem;
+        gap: 1.5rem;
         flex-wrap: wrap;
 
-        span {
+        p {
           height: 3rem;
+
+          span {
+            font-size: var(--fs-16);
+          }
         }
       }
     }
@@ -666,6 +712,16 @@
           font-size: var(--fs-18);
         }
       }
+    }
+  }
+
+  // scroll_txt
+  .scroll_txt_section {
+    height: 7rem;
+
+    .scroll_txt {
+      width: 700rem;
+      font-size: 7rem;
     }
   }
 }

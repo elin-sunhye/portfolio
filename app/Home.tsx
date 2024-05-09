@@ -11,6 +11,7 @@ import { FiDownloadCloud, FiExternalLink } from 'react-icons/fi';
 import { useRouter } from 'next/navigation';
 import LastSection from '@/component/lastSection/LastSection';
 import Btn from '@/component/common/btn/Btn';
+import Image from 'next/image';
 
 // dummyData ---------------------------------
 import menuData from '@/dummyData/menu.json';
@@ -44,7 +45,8 @@ export default function Home() {
       if (window.scrollY > 0 && scrollTxtRef.current !== null) {
         scrollTxtRef.current.style.setProperty(
           'transform',
-          `translateX(-${String(window.scrollY - window.innerHeight + 1)}px)`
+          // `translateX(-${String(window.scrollY - window.innerHeight + 1)}px)`
+          `translateX(-${String(window.scrollY - window.innerHeight * 3.5)}px)`
         );
       }
 
@@ -63,7 +65,8 @@ export default function Home() {
             scrollTxtRef.current.style.setProperty(
               'transform',
               `translateX(-${String(
-                window.scrollY + 1
+                window.scrollY - window.innerHeight * 3.5
+                // window.scrollY + 1
                 // window.scrollY - window.innerHeight + 1
               )}px)`
             );
@@ -71,7 +74,8 @@ export default function Home() {
             scrollTxtRef.current.style.setProperty(
               'transform',
               `translateX(-${String(
-                window.scrollY - 1
+                window.scrollY - window.innerHeight * 3.5
+                // window.scrollY - 1
                 // window.scrollY - window.innerHeight - 1
               )}px)`
             );
@@ -141,13 +145,13 @@ export default function Home() {
 
         // scroll 2
         if (scroll2UpRef.current !== null && scroll2DownRef.current !== null) {
-          if (window.scrollY >= window.innerHeight * 3.5) {
+          if (window.scrollY >= window.innerHeight * 2) {
             let num1 = String(
-              window.scrollY - window.innerHeight * 3.5 + 0.1
+              window.scrollY - window.innerHeight * 2 + 0.1
             ).replaceAll('.', '');
 
             let num2 = String(
-              window.scrollY - window.innerHeight * 3.5 - 0.1
+              window.scrollY - window.innerHeight * 2 - 0.1
             ).replaceAll('.', '');
 
             let plus =
@@ -288,9 +292,29 @@ export default function Home() {
           <span></span>
           <span></span>
           <span></span>
-          <span></span>
+          {/* <span></span> */}
 
-          <div className={style.main_visual}></div>
+          <div className={`flex_center ${style.main_visual}`}>
+            <div className={`top_box ${style.top_box}`}>
+              <span className={style.img_profile}>
+                <Image
+                  src={'/main/img_profile.svg'}
+                  width={0}
+                  height={0}
+                  alt="프로필 이미지"
+                />
+              </span>
+              <h3>김선혜</h3>
+              <p>Frontend Developer</p>
+              <span>🎂 1996 . 04 . 03</span>
+              <span>🤙 010-2162-0043</span>
+              <span>📨 tjsgp1401@naver.com</span>
+              <span>📎 PORTFOLIO</span>
+              <span>📎 GitHub</span>
+            </div>
+
+            <div className={style.skill_box}></div>
+          </div>
         </div>
 
         <Btn
@@ -309,107 +333,146 @@ export default function Home() {
         </Btn>
       </section>
 
-      {/* scroll_txt_section --------------------------------- */}
-      <section className={style.scroll_txt_section}>
-        <span className={style.scroll_txt} ref={scrollTxtRef}>
-          THE PARADISE IS WHERE I AM THE PARADISE IS WHERE I AM
-        </span>
-      </section>
-
       {/* introduce_section --------------------------------- */}
       <section className={`section_padding ${style.introduce_section}`}>
         <div className={`top_box ${style.top_box}`}>
-          <h3>김선혜</h3>
-          <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
-          <span>가나다 나다 가가라</span>
-          <Btn
-            title={'contact me'}
-            id={'contactMe'}
-            className={style.btn_dialog}
-            color="black"
-            border="br_round"
-            onClick={() => {
-              setContactMeDialog(true);
-            }}
-          >
-            contact me
-          </Btn>
+          <h3>SKILLS ABILITY</h3>
+          <p>Framework | Language | Library</p>
         </div>
-
-        {/* dialog */}
-        {/* <Dialog
-          state={contactMeDialog}
-          setState={setContactMeDialog}
-          title={"contact me"}
-          width={"50rem"}
-        >
-          <>
-            <p>
-              연락처 : <span>010-2162-0043</span>
-            </p>
-            <br />
-            <p>
-              이메일 : <span>tjsgp1041@naver.com</span>
-            </p>
-          </>
-        </Dialog> */}
-
         <div className={`wrap flex_start ${style.skill_box}`}>
-          <div className={`flex_start ${style.bg_circle}`}>
+          {/* <div className={`flex_start ${style.bg_circle}`}>
             <span></span>
             <span></span>
             <span></span>
             <span></span>
-          </div>
+          </div> */}
 
           <div>
-            <span>
-              <img src="/main/skill/img_react.svg" alt="react" />
-            </span>
-            <span>
-              <img src="/main/skill/img_react-query.svg" alt="react" />
-            </span>
-            <span>
-              <img src="/main/skill/img_react-hook-form.png" alt="react" />
-            </span>
-            <span>
-              <img src="/main/skill/img_react-icons.svg" alt="react" />
-            </span>
+            <p className={`flex_center`}>
+              <Image
+                src="/main/skill/ico_react.svg"
+                alt="react"
+                width={0}
+                height={0}
+              />
+              <span>React.js</span>
+            </p>
+            <p className={`flex_center`}>
+              <Image
+                src="/main/skill/ico_next.svg"
+                alt="react"
+                width={0}
+                height={0}
+              />
+              <span>Next.js</span>
+            </p>
+            <p className={`flex_center`}>
+              <Image
+                src="/main/skill/ico_github.svg"
+                alt="react"
+                width={0}
+                height={0}
+              />
+              <span>Github</span>
+            </p>
+            <p className={`flex_center`}>
+              <Image
+                src="/main/skill/ico_gitlab.svg"
+                alt="react"
+                width={0}
+                height={0}
+              />
+              <span>Gitlab</span>
+            </p>
           </div>
           <div>
-            <span>
-              <img src="/main/skill/img_nextjs.svg" alt="react" />
-            </span>
-            <span>
-              <img src="/main/skill/img_recoil.svg" alt="react" />
-            </span>
-            <span>
-              <img src="/main/skill/img_js.svg" alt="react" />
-            </span>
-            <span>
-              <img src="/main/skill/img_ts.svg" alt="react" />
-            </span>
+            <p className={`flex_center`}>
+              <Image
+                src="/main/skill/ico_js.svg"
+                alt="react"
+                width={0}
+                height={0}
+              />
+              <span>JavaScript</span>
+            </p>
+            <p className={`flex_center`}>
+              <Image
+                src="/main/skill/ico_ts.svg"
+                alt="react"
+                width={0}
+                height={0}
+              />
+              <span>TypeScript</span>
+            </p>
+            <p className={`flex_center`}>
+              <Image
+                src="/main/skill/ico_html.svg"
+                alt="react"
+                width={0}
+                height={0}
+              />
+              <span>HTML5</span>
+            </p>
+            <p className={`flex_center`}>
+              <Image
+                src="/main/skill/ico_scss.svg"
+                alt="react"
+                width={0}
+                height={0}
+              />
+              <span>SCSS</span>
+            </p>
+            <p className={`flex_center`}>
+              <Image
+                src="/main/skill/ico_css.svg"
+                alt="react"
+                width={0}
+                height={0}
+              />
+              <span>CSS</span>
+            </p>
           </div>
           <div>
-            <span>
-              <img src="/main/skill/img_html.svg" alt="react" />
-            </span>
-            <span>
-              <img src="/main/skill/img_css.svg" alt="react" />
-            </span>
-            <span>
-              <img src="/main/skill/img_scss.svg" alt="react" />
-            </span>
-            <span>
-              <img src="/main/skill/img_github.svg" alt="react" />
-            </span>
-            <span>
-              <img src="/main/skill/img_gitlab.svg" alt="react" />
-            </span>
+            <p className={`flex_center`}>
+              <Image
+                src="/main/skill/ico_react_query.svg"
+                alt="react"
+                width={0}
+                height={0}
+              />
+              <span>react-query</span>
+            </p>
+            <p className={`flex_center`}>
+              <Image
+                src="/main/skill/ico_react_hook_form.svg"
+                alt="react"
+                width={0}
+                height={0}
+              />
+              <span>react-hook-form</span>
+            </p>
+            <p className={`flex_center`}>
+              <Image
+                src="/main/skill/ico_lodash.svg"
+                alt="lodash"
+                width={0}
+                height={0}
+              />
+              <span>Lodash.js</span>
+            </p>
+            <p className={`flex_center`}>
+              <Image
+                src="/main/skill/ico_recoil.svg"
+                alt="react"
+                width={0}
+                height={0}
+              />
+              <span>recoil</span>
+            </p>
           </div>
         </div>
 
-        <div className={style.bg_triangle}></div>
+        {/* <div className={style.bg_triangle}></div> */}
       </section>
 
       {/* career_section --------------------------------- */}
@@ -531,7 +594,7 @@ export default function Home() {
       </section>
 
       {/* project_wiko_section --------------------------------- */}
-      <section className={`${style.project_wiko_section}`}>
+      {/* <section className={`${style.project_wiko_section}`}>
         <div className={`wrap flex_between ${style.wrap}`}>
           <div className={`top_box ${style.top_box}`}>
             <h3>WIKO</h3>
@@ -577,7 +640,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* project_2_section --------------------------------- */}
       <section className={`${style.project_2_section}`}>
@@ -625,7 +688,7 @@ export default function Home() {
       </section>
 
       {/* project_3_section --------------------------------- */}
-      <section className={`${style.project_3_section}`}>
+      {/* <section className={`${style.project_3_section}`}>
         <div className={`wrap flex_between ${style.wrap}`}>
           <div className={`top_box ${style.top_box}`}>
             <h3>WIKO</h3>
@@ -669,7 +732,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* support_section --------------------------------- */}
       <section className={`section_padding ${style.support_section}`}>
@@ -693,6 +756,13 @@ export default function Home() {
             <FiExternalLink role="img" aria-label="새창 아이콘" />
           </Link>
         </div>
+      </section>
+
+      {/* scroll_txt_section --------------------------------- */}
+      <section className={style.scroll_txt_section}>
+        <span className={style.scroll_txt} ref={scrollTxtRef}>
+          THE PARADISE IS WHERE I AM THE PARADISE IS WHERE I AM
+        </span>
       </section>
 
       {/* view_more_section --------------------------------- */}
