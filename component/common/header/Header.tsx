@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import style from "./header.module.scss";
-import { useEffect, useState } from "react";
-import { FiExternalLink } from "react-icons/fi";
-import { menuType } from "@/type/menu/menuType";
-import { usePathname, useRouter } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
+import style from './header.module.scss';
+import { useEffect, useState } from 'react';
+import { FiExternalLink } from 'react-icons/fi';
+import { menuType } from '@/type/menu/menuType';
+import { usePathname, useRouter } from 'next/navigation';
+import Image from 'next/image';
+import Link from 'next/link';
 
 // dummyData
-import menuData from "@/dummyData/menu.json";
+import menuData from '@/dummyData/menu.json';
 
 interface HeaderClientProps {
   // /**
@@ -44,7 +44,7 @@ export default function HeaderClient({}: HeaderClientProps) {
   const [scroll, setScroll] = useState<boolean>(false);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== 'undefined') {
       // 스크롤 초기화
       if (window.scrollY > 0) {
         setScroll(true);
@@ -52,7 +52,7 @@ export default function HeaderClient({}: HeaderClientProps) {
 
       // scroll
       let lastScroll = 0;
-      window.addEventListener("scroll", function () {
+      window.addEventListener('scroll', function () {
         let currentScroll = document.documentElement.scrollTop;
 
         if (currentScroll > lastScroll) {
@@ -72,7 +72,7 @@ export default function HeaderClient({}: HeaderClientProps) {
   // sitemap 나와있을때 헤더 스크롤 막기
   useEffect(() => {
     if (siteMap) {
-      window.addEventListener("scroll", function (e) {
+      window.addEventListener('scroll', function (e) {
         setScroll(false);
       });
 
@@ -80,7 +80,7 @@ export default function HeaderClient({}: HeaderClientProps) {
       document.body.style.cssText = `overflow-y: hidden`;
     } else {
       let lastScroll = 0;
-      window.addEventListener("scroll", function () {
+      window.addEventListener('scroll', function () {
         let currentScroll = document.documentElement.scrollTop;
 
         if (currentScroll > lastScroll) {
@@ -106,18 +106,18 @@ export default function HeaderClient({}: HeaderClientProps) {
   return (
     <header
       className={`flex_between ${style.header} ${
-        scroll ? style.scroll_none : ""
-      } ${siteMap ? style.active : ""}`}
+        scroll ? style.scroll_none : ''
+      } ${siteMap ? style.active : ''}`}
     >
       <div className={`flex_center ${style.left}`}>
         <h1
           className={style.t_logo_l}
           title="홈"
           onClick={() => {
-            router.push("/");
+            router.push('/');
           }}
         >
-          <Image src={"/logo.png"} alt={"로고이미지"} width={70} height={70} />
+          <Image src={'/logo.png'} alt={'로고이미지'} width={70} height={70} />
         </h1>
 
         {/* 사이트 맵 */}
@@ -136,47 +136,53 @@ export default function HeaderClient({}: HeaderClientProps) {
 
         {/* github */}
         <Link
-          href={"https://github.com/elin-sunhye"}
+          href={'https://github.com/elin-sunhye'}
           target="_blank"
           title="github 바로가기"
           className={`flex_center ${style.link_git_hub}`}
         >
-          <FiExternalLink role="img" aria-label="새창 아이콘" />
+          {/* <FiExternalLink role="img" aria-label="새창 아이콘" /> */}
+          <Image
+            src={'/main/skill/ico_github.svg'}
+            alt="깃허브 아이콘"
+            width={0}
+            height={0}
+          />
         </Link>
       </div>
 
       <div className={`flex_center ${style.right}`}>
         <ul className={`flex_start ${style.depth_1}`}>
           {depth1.map((one: menuType, idx1: number) => {
-            const middle = String(depth1.length / 2).includes(".")
-              ? Number(String(depth1.length / 2).split(".")[1]) >= 5
-                ? Number(String(depth1.length / 2).split(".")[0]) + 1
-                : Number(String(depth1.length / 2).split(".")[0])
+            const middle = String(depth1.length / 2).includes('.')
+              ? Number(String(depth1.length / 2).split('.')[1]) >= 5
+                ? Number(String(depth1.length / 2).split('.')[0]) + 1
+                : Number(String(depth1.length / 2).split('.')[0])
               : depth1.length / 2;
             return (
               <li
                 key={`one_${one.seq}`}
                 className={` ${
-                  one.menu === "CAREER"
+                  one.menu === 'CAREER'
                     ? style.green
-                    : one.menu === "PROJECT"
+                    : one.menu === 'PROJECT'
                     ? style.pink
-                    : one.menu === "COMPONENT"
+                    : one.menu === 'COMPONENT'
                     ? style.purple
                     : style.gray
                 } ${
                   middle <= idx1 + 1 && idx1 <= depth1.length
                     ? `flex_end ${style.end}`
-                    : "flex_start"
+                    : 'flex_start'
                 }`}
               >
-                {one.menu === "CAREER" ? (
+                {one.menu === 'CAREER' ? (
                   <div className={`${style.depth_1_bg} ${style.career_bg}`}>
                     <span></span>
                     <span></span>
                     <span></span>
                   </div>
-                ) : one.menu === "PROJECT" ? (
+                ) : one.menu === 'PROJECT' ? (
                   <div
                     className={`flex_center ${style.depth_1_bg} ${style.project_bg}`}
                   >
@@ -185,7 +191,7 @@ export default function HeaderClient({}: HeaderClientProps) {
                     <span></span>
                     <span></span>
                   </div>
-                ) : one.menu === "COMPONENT" ? (
+                ) : one.menu === 'COMPONENT' ? (
                   <div
                     className={`flex_start ${style.depth_1_bg} ${style.conponent_bg}`}
                   >
@@ -217,26 +223,26 @@ export default function HeaderClient({}: HeaderClientProps) {
                                 href={
                                   depth1.find(
                                     (oneNm) => oneNm.seq === two.parentSeq
-                                  )?.menu === "CAREER"
+                                  )?.menu === 'CAREER'
                                     ? two.url
                                     : two.hasChild
                                     ? depth3.find(
                                         (three) => three.parentSeq === two.seq
-                                      )?.url || ""
+                                      )?.url || ''
                                     : two.url
                                 }
                               >
                                 {two.menu}
                                 <span>
-                                  {two.menu === "DEPS"
-                                    ? "AI 융합 솔루션 전문기업"
-                                    : two.menu === "ORANGE"
-                                    ? "해외 아티스트 콜라보레이션 전문 기업"
-                                    : two.menu === "LAPCOS"
-                                    ? "LAP 브랜드에서 론칭한 회장품 회사"
-                                    : two.menu === "WIKO"
-                                    ? "주물 주조"
-                                    : ""}
+                                  {two.menu === 'DEPS'
+                                    ? 'AI 융합 솔루션 전문기업'
+                                    : two.menu === 'ORANGE'
+                                    ? '해외 아티스트 콜라보레이션 전문 기업'
+                                    : two.menu === 'LAPCOS'
+                                    ? 'LAP 브랜드에서 론칭한 회장품 회사'
+                                    : two.menu === 'WIKO'
+                                    ? '주물 주조'
+                                    : ''}
                                 </span>
                               </Link>
                               {/* {two.hasChild ? (

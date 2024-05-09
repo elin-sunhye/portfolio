@@ -15,6 +15,8 @@ import Image from 'next/image';
 
 // dummyData ---------------------------------
 import menuData from '@/dummyData/menu.json';
+import { RiNotionFill } from 'react-icons/ri';
+import { FaGithub } from 'react-icons/fa';
 
 export default function Home() {
   // ---------------------------------
@@ -295,7 +297,7 @@ export default function Home() {
           {/* <span></span> */}
 
           <div className={`flex_center ${style.main_visual}`}>
-            <div className={`top_box ${style.top_box}`}>
+            <div className={`top_box flex_center ${style.top_box}`}>
               <span className={style.img_profile}>
                 <Image
                   src={'/main/img_profile.svg'}
@@ -304,13 +306,15 @@ export default function Home() {
                   alt="프로필 이미지"
                 />
               </span>
-              <h3>김선혜</h3>
-              <p>Frontend Developer</p>
-              <span>🎂 1996 . 04 . 03</span>
-              <span>🤙 010-2162-0043</span>
-              <span>📨 tjsgp1401@naver.com</span>
-              <span>📎 PORTFOLIO</span>
-              <span>📎 GitHub</span>
+              <div className={style.right}>
+                <h3>김선혜</h3>
+                <p>Frontend Developer</p>
+                <span>🎂 1996 . 04 . 03</span>
+                <span>🤙 010-2162-0043</span>
+                <span>📨 tjsgp1401@naver.com</span>
+                {/* <span>📎 PORTFOLIO</span> */}
+                <span>📎 GitHub</span>
+              </div>
             </div>
 
             <div className={style.skill_box}></div>
@@ -479,8 +483,8 @@ export default function Home() {
       <section className={`section_padding ${style.career_section}`}>
         <div className={`top_box ${style.top_box}`}>
           <h3>TOGETHER</h3>
-          <p>총 경력 : 4년 (5년차) | 2019년 2월 ~ </p>
-          <span>(2024년 2월 기준 | 공백 : 2019년 11월 ~ 2020년 11월)</span>
+          <p>총 경력 : 4년 5개월 | 2019년 2월 ~ </p>
+          <span>(2024년 5월 기준 | 공백 : 2019년 11월 ~ 2020년 11월)</span>
         </div>
 
         <div className={`flex_start ${style.career_box}`}>
@@ -493,16 +497,23 @@ export default function Home() {
                   href={item.url}
                   className={`flex_center ${style.career_slides} ${
                     itemInd % 2 === 0 ? style.polygon : ''
-                  } ${itemInd % 3 === 0 ? style.circle : ''} `}
+                  } ${itemInd % 3 === 0 ? style.circle : ''} ${
+                    itemInd % 2 == 0 ? style.red : ''
+                  } ${itemInd % 3 == 0 ? style.blue : ''} ${
+                    itemInd % 5 == 0 ? style.black : ''
+                  }`}
                 >
-                  <p>개발 사진</p>
+                  <p>
+                    <Image
+                      src={`/career/deps/img_${item.menu.toLowerCase()}_logo.svg`}
+                      alt={`${item.menu.toLowerCase()} 로고`}
+                      width={0}
+                      height={0}
+                    />
+                  </p>
 
                   <div
-                    className={`flex_center ${
-                      style.career_rolling_hover_card
-                    } ${itemInd % 2 == 0 ? style.red : ''} ${
-                      itemInd % 4 == 0 ? style.blue : ''
-                    } ${itemInd % 5 == 0 ? style.black : ''}`}
+                    className={`flex_center ${style.career_rolling_hover_card}`}
                   >
                     <span>
                       {menuData.find((seq) => seq.seq === item.parentSeq)?.menu}
@@ -536,16 +547,16 @@ export default function Home() {
                   href={item.url}
                   className={`flex_center ${style.career_slides} ${
                     itemInd % 2 === 0 ? style.polygon : ''
-                  } ${itemInd % 3 === 0 ? style.circle : ''} `}
+                  } ${itemInd % 3 === 0 ? style.circle : ''} ${
+                    itemInd % 2 == 0 ? style.red : ''
+                  } ${itemInd % 4 == 0 ? style.blue : ''} ${
+                    itemInd % 5 == 0 ? style.black : ''
+                  }`}
                 >
                   <p>디자인 사진</p>
 
                   <div
-                    className={`flex_center ${
-                      style.career_rolling_hover_card
-                    } ${itemInd % 2 == 0 ? style.red : ''} ${
-                      itemInd % 4 == 0 ? style.blue : ''
-                    } ${itemInd % 5 == 0 ? style.black : ''}`}
+                    className={`flex_center ${style.career_rolling_hover_card}`}
                   >
                     <span>
                       {menuData.find((seq) => seq.seq === item.parentSeq)?.menu}
@@ -743,9 +754,14 @@ export default function Home() {
         </div>
 
         <div className={`wrap flex_center ${style.support_box}`}>
-          <Link href="/" download={''} className={'flex_center'}>
-            자기 소개서 다운
-            <FiDownloadCloud role="img" aria-label="다운로드 아이콘" />
+          <Link
+            href={
+              'https://www.notion.so/thunhye/dde0ea1679e5421e868e63a9410ccbcf?pvs=4'
+            }
+            className={'flex_center'}
+          >
+            이력서 바로 가기
+            <RiNotionFill role="img" aria-label="노션 아이콘" />
           </Link>
           <Link
             href={'https://github.com/elin-sunhye'}
@@ -753,7 +769,7 @@ export default function Home() {
             className={'flex_center'}
           >
             github 바로 가기
-            <FiExternalLink role="img" aria-label="새창 아이콘" />
+            <FaGithub role="img" aria-label="깃허브 아이콘" />
           </Link>
         </div>
       </section>

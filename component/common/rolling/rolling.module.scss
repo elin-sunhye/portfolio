@@ -7,10 +7,12 @@
     position: relative;
 
     &.original {
-      animation: 50s linear infinite normal none running rolling1;
+      // animation: 50s linear infinite normal none running rolling1;
+      animation: flow 30s linear infinite;
     }
     &.clone {
-      animation: 50s linear infinite rolling2;
+      // animation: 50s linear infinite rolling2;
+      animation: flow 30s linear infinite;
     }
     &.original.stop,
     &.clone.stop {
@@ -30,10 +32,12 @@
       position: relative;
 
       &.original {
-        animation: 30s linear infinite normal none running rollingRight1;
+        // animation: 30s linear infinite normal none running rollingRight1;
+        animation: flow2 30s linear infinite;
       }
       &.clone {
-        animation: 30s linear infinite rollingRight2;
+        // animation: 30s linear infinite rollingRight2;
+        animation: flow2 30s linear infinite;
       }
       &.original.stop,
       &.clone.stop {
@@ -86,6 +90,24 @@
 @keyframes rollingRight2 {
   0% {
     transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+// animation: flow 30s linear infinite;
+@keyframes flow {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes flow2 {
+  0% {
+    transform: translateX(-100%);
   }
   100% {
     transform: translateX(0);
