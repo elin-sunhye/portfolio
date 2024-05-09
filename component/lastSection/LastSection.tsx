@@ -41,11 +41,13 @@ export default function LastSection({
       // scroll
       let lastScroll = 0;
       window.addEventListener('scroll', function () {
+        // console.log('document.body.clientHeight', document.body.clientHeight);
+
         // viwe_more_bg
-        if (window.scrollY >= window.innerHeight * 6.5) {
+        if (window.scrollY >= document.body.clientHeight - window.innerHeight) {
           setViewMoreBg(true);
         } else {
-          setViewMoreBg(false);
+          // setViewMoreBg(false);
         }
       });
     }
