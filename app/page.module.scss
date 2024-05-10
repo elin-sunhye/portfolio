@@ -102,6 +102,7 @@
     height: calc(100vh - 10rem);
     background-color: var(--main-gray-1);
     position: relative;
+    overflow: hidden;
 
     & > span {
       display: inline-block;
@@ -511,6 +512,7 @@
 
   .support_box {
     height: calc(100% - 27rem);
+    overflow: hidden;
     gap: 10rem;
 
     a {
@@ -556,10 +558,6 @@
 
 // 테블릿 ---------------------------------
 @media screen and (max-width: 1024px) {
-}
-
-// 모바일 ---------------------------------
-@media screen and (max-width: 640px) {
   // 메인 ---------------------------------
   .main_visual_section {
     .main_visual_box {
@@ -602,21 +600,18 @@
           span {
             text-align: center;
           }
+
+          .right {
+            width: 100%;
+          }
         }
       }
     }
-
-    .btn_go_content {
-      margin: 0 auto;
-      @include aniSetting(upDownAniMo);
-
-      svg {
-        font-size: var(--fs-24);
-        color: var(--blakc);
-      }
-    }
   }
+}
 
+// 모바일 ---------------------------------
+@media screen and (max-width: 640px) {
   // 공통 ---------------------------------
   // scroll_box
   .scroll_box {
