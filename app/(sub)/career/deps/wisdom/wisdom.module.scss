@@ -1,262 +1,158 @@
-// 애니메이션 ---------------------------------
-@mixin aniSetting($name) {
-  animation-name: $name;
-  // 시작되기 전이나 끝나고 난 후 어떤 값 적용
-  // animation-fill-mode: forwards;
+// // 애니메이션 ---------------------------------
+// @mixin aniSetting($name) {
+//   animation-name: $name;
+//   // 시작되기 전이나 끝나고 난 후 어떤 값 적용
+//   // animation-fill-mode: forwards;
 
-  // 종료 후 다시 처음부터 시작할지 역방향으로 진행할지
-  animation-direction: alternate;
-  // 몇번 진행
-  animation-iteration-count: infinite;
-  // 진행 속도
-  animation-duration: 3s;
-  // 애니메이션 속도
-  animation-timing-function: ease-in-out;
-}
+//   // 종료 후 다시 처음부터 시작할지 역방향으로 진행할지
+//   animation-direction: alternate;
+//   // 몇번 진행
+//   animation-iteration-count: infinite;
+//   // 진행 속도
+//   animation-duration: 3s;
+//   // 애니메이션 속도
+//   animation-timing-function: ease-in-out;
+// }
 
-@keyframes chart1Ani {
-  0% {
-    height: 50%;
-  }
-  50% {
-    height: 80%;
-  }
-  100% {
-    height: 10%;
-  }
-}
+// @keyframes chart1Ani {
+//   0% {
+//     height: 50%;
+//   }
+//   50% {
+//     height: 80%;
+//   }
+//   100% {
+//     height: 10%;
+//   }
+// }
 
-@keyframes chart2Ani {
-  0% {
-    height: 100%;
-  }
-  50% {
-    height: 10%;
-  }
-  100% {
-    height: 30%;
-  }
-}
+// @keyframes chart2Ani {
+//   0% {
+//     height: 100%;
+//   }
+//   50% {
+//     height: 10%;
+//   }
+//   100% {
+//     height: 30%;
+//   }
+// }
 
-@keyframes circleAni {
-  0% {
-    background: conic-gradient(#3377ff 0deg 360deg);
-  }
-  8.3% {
-    background: conic-gradient(#0e419c 0% 90deg, #3377ff 90deg 360deg);
-  }
-  16.6% {
-    background: conic-gradient(#0e419c 0% 180deg, #3377ff 180deg 360deg);
-  }
-  24.9% {
-    background: conic-gradient(#0e419c 0% 270deg, #3377ff 270deg 360deg);
-  }
-  33.2% {
-    background: conic-gradient(#0e419c 0% 360deg);
-  }
-  41.5% {
-    background: conic-gradient(#92b1e7 0% 90deg, #0e419c 90deg 360deg);
-  }
-  49.8% {
-    background: conic-gradient(#92b1e7 0% 180deg, #0e419c 180deg 360deg);
-  }
-  58.1% {
-    background: conic-gradient(#92b1e7 0% 270deg, #0e419c 270deg 360deg);
-  }
-  66.4% {
-    background: conic-gradient(#92b1e7 0% 360deg);
-  }
-  74.7% {
-    background: conic-gradient(#3377ff 0% 90deg, #92b1e7 90deg 360deg);
-  }
-  83% {
-    background: conic-gradient(#3377ff 0% 180deg, #92b1e7 180deg 360deg);
-  }
-  91.3% {
-    background: conic-gradient(#3377ff 0% 270deg, #92b1e7 270deg 360deg);
-  }
-  100% {
-    background: conic-gradient(#3377ff 0deg 360deg);
-  }
-}
-// sub_top ---------------------------------
-.rolling_item {
-  width: 40rem;
-  aspect-ratio: 1 / 1;
-  // background-color: var(--main-purple-1);
+// @keyframes circleAni {
+//   0% {
+//     background: conic-gradient(#3377ff 0deg 360deg);
+//   }
+//   8.3% {
+//     background: conic-gradient(#0e419c 0% 90deg, #3377ff 90deg 360deg);
+//   }
+//   16.6% {
+//     background: conic-gradient(#0e419c 0% 180deg, #3377ff 180deg 360deg);
+//   }
+//   24.9% {
+//     background: conic-gradient(#0e419c 0% 270deg, #3377ff 270deg 360deg);
+//   }
+//   33.2% {
+//     background: conic-gradient(#0e419c 0% 360deg);
+//   }
+//   41.5% {
+//     background: conic-gradient(#92b1e7 0% 90deg, #0e419c 90deg 360deg);
+//   }
+//   49.8% {
+//     background: conic-gradient(#92b1e7 0% 180deg, #0e419c 180deg 360deg);
+//   }
+//   58.1% {
+//     background: conic-gradient(#92b1e7 0% 270deg, #0e419c 270deg 360deg);
+//   }
+//   66.4% {
+//     background: conic-gradient(#92b1e7 0% 360deg);
+//   }
+//   74.7% {
+//     background: conic-gradient(#3377ff 0% 90deg, #92b1e7 90deg 360deg);
+//   }
+//   83% {
+//     background: conic-gradient(#3377ff 0% 180deg, #92b1e7 180deg 360deg);
+//   }
+//   91.3% {
+//     background: conic-gradient(#3377ff 0% 270deg, #92b1e7 270deg 360deg);
+//   }
+//   100% {
+//     background: conic-gradient(#3377ff 0deg 360deg);
+//   }
+// }
 
-  // &:nth-child(4n) {
-  //   background-color: var(--main-green-1);
-  // }
-  // &:nth-child(5n) {
-  //   background-color: var(--main-orange-1);
-  // }
+// .rolling_item {
+//   width: 40rem;
+//   aspect-ratio: 1 / 1;
+//   // background-color: var(--main-purple-1);
 
-  &.rolling_circle {
-    border-radius: var(--br-50pro);
-    @include aniSetting(circleAni);
-    animation-direction: normal;
-    animation-duration: 10s;
-    animation-timing-function: unset;
-  }
-  // &.rolling_pattern {
-  //   background: url('/career/wisdom/sub_visual_mp.svg') no-repeat 0 0 / cover;
-  //   // linear-gradient( #00359f, #011a45 25%, #37f 70%);
-  // }
-  &.rolling_half_circle {
-    span {
-      display: block;
-      width: 100%;
-      aspect-ratio: 1 / 0.5;
-      border-radius: 30rem 30rem 0 0;
+//   // &:nth-child(4n) {
+//   //   background-color: var(--main-green-1);
+//   // }
+//   // &:nth-child(5n) {
+//   //   background-color: var(--main-orange-1);
+//   // }
 
-      &:first-of-type {
-        background-color: #de3923;
-      }
-      &:last-of-type {
-        background-color: #f3971c;
-      }
-    }
-  }
-  &.rolling_won {
-    border-radius: var(--br-50pro);
-    background-color: #ffd64b;
-  }
-  &.rolling_chart {
-    align-items: flex-end;
+//   &.rolling_circle {
+//     border-radius: var(--br-50pro);
+//     @include aniSetting(circleAni);
+//     animation-direction: normal;
+//     animation-duration: 10s;
+//     animation-timing-function: unset;
+//   }
+//   // &.rolling_pattern {
+//   //   background: url('/career/wisdom/sub_visual_mp.svg') no-repeat 0 0 / cover;
+//   //   // linear-gradient( #00359f, #011a45 25%, #37f 70%);
+//   // }
+//   &.rolling_half_circle {
+//     span {
+//       display: block;
+//       width: 100%;
+//       aspect-ratio: 1 / 0.5;
+//       border-radius: 30rem 30rem 0 0;
 
-    span {
-      display: block;
-      width: 45%;
-      border-radius: var(--br-5) var(--br-5) 0 0;
-      transition: all 30s;
+//       &:first-of-type {
+//         background-color: #de3923;
+//       }
+//       &:last-of-type {
+//         background-color: #f3971c;
+//       }
+//     }
+//   }
+//   &.rolling_won {
+//     border-radius: var(--br-50pro);
+//     background-color: #ffd64b;
+//   }
+//   &.rolling_chart {
+//     align-items: flex-end;
 
-      &:first-of-type {
-        background-color: #0e419c;
-        @include aniSetting(chart1Ani);
-      }
-      &:last-of-type {
-        background-color: #fb9625;
-        @include aniSetting(chart2Ani);
-      }
-    }
-  }
-  &.rolling_four_circle {
-    flex-wrap: wrap;
+//     span {
+//       display: block;
+//       width: 45%;
+//       border-radius: var(--br-5) var(--br-5) 0 0;
+//       transition: all 30s;
 
-    span {
-      display: block;
-      width: 50%;
-      aspect-ratio: 1 / 1;
-      background-color: #3fa454;
-      border-radius: var(--br-50pro);
-    }
-  }
-}
+//       &:first-of-type {
+//         background-color: #0e419c;
+//         @include aniSetting(chart1Ani);
+//       }
+//       &:last-of-type {
+//         background-color: #fb9625;
+//         @include aniSetting(chart2Ani);
+//       }
+//     }
+//   }
+//   &.rolling_four_circle {
+//     flex-wrap: wrap;
 
-// first_section ---------------------------------
-.first_section {
-  padding-top: 0;
-  position: relative;
-
-  .bg_top {
-    width: 15%;
-    aspect-ratio: 0.5 / 1;
-    border: 1px solid var(--main-blue-1);
-    border-radius: 0 50rem 50rem 0;
-    position: absolute;
-    left: 0.1rem;
-    top: 0;
-    z-index: -1;
-  }
-
-  .first_box {
-    & > div {
-      width: 50%;
-      aspect-ratio: 1 / 1;
-
-      &.left {
-        border-radius: 0 50rem 50rem 0;
-        background-color: var(--main-blue-1);
-      }
-
-      &.right {
-        background-color: var(--gray-2);
-        padding: 3rem;
-        flex-direction: column;
-        align-content: center;
-        gap: 3rem;
-
-        & > div {
-          gap: 1rem;
-
-          span {
-            width: 12rem;
-            font-size: var(--fs-20);
-            color: var(--sub-blue-1);
-          }
-        }
-      }
-    }
-  }
-}
-
-// sec_sections ---------------------------------
-.sec_sections {
-  .sec_box {
-    flex-wrap: wrap;
-    gap: 3rem;
-
-    .row {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      & > div {
-        width: 49%;
-        aspect-ratio: 1 / 1;
-      }
-
-      &:first-of-type {
-        & > div {
-          &:first-of-type {
-            background-color: var(--main-blue-1);
-          }
-        }
-      }
-
-      &:nth-of-type(2) {
-        & > div {
-          &:last-of-type {
-            background-color: var(--main-green-1);
-          }
-        }
-      }
-
-      &:last-of-type {
-        & > div {
-          &:first-of-type {
-            background-color: var(--sub-blue-1);
-          }
-        }
-      }
-    }
-  }
-}
-
-// third_section ---------------------------------
-.third_section {
-  .third_box {
-    aspect-ratio: 1 / 0.5;
-    background-color: var(--main-blue-1);
-    border-radius: 50rem;
-
-    .top_box {
-      margin: 0;
-    }
-  }
-}
+//     span {
+//       display: block;
+//       width: 50%;
+//       aspect-ratio: 1 / 1;
+//       background-color: #3fa454;
+//       border-radius: var(--br-50pro);
+//     }
+//   }
+// }
 
 // fourth_section ---------------------------------
 .fourth_section {
@@ -270,47 +166,4 @@
 }
 
 @media screen and (max-width: 1024px) {
-  // sub_top ---------------------------------
-  .rolling_item {
-    width: 25rem;
-  }
-
-  // first_section ---------------------------------
-  .first_section {
-    .first_box {
-      flex-wrap: wrap;
-      gap: 1rem;
-
-      & > div {
-        width: 100%;
-      }
-    }
-  }
-
-  // sec_sections ---------------------------------
-  .sec_sections {
-    .sec_box {
-      gap: 1rem;
-
-      .row {
-        width: 100%;
-        flex-wrap: wrap;
-
-        & > div {
-          width: 100%;
-        }
-
-        &:nth-of-type(2) {
-          flex-wrap: wrap-reverse;
-        }
-      }
-    }
-  }
-
-  // third_section ---------------------------------
-  .third_section {
-    .third_box {
-      aspect-ratio: 1 / 1.5;
-    }
-  }
 }
