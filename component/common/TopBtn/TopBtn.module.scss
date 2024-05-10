@@ -29,3 +29,29 @@
     bottom: 7rem;
   }
 }
+
+@media screen and (max-width: 640px) {
+  .btn_top {
+    button {
+      padding: 0.5rem !important;
+    }
+
+    &.topLeft {
+      left: 2rem;
+      top: 2rem;
+    }
+
+    &.topRgiht {
+      right: 2rem;
+      top: 2rem;
+    }
+    &.bottomLeft {
+      left: 2rem;
+      bottom: 2rem;
+    }
+    &.bottomRight {
+      right: 2rem;
+      bottom: 2rem;
+    }
+  }
+}

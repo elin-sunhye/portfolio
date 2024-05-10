@@ -1,13 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import style from './page.module.scss';
 import { HiOutlineChevronDoubleDown } from 'react-icons/hi';
 import { useEffect, useRef, useState } from 'react';
 import { menuType } from '@/type/menu/menuType';
-import Rolling from '@/component/common/rolling/Rolling';
 import Link from 'next/link';
-import { FiDownloadCloud, FiExternalLink } from 'react-icons/fi';
 import { useRouter } from 'next/navigation';
 import LastSection from '@/component/lastSection/LastSection';
 import Btn from '@/component/common/btn/Btn';
@@ -27,12 +24,8 @@ export default function Home() {
 
   // scroll ---------------------------------
   const scrollTxtRef = useRef<HTMLSpanElement>(null);
-  const scrollWikoUpRef = useRef<HTMLDivElement>(null);
-  const scrollWikoDownRef = useRef<HTMLDivElement>(null);
   const scroll2UpRef = useRef<HTMLDivElement>(null);
   const scroll2DownRef = useRef<HTMLDivElement>(null);
-  const scroll3UpRef = useRef<HTMLDivElement>(null);
-  const scroll3DownRef = useRef<HTMLDivElement>(null);
 
   // 화면 로드시
   useEffect(() => {
@@ -86,66 +79,6 @@ export default function Home() {
         }
 
         // scroll wiko
-        if (
-          scrollWikoUpRef.current !== null &&
-          scrollWikoDownRef.current !== null
-        ) {
-          if (window.scrollY >= window.innerHeight * 2.5) {
-            let num1 = String(
-              window.scrollY - window.innerHeight * 2.5 + 0.1
-            ).replaceAll('.', '');
-
-            let num2 = String(
-              window.scrollY - window.innerHeight * 2.5 - 0.1
-            ).replaceAll('.', '');
-
-            let plus =
-              num1.length == 1
-                ? `0.00${num1}`
-                : num1.length == 2
-                ? `0.0${num1}`
-                : num1.length == 3
-                ? `0.${num1}`
-                : num1.length == 4
-                ? num1.slice(0, 1) + '.' + num1.slice(1)
-                : num1.slice(0, 2) + '.' + num1.slice(2);
-
-            let minus =
-              num2.length == 1
-                ? `0.00${num2}`
-                : num2.length == 2
-                ? `0.0${num2}`
-                : num2.length == 3
-                ? `0.${num2}`
-                : num2.length == 4
-                ? num2.slice(0, 1) + '.' + num2.slice(1)
-                : num2.slice(0, 2) + '.' + num2.slice(2);
-
-            if (currentScroll > lastScroll) {
-              scrollWikoUpRef.current.style.setProperty(
-                'transform',
-                `translateY(-${plus}%)`
-              );
-              scrollWikoDownRef.current.style.setProperty(
-                'transform',
-                `translateY(${minus}%)`
-              );
-            } else {
-              scrollWikoUpRef.current.style.setProperty(
-                'transform',
-                `translateY(-${minus}%)`
-              );
-
-              scrollWikoDownRef.current.style.setProperty(
-                'transform',
-                `translateY(${plus}%)`
-              );
-            }
-            lastScroll = currentScroll;
-          }
-        }
-
-        // scroll 2
         if (scroll2UpRef.current !== null && scroll2DownRef.current !== null) {
           if (window.scrollY >= window.innerHeight * 2) {
             let num1 = String(
@@ -194,63 +127,6 @@ export default function Home() {
               );
 
               scroll2DownRef.current.style.setProperty(
-                'transform',
-                `translateY(${plus}%)`
-              );
-            }
-            lastScroll = currentScroll;
-          }
-        }
-
-        // scroll 3
-        if (scroll3UpRef.current !== null && scroll3DownRef.current !== null) {
-          if (window.scrollY >= window.innerHeight * 4.5) {
-            let num1 = String(
-              window.scrollY - window.innerHeight * 4.5 + 0.1
-            ).replaceAll('.', '');
-
-            let num2 = String(
-              window.scrollY - window.innerHeight * 4.5 - 0.1
-            ).replaceAll('.', '');
-
-            let plus =
-              num1.length == 1
-                ? `0.00${num1}`
-                : num1.length == 2
-                ? `0.0${num1}`
-                : num1.length == 3
-                ? `0.${num1}`
-                : num1.length == 4
-                ? num1.slice(0, 1) + '.' + num1.slice(1)
-                : num1.slice(0, 2) + '.' + num1.slice(2);
-
-            let minus =
-              num2.length == 1
-                ? `0.00${num2}`
-                : num2.length == 2
-                ? `0.0${num2}`
-                : num2.length == 3
-                ? `0.${num2}`
-                : num2.length == 4
-                ? num2.slice(0, 1) + '.' + num2.slice(1)
-                : num2.slice(0, 2) + '.' + num2.slice(2);
-
-            if (currentScroll > lastScroll) {
-              scroll3UpRef.current.style.setProperty(
-                'transform',
-                `translateY(-${plus}%)`
-              );
-              scroll3DownRef.current.style.setProperty(
-                'transform',
-                `translateY(${minus}%)`
-              );
-            } else {
-              scroll3UpRef.current.style.setProperty(
-                'transform',
-                `translateY(-${minus}%)`
-              );
-
-              scroll3DownRef.current.style.setProperty(
                 'transform',
                 `translateY(${plus}%)`
               );
@@ -310,10 +186,18 @@ export default function Home() {
                 <h3>김선혜</h3>
                 <p>Frontend Developer</p>
                 <span>🎂 1996 . 04 . 03</span>
-                <span>🤙 010-2162-0043</span>
-                <span>📨 tjsgp1401@naver.com</span>
-                {/* <span>📎 PORTFOLIO</span> */}
-                <span>📎 GitHub</span>
+                <a href={'tel:01021620043'} title="이메일 바로가기">
+                  🤙 010-2162-0043
+                </a>
+                <a href={'mailto:tjsgp1401@naver.com'} title="이메일 바로가기">
+                  📨 tjsgp1401@naver.com
+                </a>
+                <a
+                  href={'https://github.com/elin-sunhye'}
+                  title="깃허브 바로가기"
+                >
+                  📎 GitHub
+                </a>
               </div>
             </div>
 
@@ -344,13 +228,6 @@ export default function Home() {
           <p>Framework | Language | Library</p>
         </div>
         <div className={`wrap flex_start ${style.skill_box}`}>
-          {/* <div className={`flex_start ${style.bg_circle}`}>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div> */}
-
           <div>
             <p className={`flex_center`}>
               <Image
@@ -475,8 +352,6 @@ export default function Home() {
             </p>
           </div>
         </div>
-
-        {/* <div className={style.bg_triangle}></div> */}
       </section>
 
       {/* career_section --------------------------------- */}
@@ -487,10 +362,10 @@ export default function Home() {
           <span>(2024년 5월 기준 | 공백 : 2019년 11월 ~ 2020년 11월)</span>
         </div>
 
-        <div className={`flex_start ${style.career_box}`}>
-          {/* https://velog.io/@kimbangul/React-SCSS-%EC%B4%88%EA%B0%84%EB%8B%A8-%EB%AC%B4%ED%95%9C%EC%9E%AC%EC%83%9D-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EB%93%9C-%EB%A7%8C%EB%93%A4%EA%B8%B0  */}
-          <Rolling>
-            {rollingITems.map((item, itemInd) => {
+        <div className={`wrap flex_center ${style.career_box}`}>
+          {menuData
+            .filter((menu) => menu.url.includes('career') && menu.depth === 2)
+            .map((item: menuType, itemInd: number) => {
               return (
                 <a
                   key={`rolling_item_${item.seq}`}
@@ -505,7 +380,7 @@ export default function Home() {
                 >
                   <p>
                     <Image
-                      src={`/career/deps/img_${item.menu.toLowerCase()}_logo.svg`}
+                      src={`/main/together/img_${item.menu.toLowerCase()}_logo.svg`}
                       alt={`${item.menu.toLowerCase()} 로고`}
                       width={0}
                       height={0}
@@ -516,145 +391,29 @@ export default function Home() {
                     className={`flex_center ${style.career_rolling_hover_card}`}
                   >
                     <span>
-                      {menuData.find((seq) => seq.seq === item.parentSeq)?.menu}
+                      {item.menu === 'DEPS'
+                        ? '2021.12 ~ 재직중'
+                        : item.menu === 'ORANGE'
+                        ? '2020.11 ~ 2021.11'
+                        : '2019.02 ~ 2019.11'}
                     </span>
                     <p>{item.menu}</p>
                     <span>
-                      {item.menu === 'STX'
-                        ? '2022.02 ~ 2022.08'
-                        : item.menu === 'HOMEPAGE'
-                        ? '2022.04 ~ 2022.06'
-                        : item.menu === 'SANDAN'
-                        ? '2022.08 ~ 2022.10'
-                        : item.menu === 'GNHOME'
-                        ? '2022.10 ~ 2023.03'
-                        : item.menu === 'GNTP'
-                        ? '2023.01 ~ 2023.07'
-                        : item.menu === 'GNCAR'
-                        ? '2023.08 ~ 2024.02'
-                        : '2024.01 ~ 2024.03'}
+                      {item.menu === 'DEPS'
+                        ? '응용 소프트웨어 개발 및 공급'
+                        : item.menu === 'ORANGE'
+                        ? '해외 아티스트 콜라보앨범 재작'
+                        : '화장품'}
                     </span>
                   </div>
                 </a>
               );
             })}
-          </Rolling>
-          <Rolling deirection={'right'}>
-            {rollingDesignITems.map((item, itemInd) => {
-              return (
-                <a
-                  key={`rolling_design_item_${item.seq}`}
-                  href={item.url}
-                  className={`flex_center ${style.career_slides} ${
-                    itemInd % 2 === 0 ? style.polygon : ''
-                  } ${itemInd % 3 === 0 ? style.circle : ''} ${
-                    itemInd % 2 == 0 ? style.red : ''
-                  } ${itemInd % 4 == 0 ? style.blue : ''} ${
-                    itemInd % 5 == 0 ? style.black : ''
-                  }`}
-                >
-                  <p>디자인 사진</p>
-
-                  <div
-                    className={`flex_center ${style.career_rolling_hover_card}`}
-                  >
-                    <span>
-                      {menuData.find((seq) => seq.seq === item.parentSeq)?.menu}
-                    </span>
-                    <p>{item.menu}</p>
-                    <span>
-                      {item.menu === 'CATALOG'
-                        ? '2019.02 ~ 2019.04'
-                        : item.menu === 'TRADESHOW'
-                        ? '2019.04 ~ 2019.10'
-                        : '2024.09 ~ 2024.11'}
-                    </span>
-                  </div>
-                </a>
-              );
-            })}
-            {rollingDesignITems.map((item, itemInd) => {
-              return (
-                <a
-                  key={`rolling_design_item_${item.seq}`}
-                  href={item.url}
-                  className={`flex_center ${style.career_slides} ${
-                    itemInd % 2 === 0 ? style.polygon : ''
-                  } ${itemInd % 3 === 0 ? style.circle : ''} `}
-                >
-                  <p>디자인 사진</p>
-
-                  <div
-                    className={`flex_center ${
-                      style.career_rolling_hover_card
-                    } ${itemInd % 2 == 0 ? style.red : ''} ${
-                      itemInd % 4 == 0 ? style.blue : ''
-                    } ${itemInd % 5 == 0 ? style.black : ''}`}
-                  >
-                    <span>
-                      {menuData.find((seq) => seq.seq === item.parentSeq)?.menu}
-                    </span>
-                    <p>{item.menu}</p>
-                    <span>기간 | 설명설명ㅆㅡ</span>
-                  </div>
-                </a>
-              );
-            })}
-          </Rolling>
         </div>
       </section>
 
       {/* project_wiko_section --------------------------------- */}
-      {/* <section className={`${style.project_wiko_section}`}>
-        <div className={`wrap flex_between ${style.wrap}`}>
-          <div className={`top_box ${style.top_box}`}>
-            <h3>WIKO</h3>
-            <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
-            <span>가나다 나다 가가라</span>
-            <Btn
-              title={'자세히 보기'}
-              id={'viewDetail'}
-              className={style.btn_go_page}
-              color="black"
-              border="br_round"
-              onClick={() => {
-                router.push(`/project/wiko`);
-              }}
-            >
-              view detail
-            </Btn>
-          </div>
-          <div className={`flex_end ${style.scroll_box}`}>
-            <div
-              ref={scrollWikoUpRef}
-              className={`flex_center ${style.scroll_up}`}
-            >
-              <span>asd</span>
-              <span>123</span>
-              <span>123</span>
-              <span>dsfsad</span>
-              <span>123</span>
-            </div>
-            <div
-              ref={scrollWikoDownRef}
-              className={`flex_center ${style.scroll_down}`}
-            >
-              <span>asd</span>
-              <span>123</span>
-              <span>123</span>
-              <div className="flex_between">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <span>123</span>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* project_2_section --------------------------------- */}
-      <section className={`${style.project_2_section}`}>
+      <section className={`${style.project_wiko_section}`}>
         <div className={`wrap flex_between ${style.wrap}`}>
           <div className={`flex_end ${style.scroll_box}`}>
             <div
@@ -698,59 +457,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* project_3_section --------------------------------- */}
-      {/* <section className={`${style.project_3_section}`}>
-        <div className={`wrap flex_between ${style.wrap}`}>
-          <div className={`top_box ${style.top_box}`}>
-            <h3>WIKO</h3>
-            <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
-            <span>가나다 나다 가가라</span>
-            <Btn
-              title={'자세히 보기'}
-              id={'viewDetail'}
-              className={style.btn_go_page}
-              color="black"
-              border="br_round"
-            >
-              view detail
-            </Btn>
-          </div>
-          <div className={`flex_end ${style.scroll_box}`}>
-            <div
-              ref={scroll3UpRef}
-              className={`flex_center ${style.scroll_up}`}
-            >
-              <span>asd</span>
-              <span>123</span>
-              <span>123</span>
-              <span>dsfsad</span>
-              <span>123</span>
-            </div>
-            <div
-              ref={scroll3DownRef}
-              className={`flex_center ${style.scroll_down}`}
-            >
-              <span>asd</span>
-              <span>123</span>
-              <span>123</span>
-              <div className="flex_start">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <span>123</span>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* support_section --------------------------------- */}
       <section className={`section_padding ${style.support_section}`}>
         <div className={`top_box ${style.top_box}`}>
           <h3>SUPPORT +</h3>
-          <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
-          <span>가나다 나다 가가라</span>
+          {/* <p>가나다라 가나 가나다라가나다라 가나 가나다라</p>
+          <span>가나다 나다 가가라</span> */}
         </div>
 
         <div className={`wrap flex_center ${style.support_box}`}>
@@ -777,15 +489,16 @@ export default function Home() {
       {/* scroll_txt_section --------------------------------- */}
       <section className={style.scroll_txt_section}>
         <span className={style.scroll_txt} ref={scrollTxtRef}>
-          THE PARADISE IS WHERE I AM THE PARADISE IS WHERE I AM
+          THE PARADISE IS WHERE I AM THE PARADISE IS WHERE I AM THE PARADISE IS
+          WHERE I AM THE PARADISE IS WHERE I AM
         </span>
       </section>
 
       {/* view_more_section --------------------------------- */}
       <LastSection
-        title="가가각"
-        subTitle="skskskskskssksksksksks sksksksksks sksksksksks"
-        explain="asda sd qu1t27 45 1q2765172q5r43 1253 12753"
+        title="김선혜"
+        subTitle="🤙 010-2162-0043"
+        explain="📎 GitHub"
       />
     </main>
   );
