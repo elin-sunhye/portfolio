@@ -101,174 +101,14 @@ export default function Wisdom() {
 
   return (
     <>
-      {/* sub_top --------------------------------- */}
-      <SubTop
-        explain={'경남대학교와 지역기관, 산업체의 협업체계를 위한 개발 사이트'}
-        linkBtn={{
-          id: 'btnWisdom',
-          className: style.btn_link,
-          scss: { backgroundColor: 'var(--main-blue-1)' },
-          tartget: '_blank',
-        }}
-      >
-        <Rolling hoverStop={false} speed="120s">
-          <div
-            className={`${style.rolling_item} ${style.rolling_circle}`}
-          ></div>
-          <div className={`${style.rolling_item} ${style.rolling_half_circle}`}>
-            <span></span>
-            <span></span>
-          </div>
-          <div className={`${style.rolling_item} ${style.rolling_won}`}></div>
-          <div
-            className={`flex_between ${style.rolling_item} ${style.rolling_chart}`}
-          >
-            <span></span>
-            <span></span>
-          </div>
-
-          <div
-            className={`flex_center ${style.rolling_item} ${style.rolling_four_circle}`}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </Rolling>
-      </SubTop>
-
-      {/* first_section --------------------------------- */}
-      <section className={`section_padding ${style.first_section}`}>
-        <div className={`top_box`}>
-          {/* <span className="point">Technology Stack</span> */}
-          <h3>Technology Stack</h3>
-          {/* <p>asdasdasdasdasdasdasd</p> */}
-        </div>
-
-        <span className={style.bg_top}></span>
-
-        <div className={`wrap flex_center ${style.first_box}`}>
-          <div className={`swiper_left ${style.left}`}>
-            <Swiper
-              {...swiperAutoParams}
-              ref={technologyRef}
-              onSlideChange={(e) => {
-                console.log('e', e.activeIndex);
-                //   setIdx(e.activeIndex);
-              }}
-            >
-              <SwiperSlide>
-                <Image
-                  src={'/career/deps/wisdom/img_main_all.png'}
-                  alt={'wisdom main all 이미지'}
-                  width={100}
-                  height={100}
-                  style={{ width: '100%', height: 'auto' }}
-                />
-              </SwiperSlide>
-              <SwiperSlide className="front">
-                <Image
-                  src={'/career/deps/wisdom/img_sub_front.png'}
-                  alt={'wisdom sub 이미지'}
-                  width={100}
-                  height={100}
-                  style={{ width: '100%', height: 'auto' }}
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image
-                  src={'/career/deps/wisdom/img_sub_all.png'}
-                  alt={'wisdom sub 이미지'}
-                  width={100}
-                  height={100}
-                  style={{ width: '100%', height: 'auto' }}
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Image
-                  src={'/career/deps/wisdom/img_cms_all.png'}
-                  alt={'wisdom cms 이미지'}
-                  width={100}
-                  height={100}
-                  style={{ width: '100%', height: 'auto' }}
-                />
-              </SwiperSlide>
-            </Swiper>
-          </div>
-          <div className={`flex_center ${style.right}`}>
-            <div className={`flex_start`}>
-              <span>front-end</span>
-              <Switch
-                title={''}
-                id={''}
-                value={''}
-                ref={null}
-                inpSize="xlg"
-                color="blue"
-                checked={true}
-                disabled={true}
-                border={'br_round'}
-              />
-            </div>
-
-            <div className={`flex_start`}>
-              <span>back-end</span>
-              <Switch
-                title={''}
-                id={''}
-                value={''}
-                ref={null}
-                inpSize="xlg"
-                color="blue"
-                checked={true}
-                disabled={true}
-                border={'br_round'}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* sec_sections --------------------------------- */}
-      <section className={`section_padding ${style.sec_sections}`}>
-        <div className={`top_box`}>
-          <span className="point">dskhf sdjfhsjdk asdfh</span>
-          <h3>어쩌고 저쩌고 짠</h3>
-          <p>asdasdasdasdasdasdasd</p>
-        </div>
-
-        <div className={`wrap flex_center ${style.sec_box}`}>
-          <div className={style.row}>
-            <div></div>
-            <div></div>
-          </div>
-          <div className={style.row}>
-            <div></div>
-            <div></div>
-          </div>
-          <div className={style.row}>
-            <div></div>
-            <div></div>
-          </div>
-        </div>
-      </section>
-
-      {/* third_section --------------------------------- */}
-      <section className={`section_padding ${style.third_section}`}>
-        <div className={`wrap flex_center ${style.third_box}`}>
-          <div className={`top_box ${style.top_box}`}>
-            <p>code</p>
-            <span>코드 어쩌고 저쩌고</span>
-          </div>
-        </div>
-      </section>
-
       {/* fourth_section --------------------------------- */}
       <section className={`section_padding ${style.fourth_section}`}>
         <div className={`top_box`}>
-          <p>database</p>
-          <span>data 어쩌고 저쩌고</span>
+          <span className="point">FRONTEND</span>
+          <p>WISDOM</p>
+          <span>
+            경남대학교와 지역기관, 산업체의 협업체계를 위한 개발 사이트
+          </span>
         </div>
 
         <div className={`wrap ${style.fourth_box}`}>
@@ -303,24 +143,103 @@ export default function Wisdom() {
 
       {/* sec_sections --------------------------------- */}
       <section className={`section_padding ${style.sec_sections}`}>
-        <div className={`top_box`}>
-          <span className="point">dskhf sdjfhsjdk asdfh</span>
-          <h3>어쩌고 저쩌고 짠</h3>
-          <p>asdasdasdasdasdasdasd</p>
-        </div>
-
-        <div className={`wrap flex_center ${style.sec_box}`}>
-          <div className={style.row}>
-            <div></div>
-            <div></div>
+        <div className={`wrap ${style.info_box}`}>
+          <div className={`flex_start ${style.info}`}>
+            <p>SKILLS</p>
+            <div
+              className={`flex_start ${style.info_inner} ${style.skill_box}`}
+            >
+              <p>
+                <span>
+                  <Image
+                    src="/main/skill/ico_react.svg"
+                    alt="react"
+                    width={0}
+                    height={0}
+                  />
+                </span>
+                <span>React.js</span>
+              </p>
+              <p>
+                <span>
+                  <Image
+                    src="/main/skill/ico_next.svg"
+                    alt="next"
+                    width={0}
+                    height={0}
+                  />
+                </span>
+                <span>Next.js</span>
+              </p>
+              <p>
+                <span>
+                  <Image
+                    src="/main/skill/ico_js.svg"
+                    alt="react"
+                    width={0}
+                    height={0}
+                  />
+                </span>
+                <span>JavaScript</span>
+              </p>
+              <p>
+                <span>
+                  <Image
+                    src="/main/skill/ico_ts.svg"
+                    alt="react"
+                    width={0}
+                    height={0}
+                  />
+                </span>
+                <span>TypeScript</span>
+              </p>
+              <p>
+                <span>
+                  <Image
+                    src="/main/skill/ico_scss.svg"
+                    alt="react"
+                    width={0}
+                    height={0}
+                  />
+                </span>
+                <span>SCSS</span>
+              </p>
+              <p>
+                <span>
+                  <Image
+                    src="/main/skill/ico_gitlab.svg"
+                    alt="react"
+                    width={0}
+                    height={0}
+                  />
+                </span>
+                <span>Gitlab</span>
+              </p>
+            </div>
           </div>
-          <div className={style.row}>
-            <div></div>
-            <div></div>
+          <div className={`flex_start ${style.info}`}>
+            <p>PERIOD</p>
+            <div className={style.info_inner}>
+              <p>2024.01 ~ 2024.04</p>
+            </div>
           </div>
-          <div className={style.row}>
-            <div></div>
-            <div></div>
+          <div className={`flex_start ${style.info}`}>
+            <p>DEVELOPER</p>
+            <div className={style.info_inner}>
+              <p>프론트엔드 개발자-2명 | 백엔드 개발자-2명</p>
+            </div>
+          </div>
+          <div className={`flex_start ${style.info}`}>
+            <p>CONTRIBUTION</p>
+            <div className={style.info_inner}>
+              <p>50%</p>
+            </div>
+          </div>
+          <div className={`flex_start ${style.info}`}>
+            <p>CONTRIBUTION</p>
+            <div className={style.info_inner}>
+              <p>50%</p>
+            </div>
           </div>
         </div>
       </section>
@@ -333,8 +252,9 @@ export default function Wisdom() {
           id={'viewSite'}
           className={'btn_go_page'}
           color="var(--black)"
+          onClick={() => {}}
         >
-          view site
+          목록
         </Btn>
       </LastSection>
     </>
