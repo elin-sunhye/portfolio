@@ -214,10 +214,10 @@
           width: 30rem;
           z-index: 9;
           position: absolute;
-          right: -33%;
+          // right: -33%;
           top: 10rem;
           // transform: translateX(-100%);
-          opacity: 0;
+          // opacity: 0;
           transition: all 0.3s;
 
           & > p {
@@ -227,7 +227,7 @@
           }
 
           .depth_2 {
-            margin-left: 9rem;
+            margin-left: 3rem;
 
             li {
               margin-bottom: 5rem;
@@ -248,27 +248,27 @@
         }
 
         // 마지막 1차 메뉴들
-        &.end {
-          .box {
-            left: -33%;
-            top: 10rem;
-            text-align: right;
+        // &.end {
+        //   .box {
+        //     left: -33%;
+        //     top: 10rem;
+        //     text-align: right;
 
-            .depth_2 {
-              margin-right: 9rem;
-            }
-          }
-        }
+        //     .depth_2 {
+        //       margin-right: 9rem;
+        //     }
+        //   }
+        // }
 
         // hover
-        &:hover {
-          width: 150%;
+        // &:hover {
+        //   width: 150%;
 
-          .box {
-            z-index: 999;
-            opacity: 1;
-          }
-        }
+        //   .box {
+        //     z-index: 999;
+        //     opacity: 1;
+        //   }
+        // }
       }
     }
 
@@ -395,6 +395,7 @@
   .header {
     gap: 1rem;
     flex-wrap: wrap;
+    align-content: flex-start;
     width: 100vw;
     height: 5rem;
     padding: 0 1rem;
@@ -436,7 +437,7 @@
     // right
     .right {
       width: 100%;
-      height: calc(100vh - 5rem);
+      height: calc(100vh - 7rem);
       padding: 0;
 
       // depth1
@@ -446,7 +447,7 @@
         gap: 1rem;
 
         & > li {
-          height: calc(100% / 3);
+          height: calc((100% - 2rem) / 3);
           padding: 1rem;
 
           // bg

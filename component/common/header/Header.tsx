@@ -191,7 +191,7 @@ export default function HeaderClient({}: HeaderClientProps) {
                     <span></span>
                     <span></span>
                   </div>
-                ) : one.menu === 'COMPONENT' ? (
+                ) : one.menu === 'JAVASCRIPT' ? (
                   <div
                     className={`flex_start ${style.depth_1_bg} ${style.conponent_bg}`}
                   >
