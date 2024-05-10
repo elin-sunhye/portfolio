@@ -31,66 +31,12 @@
   }
 }
 
-@keyframes circleSizeAni {
-  0% {
-    top: -23.396424816vw;
-    width: 100vw;
-    height: 100vw;
-  }
-
-  100% {
-    top: 0;
-    width: 73.568vw;
-    height: 73.568vw;
-  }
-}
-
 // 공통 ---------------------------------
 // top_box
 .top_box {
   h3 {
     -webkit-text-stroke: 2px var(--black);
     letter-spacing: unset;
-  }
-}
-
-// scroll_box
-.scroll_box {
-  gap: 3rem;
-  width: calc(100% - 50rem - 3rem);
-  height: 100%;
-  overflow: hidden;
-
-  & > div {
-    width: 50%;
-    flex-wrap: wrap;
-    gap: 3rem;
-
-    & > div,
-    & > span {
-      width: 100%;
-    }
-
-    & > span {
-      display: block;
-      border-radius: var(--br-50);
-      border: 1px solid #333;
-      aspect-ratio: 1 / 1.5;
-      background-color: var(--white);
-    }
-    & > div {
-      aspect-ratio: 1 / 1;
-    }
-
-    // up
-    &.scroll_up {
-      align-self: flex-start;
-    }
-
-    // down
-    &.scroll_down {
-      align-self: flex-end;
-    }
   }
 }
 
@@ -164,7 +110,8 @@
 
         h3,
         p,
-        span {
+        span,
+        a {
           text-align: left;
         }
 
@@ -177,7 +124,8 @@
           font-size: var(--fs-36);
         }
 
-        span {
+        span,
+        a {
           font-size: var(--fs-24);
         }
       }
@@ -201,33 +149,25 @@
 
   // skill
   .skill_box {
-    padding: 10rem 5rem;
-    background-color: var(--main-gray-1);
-    border-radius: 30rem;
+    width: 100%;
     flex-wrap: wrap;
-    gap: 5rem;
-    position: relative;
+    gap: 3rem;
 
-    & > div {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 3rem;
+    p {
+      width: auto;
+      height: 15rem;
+      gap: 1rem;
+      background-color: var(--main-gray-1);
+      border-radius: var(--br-10);
+      padding: 0 7rem;
 
-      p {
-        width: auto;
-        height: 5rem;
-        gap: 1rem;
+      img {
+        width: fit-content;
+        height: 40%;
+      }
 
-        img {
-          width: fit-content;
-          height: 100%;
-        }
-
-        span {
-          font-size: var(--fs-24);
-        }
+      span {
+        font-size: var(--fs-36);
       }
     }
   }
@@ -236,104 +176,89 @@
 // career_section ---------------------------------
 .career_section {
   width: 100%;
+  background-color: var(--main-gray-1);
 
   .career_box {
-    gap: 5rem;
-    flex-wrap: wrap;
+    width: 100%;
+    gap: 10rem;
+    flex-direction: column;
 
-    .career_slides {
-      width: calc(100% / 3 - 10rem);
-      aspect-ratio: 1 / 1;
-      background-color: var(--main-blue-1);
-      border-radius: var(--br-10);
-      position: relative;
-      overflow: hidden;
+    .career {
+      width: 100%;
+      gap: 10rem;
+      align-items: flex-start;
 
-      &.polygon {
-        // https://bennettfeely.com/clippy/
-        border-radius: var(--br-5);
-        clip-path: polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0 80%, 0 20%);
-      }
-      &.polygon.circle,
-      &.circle {
+      & > P {
+        width: 40rem;
+        aspect-ratio: 1 / 1;
+        background-color: var(--white);
         border-radius: var(--br-50pro);
-        clip-path: unset;
-      }
+        overflow: hidden;
 
-      &.red {
-        background-color: var(--sub-yellow-1);
-        color: var(--white);
-
-        .career_rolling_hover_card {
-          span {
-            &:first-of-type {
-              border-color: var(--white);
-            }
-          }
-        }
-      }
-
-      &.red.blue,
-      &.blue {
-        background-color: var(--sub-pink-1);
-      }
-
-      &.blue.black,
-      &.red.black,
-      &.red.blue.black,
-      &.black {
-        background-color: var(--main-green-1);
-      }
-
-      & > p {
-        width: 90%;
-        margin: 0 auto;
-        opacity: 0;
-        transition: all 0.3s;
         img {
+          width: 80%;
           height: auto;
         }
       }
 
-      // career_rolling_hover_card
-      .career_rolling_hover_card {
-        flex-direction: column;
-        align-content: center;
-        gap: 1rem;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 1;
-        transition: all 0.5s;
-
-        span {
-          display: inline-block;
-          font-size: var(--fs-20);
-
-          &:first-of-type {
-            border: 1px solid var(--black);
-            border-radius: var(--br-50);
-            padding: 0.5rem 2rem;
+      &:nth-of-type(2) {
+        & > P {
+          img {
+            width: 100%;
           }
-        }
-
-        p {
-          width: 100%;
-          text-align: center;
-          font-size: var(--fs-36);
         }
       }
 
-      // hover
-      &:hover {
-        & > p {
-          opacity: 1;
+      .career_info {
+        width: calc(100% - 50rem);
+        border-left: 1px solid var(--black);
+        padding-left: 3rem;
+
+        .comp_name {
+          font-size: var(--fs-36);
+          font-weight: 900;
         }
-        .career_rolling_hover_card {
-          opacity: 0;
+
+        .period {
+          display: block;
+          font-size: var(--fs-20);
+          color: var(--gray-5);
+          margin: 1rem 0;
+        }
+
+        .comp_desc {
+          span {
+            display: block;
+            margin-bottom: 0.5rem;
+          }
+        }
+
+        .project_box {
+          margin: 5rem 0;
+
+          .project_nm {
+            border-left: 0.5rem solid var(--black);
+            padding-left: 1rem;
+            font-size: var(--fs-24);
+            margin-bottom: 1rem;
+
+            a {
+              display: inline-block;
+              margin-left: 1rem;
+              color: var(--sub-blue-1);
+            }
+          }
+
+          .project_period {
+            display: block;
+            font-size: var(--fs-20);
+            color: var(--gray-5);
+            margin: 1rem 0;
+          }
+
+          .project_desc {
+            line-height: 1.3;
+          }
         }
       }
     }
@@ -344,6 +269,7 @@
 .project_wiko_section {
   height: 100vh;
   background-color: var(--sub-pink-1);
+
   .wrap {
     height: 100%;
     .top_box {
@@ -355,21 +281,57 @@
       }
     }
 
+    // scroll_box
     .scroll_box {
-      .scroll_down {
+      gap: 3rem;
+      width: calc(100% - 50rem - 3rem);
+      height: 100%;
+      overflow: hidden;
+
+      & > div {
+        width: 50%;
+        flex-wrap: wrap;
+        gap: 3rem;
+
+        & > div,
+        & > span {
+          width: 100%;
+        }
+
+        & > span {
+          display: block;
+          border-radius: var(--br-50);
+          aspect-ratio: 1 / 1.5;
+          background-color: var(--white);
+          // box-shadow: 0px 0px 2rem #3333333e;
+        }
         & > div {
-          flex-wrap: wrap;
+          aspect-ratio: 1 / 1;
+        }
 
-          & > span {
-            width: 100%;
-            aspect-ratio: 1 / 0.5;
-            border-radius: 20rem 20rem 0 0;
+        // up
+        &.scroll_up {
+          align-self: flex-start;
+        }
 
-            &:first-of-type {
-              background-color: var(--main-blue-1);
-            }
-            &:last-of-type {
-              background-color: var(--sub-blue-1);
+        // down
+        &.scroll_down {
+          align-self: flex-end;
+
+          & > div {
+            flex-wrap: wrap;
+
+            & > span {
+              width: 100%;
+              aspect-ratio: 1 / 0.5;
+              border-radius: 20rem 20rem 0 0;
+
+              &:first-of-type {
+                background-color: var(--main-blue-1);
+              }
+              &:last-of-type {
+                background-color: var(--sub-blue-1);
+              }
             }
           }
         }
@@ -413,7 +375,7 @@
 // scroll_txt ---------------------------------
 .scroll_txt_section {
   width: 100%;
-  height: 15rem;
+  height: 50rem;
   position: relative;
   overflow: hidden;
 
@@ -424,30 +386,13 @@
     font-weight: 900;
     line-height: 1;
     position: absolute;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 
 // 테블릿 ---------------------------------
 @media screen and (max-width: 1024px) {
-  // 공통 ---------------------------------
-  // scroll_box
-  .scroll_box {
-    width: 100%;
-    height: calc(100% - 25rem);
-    gap: 2rem;
-
-    & > div {
-      width: 50%;
-      gap: 1rem;
-
-      & > span {
-        display: block;
-        border-radius: var(--br-15);
-      }
-    }
-  }
-
   // 메인 ---------------------------------
   .main_visual_section {
     .main_visual_box {
@@ -482,7 +427,8 @@
 
           h3,
           p,
-          span {
+          span,
+          a {
             text-align: center;
           }
 
@@ -495,15 +441,15 @@
   }
 
   // career_section ---------------------------------
-  .career_section {
-    .career_box {
-      gap: 3rem;
+  // .career_section {
+  //   .career_box {
+  //     gap: 3rem;
 
-      .career_slides {
-        width: calc(100% / 2 - 5rem);
-      }
-    }
-  }
+  //     .career_slides {
+  //       width: calc(100% / 2 - 5rem);
+  //     }
+  //   }
+  // }
 
   // project_wiko_section ---------------------------------
   .project_wiko_section {
@@ -523,6 +469,22 @@
 
         button {
           margin: 0 auto;
+        }
+      }
+
+      .scroll_box {
+        width: 100%;
+        height: calc(100% - 25rem);
+        gap: 2rem;
+
+        & > div {
+          width: 50%;
+          gap: 1rem;
+
+          & > span {
+            display: block;
+            border-radius: var(--br-15);
+          }
         }
       }
     }
@@ -553,13 +515,6 @@
 
 // 모바일 ---------------------------------
 @media screen and (max-width: 640px) {
-  // 공통 ---------------------------------
-  // scroll_box
-  .scroll_box {
-    height: calc(100% - 20rem);
-    gap: 1rem;
-  }
-
   // 메인 ---------------------------------
   .main_visual_section {
     height: 76rem;
@@ -624,22 +579,32 @@
   }
 
   // career_section ---------------------------------
-  .career_section {
-    .career_box {
-      gap: 2rem;
+  // .career_section {
+  //   .career_box {
+  //     gap: 2rem;
 
-      .career_slides {
-        width: 100vw;
+  //     .career_slides {
+  //       width: 100vw;
 
-        // career_rolling_hover_card
-        .career_rolling_hover_card {
-          span {
-            font-size: var(--fs-14);
-          }
-          p {
-            font-size: var(--fs-18);
-          }
-        }
+  //       // career_rolling_hover_card
+  //       .career_rolling_hover_card {
+  //         span {
+  //           font-size: var(--fs-14);
+  //         }
+  //         p {
+  //           font-size: var(--fs-18);
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+
+  //
+  .project_wiko_section {
+    .wrap {
+      .scroll_box {
+        height: calc(100% - 20rem);
+        gap: 1rem;
       }
     }
   }
@@ -655,14 +620,14 @@
       }
     }
   }
-}
 
-// scroll_txt
-.scroll_txt_section {
-  height: 7rem;
+  // scroll_txt
+  .scroll_txt_section {
+    height: 7rem;
 
-  .scroll_txt {
-    width: 700rem;
-    font-size: 7rem;
+    .scroll_txt {
+      width: 700rem;
+      font-size: 7rem;
+    }
   }
 }

@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import NextAuthProvider from '@/component/common/layout/NextAuthProvider';
 import RecoilRootProvider from '@/component/common/layout/RecoilRootProvider';
 import ReactQueryProvider from '@/component/common/layout/ReactQueryProvider';
-import Header from '@/component/common/header/Header';
 import localFont from 'next/font/local';
 import TopBtn from '@/component/common/TopBtn/TopBtn';
 import { LuArrowDownToLine } from 'react-icons/lu';
@@ -37,8 +36,6 @@ export default function RootLayout({
       <body className={`${Strawford.variable}`}>
         <NextAuthProvider>
           <RecoilRootProvider>
-            <Header />
-
             <ReactQueryProvider>{children}</ReactQueryProvider>
 
             <TopBtn border="br_round" color="black">
