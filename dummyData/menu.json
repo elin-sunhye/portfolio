@@ -50,7 +50,7 @@
     "parentSeq": 10,
     "menu": "GNCAR",
     "url": "/career/deps/gncar",
-    "site": "https://gncar.gntp.or.kr",
+    "site": "https://gncar.gntp.or.kr/virtual",
     "title": "경남 TP 버추얼 개발 기술지원 플랫폼",
     "tag": [
       "react",
@@ -117,7 +117,7 @@
     "parentSeq": 10,
     "menu": "HOMEPAGE",
     "url": "/career/deps/homepage",
-    "site": "http://deps.kr",
+    "site": "http://www.deps.kr/",
     "title": "뎁스 홈페이지",
     "tag": ["javascript", "html", "css", "퍼블리싱", "publishing"],
     "hasChild": false,
@@ -174,6 +174,18 @@
   {
     "seq": 111,
     "parentSeq": 11,
+    "menu": "NFT SHOWCASE",
+    "url": "/career/orangeent/nftshowcase",
+    "site": "",
+    "title": "랜디주커버그 nft 쇼케이스",
+    "tag": ["javascript", "html", "css", "퍼블리싱", "publishing"],
+    "hasChild": false,
+    "depth": 3,
+    "sort": 2
+  },
+  {
+    "seq": 112,
+    "parentSeq": 11,
     "menu": "HOMEPAGE",
     "url": "/career/orangeent/homepage",
     "site": "",
@@ -189,18 +201,6 @@
       "디자인",
       "피그마"
     ],
-    "hasChild": false,
-    "depth": 3,
-    "sort": 2
-  },
-  {
-    "seq": 112,
-    "parentSeq": 11,
-    "menu": "NFT SHOWCASE",
-    "url": "/career/orangeent/nftshowcase",
-    "site": "",
-    "title": "랜디주커버그 nft 쇼케이스",
-    "tag": ["javascript", "html", "css", "퍼블리싱", "publishing"],
     "hasChild": false,
     "depth": 3,
     "sort": 3
@@ -232,11 +232,11 @@
   {
     "seq": 120,
     "parentSeq": 12,
-    "menu": "CATALOG",
-    "url": "/career/lapcos/catalog",
+    "menu": "COSTCO",
+    "url": "/career/lapcos/cost",
     "site": "",
-    "title": "제품 카탈로그",
-    "tag": ["indesign", "인디자인", "design", "디자인"],
+    "title": "코스트코",
+    "tag": ["indesign", "인디자인", "design", "디자인", "패키지 디자인"],
     "hasChild": false,
     "depth": 3,
     "sort": 1
@@ -256,11 +256,11 @@
   {
     "seq": 122,
     "parentSeq": 12,
-    "menu": "COSTCO",
-    "url": "/career/lapcos/cost",
+    "menu": "CATALOG",
+    "url": "/career/lapcos/catalog",
     "site": "",
-    "title": "코스트코",
-    "tag": ["indesign", "인디자인", "design", "디자인", "패키지 디자인"],
+    "title": "제품 카탈로그",
+    "tag": ["indesign", "인디자인", "design", "디자인"],
     "hasChild": false,
     "depth": 3,
     "sort": 3

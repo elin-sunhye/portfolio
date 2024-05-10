@@ -367,7 +367,8 @@ button.swiper-pagination-bullet-active {
     margin-bottom: 1.5rem;
   }
   p,
-  span {
+  span,
+  a {
     display: block;
     margin-bottom: 2rem;
   }
@@ -376,7 +377,8 @@ button.swiper-pagination-bullet-active {
     font-size: var(--fs-36);
     font-weight: bold;
   }
-  span {
+  span,
+  a {
     font-size: var(--fs-20);
   }
 }
@@ -438,14 +440,16 @@ button.swiper-pagination-bullet-active {
       font-size: var(--fs-48);
     }
     p,
-    span {
+    span,
+    a {
       margin-bottom: 1.5rem;
     }
 
     p {
       font-size: var(--fs-36);
     }
-    span {
+    span,
+    a {
       font-size: var(--fs-18);
     }
   }
