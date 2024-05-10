@@ -4,16 +4,12 @@ import style from './page.module.scss';
 import { HiOutlineChevronDoubleDown } from 'react-icons/hi';
 import { useEffect, useRef, useState } from 'react';
 import { menuType } from '@/type/menu/menuType';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import LastSection from '@/component/lastSection/LastSection';
 import Btn from '@/component/common/btn/Btn';
 import Image from 'next/image';
 
 // dummyData ---------------------------------
 import menuData from '@/dummyData/menu.json';
-import { RiNotionFill } from 'react-icons/ri';
-import { FaGithub } from 'react-icons/fa';
 
 export default function Home() {
   // ---------------------------------
@@ -487,9 +483,18 @@ export default function Home() {
 
                                 {project.menu === 'SANDAN' ||
                                 project.menu === 'STX' ? (
-                                  <></>
+                                  <a
+                                    href={project.url}
+                                    title="상세페이지 바로가기"
+                                  >
+                                    view detail
+                                  </a>
                                 ) : (
-                                  <a href={project.site} target="_blank">
+                                  <a
+                                    href={project.site}
+                                    target="_blank"
+                                    title="사이트 바로가기"
+                                  >
                                     site
                                   </a>
                                 )}
