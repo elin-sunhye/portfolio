@@ -457,9 +457,8 @@ button.swiper-pagination-bullet-active {
     padding: 3rem 0;
   }
   .wrap {
-    max-width: calc(100% - 2rem);
+    width: calc(100% - 2rem);
   }
-
   // top_box
   .top_box {
     margin: 0 auto 3rem;
@@ -473,14 +472,16 @@ button.swiper-pagination-bullet-active {
       margin-bottom: 1rem;
     }
     p,
-    span {
+    span,
+    a {
       margin-bottom: 1rem;
     }
 
     p {
       font-size: var(--fs-20);
     }
-    span {
+    span,
+    a {
       font-size: var(--fs-14);
     }
   }

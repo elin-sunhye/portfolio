@@ -76,6 +76,7 @@
       border-radius: var(--br-50);
       border: 1px solid #333;
       aspect-ratio: 1 / 1.5;
+      background-color: var(--white);
     }
     & > div {
       aspect-ratio: 1 / 1;
@@ -125,7 +126,7 @@
         right: 0;
         top: 0;
       }
-      &:nth-of-type(3) {
+      &:last-of-type {
         width: calc(40vh - 10rem);
         height: calc(40vh - 10rem);
         border: 3px solid var(--main-green-1);
@@ -133,15 +134,6 @@
         right: -0.3rem;
         bottom: 0;
       }
-
-      // &:last-of-type {
-      //   width: 60vh;
-      //   height: 30vh;
-      //   background-color: var(--sub-pink-1);
-      //   border-radius: 0 0 50rem 50rem;
-      //   right: 30vh;
-      //   top: 30vh;
-      // }
     }
 
     .main_visual {
@@ -207,38 +199,6 @@
 .introduce_section {
   position: relative;
 
-  // bg
-  // .bg_circle,
-  // .bg_triangle {
-  //   position: absolute;
-  //   z-index: -1;
-  // }
-
-  // .bg_circle {
-  //   width: 50rem;
-  //   height: 50rem;
-  //   flex-wrap: wrap;
-  //   left: -37rem;
-  //   top: -40rem;
-
-  //   span {
-  //     display: block;
-  //     width: calc(100% / 2);
-  //     height: calc(100% / 2);
-  //     border-radius: var(--br-50pro);
-  //     background-color: var(--main-green-1);
-  //   }
-  // }
-
-  // .bg_triangle {
-  //   width: 50rem;
-  //   height: 40rem;
-  //   clip-path: polygon(100% 0, 0 100%, 100% 100%);
-  //   background-color: var(--sub-pink-1);
-  //   right: 0;
-  //   bottom: 0;
-  // }
-
   // skill
   .skill_box {
     padding: 10rem 5rem;
@@ -247,25 +207,6 @@
     flex-wrap: wrap;
     gap: 5rem;
     position: relative;
-
-    // & > div:not(.bg_circle) {
-    //   width: 100%;
-    //   display: flex;
-    //   justify-content: center;
-    //   align-items: center;
-    //   gap: 3rem;
-
-    //   span {
-    //     display: inline-block;
-    //     width: auto;
-    //     height: 5rem;
-
-    //     img {
-    //       width: fit-content;
-    //       height: 100%;
-    //     }
-    //   }
-    // }
 
     & > div {
       width: 100%;
@@ -301,7 +242,7 @@
     flex-wrap: wrap;
 
     .career_slides {
-      width: calc(100vw / 5);
+      width: calc(100% / 3 - 10rem);
       aspect-ratio: 1 / 1;
       background-color: var(--main-blue-1);
       border-radius: var(--br-10);
@@ -347,7 +288,7 @@
       & > p {
         width: 90%;
         margin: 0 auto;
-        opacity: 1;
+        opacity: 0;
         transition: all 0.3s;
         img {
           height: auto;
@@ -361,12 +302,11 @@
         gap: 1rem;
         width: 100%;
         height: 100%;
-        // background-color: var(--sub-yellow-1);
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        opacity: 0;
+        opacity: 1;
         transition: all 0.5s;
 
         span {
@@ -390,31 +330,11 @@
       // hover
       &:hover {
         & > p {
-          opacity: 0;
-        }
-        .career_rolling_hover_card {
           opacity: 1;
         }
-      }
-    }
-  }
-}
-
-// project ---------------------------------
-.project_wiko_section,
-.project_2_section,
-.project_3_section {
-  height: 100vh;
-
-  .wrap {
-    height: 100%;
-
-    .top_box {
-      margin: unset;
-      text-align: unset;
-
-      button {
-        margin: unset;
+        .career_rolling_hover_card {
+          opacity: 0;
+        }
       }
     }
   }
@@ -422,43 +342,17 @@
 
 // project_wiko_section ---------------------------------
 .project_wiko_section {
-  background-color: var(--main-green-1);
-
-  .wrap {
-    .scroll_box {
-      .scroll_down {
-        & > div {
-          align-items: flex-end;
-          & > span {
-            width: 25%;
-
-            &:first-of-type {
-              height: 30%;
-              background-color: #ffe1a556;
-            }
-
-            &:nth-of-type(2) {
-              height: 60%;
-              background-color: #ffbe3d96;
-            }
-            &:last-of-type {
-              height: 100%;
-              background-color: var(--sub-yellow-1);
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-// project_2_section ---------------------------------
-.project_2_section {
+  height: 100vh;
   background-color: var(--sub-pink-1);
   .wrap {
+    height: 100%;
     .top_box {
+      margin: unset;
       width: 45rem;
       text-align: right;
+      button {
+        margin: unset;
+      }
     }
 
     .scroll_box {
@@ -477,28 +371,6 @@
             &:last-of-type {
               background-color: var(--sub-blue-1);
             }
-          }
-        }
-      }
-    }
-  }
-}
-
-// project_3_section ---------------------------------
-.project_3_section {
-  background-color: var(--main-blue-1);
-
-  .wrap {
-    .scroll_box {
-      .scroll_down {
-        & > div {
-          flex-wrap: wrap;
-
-          & > span {
-            width: 50%;
-            aspect-ratio: 1 / 1;
-            border-radius: var(--br-50pro);
-            background-color: var(--sub-pink-1);
           }
         }
       }
@@ -558,6 +430,24 @@
 
 // 테블릿 ---------------------------------
 @media screen and (max-width: 1024px) {
+  // 공통 ---------------------------------
+  // scroll_box
+  .scroll_box {
+    width: 100%;
+    height: calc(100% - 25rem);
+    gap: 2rem;
+
+    & > div {
+      width: 50%;
+      gap: 1rem;
+
+      & > span {
+        display: block;
+        border-radius: var(--br-15);
+      }
+    }
+  }
+
   // 메인 ---------------------------------
   .main_visual_section {
     .main_visual_box {
@@ -573,15 +463,10 @@
           width: 20vh;
           height: 40vh;
         }
-        &:nth-of-type(3) {
+        &:last-of-type {
           width: calc(30vh - 10rem);
           height: calc(30vh - 10rem);
         }
-
-        // &:last-of-type {
-        //   width: 40vh;
-        //   height: 20vh;
-        // }
       }
 
       .main_visual {
@@ -608,6 +493,62 @@
       }
     }
   }
+
+  // career_section ---------------------------------
+  .career_section {
+    .career_box {
+      gap: 3rem;
+
+      .career_slides {
+        width: calc(100% / 2 - 5rem);
+      }
+    }
+  }
+
+  // project_wiko_section ---------------------------------
+  .project_wiko_section {
+    padding-bottom: 3rem;
+
+    .wrap {
+      flex-wrap: wrap;
+      align-content: space-between;
+
+      .top_box {
+        width: 100%;
+        text-align: center;
+
+        p {
+          font-size: var(--fs-20);
+        }
+
+        button {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  // support_section ---------------------------------
+  .support_section {
+    height: auto;
+
+    .support_box {
+      width: 100%;
+      height: auto;
+      gap: 1rem;
+
+      a {
+        width: 50%;
+        height: auto;
+        aspect-ratio: 1 / 2;
+        border-radius: 0 50rem 50rem 0;
+
+        &:last-of-type {
+          border-radius: 50rem 0 0 50rem;
+        }
+      }
+    }
+  }
 }
 
 // 모바일 ---------------------------------
@@ -615,51 +556,56 @@
   // 공통 ---------------------------------
   // scroll_box
   .scroll_box {
-    width: auto;
-    height: calc(100% - 17rem);
-    gap: 2rem;
+    height: calc(100% - 20rem);
+    gap: 1rem;
+  }
 
-    & > div {
-      width: 25rem;
-      gap: 1rem;
+  // 메인 ---------------------------------
+  .main_visual_section {
+    height: 76rem;
 
-      & > span {
-        display: block;
-        border-radius: var(--br-15);
+    .main_visual_box {
+      height: calc(100% - 5rem);
+
+      .main_visual {
+        .top_box {
+          gap: 1rem;
+
+          .img_profile {
+            margin-bottom: 1.5rem;
+          }
+
+          h3 {
+            font-size: var(--fs-48);
+          }
+          p {
+            font-size: var(--fs-24);
+          }
+          span {
+            font-size: var(--fs-14);
+          }
+        }
+      }
+    }
+
+    .btn_go_content {
+      margin: 0 auto;
+      @include aniSetting(upDownAniMo);
+
+      svg {
+        font-size: var(--fs-36);
+        color: var(--blakc);
       }
     }
   }
 
   // introduce_section ---------------------------------
   .introduce_section {
-    // bg
-    // .bg_circle {
-    //   width: 30rem;
-    //   height: 30rem;
-    //   left: -10rem;
-    //   top: -25rem;
-    // }
-
-    // .bg_triangle {
-    //   width: 20rem;
-    //   height: 15rem;
-    // }
-
     // skill
     .skill_box {
       padding: 3rem 1rem;
       border-radius: var(--br-15);
       gap: 1.5rem;
-
-      // & > div:not(.bg_circle) {
-      //   width: 100%;
-      //   gap: 1rem;
-      //   flex-wrap: wrap;
-
-      //   span {
-      //     height: 3rem;
-      //   }
-      // }
 
       & > div {
         width: 100%;
@@ -683,83 +629,40 @@
       gap: 2rem;
 
       .career_slides {
-        width: calc(100vw / 1.3);
+        width: 100vw;
 
         // career_rolling_hover_card
         .career_rolling_hover_card {
+          span {
+            font-size: var(--fs-14);
+          }
           p {
-            font-size: var(--fs-16);
+            font-size: var(--fs-18);
           }
         }
       }
     }
   }
 
-  // project ---------------------------------
-  .project_wiko_section,
-  .project_2_section,
-  .project_3_section {
-    padding-bottom: 3rem;
-
-    .wrap {
-      flex-wrap: wrap-reverse;
-      align-content: space-between;
-
-      .top_box {
-        width: 100%;
-        text-align: center;
-
-        p {
-          font-size: var(--fs-20);
-        }
-
-        button {
-          margin: 0 auto;
-        }
-      }
-    }
-  }
-
-  // project_2_section ---------------------------------
-  .project_2_section {
-    .wrap {
-      flex-wrap: wrap;
-    }
-  }
-
   // support_section ---------------------------------
   .support_section {
-    height: auto;
-
     .support_box {
-      width: 100%;
-      height: auto;
-      gap: 1rem;
-
       a {
-        width: 50%;
-        height: auto;
-        aspect-ratio: 1 / 2;
-        border-radius: 0 50rem 50rem 0;
-
-        &:last-of-type {
-          border-radius: 50rem 0 0 50rem;
-        }
-
+        font-size: var(--fs-18);
         svg {
-          font-size: var(--fs-18);
+          font-size: var(--fs-20);
         }
       }
     }
   }
+}
 
-  // scroll_txt
-  .scroll_txt_section {
-    height: 7rem;
+// scroll_txt
+.scroll_txt_section {
+  height: 7rem;
 
-    .scroll_txt {
-      width: 700rem;
-      font-size: 7rem;
-    }
+  .scroll_txt {
+    width: 700rem;
+    font-size: 7rem;
   }
 }
