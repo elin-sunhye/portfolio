@@ -238,12 +238,13 @@
             border-left: 0.5rem solid var(--black);
             padding-left: 1rem;
             font-size: var(--fs-24);
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
 
             a {
               display: inline-block;
               margin-left: 1rem;
               color: var(--sub-blue-1);
+              font-size: var(--fs-18);
             }
           }
 
@@ -251,11 +252,37 @@
             display: block;
             font-size: var(--fs-20);
             color: var(--gray-5);
-            margin: 1rem 0;
+            margin-top: 1rem;
+          }
+
+          .project_desc,
+          .project_func {
+            flex-wrap: wrap;
+            gap: 0.5rem;
+
+            span {
+              display: block;
+              width: 100%;
+            }
           }
 
           .project_desc {
-            line-height: 1.3;
+            margin: 2rem 0;
+          }
+
+          .project_func {
+            span {
+              &::before {
+                content: '';
+                width: 0.5rem;
+                height: 0.5rem;
+                display: inline-block;
+                background-color: var(--black);
+                margin: 0 0.5rem 0 2rem;
+                vertical-align: middle;
+                border-radius: var(--br-50pro);
+              }
+            }
           }
         }
       }

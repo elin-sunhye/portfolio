@@ -480,15 +480,15 @@ export default function Home() {
                             >
                               <p className={style.project_nm}>
                                 {project.menu}
-
                                 {project.menu === 'SANDAN' ||
                                 project.menu === 'STX' ? (
-                                  <a
-                                    href={project.url}
-                                    title="상세페이지 바로가기"
-                                  >
-                                    view detail
-                                  </a>
+                                  // <a
+                                  //   href={project.url}
+                                  //   title="상세페이지 바로가기"
+                                  // >
+                                  //   view detail
+                                  // </a>
+                                  <></>
                                 ) : (
                                   <a
                                     href={project.site}
@@ -518,49 +518,193 @@ export default function Home() {
                                   <></>
                                 )}
                               </span>
-                              <div className={style.project_desc}>
+                              <div
+                                className={`flex_start ${style.project_desc}`}
+                              >
                                 {project.menu === 'WISDOM' ? (
                                   <>
-                                    경남대학과 지역산업의 공생 발전을 위한
-                                    산학연 플랫폼(LINC 사업). 학생과 교수 등
-                                    다양한 사람들이 접속하여 교육을 신청하고
-                                    공간을 대여 할 수 있는 사이트.
+                                    <span>
+                                      경남대학과 지역산업의 공생 발전을 위한
+                                      산학연 플랫폼(LINC 사업)
+                                    </span>
+                                    <span>
+                                      SKILLS | React.js, Next.js, JavaScript,
+                                      TypeScript, SCSS, CSS
+                                    </span>
                                   </>
                                 ) : project.menu === 'GNCAR' ? (
                                   <>
-                                    경남 TP 버추얼 개발 기술 지원 플랫폼. 경남도
-                                    부품사들의 미래차 전환을 위한 프로세스 및
-                                    장비 구축을 위한 사이트로 지도 기반으로
-                                    자동자 부품 기업 및 정보를 검색 하고, 3D
-                                    부품 정보를 확인.
+                                    <span>
+                                      경남 TP 버추얼 개발 기술 지원 플랫폼
+                                    </span>
+                                    <span>
+                                      SKILLS | React.js, Next.js, JavaScript,
+                                      TypeScript, SCSS, CSS
+                                    </span>
                                   </>
                                 ) : project.menu === 'GNWP' ? (
                                   <>
-                                    경상남도 통합 일자리 플랫폼으로 지도기반으로
-                                    주변 구인 기업을 검색하고, AI 컨설팅으로
-                                    매칭하여 경남 내의 청년 구직 활동을 활성화
-                                    시키려는 목적의 사이트.
+                                    <span>경상남도 통합 일자리 플랫폼</span>
+                                    <span>
+                                      SKILLS | React.js, Next.js, JavaScript,
+                                      TypeScript, SCSS, CSS
+                                    </span>
                                   </>
                                 ) : project.menu === 'GNHOME' ? (
                                   <>
-                                    경남 공동 주택 관리 통합 플랫폼. 아파트
-                                    관리비 투명화하고, 아파트 관리자들과 지자체,
-                                    아파트 임원들과 공문을 주고 받는 결재
-                                    시스템이 있으며, 상황전파 방송을 통하여
-                                    아파트 거주자들과 관리자들과의 원할한 소통.
+                                    <span>
+                                      {' '}
+                                      경남 공동 주택 관리 통합 플랫폼
+                                    </span>
+                                    <span>
+                                      SKILLS | React.js, Next.js, JavaScript,
+                                      TypeScript, SCSS, CSS
+                                    </span>
                                   </>
                                 ) : project.menu === 'SANDAN' ? (
                                   <>
-                                    경남 공단 내 키오스크 설치하여 주변 환경에
-                                    대해 알려주는 플랫폼. 지도로 각 키오스크
-                                    위치를 알려주고 주변 환경에 대해 얼려줌.
+                                    <span>
+                                      경남 공단 내 키오스크 설치하여 주변 환경에
+                                      대해 알려주는 플랫폼
+                                    </span>
+                                    <span>
+                                      SKILLS | HTML5, CSS, JavaScript, jQuery
+                                    </span>
                                   </>
                                 ) : project.menu === 'HOMEPAGE' ? (
-                                  <>자사 브랜드 리뉴얼 사이트.</>
+                                  <>자사 브랜드 리뉴얼 사이트</>
                                 ) : project.menu === 'STX' ? (
                                   <>
-                                    STX엔진 내 SSC 시스템. 회사 내 부품 정보를
-                                    등록하고 관리하는 사이트.
+                                    <span>STX엔진 내 SSC 시스템</span>
+                                  </>
+                                ) : (
+                                  <></>
+                                )}
+                              </div>
+                              <div
+                                className={`flex_start ${style.project_func}`}
+                              >
+                                {project.menu === 'WISDOM' ? (
+                                  <>
+                                    <span>
+                                      카카오 맵 API를 활용한 마커 위치 구현
+                                    </span>
+                                    <span>시간별 공간 대여 기능 구현</span>
+                                    <span>공통 게시판 모듈 구현</span>
+                                    <span>권한별 메뉴 관리 시스템 개발</span>
+                                    <span>ㅇㅇ을 활용한 프린트 기능 구현</span>
+                                    <span>
+                                      ㅇㅇ을 활용한 엑셀 다운로드 기능 구현
+                                    </span>
+                                    <span>
+                                      ㅇㅇ을 활용한 PDF 다운로드 기능 구현
+                                    </span>
+                                    <span>
+                                      게시판 CRUD 기본적인 데이터 처리 기능 구현
+                                    </span>
+                                    <span>
+                                      카카오, 라인, 페이스북 공유 기능 구현
+                                    </span>
+                                    <span>chart.js를 활용한 데이터 시각화</span>
+                                    <span>localStorage를 이용한 팝업 구현</span>
+                                    <span>
+                                      Radix ux/ui 라이브러리를 활용한 컴포넌트
+                                      개발
+                                    </span>
+                                    <span>
+                                      미디어쿼리를 이용한 반응형/적응형 구현
+                                    </span>
+                                  </>
+                                ) : project.menu === 'GNCAR' ? (
+                                  <>
+                                    <span>
+                                      카카오 맵 API를 활용한 부품 장비 기업 검색
+                                      기능 구현
+                                    </span>
+                                    <span>
+                                      협약, 수행 등 단계별 지원 사업 관리 구현
+                                    </span>
+                                    <span>ㅇㅇ을 활용한 프린트 기능 구현</span>
+                                    <span>
+                                      ㅇㅇ을 활용한 엑셀 다운로드 기능 구현
+                                    </span>
+                                    <span>
+                                      ㅇㅇ을 활용한 PDF 다운로드 기능 구현
+                                    </span>
+                                    <span>권한별 메뉴 관리 시스템 개발</span>
+                                    <span>
+                                      게시판 CRUD 기본적인 데이터 처리 기능 구현
+                                    </span>
+                                    <span>localStorage를 이용한 팝업 구현</span>
+                                    <span>
+                                      Radix ux/ui 라이브러리를 활용한 컴포넌트
+                                      개발
+                                    </span>
+                                    <span>
+                                      미디어쿼리를 이용한 반응형/적응형 구현
+                                    </span>
+                                  </>
+                                ) : project.menu === 'GNWP' ? (
+                                  <>
+                                    <span>
+                                      카카오 맵 API를 활용한 내 주변 채용 정보
+                                      및 검색 구현
+                                    </span>
+                                    <span>채용 정보 검색 필터링 구현</span>
+                                    <span>챗봇 기능 구현</span>
+                                    <span>
+                                      미디어쿼리를 이용한 반응형/적응형 구현
+                                    </span>
+                                  </>
+                                ) : project.menu === 'GNHOME' ? (
+                                  <>
+                                    <span>CMS 공문 서식 등록 기능 개발</span>
+                                    <span>
+                                      CMS 공문 등록 및 결재 시스템 개발
+                                    </span>
+                                    <span>
+                                      게시판 CRUD 기본적인 데이터 처리 기능 구현
+                                    </span>
+                                    <span>지역별 필터링 기능 구현</span>
+                                    <span>
+                                      미디어쿼리를 이용한 반응형/적응형 구현
+                                    </span>
+                                  </>
+                                ) : project.menu === 'SANDAN' ? (
+                                  <>
+                                    <span>
+                                      카카오 API를 이용한 공단 내 키오스크 위치
+                                      구현
+                                    </span>
+                                    <span>환경 단위별 필터링 기능 구현</span>
+                                    <span>환경 수치에 대한 데이터 시각화</span>
+                                  </>
+                                ) : project.menu === 'HOMEPAGE' ? (
+                                  <>
+                                    <span>
+                                      JavaScript로 영상 및 스크립트 싱크 구현
+                                    </span>
+                                    <span>
+                                      fullpage.js 라이브러리를 활용한 풀페이지
+                                      구현
+                                    </span>
+                                    <span>
+                                      keyframe을 이용한 애니메이션 구현
+                                    </span>
+                                    <span>
+                                      AOS.js 라이브러리를 활용한 스크롤
+                                      애니매이션 구현
+                                    </span>
+                                    <span>
+                                      미디어쿼리를 이용한 반응형/적응형 구현
+                                    </span>
+                                  </>
+                                ) : project.menu === 'STX' ? (
+                                  <>
+                                    <span>grid 테이블 구현</span>
+                                    <span>
+                                      미디어쿼리를 이용한 반응형/적응형 구현
+                                    </span>
                                   </>
                                 ) : (
                                   <></>
