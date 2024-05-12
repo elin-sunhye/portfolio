@@ -577,7 +577,7 @@
   // career_section ---------------------------------
   .career_section {
     .career_box {
-      gap: 7rem;
+      gap: 3rem;
 
       .career {
         flex-wrap: wrap;
@@ -593,18 +593,14 @@
           padding-left: 0;
           border-left: 0;
           border-bottom: 1px solid var(--black);
-          padding-bottom: 3rem;
+          padding-bottom: 0;
 
           .comp_name {
-            font-size: var(--fs-36);
-            font-weight: 900;
+            font-size: var(--fs-24);
           }
 
           .period {
-            display: block;
-            font-size: var(--fs-20);
-            color: var(--gray-5);
-            margin: 1rem 0;
+            font-size: var(--fs-16);
           }
 
           .comp_desc {
@@ -615,26 +611,20 @@
           }
 
           .project_box {
-            margin: 5rem 0;
+            margin: 3rem 0;
 
             .project_nm {
               border-left: 0.5rem solid var(--black);
               padding-left: 1rem;
-              font-size: var(--fs-24);
+              font-size: var(--fs-20);
               margin-bottom: 1rem;
-
-              a {
-                display: inline-block;
-                margin-left: 1rem;
-                color: var(--sub-blue-1);
-              }
             }
 
             .project_period {
               display: block;
-              font-size: var(--fs-20);
+              font-size: var(--fs-16);
               color: var(--gray-5);
-              margin: 1rem 0;
+              margin-top: 0.5rem;
             }
 
             .project_desc {
@@ -717,28 +707,7 @@
     }
   }
 
-  // career_section ---------------------------------
-  // .career_section {
-  //   .career_box {
-  //     gap: 2rem;
-
-  //     .career_slides {
-  //       width: 100vw;
-
-  //       // career_rolling_hover_card
-  //       .career_rolling_hover_card {
-  //         span {
-  //           font-size: var(--fs-14);
-  //         }
-  //         p {
-  //           font-size: var(--fs-18);
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
-
-  //
+  // project_wiko_section
   .project_wiko_section {
     .wrap {
       .scroll_box {
