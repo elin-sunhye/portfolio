@@ -273,7 +273,7 @@
           .project_func {
             span {
               &::before {
-                content: '';
+                content: "";
                 width: 0.5rem;
                 height: 0.5rem;
                 display: inline-block;
@@ -416,8 +416,8 @@
   }
 }
 
-// 테블릿 ---------------------------------
-@media screen and (max-width: 1200px) {
+// pc ---------------------------------
+@media screen and (max-width: 1500px) {
   // introduce_section ---------------------------------
   .introduce_section {
     // skill
@@ -434,6 +434,36 @@
       }
     }
   }
+
+  // scroll_txt ---------------------------------
+  .scroll_txt_section {
+    height: 30rem;
+
+    .scroll_txt {
+      width: 610rem;
+      font-size: 10rem;
+    }
+  }
+}
+
+// 테블릿 ---------------------------------
+@media screen and (max-width: 1200px) {
+  // introduce_section ---------------------------------
+  // .introduce_section {
+  //   // skill
+  //   .skill_box {
+  //     gap: 2rem;
+
+  //     p {
+  //       height: 10rem;
+  //       padding: 0 5rem;
+
+  //       img {
+  //         height: 45%;
+  //       }
+  //     }
+  //   }
+  // }
 
   // career_section ---------------------------------
   .career_section {
@@ -574,6 +604,28 @@
 }
 
 @media screen and (max-width: 768px) {
+  // introduce_section ---------------------------------
+  .introduce_section {
+    // skill
+    .skill_box {
+      gap: 1rem;
+      justify-content: center;
+
+      p {
+        height: 5rem;
+        padding: 0 2rem;
+
+        img {
+          height: 70%;
+        }
+
+        span {
+          font-size: var(--fs-18);
+        }
+      }
+    }
+  }
+
   // career_section ---------------------------------
   .career_section {
     .career_box {
@@ -686,27 +738,6 @@
     }
   }
 
-  // introduce_section ---------------------------------
-  .introduce_section {
-    // skill
-    .skill_box {
-      gap: 1rem;
-
-      p {
-        height: 5rem;
-        padding: 0 2rem;
-
-        img {
-          height: 70%;
-        }
-
-        span {
-          font-size: var(--fs-18);
-        }
-      }
-    }
-  }
-
   // project_wiko_section
   .project_wiko_section {
     .wrap {
@@ -729,12 +760,12 @@
     }
   }
 
-  // scroll_txt
+  // scroll_txt ---------------------------------
   .scroll_txt_section {
     height: 15rem;
 
     .scroll_txt {
-      width: 800rem;
+      width: 425rem;
       font-size: 7rem;
     }
   }
