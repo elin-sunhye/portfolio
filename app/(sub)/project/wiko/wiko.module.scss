@@ -1,0 +1,50 @@
+// sub_top ---------------------------------
+.sub_top {
+  background-color: var(--main-blue-1);
+  padding-bottom: 0;
+
+  .sub_top_box {
+    position: relative;
+    border-radius: var(--br-50) var(--br-50) 0 0;
+    overflow: hidden;
+  }
+}
+
+// detail_box ---------------------------------
+.detail_box {
+  flex-direction: column;
+  gap: 5rem;
+
+  .row {
+    width: 100%;
+    gap: 3rem;
+
+    & > div {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+    }
+
+    &:nth-of-type(odd) {
+      & > div {
+        &:first-of-type {
+          background-color: var(--main-green-1);
+        }
+      }
+    }
+
+    &:nth-of-type(even) {
+      & > div {
+        &:last-of-type {
+          background-color: var(--sub-blue-1);
+        }
+      }
+    }
+    &:nth-of-type(4n) {
+      & > div {
+        &:last-of-type {
+          background-color: var(--main-orange-1);
+        }
+      }
+    }
+  }
+}

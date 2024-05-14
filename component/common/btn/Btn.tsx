@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { Ref, forwardRef, useState } from "react";
-import style from "./btn.module.scss";
+import { Ref, forwardRef, useState } from 'react';
+import style from './btn.module.scss';
 
 interface BtnProps {
-  type?: "submit" | "reset";
-  btnSize?: "xsm" | "sm" | "lg" | "xlg";
+  type?: 'submit' | 'reset';
+  btnSize?: 'xsm' | 'sm' | 'lg' | 'xlg';
   color?: string;
-  border?: "br_square_round_1" | "br_square_round_2" | "br_round";
+  border?: 'br_square_round_1' | 'br_square_round_2' | 'br_round';
   children: React.ReactNode | React.ReactNode[];
   onBlur?: () => void;
   btnStyle?: React.CSSProperties;
@@ -81,28 +81,28 @@ const Btn = (
     <a
       href={href}
       id={id}
-      type={type ? type : "button"}
-      role="button"
+      role="link"
       title={title}
       aria-label={title}
       tabIndex={tabIndex !== undefined ? tabIndex : 0}
       onBlur={onBlur ? onBlur : () => {}}
+      target="_blank"
       className={`${style.btn} ${
-        btnSize === "xsm"
+        btnSize === 'xsm'
           ? style.xsm
-          : btnSize === "sm"
+          : btnSize === 'sm'
           ? style.sm
-          : btnSize === "lg"
+          : btnSize === 'lg'
           ? style.lg
-          : btnSize === "xlg"
+          : btnSize === 'xlg'
           ? style.xlg
           : style.md
-      } ${color && color !== "" ? style[color] : style.white} ${
-        border ? style[border] : ""
-      } ${isHover === true ? `${style[color + "_hover"]}` : ""} ${
-        className ? className : ""
+      } ${color && color !== '' ? style[color] : style.white} ${
+        border ? style[border] : ''
+      } ${isHover === true ? `${style[color + '_hover']}` : ''} ${
+        className ? className : ''
       }`}
-      disabled={color === "disabled" ? true : false}
+      disabled={color === 'disabled' ? true : false}
       style={{ ...btnStyle }}
       {...props}
     >
@@ -112,28 +112,28 @@ const Btn = (
     <button
       ref={ref}
       id={id}
-      type={type ? type : "button"}
+      type={type ? type : 'button'}
       role="button"
       title={title}
       aria-label={title}
       tabIndex={tabIndex !== undefined ? tabIndex : 0}
       onBlur={onBlur ? onBlur : () => {}}
       className={`${style.btn} ${
-        btnSize === "xsm"
+        btnSize === 'xsm'
           ? style.xsm
-          : btnSize === "sm"
+          : btnSize === 'sm'
           ? style.sm
-          : btnSize === "lg"
+          : btnSize === 'lg'
           ? style.lg
-          : btnSize === "xlg"
+          : btnSize === 'xlg'
           ? style.xlg
           : style.md
-      } ${color && color !== "" ? style[color] : style.white} ${
-        border ? style[border] : ""
-      } ${isHover === true ? `${style[color + "_hover"]}` : ""} ${
-        className ? className : ""
+      } ${color && color !== '' ? style[color] : style.white} ${
+        border ? style[border] : ''
+      } ${isHover === true ? `${style[color + '_hover']}` : ''} ${
+        className ? className : ''
       }`}
-      disabled={color === "disabled" ? true : false}
+      disabled={color === 'disabled' ? true : false}
       style={{ ...btnStyle }}
       {...props}
     >

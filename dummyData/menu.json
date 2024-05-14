@@ -282,7 +282,7 @@
     "parentSeq": 2,
     "menu": "WIKO",
     "url": "/project/wiko",
-    "site": "https://wiko.co.kr",
+    "site": "https://wiko.netlify.app",
     "title": "위코",
     "tag": [],
     "hasChild": false,
