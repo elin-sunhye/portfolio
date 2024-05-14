@@ -31,15 +31,6 @@
   }
 }
 
-// 공통 ---------------------------------
-// top_box
-.top_box {
-  h3 {
-    -webkit-text-stroke: 2px var(--black);
-    letter-spacing: unset;
-  }
-}
-
 // 메인 ---------------------------------
 .main_visual_section {
   height: 100vh;
@@ -117,6 +108,7 @@
 
         h3 {
           -webkit-text-stroke: 0;
+          letter-spacing: 0.3rem;
           font-size: var(--fs-72);
         }
 
@@ -145,8 +137,6 @@
 
 // introduce_section ---------------------------------
 .introduce_section {
-  position: relative;
-
   // skill
   .skill_box {
     flex-wrap: wrap;
@@ -273,7 +263,7 @@
           .project_func {
             span {
               &::before {
-                content: "";
+                content: '';
                 width: 0.5rem;
                 height: 0.5rem;
                 display: inline-block;
@@ -297,12 +287,18 @@
 
   .wrap {
     height: 100%;
+
     .top_box {
-      margin: unset;
-      width: 45rem;
-      text-align: right;
-      button {
-        margin: unset;
+      margin: 0 auto !important;
+      & > div {
+        margin: 0 auto !important;
+      }
+      .btn_box {
+        gap: 1rem;
+        button,
+        a {
+          margin: unset;
+        }
       }
     }
 
@@ -551,20 +547,26 @@
 
       .top_box {
         width: 100%;
-        text-align: center;
 
-        p {
-          font-size: var(--fs-20);
+        h3,
+        p,
+        span,
+        a {
+          text-align: center !important;
         }
 
-        button {
-          margin: 0 auto;
+        .btn_box {
+          button,
+          a {
+            margin: 0 auto;
+            width: 100%;
+          }
         }
       }
 
       .scroll_box {
         width: 100%;
-        height: calc(100% - 25rem);
+        height: calc(100% - 40rem);
         gap: 2rem;
 
         & > div {
@@ -742,7 +744,7 @@
   .project_wiko_section {
     .wrap {
       .scroll_box {
-        height: calc(100% - 20rem);
+        height: calc(100% - 25rem);
         gap: 1rem;
       }
     }

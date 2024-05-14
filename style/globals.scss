@@ -307,6 +307,9 @@ img {
 .swiper-slide {
   flex-wrap: wrap;
   opacity: 0.7;
+  background-color: var(--white);
+  overflow: hidden;
+  opacity: 1;
 }
 // swiper 현재 보여지는 슬라이드만 진하게
 .swiper .swiper-wrapper .swiper-slide-active {
@@ -315,6 +318,8 @@ img {
 // swiper 버튼
 .swiper-button-prev,
 .swiper-button-next {
+  width: 4.4rem !important;
+  padding: 1rem !important;
   svg {
     color: var(--black);
   }
@@ -363,7 +368,8 @@ button.swiper-pagination-bullet-active {
   h3 {
     font-size: var(--fs-60);
     font-weight: 900;
-    letter-spacing: 0.3rem;
+    -webkit-text-stroke: 2px var(--black);
+    // letter-spacing: 0.3rem;
     margin-bottom: 1.5rem;
   }
   p,
@@ -376,6 +382,11 @@ button.swiper-pagination-bullet-active {
   p {
     font-size: var(--fs-36);
     font-weight: bold;
+
+    span {
+      font-size: var(--fs-36);
+      display: block;
+    }
   }
   span,
   a {
@@ -445,9 +456,6 @@ button.swiper-pagination-bullet-active {
       margin-bottom: 1.5rem;
     }
 
-    p {
-      font-size: var(--fs-36);
-    }
     span,
     a {
       font-size: var(--fs-18);
@@ -483,6 +491,11 @@ button.swiper-pagination-bullet-active {
 
     p {
       font-size: var(--fs-20);
+
+      span {
+        font-size: var(--fs-20);
+        display: inline-block;
+      }
     }
     span,
     a {

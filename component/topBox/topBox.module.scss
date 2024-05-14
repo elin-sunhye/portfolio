@@ -1,0 +1,22 @@
+.left {
+  h3,
+  p,
+  span,
+  a {
+    text-align: left;
+  }
+}
+.right {
+  h3,
+  p,
+  span,
+  a {
+    text-align: right;
+  }
+}
+
+.btn_link {
+  width: fit-content;
+  margin-bottom: 8%;
+  margin: 0 auto;
+}
