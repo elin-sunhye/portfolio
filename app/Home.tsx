@@ -350,20 +350,48 @@ export default function Home() {
             >
               <span>asd</span>
               <span>123</span>
-              <span>123</span>
+              <span className={style.bottom}>
+                <Image
+                  src={'/main/project/wiko/img_wiko_main.svg'}
+                  alt="위코 메인 화면"
+                  width={0}
+                  height={0}
+                />
+              </span>
               <div className="flex_start">
                 <span></span>
                 <span></span>
               </div>
-              <span>123</span>
+              <span>
+                <Image
+                  src={'/main/project/wiko/img_wiko_contact.svg'}
+                  alt="위코 문의사항 화면"
+                  width={0}
+                  height={0}
+                />
+              </span>
             </div>
             <div
               ref={scroll2UpRef}
               className={`flex_center ${style.scroll_up}`}
             >
-              <span>asd</span>
-              <span>123</span>
-              <span>123</span>
+              <span>
+                <Image
+                  src={'/main/project/wiko/img_wiko_story.svg'}
+                  alt="위코 스토리 화면"
+                  width={0}
+                  height={0}
+                />
+              </span>
+              <span>
+                <Image
+                  src={'/main/project/wiko/img_wiko_main.svg'}
+                  alt="위코 메인 화면"
+                  width={0}
+                  height={0}
+                />
+              </span>
+              <span className={style.bottom}>asd</span>
               <span>dsfsad</span>
               <span>123</span>
             </div>
