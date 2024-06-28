@@ -1,6 +1,6 @@
 "use client";
 
-import style from "./wiko.module.scss";
+import style from "./pawtail.module.scss";
 import "./swiper.scss";
 import { useRouter } from "next/navigation";
 import { useRef } from "react";
@@ -19,7 +19,7 @@ import "swiper/css/autoplay";
 // dummyData
 import menuData from "@/dummyData/menu.json";
 
-export default function Wiko() {
+export default function Pawtail() {
   //
   const router = useRouter();
 
@@ -47,7 +47,7 @@ export default function Wiko() {
         <TopBox
           explain={""}
           // explain={"react 언어를 사용하여 개발한 브랜드 사이트"}
-          desc={"주물 • 주조 및 산업 부자재 전문 기업"}
+          desc={"강아지 유치원 알림장"}
         />
 
         <div className={`wrap ${style.sub_top_inner}`}>
@@ -55,25 +55,23 @@ export default function Wiko() {
             <div className={`flex_start ${style.info}`}>
               <p>
                 <span>PERIOD</span>
-                2024.05 ~ 2024.08
+                2024.06 ~
               </p>
               <p>
                 <span>SKILLS</span>
-                React.js, Next.js, JavaScript, TypeScript, SCSS, eMail.js
+                React.js, Next.js, JavaScript, TypeScript, SCSS
               </p>
             </div>
             <p className={style.expl}>
-              React 기반의 Next.js 프레임워크를 활용하여 개발한 웹 사이트입니다.{" "}
+              React 기반의 Next.js 프레임워크를 활용하여 개발한 웹 & 앱입니다.
               <br />
               NextAuth 라이브러리를 통해 사용자들이 간편하게 로그인 및
-              로그아웃할 수 있는 기능을 제공하며, email.js 라이브러리를 활용하여
-              메일 전송 기능을 구현하였습니다. <br />
-              사이트의 전반적인 디자인은 Cross Target 홈페이지를 참고하여
-              설계하였으며, 이 회사의 요구사항과 기획에 맞추어 각 부서의
-              서비스와 제품을 효과적으로 소개하는 구조로 개발하였습니다. <br />
-              사용자 경험을 최적화하기 위해 반응형 디자인을 채택하여 모바일 및
-              데스크탑 환경에서 모두 직관적이고 효율적인 웹 사이트를
-              제작하였습니다.
+              로그아웃할 수 있는 기능을 제공하며,
+              <br />
+              사용자 친화적이고 직관적인 인터페이스를 제공하며, 웹과 모바일 환경
+              모두에서 원활하게 사용할 수 있도록 설계하였습니다. <br />
+              {/* 강아지의 중요한 일정을 놓치지 않고 관리할 수 있는 완벽한 도구가 될
+              것입니다. */}
             </p>
           </div>
 

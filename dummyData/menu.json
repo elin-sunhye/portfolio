@@ -26,10 +26,10 @@
   {
     "seq": 100,
     "parentSeq": 10,
-    "menu": "WISDOM",
-    "url": "/career/deps/wisdom",
-    "site": "https://wisdom.kyungnam.ac.kr",
-    "title": "경남대학교 LINC3.0 사업단 WISDOM 플랫폼",
+    "menu": "BACKOFFICE",
+    "url": "/career/deps/backoffice",
+    "site": "/",
+    "title": "자사 프로젝트 백오피스",
     "tag": [
       "react",
       "nextjs",
@@ -48,10 +48,10 @@
   {
     "seq": 101,
     "parentSeq": 10,
-    "menu": "GNCAR",
-    "url": "/career/deps/gncar",
-    "site": "https://gncar.gntp.or.kr/virtual",
-    "title": "경남 TP 버추얼 개발 기술지원 플랫폼",
+    "menu": "WISDOM",
+    "url": "/career/deps/wisdom",
+    "site": "https://wisdom.kyungnam.ac.kr",
+    "title": "경남대학교 LINC3.0 사업단 WISDOM 플랫폼",
     "tag": [
       "react",
       "nextjs",
@@ -70,6 +70,28 @@
   {
     "seq": 102,
     "parentSeq": 10,
+    "menu": "GNCAR",
+    "url": "/career/deps/gncar",
+    "site": "https://gncar.gntp.or.kr/virtual",
+    "title": "경남 TP 버추얼 개발 기술지원 플랫폼",
+    "tag": [
+      "react",
+      "nextjs",
+      "typescript",
+      "html",
+      "scss",
+      "css",
+      "radix",
+      "reactIcon",
+      "reactQuery"
+    ],
+    "hasChild": false,
+    "depth": 3,
+    "sort": 3
+  },
+  {
+    "seq": 103,
+    "parentSeq": 10,
     "menu": "GNWP",
     "url": "/career/deps/gnwp",
     "site": "http://job.giba.or.kr",
@@ -86,10 +108,10 @@
     ],
     "hasChild": false,
     "depth": 3,
-    "sort": 3
+    "sort": 4
   },
   {
-    "seq": 103,
+    "seq": 104,
     "parentSeq": 10,
     "menu": "GNHOME",
     "url": "/career/deps/gnhome",
@@ -98,10 +120,10 @@
     "tag": ["react", "nextjs", "typescript", "html", "css", "reactQuery"],
     "hasChild": false,
     "depth": 3,
-    "sort": 4
+    "sort": 5
   },
   {
-    "seq": 104,
+    "seq": 105,
     "parentSeq": 10,
     "menu": "SANDAN",
     "url": "/career/deps/sandan",
@@ -110,10 +132,10 @@
     "tag": ["javascript", "html", "css", "퍼블리싱", "publishing"],
     "hasChild": false,
     "depth": 3,
-    "sort": 5
+    "sort": 6
   },
   {
-    "seq": 105,
+    "seq": 106,
     "parentSeq": 10,
     "menu": "HOMEPAGE",
     "url": "/career/deps/homepage",
@@ -122,10 +144,10 @@
     "tag": ["javascript", "html", "css", "퍼블리싱", "publishing"],
     "hasChild": false,
     "depth": 3,
-    "sort": 6
+    "sort": 7
   },
   {
-    "seq": 106,
+    "seq": 107,
     "parentSeq": 10,
     "menu": "STX",
     "url": "/career/deps/stx",
@@ -134,7 +156,7 @@
     "tag": ["javascript", "html", "css", "퍼블리싱", "publishing"],
     "hasChild": false,
     "depth": 3,
-    "sort": 7
+    "sort": 8
   },
 
   {
@@ -284,6 +306,18 @@
     "url": "/project/wiko",
     "site": "https://wiko.netlify.app",
     "title": "위코",
+    "tag": [],
+    "hasChild": false,
+    "depth": 2,
+    "sort": 1
+  },
+  {
+    "seq": 21,
+    "parentSeq": 2,
+    "menu": "PAWTAIL",
+    "url": "/project/pawtail",
+    "site": "https://pawtail.netlify.app",
+    "title": "파우테일",
     "tag": [],
     "hasChild": false,
     "depth": 2,
