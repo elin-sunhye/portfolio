@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import style from './page.module.scss';
-import { HiOutlineChevronDoubleDown } from 'react-icons/hi';
-import { useEffect, useRef, useState } from 'react';
-import { menuType } from '@/type/menu/menuType';
-import { useRouter } from 'next/navigation';
-import Btn from '@/component/common/btn/Btn';
-import Image from 'next/image';
+import style from "./page.module.scss";
+import { HiOutlineChevronDoubleDown } from "react-icons/hi";
+import { useEffect, useRef, useState } from "react";
+import { menuType } from "@/type/menu/menuType";
+import { useRouter } from "next/navigation";
+import Btn from "@/component/common/btn/Btn";
+import Image from "next/image";
 
 // dummyData ---------------------------------
-import menuData from '@/dummyData/menu.json';
-import TopBox from '@/component/topBox/TopBox';
+import menuData from "@/dummyData/menu.json";
+import TopBox from "@/component/topBox/TopBox";
 
 export default function Home() {
   // ---------------------------------
@@ -28,17 +28,17 @@ export default function Home() {
 
   // 화면 로드시
   useEffect(() => {
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       // 브라우저 크기
       setBrowserHeight(window.innerHeight);
-      window.addEventListener('resize', function () {
+      window.addEventListener("resize", function () {
         setBrowserHeight(window.innerHeight);
       });
 
       // 스크롤 초기화
       if (window.scrollY > 0 && scrollTxtRef.current !== null) {
         scrollTxtRef.current.style.setProperty(
-          'transform',
+          "transform",
           // `translateX(-${String(window.scrollY - window.innerHeight + 1)}px)`
           `translateX(-${String(window.scrollY - window.innerHeight * 1.5)}px)`
         );
@@ -46,7 +46,7 @@ export default function Home() {
 
       // scroll
       let lastScroll = 0;
-      window.addEventListener('scroll', function () {
+      window.addEventListener("scroll", function () {
         let currentScroll = document.documentElement.scrollTop;
 
         // scrollTxt
@@ -57,7 +57,7 @@ export default function Home() {
         ) {
           if (currentScroll > lastScroll) {
             scrollTxtRef.current.style.setProperty(
-              'transform',
+              "transform",
               `translateX(-${String(
                 window.scrollY - window.innerHeight * 1.5
                 // window.scrollY + 1
@@ -66,7 +66,7 @@ export default function Home() {
             );
           } else {
             scrollTxtRef.current.style.setProperty(
-              'transform',
+              "transform",
               `translateX(-${String(
                 window.scrollY - window.innerHeight * 1.5
                 // window.scrollY - 1
@@ -88,11 +88,11 @@ export default function Home() {
           if (window.scrollY >= window.innerHeight / 2) {
             let num1 = String(
               window.scrollY - window.innerHeight + 0.1
-            ).replaceAll('.', '');
+            ).replaceAll(".", "");
 
             let num2 = String(
               window.scrollY - window.innerHeight - 0.1
-            ).replaceAll('.', '');
+            ).replaceAll(".", "");
 
             let plus =
               num1.length == 1
@@ -102,8 +102,8 @@ export default function Home() {
                 : num1.length == 3
                 ? `0.${num1}`
                 : num1.length == 4
-                ? num1.slice(0, 1) + '.' + num1.slice(1)
-                : num1.slice(0, 2) + '.' + num1.slice(2);
+                ? num1.slice(0, 1) + "." + num1.slice(1)
+                : num1.slice(0, 2) + "." + num1.slice(2);
 
             let minus =
               num2.length == 1
@@ -113,43 +113,43 @@ export default function Home() {
                 : num2.length == 3
                 ? `0.${num2}`
                 : num2.length == 4
-                ? num2.slice(0, 1) + '.' + num2.slice(1)
-                : num2.slice(0, 2) + '.' + num2.slice(2);
+                ? num2.slice(0, 1) + "." + num2.slice(1)
+                : num2.slice(0, 2) + "." + num2.slice(2);
 
             if (currentScroll > lastScroll) {
               scroll1UpRef.current.style.setProperty(
-                'transform',
+                "transform",
                 `translateY(-${plus}%)`
               );
               scroll1DownRef.current.style.setProperty(
-                'transform',
+                "transform",
                 `translateY(${minus}%)`
               );
 
               scroll2UpRef.current.style.setProperty(
-                'transform',
+                "transform",
                 `translateY(-${plus}%)`
               );
               scroll2DownRef.current.style.setProperty(
-                'transform',
+                "transform",
                 `translateY(${minus}%)`
               );
             } else {
               scroll1UpRef.current.style.setProperty(
-                'transform',
+                "transform",
                 `translateY(-${minus}%)`
               );
               scroll1DownRef.current.style.setProperty(
-                'transform',
+                "transform",
                 `translateY(${plus}%)`
               );
 
               scroll2UpRef.current.style.setProperty(
-                'transform',
+                "transform",
                 `translateY(-${minus}%)`
               );
               scroll2DownRef.current.style.setProperty(
-                'transform',
+                "transform",
                 `translateY(${plus}%)`
               );
             }
@@ -168,14 +168,14 @@ export default function Home() {
     setRollingItems(
       menuData.filter(
         (mn) =>
-          (mn.url.includes('/career/orange/') ||
-            mn.url.includes('/career/deps/')) &&
+          (mn.url.includes("/career/orange/") ||
+            mn.url.includes("/career/deps/")) &&
           mn.depth === 3
       )
     );
     setRollingDesignItems(
       menuData.filter(
-        (mn) => mn.url.includes('/career/lapcos/') && mn.depth === 3
+        (mn) => mn.url.includes("/career/lapcos/") && mn.depth === 3
       )
     );
   }, [menuData]);
@@ -194,7 +194,7 @@ export default function Home() {
             <div className={`top_box flex_center ${style.top_box}`}>
               <span className={style.img_profile}>
                 <Image
-                  src={'/main/img_profile.svg'}
+                  src={"/main/img_profile.svg"}
                   width={0}
                   height={0}
                   alt="프로필 이미지"
@@ -204,14 +204,14 @@ export default function Home() {
                 <h3>김선혜</h3>
                 <p>Frontend Developer</p>
                 <span>🎂 1996 . 04 . 03</span>
-                <a href={'tel:01021620043'} title="이메일 바로가기">
+                <a href={"tel:01021620043"} title="이메일 바로가기">
                   🤙 010-2162-0043
                 </a>
-                <a href={'mailto:tjsgp1401@naver.com'} title="이메일 바로가기">
+                <a href={"mailto:tjsgp1401@naver.com"} title="이메일 바로가기">
                   📨 tjsgp1401@naver.com
                 </a>
                 <a
-                  href={'https://github.com/elin-sunhye'}
+                  href={"https://github.com/elin-sunhye"}
                   title="깃허브 바로가기"
                 >
                   📎 GitHub
@@ -222,12 +222,12 @@ export default function Home() {
         </div>
 
         <Btn
-          title={'컨텐츠'}
-          id={'goContent'}
+          title={"컨텐츠"}
+          id={"goContent"}
           className={style.btn_go_content}
           color="none"
           onClick={() => {
-            window.scrollTo({ top: browserHeight, behavior: 'smooth' });
+            window.scrollTo({ top: browserHeight, behavior: "smooth" });
           }}
         >
           <HiOutlineChevronDoubleDown
@@ -240,8 +240,8 @@ export default function Home() {
       {/* introduce_section --------------------------------- */}
       <section className={`section_padding ${style.introduce_section}`}>
         <TopBox
-          title={'SKILLS ABILITY'}
-          explain={'Framework | Language | Library'}
+          title={"SKILLS ABILITY"}
+          explain={"Framework | Language | Library"}
         />
 
         <div className={`wrap flex_start ${style.skill_box}`}>
@@ -390,17 +390,24 @@ export default function Home() {
             >
               <span className={style.img_box}>
                 <Image
-                  src={'/main/project/wiko/img_wiko_5.svg'}
-                  alt={'공장 이미지'}
+                  src={"/main/project/wiko/img_wiko_5.svg"}
+                  alt={"공장 이미지"}
                   width={0}
                   height={0}
                 />
               </span>
-              <span></span>
               <span className={style.img_box}>
                 <Image
-                  src={'/main/project/wiko/img_wiko_1.svg'}
-                  alt={'공장 이미지'}
+                  src={"/main/project/wiko/img_wiko_3.svg"}
+                  alt={"공장 이미지"}
+                  width={0}
+                  height={0}
+                />
+              </span>
+              <span className={style.img_box}>
+                <Image
+                  src={"/main/project/wiko/img_wiko_1.svg"}
+                  alt={"공장 이미지"}
                   width={0}
                   height={0}
                 />
@@ -412,8 +419,8 @@ export default function Home() {
               </div>
               <span className={style.img_box}>
                 <Image
-                  src={'/main/project/wiko/img_wiko_7.svg'}
-                  alt={'공장 이미지'}
+                  src={"/main/project/wiko/img_wiko_7.svg"}
+                  alt={"공장 이미지"}
                   width={0}
                   height={0}
                 />
@@ -428,54 +435,68 @@ export default function Home() {
               </div>
               <span className={style.img_box}>
                 <Image
-                  src={'/main/project/wiko/img_wiko_6.svg'}
-                  alt={'공장 이미지'}
+                  src={"/main/project/wiko/img_wiko_6.svg"}
+                  alt={"공장 이미지"}
                   width={0}
                   height={0}
                 />
               </span>
               <span className={style.img_box}>
                 <Image
-                  src={'/main/project/wiko/img_wiko_4.svg'}
-                  alt={'공장 이미지'}
+                  src={"/main/project/wiko/img_wiko_4.svg"}
+                  alt={"공장 이미지"}
                   width={0}
                   height={0}
                 />
               </span>
-              <span></span>
-              <span></span>
+              <span className={style.img_box}>
+                <Image
+                  src={"/main/project/wiko/img_wiko_3.svg"}
+                  alt={"공장 이미지"}
+                  width={0}
+                  height={0}
+                />
+              </span>
+              <span className={style.img_box}>
+                <Image
+                  src={"/main/project/wiko/img_wiko_2.svg"}
+                  alt={"공장 이미지"}
+                  width={0}
+                  height={0}
+                />
+              </span>
             </div>
           </div>
 
           <div className={`top_box ${style.top_box}`}>
             <TopBox
-              direction={'right'}
-              title={'WIKO'}
+              direction={"right"}
+              title={"WIKO"}
               explain={
                 '정밀 주조를 다루고 있는 <br />"위코" 회사의 브랜드 사이트'
               }
-              desc={'2024.01 ~ 2024.06'}
+              desc={"2024.01 ~"}
             />
 
             <div className={`flex_end ${style.btn_box}`}>
-              <Btn
-                title={'자세히 보기'}
-                id={'viewDetail'}
+              {/* <Btn
+                title={"자세히 보기"}
+                id={"viewDetail"}
                 className={style.btn_go_detail}
                 color="black"
                 border="br_round"
-                href={menuData.find((menu) => menu.menu === 'WIKO')?.url || ''}
+                href={menuData.find((menu) => menu.menu === "WIKO")?.url || ""}
                 target="_self"
               >
                 view detail
-              </Btn>
+              </Btn> */}
               <Btn
-                title={'사이트 바로가기'}
-                id={'viewSite'}
+                title={"사이트 바로가기"}
+                id={"viewSite"}
                 className={style.btn_go_detail}
                 color="black"
                 border="br_round"
-                href={menuData.find((menu) => menu.menu === 'WIKO')?.site || ''}
+                href={menuData.find((menu) => menu.menu === "WIKO")?.site || ""}
               >
                 view site
               </Btn>
@@ -491,34 +512,34 @@ export default function Home() {
         <div className={`wrap flex_between ${style.wrap}`}>
           <div className={`top_box ${style.top_box}`}>
             <TopBox
-              direction={'left'}
-              title={'PAWTAIL'}
-              explain={'강아지 유치원 알림장 <br />웹 & 어플입니다.'}
-              desc={'2024.06 ~ '}
+              direction={"left"}
+              title={"PAWTAIL"}
+              explain={"강아지 유치원 알림장 <br />웹 & 어플입니다."}
+              desc={"2024.06 ~ "}
             />
 
             <div className={`flex_start ${style.btn_box}`}>
               <Btn
-                title={'자세히 보기'}
-                id={'viewDetail'}
+                title={"자세히 보기"}
+                id={"viewDetail"}
                 className={style.btn_go_detail}
                 color="black"
                 border="br_round"
                 href={
-                  menuData.find((menu) => menu.menu === 'PAWTAIL')?.url || ''
+                  menuData.find((menu) => menu.menu === "PAWTAIL")?.url || ""
                 }
                 target="_self"
               >
                 view detail
               </Btn>
               <Btn
-                title={'사이트 바로가기'}
-                id={'viewSite'}
+                title={"사이트 바로가기"}
+                id={"viewSite"}
                 className={style.btn_go_detail}
                 color="black"
                 border="br_round"
                 href={
-                  menuData.find((menu) => menu.menu === 'PAWTAIL')?.site || ''
+                  menuData.find((menu) => menu.menu === "PAWTAIL")?.site || ""
                 }
               >
                 view site
@@ -531,24 +552,74 @@ export default function Home() {
               ref={scroll2UpRef}
               className={`flex_center ${style.scroll_up}`}
             >
-              <span>
-                <Image src={'/'} alt="위코 스토리 화면" width={0} height={0} />
+              <span className={style.img_box}>
+                <Image
+                  src={"/main/project/pawtail/img_pawtail_3.svg"}
+                  alt={"강아지 이미지"}
+                  width={0}
+                  height={0}
+                />
               </span>
-              <span>
-                <Image src={''} alt="위코 메인 화면" width={0} height={0} />
+              <span className={style.img_box}>
+                <Image
+                  src={"/main/project/pawtail/img_pawtail_7.svg"}
+                  alt={"강아지 이미지"}
+                  width={0}
+                  height={0}
+                />
               </span>
-              <span className={style.bottom}>asd</span>
-              <span>dsfsad</span>
-              <span>123</span>
+              <span className={style.img_box}>
+                <Image
+                  src={"/main/project/pawtail/img_pawtail_1.svg"}
+                  alt={"강아지 이미지"}
+                  width={0}
+                  height={0}
+                />
+              </span>
+              <span className={style.img_box}>
+                <Image
+                  src={"/main/project/pawtail/img_pawtail_5.svg"}
+                  alt={"강아지 이미지"}
+                  width={0}
+                  height={0}
+                />
+              </span>
+              <span className={style.img_box}>
+                <Image
+                  src={"/main/project/pawtail/img_pawtail_4.svg"}
+                  alt={"강아지 이미지"}
+                  width={0}
+                  height={0}
+                />
+              </span>
             </div>
             <div
               ref={scroll2DownRef}
               className={`flex_center ${style.scroll_down}`}
             >
-              <span>asd</span>
-              <span>123</span>
-              <span className={style.bottom}>
-                <Image src={'/'} alt="위코 메인 화면" width={0} height={0} />
+              <span className={style.img_box}>
+                <Image
+                  src={"/main/project/pawtail/img_pawtail_2.svg"}
+                  alt={"강아지 이미지"}
+                  width={0}
+                  height={0}
+                />
+              </span>
+              <span className={style.img_box}>
+                <Image
+                  src={"/main/project/pawtail/img_pawtail_6.svg"}
+                  alt={"강아지 이미지"}
+                  width={0}
+                  height={0}
+                />
+              </span>
+              <span className={style.img_box}>
+                <Image
+                  src={"/main/project/pawtail/img_pawtail_2.svg"}
+                  alt={"강아지 이미지"}
+                  width={0}
+                  height={0}
+                />
               </span>
               <div className="flex_start">
                 <span></span>
@@ -556,10 +627,10 @@ export default function Home() {
                 <span></span>
                 <span></span>
               </div>
-              <span>
+              <span className={style.img_box}>
                 <Image
-                  src={'/'}
-                  alt="위코 문의사항 화면"
+                  src={"/main/project/pawtail/img_pawtail_3.svg"}
+                  alt={"강아지 이미지"}
                   width={0}
                   height={0}
                 />
@@ -580,15 +651,15 @@ export default function Home() {
       {/* career_section --------------------------------- */}
       <section className={`section_padding ${style.career_section}`}>
         <TopBox
-          title={'TOGETHER'}
-          explain={'총 경력 : 4년 5개월 | 2019년 2월 ~ '}
-          desc={'(2024년 5월 기준)'}
+          title={"TOGETHER"}
+          explain={"총 경력 : 4년 5개월 | 2019년 2월 ~ "}
+          desc={"(2024년 5월 기준)"}
           // desc={'(2024년 5월 기준 | 공백 : 2019년 11월 ~ 2020년 11월)'}
         />
 
         <div className={`wrap flex_start ${style.career_box}`}>
           {menuData
-            .filter((menu) => menu.url.includes('career') && menu.depth === 2)
+            .filter((menu) => menu.url.includes("career") && menu.depth === 2)
             .map((item: menuType, itemInd: number) => {
               return (
                 <div
@@ -608,16 +679,16 @@ export default function Home() {
                   <div className={`${style.career_info}`}>
                     <p className={style.comp_name}>{item.menu}</p>
                     <span className={style.period}>
-                      {item.menu === 'DEPS' ? (
+                      {item.menu === "DEPS" ? (
                         <>2021.12 ~ 재직중 | 개발팀 대리 - 프론트엔드 개발자</>
-                      ) : item.menu === 'ORANGE' ? (
+                      ) : item.menu === "ORANGE" ? (
                         <>2020.11 ~ 2021.11 | 전략기획팀 매니저 - 퍼블리셔</>
                       ) : (
                         <>2019.02 ~ 2019.11 | 디자인팀 인턴</>
                       )}
                     </span>
                     <p className={style.comp_desc}>
-                      {item.menu === 'DEPS' ? (
+                      {item.menu === "DEPS" ? (
                         <>
                           <span>
                             뎁스는 경남 지자체에서 운영하는 응용 소프트웨어 개발
@@ -628,7 +699,7 @@ export default function Home() {
                             개발 및 유지보수를 담당하고 있습니다.
                           </span>
                         </>
-                      ) : item.menu === 'ORANGE' ? (
+                      ) : item.menu === "ORANGE" ? (
                         <>
                           <span>
                             오렌지 엔터테인먼트는 해외 아티스트 콜라보 앨범을
@@ -652,11 +723,11 @@ export default function Home() {
                       )}
                     </p>
 
-                    {item.menu === 'DEPS' ? (
+                    {item.menu === "DEPS" ? (
                       menuData
                         .filter(
                           (menu) =>
-                            menu.url.includes('deps') && menu.depth === 3
+                            menu.url.includes("deps") && menu.depth === 3
                         )
                         .map((project: menuType, projectIndex: number) => {
                           return (
@@ -666,8 +737,8 @@ export default function Home() {
                             >
                               <p className={style.project_nm}>
                                 {project.menu}
-                                {project.menu === 'SANDAN' ||
-                                project.menu === 'STX' ? (
+                                {project.menu === "SANDAN" ||
+                                project.menu === "STX" ? (
                                   // <a
                                   //   href={project.url}
                                   //   title="상세페이지 바로가기"
@@ -686,21 +757,21 @@ export default function Home() {
                                 )}
                               </p>
                               <span className={style.project_period}>
-                                {project.menu === 'BACKOFFICE' ? (
+                                {project.menu === "BACKOFFICE" ? (
                                   <>2024.06 ~ </>
-                                ) : project.menu === 'WISDOM' ? (
+                                ) : project.menu === "WISDOM" ? (
                                   <>2024.01 ~ 2024.04</>
-                                ) : project.menu === 'GNCAR' ? (
+                                ) : project.menu === "GNCAR" ? (
                                   <>2023.08 ~ 2024.01</>
-                                ) : project.menu === 'GNWP' ? (
+                                ) : project.menu === "GNWP" ? (
                                   <>2023.01 ~ 2023.06</>
-                                ) : project.menu === 'GNHOME' ? (
+                                ) : project.menu === "GNHOME" ? (
                                   <>2022.10 ~ 2023.03</>
-                                ) : project.menu === 'SANDAN' ? (
+                                ) : project.menu === "SANDAN" ? (
                                   <>2022.08 ~ 2022.10</>
-                                ) : project.menu === 'HOMEPAGE' ? (
+                                ) : project.menu === "HOMEPAGE" ? (
                                   <>2022.04 ~ 2022.06</>
-                                ) : project.menu === 'STX' ? (
+                                ) : project.menu === "STX" ? (
                                   <>2022.02 ~ 2022.08</>
                                 ) : (
                                   <></>
@@ -709,7 +780,7 @@ export default function Home() {
                               <div
                                 className={`flex_start ${style.project_desc}`}
                               >
-                                {project.menu === 'BACKOFFICE' ? (
+                                {project.menu === "BACKOFFICE" ? (
                                   <>
                                     <span>
                                       운영, 관리, 지원 기능을 담당하는 시스템
@@ -719,7 +790,7 @@ export default function Home() {
                                       TypeScript, SCSS, CSS
                                     </span>
                                   </>
-                                ) : project.menu === 'WISDOM' ? (
+                                ) : project.menu === "WISDOM" ? (
                                   <>
                                     <span>
                                       경남대학과 지역산업의 공생 발전을 위한
@@ -730,7 +801,7 @@ export default function Home() {
                                       TypeScript, SCSS, CSS
                                     </span>
                                   </>
-                                ) : project.menu === 'GNCAR' ? (
+                                ) : project.menu === "GNCAR" ? (
                                   <>
                                     <span>
                                       경남 TP 버추얼 개발 기술 지원 플랫폼
@@ -740,7 +811,7 @@ export default function Home() {
                                       TypeScript, SCSS, CSS
                                     </span>
                                   </>
-                                ) : project.menu === 'GNWP' ? (
+                                ) : project.menu === "GNWP" ? (
                                   <>
                                     <span>경상남도 통합 일자리 플랫폼</span>
                                     <span>
@@ -748,7 +819,7 @@ export default function Home() {
                                       TypeScript, SCSS, CSS
                                     </span>
                                   </>
-                                ) : project.menu === 'GNHOME' ? (
+                                ) : project.menu === "GNHOME" ? (
                                   <>
                                     <span>경남 공동 주택 관리 통합 플랫폼</span>
                                     <span>
@@ -756,7 +827,7 @@ export default function Home() {
                                       TypeScript, SCSS, CSS
                                     </span>
                                   </>
-                                ) : project.menu === 'SANDAN' ? (
+                                ) : project.menu === "SANDAN" ? (
                                   <>
                                     <span>
                                       경남 공단 내 키오스크 설치하여 주변 환경에
@@ -766,9 +837,9 @@ export default function Home() {
                                       SKILLS | HTML5, CSS, JavaScript, jQuery
                                     </span>
                                   </>
-                                ) : project.menu === 'HOMEPAGE' ? (
+                                ) : project.menu === "HOMEPAGE" ? (
                                   <>자사 브랜드 리뉴얼 사이트</>
-                                ) : project.menu === 'STX' ? (
+                                ) : project.menu === "STX" ? (
                                   <>
                                     <span>STX엔진 내 SSC 시스템</span>
                                   </>
@@ -779,7 +850,7 @@ export default function Home() {
                               <div
                                 className={`flex_start ${style.project_func}`}
                               >
-                                {project.menu === 'BACKOFFICE' ? (
+                                {project.menu === "BACKOFFICE" ? (
                                   <>
                                     <span>
                                       NextAuth 라이브러리를 이용한 로그인
@@ -801,7 +872,7 @@ export default function Home() {
                                       미디어쿼리를 이용한 반응형/적응형 구현
                                     </span>
                                   </>
-                                ) : project.menu === 'WISDOM' ? (
+                                ) : project.menu === "WISDOM" ? (
                                   <>
                                     <span>
                                       카카오 맵 API를 활용한 마커 위치 구현
@@ -841,7 +912,7 @@ export default function Home() {
                                       미디어쿼리를 이용한 반응형/적응형 구현
                                     </span>
                                   </>
-                                ) : project.menu === 'GNCAR' ? (
+                                ) : project.menu === "GNCAR" ? (
                                   <>
                                     <span>
                                       카카오 맵 API를 활용한 부품 장비 기업 검색
@@ -876,7 +947,7 @@ export default function Home() {
                                       미디어쿼리를 이용한 반응형/적응형 구현
                                     </span>
                                   </>
-                                ) : project.menu === 'GNWP' ? (
+                                ) : project.menu === "GNWP" ? (
                                   <>
                                     <span>
                                       카카오 맵 API를 활용한 내 주변 채용 정보
@@ -900,7 +971,7 @@ export default function Home() {
                                       미디어쿼리를 이용한 반응형/적응형 구현
                                     </span>
                                   </>
-                                ) : project.menu === 'GNHOME' ? (
+                                ) : project.menu === "GNHOME" ? (
                                   <>
                                     <span>CMS 공문 서식 등록 기능 개발</span>
                                     <span>
@@ -926,7 +997,7 @@ export default function Home() {
                                       미디어쿼리를 이용한 반응형/적응형 구현
                                     </span>
                                   </>
-                                ) : project.menu === 'SANDAN' ? (
+                                ) : project.menu === "SANDAN" ? (
                                   <>
                                     <span>
                                       카카오 API를 이용한 공단 내 키오스크 위치
@@ -935,7 +1006,7 @@ export default function Home() {
                                     <span>환경 단위별 필터링 기능 구현</span>
                                     <span>환경 수치에 대한 데이터 시각화</span>
                                   </>
-                                ) : project.menu === 'HOMEPAGE' ? (
+                                ) : project.menu === "HOMEPAGE" ? (
                                   <>
                                     <span>
                                       JavaScript로 영상 및 스크립트 싱크 구현
@@ -955,7 +1026,7 @@ export default function Home() {
                                       미디어쿼리를 이용한 반응형/적응형 구현
                                     </span>
                                   </>
-                                ) : project.menu === 'STX' ? (
+                                ) : project.menu === "STX" ? (
                                   <>
                                     <span>grid 테이블 구현</span>
                                     <span>
@@ -969,11 +1040,11 @@ export default function Home() {
                             </div>
                           );
                         })
-                    ) : item.menu === 'ORANGE' ? (
+                    ) : item.menu === "ORANGE" ? (
                       menuData
                         .filter(
                           (menu) =>
-                            menu.url.includes('orange') && menu.depth === 3
+                            menu.url.includes("orange") && menu.depth === 3
                         )
                         .map((project: menuType, projectIndex: number) => {
                           return (
@@ -983,32 +1054,32 @@ export default function Home() {
                             >
                               <p className={style.project_nm}>{project.menu}</p>
                               <span className={style.project_period}>
-                                {project.menu === 'FANPICK' ? (
+                                {project.menu === "FANPICK" ? (
                                   <>2021.05 ~ 2021.11</>
-                                ) : project.menu === 'HOMEPAGE' ? (
+                                ) : project.menu === "HOMEPAGE" ? (
                                   <>2020.11 ~ 2021.03</>
-                                ) : project.menu === 'NFT SHOWCASE' ? (
+                                ) : project.menu === "NFT SHOWCASE" ? (
                                   <>2021.04 ~ 2021.06</>
-                                ) : project.menu === 'BASIC COLLABO EVENT' ? (
+                                ) : project.menu === "BASIC COLLABO EVENT" ? (
                                   <>2021.06 ~ 2021.10</>
                                 ) : (
                                   <></>
                                 )}
                               </span>
                               <div className={style.project_desc}>
-                                {project.menu === 'FANPICK' ? (
+                                {project.menu === "FANPICK" ? (
                                   <>
                                     투표를 통해 선정된 아티스트들의 콜라보
                                     앨범을 만들어 주는 어플리케이션.
                                   </>
-                                ) : project.menu === 'HOMEPAGE' ? (
+                                ) : project.menu === "HOMEPAGE" ? (
                                   <>미라클 토큰 브랜드 리뉴얼 사이트.</>
-                                ) : project.menu === 'NFT SHOWCASE' ? (
+                                ) : project.menu === "NFT SHOWCASE" ? (
                                   <>
                                     랜디 저커버그가 참석한 쇼케이스에서 배너 등
                                     디자인.
                                   </>
-                                ) : project.menu === 'BASIC COLLABO EVENT' ? (
+                                ) : project.menu === "BASIC COLLABO EVENT" ? (
                                   <>BASIC 회사와의 NFT 콜라보 이벤트 페이지.</>
                                 ) : (
                                   <></>
@@ -1017,11 +1088,11 @@ export default function Home() {
                             </div>
                           );
                         })
-                    ) : item.menu === 'LAPCOS' ? (
+                    ) : item.menu === "LAPCOS" ? (
                       menuData
                         .filter(
                           (menu) =>
-                            menu.url.includes('lapcos') && menu.depth === 3
+                            menu.url.includes("lapcos") && menu.depth === 3
                         )
                         .map((project: menuType, projectIndex: number) => {
                           return (
@@ -1031,28 +1102,28 @@ export default function Home() {
                             >
                               <p className={style.project_nm}>{project.menu}</p>
                               <span className={style.project_period}>
-                                {project.menu === 'COSTCO' ? (
+                                {project.menu === "COSTCO" ? (
                                   <>2019.09 ~ 2019.11</>
-                                ) : project.menu === 'TRADESHOW' ? (
+                                ) : project.menu === "TRADESHOW" ? (
                                   <>2019.04 ~ 2019.09</>
-                                ) : project.menu === 'CATALOG' ? (
+                                ) : project.menu === "CATALOG" ? (
                                   <>2019.02 ~ 2019.11</>
                                 ) : (
                                   <></>
                                 )}
                               </span>
                               <div className={style.project_desc}>
-                                {project.menu === 'COSTCO' ? (
+                                {project.menu === "COSTCO" ? (
                                   <>
                                     미국 COSTCO 하반기 & 유럽 COSTCO 상반기 제품
                                     패키지 디자인 유지 보수
                                   </>
-                                ) : project.menu === 'TRADESHOW' ? (
+                                ) : project.menu === "TRADESHOW" ? (
                                   <>
                                     바이어 초대장 디자인, 카탈로그 제작, 쇼룸 내
                                     DP 디자인, 제품 사인 디자인
                                   </>
-                                ) : project.menu === 'CATALOG' ? (
+                                ) : project.menu === "CATALOG" ? (
                                   <>자사 제품 카탈로그 디자인</>
                                 ) : (
                                   <></>
