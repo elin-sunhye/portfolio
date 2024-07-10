@@ -657,9 +657,9 @@ export default function Home() {
       <section className={`section_padding ${style.career_section}`}>
         <TopBox
           title={"TOGETHER"}
-          explain={"총 경력 : 4년 5개월 | 2019년 2월 ~ "}
-          desc={"(2024년 5월 기준)"}
-          // desc={'(2024년 5월 기준 | 공백 : 2019년 11월 ~ 2020년 11월)'}
+          explain={"총 경력 : 4년 7개월 | 2019년 2월 ~ "}
+          desc={"(2024년 7월 기준)"}
+          // desc={'(2024년 5월 기준 | 공백 : 2019년 12월 ~ 2020년 10월)'}
         />
 
         <div className={`wrap flex_start ${style.career_box}`}>
@@ -845,7 +845,12 @@ export default function Home() {
                                     </span>
                                   </>
                                 ) : project.menu === "HOMEPAGE" ? (
-                                  <>자사 브랜드 리뉴얼 사이트</>
+                                  <>
+                                    <span>자사 브랜드 사이트 리뉴얼</span>
+                                    <span>
+                                      SKILLS | HTML5, CSS, JavaScript, jQuery
+                                    </span>
+                                  </>
                                 ) : project.menu === "STX" ? (
                                   <>
                                     <span>STX엔진 내 SSC 시스템</span>
@@ -1080,7 +1085,7 @@ export default function Home() {
                                     앨범을 만들어 주는 어플리케이션.
                                   </>
                                 ) : project.menu === "HOMEPAGE" ? (
-                                  <>미라클 토큰 브랜드 리뉴얼 사이트.</>
+                                  <>미라클 토큰 브랜드 사이트 리뉴얼</>
                                 ) : project.menu === "NFT SHOWCASE" ? (
                                   <>
                                     랜디 저커버그가 참석한 쇼케이스에서 배너 등
