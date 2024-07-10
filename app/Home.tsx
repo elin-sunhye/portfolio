@@ -211,7 +211,11 @@ export default function Home() {
                   📨 tjsgp1401@naver.com
                 </a>
                 <a
-                  href={"https://github.com/elin-sunhye"}
+                  href={
+                    "https://github.com/elin-sunhye?tab=overview&from=2024-01-01&to=2024-12-30"
+                  }
+                  // href={"https://github.com/elin-sunhye"}
+                  target={"_blank"}
                   title="깃허브 바로가기"
                 >
                   📎 GitHub
