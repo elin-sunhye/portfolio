@@ -379,7 +379,7 @@ export default function Home() {
       </section>
 
       {/* project_wiko_section --------------------------------- */}
-      <section
+      {/* <section
         className={`${style.project_section} ${style.project_wiko_section}`}
       >
         <div className={`wrap flex_between ${style.wrap}`}>
@@ -479,7 +479,7 @@ export default function Home() {
             />
 
             <div className={`flex_end ${style.btn_box}`}>
-              {/* <Btn
+              <Btn
                 title={"자세히 보기"}
                 id={"viewDetail"}
                 className={style.btn_go_detail}
@@ -489,7 +489,7 @@ export default function Home() {
                 target="_self"
               >
                 view detail
-              </Btn> */}
+              </Btn>
               <Btn
                 title={"사이트 바로가기"}
                 id={"viewSite"}
@@ -503,10 +503,10 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* project_pawtail_section --------------------------------- */}
-      <section
+      {/* <section
         className={`${style.project_section} ${style.project_pawtail_section}`}
       >
         <div className={`wrap flex_between ${style.wrap}`}>
@@ -515,7 +515,7 @@ export default function Home() {
               direction={"left"}
               title={"PAWTAIL"}
               explain={"강아지 유치원 알림장 <br />웹 & 어플입니다."}
-              desc={"2024.06 ~ "}
+              desc={"2024.06 ~"}
             />
 
             <div className={`flex_start ${style.btn_box}`}>
@@ -539,7 +539,8 @@ export default function Home() {
                 color="black"
                 border="br_round"
                 href={
-                  menuData.find((menu) => menu.menu === "PAWTAIL")?.site || ""
+                  // menuData.find((menu) => menu.menu === "PAWTAIL")?.site || ""
+                  "https://www.figma.com/design/Q3DYrqD9C2jnBx2Miqmv8d/pawTale-%EA%B0%95%EC%95%84%EC%A7%80-%EC%95%8C%EB%A6%BC%EC%9E%A5?m=dev&node-id=0-1&t=hKja9RXGCpn9xEvU-1"
                 }
               >
                 view site
@@ -638,7 +639,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* scroll_txt_section --------------------------------- */}
       <section className={style.scroll_txt_section}>
@@ -737,7 +738,8 @@ export default function Home() {
                             >
                               <p className={style.project_nm}>
                                 {project.menu}
-                                {project.menu === "SANDAN" ||
+                                {project.menu === "BACKOFFICE" ||
+                                project.menu === "SANDAN" ||
                                 project.menu === "STX" ? (
                                   // <a
                                   //   href={project.url}
@@ -783,7 +785,8 @@ export default function Home() {
                                 {project.menu === "BACKOFFICE" ? (
                                   <>
                                     <span>
-                                      운영, 관리, 지원 기능을 담당하는 시스템
+                                      프로젝트 운영, 관리, 지원 기능을 담당하는
+                                      시스템
                                     </span>
                                     <span>
                                       SKILLS | React.js, Next.js, JavaScript,
@@ -865,11 +868,8 @@ export default function Home() {
                                     </span>
                                     <span>chart.js를 활용한 데이터 시각화</span>
                                     <span>
-                                      Radix ux/ui 라이브러리를 활용한 컴포넌트
+                                      Radix, mui 라이브러리를 활용한 컴포넌트
                                       개발
-                                    </span>
-                                    <span>
-                                      미디어쿼리를 이용한 반응형/적응형 구현
                                     </span>
                                   </>
                                 ) : project.menu === "WISDOM" ? (
