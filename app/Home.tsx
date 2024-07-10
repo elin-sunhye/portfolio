@@ -921,7 +921,10 @@ export default function Home() {
                                     <span>
                                       협약, 수행 등 단계별 지원 사업 관리 구현
                                     </span>
-                                    <span>ㅇㅇ을 활용한 프린트 기능 구현</span>
+                                    <span>
+                                      react-to-print 라이브러리를 활용한 프린트
+                                      기능 구현
+                                    </span>
                                     <span>
                                       xlsx 라이브러리를 활용한 엑셀 다운로드
                                       기능 구현
