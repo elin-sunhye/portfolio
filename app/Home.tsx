@@ -296,7 +296,7 @@ export default function Home() {
             />
             <span>react-hook-form</span>
           </p>
-          <p className={`flex_center`}>
+          {/* <p className={`flex_center`}>
             <Image
               src="/main/skill/ico_lodash.svg"
               alt="JavaScript 유틸리티 라이브러리로, 배열, 객체 등의 조작을 위한 다양한 함수를 제공"
@@ -304,7 +304,7 @@ export default function Home() {
               height={0}
             />
             <span>Lodash.js</span>
-          </p>
+          </p> */}
           <p className={`flex_center`}>
             <Image
               src="/main/skill/ico_recoil.svg"
