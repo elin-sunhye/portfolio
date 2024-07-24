@@ -765,7 +765,7 @@ export default function Home() {
                               <span className={style.project_period}>
                                 {project.menu === "BACKOFFICE" ? (
                                   <>
-                                    2024.06 ~ <br />
+                                    2024.06 ~ 2024.07 <br />
                                     프론트엔드 개발자 1명
                                   </>
                                 ) : project.menu === "WISDOM" ? (
@@ -985,6 +985,9 @@ export default function Home() {
                                   </>
                                 ) : project.menu === "GNWP" ? (
                                   <>
+                                    <span>
+                                      이중구조 개선 지원 사업 개발 (2024.07)
+                                    </span>
                                     <span>
                                       카카오 맵 API를 활용한 내 주변 채용 정보
                                       및 검색 구현
