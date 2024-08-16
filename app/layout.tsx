@@ -33,6 +33,19 @@ export default function RootLayout({
   // https://bstage.in/?hl=ko
   // https://brm.io/matter-js/demo/#mixed
   // https://bennettfeely.com/clippy/
+
+  // 각 프로젝트 개발, 라이브 서바
+  /**
+   * backoffice
+   * 개발 : 10.10.10.213:3033
+   */
+
+  /**
+   * 일자리
+   * 개발 : http://gnwp.lksmart.co.kr
+   * 라이브 : http://job.giba.or.kr
+   */
+
   return (
     <html lang="ko">
       <body className={`${Strawford.variable}`}>
