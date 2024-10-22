@@ -40,7 +40,9 @@ export default function Home() {
         scrollTxtRef.current.style.setProperty(
           'transform',
           // `translateX(-${String(window.scrollY - window.innerHeight + 1)}px)`
-          `translateX(-${String(window.scrollY - window.innerHeight * 1.3)}px)`
+          `translateX(-${String(
+            window.scrollY - window.innerHeight * 1.3
+          )}px) translateY(-50%)`
         );
       }
 
@@ -62,7 +64,7 @@ export default function Home() {
                 window.scrollY - window.innerHeight * 1.3
                 // window.scrollY + 1
                 // window.scrollY - window.innerHeight + 1
-              )}px)`
+              )}px) translateY(-50%)`
             );
           } else {
             scrollTxtRef.current.style.setProperty(
@@ -71,7 +73,7 @@ export default function Home() {
                 window.scrollY - window.innerHeight * 1.3
                 // window.scrollY - 1
                 // window.scrollY - window.innerHeight - 1
-              )}px)`
+              )}px) translateY(-50%)`
             );
           }
           lastScroll = currentScroll;
@@ -383,7 +385,7 @@ export default function Home() {
       </section>
 
       {/* project_wiko_section --------------------------------- */}
-      {/* <section
+      <section
         className={`${style.project_section} ${style.project_wiko_section}`}
       >
         <div className={`wrap flex_between ${style.wrap}`}>
@@ -394,24 +396,24 @@ export default function Home() {
             >
               <span className={style.img_box}>
                 <Image
-                  src={"/main/project/wiko/img_wiko_5.svg"}
-                  alt={"공장 이미지"}
+                  src={'/main/project/wiko/img_wiko_5.svg'}
+                  alt={'공장 이미지'}
                   width={0}
                   height={0}
                 />
               </span>
               <span className={style.img_box}>
                 <Image
-                  src={"/main/project/wiko/img_wiko_3.svg"}
-                  alt={"공장 이미지"}
+                  src={'/main/project/wiko/img_wiko_3.svg'}
+                  alt={'공장 이미지'}
                   width={0}
                   height={0}
                 />
               </span>
               <span className={style.img_box}>
                 <Image
-                  src={"/main/project/wiko/img_wiko_1.svg"}
-                  alt={"공장 이미지"}
+                  src={'/main/project/wiko/img_wiko_1.svg'}
+                  alt={'공장 이미지'}
                   width={0}
                   height={0}
                 />
@@ -423,8 +425,8 @@ export default function Home() {
               </div>
               <span className={style.img_box}>
                 <Image
-                  src={"/main/project/wiko/img_wiko_7.svg"}
-                  alt={"공장 이미지"}
+                  src={'/main/project/wiko/img_wiko_7.svg'}
+                  alt={'공장 이미지'}
                   width={0}
                   height={0}
                 />
@@ -439,32 +441,32 @@ export default function Home() {
               </div>
               <span className={style.img_box}>
                 <Image
-                  src={"/main/project/wiko/img_wiko_6.svg"}
-                  alt={"공장 이미지"}
+                  src={'/main/project/wiko/img_wiko_6.svg'}
+                  alt={'공장 이미지'}
                   width={0}
                   height={0}
                 />
               </span>
               <span className={style.img_box}>
                 <Image
-                  src={"/main/project/wiko/img_wiko_4.svg"}
-                  alt={"공장 이미지"}
+                  src={'/main/project/wiko/img_wiko_4.svg'}
+                  alt={'공장 이미지'}
                   width={0}
                   height={0}
                 />
               </span>
               <span className={style.img_box}>
                 <Image
-                  src={"/main/project/wiko/img_wiko_3.svg"}
-                  alt={"공장 이미지"}
+                  src={'/main/project/wiko/img_wiko_3.svg'}
+                  alt={'공장 이미지'}
                   width={0}
                   height={0}
                 />
               </span>
               <span className={style.img_box}>
                 <Image
-                  src={"/main/project/wiko/img_wiko_2.svg"}
-                  alt={"공장 이미지"}
+                  src={'/main/project/wiko/img_wiko_2.svg'}
+                  alt={'공장 이미지'}
                   width={0}
                   height={0}
                 />
@@ -474,77 +476,77 @@ export default function Home() {
 
           <div className={`top_box ${style.top_box}`}>
             <TopBox
-              direction={"right"}
-              title={"WIKO"}
+              direction={'right'}
+              title={'WIKO'}
               explain={
                 '정밀 주조를 다루고 있는 <br />"위코" 회사의 브랜드 사이트'
               }
-              desc={"2024.01 ~"}
+              desc={''}
             />
 
             <div className={`flex_end ${style.btn_box}`}>
               <Btn
-                title={"자세히 보기"}
-                id={"viewDetail"}
+                title={'자세히 보기'}
+                id={'viewDetail'}
                 className={style.btn_go_detail}
                 color="black"
                 border="br_round"
-                href={menuData.find((menu) => menu.menu === "WIKO")?.url || ""}
+                href={menuData.find((menu) => menu.menu === 'WIKO')?.url || ''}
                 target="_self"
               >
                 view detail
               </Btn>
               <Btn
-                title={"사이트 바로가기"}
-                id={"viewSite"}
+                title={'사이트 바로가기'}
+                id={'viewSite'}
                 className={style.btn_go_detail}
                 color="black"
                 border="br_round"
-                href={menuData.find((menu) => menu.menu === "WIKO")?.site || ""}
+                href={menuData.find((menu) => menu.menu === 'WIKO')?.site || ''}
               >
                 view site
               </Btn>
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* project_pawtail_section --------------------------------- */}
-      {/* <section
+      <section
         className={`${style.project_section} ${style.project_pawtail_section}`}
       >
         <div className={`wrap flex_between ${style.wrap}`}>
           <div className={`top_box ${style.top_box}`}>
             <TopBox
-              direction={"left"}
-              title={"PAWTAIL"}
-              explain={"강아지 유치원 알림장 <br />웹 & 어플입니다."}
-              desc={"2024.06 ~"}
+              direction={'left'}
+              title={'PAWTAIL'}
+              explain={'강아지 유치원 알림장 <br />웹 & 어플입니다.'}
+              desc={''}
             />
 
             <div className={`flex_start ${style.btn_box}`}>
               <Btn
-                title={"자세히 보기"}
-                id={"viewDetail"}
+                title={'자세히 보기'}
+                id={'viewDetail'}
                 className={style.btn_go_detail}
                 color="black"
                 border="br_round"
                 href={
-                  menuData.find((menu) => menu.menu === "PAWTAIL")?.url || ""
+                  menuData.find((menu) => menu.menu === 'PAWTAIL')?.url || ''
                 }
                 target="_self"
               >
                 view detail
               </Btn>
               <Btn
-                title={"사이트 바로가기"}
-                id={"viewSite"}
+                title={'사이트 바로가기'}
+                id={'viewSite'}
                 className={style.btn_go_detail}
                 color="black"
                 border="br_round"
                 href={
                   // menuData.find((menu) => menu.menu === "PAWTAIL")?.site || ""
-                  "https://www.figma.com/design/Q3DYrqD9C2jnBx2Miqmv8d/pawTale-%EA%B0%95%EC%95%84%EC%A7%80-%EC%95%8C%EB%A6%BC%EC%9E%A5?m=dev&node-id=0-1&t=hKja9RXGCpn9xEvU-1"
+                  'https://www.figma.com/design/Q3DYrqD9C2jnBx2Miqmv8d/pawTale-%EA%B0%95%EC%95%84%EC%A7%80-%EC%95%8C%EB%A6%BC%EC%9E%A5?m=dev&node-id=0-1&t=hKja9RXGCpn9xEvU-1'
                 }
               >
                 view site
@@ -559,40 +561,40 @@ export default function Home() {
             >
               <span className={style.img_box}>
                 <Image
-                  src={"/main/project/pawtail/img_pawtail_3.svg"}
-                  alt={"강아지 이미지"}
+                  src={'/main/project/pawtail/img_pawtail_3.svg'}
+                  alt={'강아지 이미지'}
                   width={0}
                   height={0}
                 />
               </span>
               <span className={style.img_box}>
                 <Image
-                  src={"/main/project/pawtail/img_pawtail_7.svg"}
-                  alt={"강아지 이미지"}
+                  src={'/main/project/pawtail/img_pawtail_7.svg'}
+                  alt={'강아지 이미지'}
                   width={0}
                   height={0}
                 />
               </span>
               <span className={style.img_box}>
                 <Image
-                  src={"/main/project/pawtail/img_pawtail_1.svg"}
-                  alt={"강아지 이미지"}
+                  src={'/main/project/pawtail/img_pawtail_1.svg'}
+                  alt={'강아지 이미지'}
                   width={0}
                   height={0}
                 />
               </span>
               <span className={style.img_box}>
                 <Image
-                  src={"/main/project/pawtail/img_pawtail_5.svg"}
-                  alt={"강아지 이미지"}
+                  src={'/main/project/pawtail/img_pawtail_5.svg'}
+                  alt={'강아지 이미지'}
                   width={0}
                   height={0}
                 />
               </span>
               <span className={style.img_box}>
                 <Image
-                  src={"/main/project/pawtail/img_pawtail_4.svg"}
-                  alt={"강아지 이미지"}
+                  src={'/main/project/pawtail/img_pawtail_4.svg'}
+                  alt={'강아지 이미지'}
                   width={0}
                   height={0}
                 />
@@ -604,24 +606,24 @@ export default function Home() {
             >
               <span className={style.img_box}>
                 <Image
-                  src={"/main/project/pawtail/img_pawtail_2.svg"}
-                  alt={"강아지 이미지"}
+                  src={'/main/project/pawtail/img_pawtail_2.svg'}
+                  alt={'강아지 이미지'}
                   width={0}
                   height={0}
                 />
               </span>
               <span className={style.img_box}>
                 <Image
-                  src={"/main/project/pawtail/img_pawtail_6.svg"}
-                  alt={"강아지 이미지"}
+                  src={'/main/project/pawtail/img_pawtail_6.svg'}
+                  alt={'강아지 이미지'}
                   width={0}
                   height={0}
                 />
               </span>
               <span className={style.img_box}>
                 <Image
-                  src={"/main/project/pawtail/img_pawtail_2.svg"}
-                  alt={"강아지 이미지"}
+                  src={'/main/project/pawtail/img_pawtail_2.svg'}
+                  alt={'강아지 이미지'}
                   width={0}
                   height={0}
                 />
@@ -634,8 +636,8 @@ export default function Home() {
               </div>
               <span className={style.img_box}>
                 <Image
-                  src={"/main/project/pawtail/img_pawtail_3.svg"}
-                  alt={"강아지 이미지"}
+                  src={'/main/project/pawtail/img_pawtail_3.svg'}
+                  alt={'강아지 이미지'}
                   width={0}
                   height={0}
                 />
@@ -643,7 +645,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* scroll_txt_section --------------------------------- */}
       <section className={style.scroll_txt_section}>
